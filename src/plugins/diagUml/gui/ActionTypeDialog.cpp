@@ -11,9 +11,9 @@
 udActionTypeDialog::udActionTypeDialog(wxWindow *parent) : udChoiceDialog( parent )
 {
 	wxString choices[] = {wxT("Entry"), wxT("Exit")};
-	
+
 	SetChoices( 2, choices );
-	SetTitle( wxT("State action type") );
+	SetTitle( _("State action type") );
 	SetComment( wxT("Select type of assigned state action:") );
 }
 

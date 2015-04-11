@@ -13,21 +13,21 @@
 
 udSChDiagramDialog::udSChDiagramDialog( wxWindow *parent, udDiagramItem *diag, udLanguage *lang ) : udDiagramDialog( parent, diag, lang )
 {
-	SetTitle( wxT("State Chart diagram properties") );
-	
+	SetTitle( _("State Chart diagram properties") );
+
 	// create inline option
-	m_cbInline = new wxCheckBox( m_pageAdv, wxID_ANY, wxT("Inline code") );
+	m_cbInline = new wxCheckBox( m_pageAdv, wxID_ANY, _("Inline code") );
 	m_pageAdv->GetSizer()->Add( m_cbInline, 0, wxTOP|wxRIGHT|wxLEFT, 5 );
-	
+
 	// create non-blocking option
-	m_cbNonBlocking = new wxCheckBox( m_pageAdv, wxID_ANY, wxT("Non-blocking state chart") );
+	m_cbNonBlocking = new wxCheckBox( m_pageAdv, wxID_ANY, _("Non-blocking state chart") );
 	m_pageAdv->GetSizer()->Add( m_cbNonBlocking, 0, wxTOP|wxRIGHT|wxLEFT, 5 );
-	
+
 	// create input action choice
-	m_staticTextIA = new wxStaticText( m_pageAdv, wxID_ANY, wxT("Input action:"), wxDefaultPosition, wxDefaultSize, 0 );
+	m_staticTextIA = new wxStaticText( m_pageAdv, wxID_ANY, _("Input action:"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticTextIA->Wrap( -1 );
 	m_pageAdv->GetSizer()->Add( m_staticTextIA, 0, wxTOP|wxRIGHT|wxLEFT, 5 );
-	
+
 	wxString m_chInputActionChoices[] = { wxT("<none>") };
 	int m_chInputActionNChoices = sizeof( m_chInputActionChoices ) / sizeof( wxString );
 	m_chInputAction = new wxChoice( m_pageAdv, wxID_ANY, wxDefaultPosition, wxDefaultSize, m_chInputActionNChoices, m_chInputActionChoices, 0 );
@@ -44,16 +44,16 @@ udSChDiagramDialog::~udSChDiagramDialog()
 // virtual functions /////////////////////////////////////////////////////////////////////////
 
 void udSChDiagramDialog::OnInit(wxInitDialogEvent& event)
-{	
+{
 	// initialize controls
 	bool fSubmachine = (m_pDiagram->GetSubdiagramElement() != NULL);
-	
-	m_cbInline->Enable( !fSubmachine ); 
-	
+
+	m_cbInline->Enable( !fSubmachine );
+
 	// fill input actions choice
 	udActionItem *pAction;
 	SerializableList lstActions;
-	
+
 	IPluginManager::Get()->GetProject()->GetItems( CLASSINFO(udActionItem), lstActions );
 	IPluginManager::Get()->GetProject()->GetItems( CLASSINFO(udGenericFunctionItem), lstActions );
 	SerializableList::compatibility_iterator node = lstActions.GetFirst();
@@ -61,14 +61,14 @@ void udSChDiagramDialog::OnInit(wxInitDialogEvent& event)
 	{
 		pAction = (udActionItem*) node->GetData();
 		m_chInputAction->Append( pAction->GetName() );
-		
+
 		node = node->GetNext();
 	}
 	m_chInputAction->SetStringSelection( m_InputAction );
-	
+
 	m_cbInline->SetValidator( wxGenericValidator(&m_Inline) );
 	m_cbNonBlocking->SetValidator( wxGenericValidator(&m_NonBlocking) );
-		
+
 	udDiagramDialog::OnInit( event );
 }
 
@@ -76,13 +76,13 @@ void udSChDiagramDialog::OnOk(wxCommandEvent& event)
 {
 	if( m_eName->GetValue() == wxT("") )
 	{
-		wxMessageBox(wxT("Name cannot be empty."), wxT("CodeDesigner"), wxICON_WARNING | wxOK );
+		wxMessageBox(_("Name cannot be empty."), wxT("CodeDesigner"), wxICON_WARNING | wxOK );
 		m_eName->SetFocus();
 	}
 //	else if( (m_Name != m_eName->GetValue()) && !IPluginManager::Get()->GetProject()->IsUniqueName( m_eName->GetValue() ) )
 //	{
 //		wxMessageBox(wxT("Name must be unique."), wxT("CodeDesigner"), wxICON_WARNING | wxOK );
-//		m_eName->SetFocus();		
+//		m_eName->SetFocus();
 //	}
 	else
 	{
@@ -90,13 +90,13 @@ void udSChDiagramDialog::OnOk(wxCommandEvent& event)
 		TransferDataFromWindow();
 		m_pageAdv->TransferDataFromWindow();
 		m_pageGen->TransferDataFromWindow();
-		
+
 		// ... and via direct functions
 		m_OutputFile = m_fpOutputFile->GetPath();
 		m_Generator = m_chGenerator->GetStringSelection();
 		m_Algorithm = m_chAlgorithm->GetStringSelection();
 		m_InputAction = m_chInputAction->GetStringSelection();
-		
+
 		EndModal( wxID_OK );
 	};
 }

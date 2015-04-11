@@ -20,19 +20,19 @@ END_EVENT_TABLE();
 udProjectManager::udProjectManager(wxWindow *parent) : _ProjManPanel( parent )
 {
 	//SetExtraStyle( wxWS_EX_BLOCK_EVENTS );
-	
+
 	udSettings &Settings = wxGetApp().GetSettings();
-	
+
 	m_fLinked = Settings.GetProperty(wxT("Link manager with designer"))->AsBool();
 	m_fShowProperties = Settings.GetProperty(wxT("Show item properties"))->AsBool();
 	m_fOrganizeCI = Settings.GetProperty(wxT("Organize code items"))->AsBool();
 	m_nPropsSashPosition = Settings.GetProperty(wxT("Project manager sash position"))->AsInt();
-	
+
 	m_auintbViews->SetArtProvider( new udTabArt() );
-	
+
 	// initialize properties grid
 	UpdatePropertiesView( NULL );
-	
+
 	// Delayed sash position update
 	Connect(wxEVT_IDLE, wxIdleEventHandler( udProjectManager::OnIdle ) );
 	//m_pSplitter->Unsplit( m_pPanelProperties );
@@ -41,7 +41,7 @@ udProjectManager::udProjectManager(wxWindow *parent) : _ProjManPanel( parent )
 udProjectManager::~udProjectManager()
 {
 	udSettings &Settings = wxGetApp().GetSettings();
-	
+
 	Settings.GetProperty(wxT("Project manager sash position"))->AsInt() = m_nPropsSashPosition;
 	Settings.GetProperty(wxT("Organize code items"))->AsBool() = m_fOrganizeCI;
 	Settings.GetProperty(wxT("Show item properties"))->AsBool() = m_fShowProperties;
@@ -113,9 +113,9 @@ void udProjectManager::OnExpandAll(wxCommandEvent& event)
 }
 
 void udProjectManager::OnViewChanged(wxAuiNotebookEvent& event)
-{	
+{
 	m_fExpanded = true;
-	
+
 	udProjectTree *pView = GetActiveView();
 	if( pView )
 	{
@@ -137,11 +137,11 @@ void udProjectManager::OnUpdateLinkedEditor(wxUpdateUIEvent& event)
 void udProjectManager::OnShowProperties(wxCommandEvent& event)
 {
 	m_fShowProperties = !m_fShowProperties;
-	
+
 	if( m_fShowProperties )
 	{
 		m_pSplitter->SplitHorizontally( m_pPanelTree, m_pPanelProperties, m_nPropsSashPosition );
-		
+
 		UpdatePropertiesView( wxGetApp().GetMainFrame()->GetSelectedProjectItem() );
 	}
 	else
@@ -163,27 +163,27 @@ void udProjectManager::UpdatePropertiesView(udProjectItem* item)
 	// initialize properties grid
 	m_pPropertiesGrid->Clear();
 	// create some common steps
-	m_pPropertiesGrid->Append( new wxPropertyCategory( wxT("Common") ) );
-	
+	m_pPropertiesGrid->Append( new wxPropertyCategory( _("Common") ) );
+
 	// show read-only properties of given item
 	if( item )
 	{
 		m_pPropertiesGrid->DisableProperty( m_pPropertiesGrid->Append( new wxStringProperty( wxT("type"), wxPG_LABEL, udXS2PG::GetFriendlyName( wxT("classname"), item->GetClassInfo()->GetClassName() ) ) ) );
-		
-		m_pPropertiesGrid->Append( new wxPropertyCategory( wxT("Properties") ) );
-		
+
+		m_pPropertiesGrid->Append( new wxPropertyCategory( _("Properties") ) );
+
 		xsProperty *pProperty;
 		wxString sValue;
-		
+
 		PropertyList::compatibility_iterator node = item->GetProperties().GetFirst();
 		while( node )
 		{
 			pProperty = node->GetData();
 			sValue = wxXmlSerializer::GetPropertyIOHandler( pProperty->m_sDataType )->GetValueStr( pProperty );
-			
+
 			wxPGProperty *pNewProp =  m_pPropertiesGrid->Append( new wxStringProperty( pProperty->m_sFieldName, wxPG_LABEL, udXS2PG::GetFriendlyName( pProperty->m_sFieldName, sValue ) ) );
 			if( pNewProp ) m_pPropertiesGrid->DisableProperty( pNewProp );
-			
+
 			node = node->GetNext();
 		}
 	}
@@ -217,7 +217,7 @@ void udProjectManager::OnIdle(wxIdleEvent& event)
 	if( m_fShowProperties )
 	{
 		if( m_pSplitter->GetSashPosition() == m_nPropsSashPosition) Disconnect(wxEVT_IDLE, wxIdleEventHandler( udProjectManager::OnIdle ) );
-		
+
 		m_pSplitter->SetSashPosition( m_nPropsSashPosition );
 	}
 }

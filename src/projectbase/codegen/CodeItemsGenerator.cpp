@@ -9,7 +9,7 @@
 
 udCodeItemsGenerator::udCodeItemsGenerator()
 {
-	m_sName = wxT("Code items generator");
+	m_sName = _("Code items generator");
 }
 
 udCodeItemsGenerator::~udCodeItemsGenerator()
@@ -39,16 +39,16 @@ bool udCodeItemsGenerator::ProcessDiagram(udDiagramItem *src)
 	{
 		case genCOMMON_DECLARATION:
 			return GenerateCommonDeclaration();
-			
+
 		case genCOMMON_DEFINITION:
 			return GenerateCommonDefinition();
-			
+
 		case genDECLARATION:
 		case genDEFINITION:
 			return true;
-			
+
 		default:
-			IPluginManager::Get()->Log( wxT("ERROR: No valid generation target has been specified.") );
+			IPluginManager::Get()->Log( _("ERROR: No valid generation target has been specified.") );
 			return false;
 	}
 }
@@ -61,21 +61,21 @@ void udCodeItemsGenerator::CleanUp()
 // protected functions /////////////////////////////////////////////////////////////////////////////////////
 
 bool udCodeItemsGenerator::GenerateCommonDeclaration()
-{	
+{
 	wxClassInfo *pPrevType = NULL;
 	udCodeItem *pCodeItem;
 	wxString sOut;
-	
+
 	// initialize output stream
     wxTextOutputStream textOut(*m_pOut);
-	
+
 	// create declarations of non-inlined conditions and functions
 	m_pOutLang->SingleLineCommentCmd( wxT("Generic code items' declarations") );
-	
+
 	SerializableList lstCodeItems;
 	IPluginManager::Get()->GetProject()->GetItems( CLASSINFO(udGenericVariableItem), lstCodeItems );
 	IPluginManager::Get()->GetProject()->GetItems( CLASSINFO(udGenericFunctionItem), lstCodeItems );
-	
+
 	SerializableList::compatibility_iterator node = lstCodeItems.GetFirst();
 	while( node )
 	{
@@ -105,34 +105,34 @@ bool udCodeItemsGenerator::GenerateCommonDeclaration()
 					}
 				}
 			}
-				
+
 			pPrevType = pCodeItem->GetClassInfo();
 		}
-			
+
 		node = node->GetNext();
 	}
-	
+
 	textOut << m_pOutLang->GetCodeBuffer();
-	
+
 	return true;
 }
 
 bool udCodeItemsGenerator::GenerateCommonDefinition()
-{	
+{
 	wxString sOut;
 	wxClassInfo *pPrevType = NULL;
 	udCodeItem *pCodeItem;
-	
+
 	// initialize output stream
     wxTextOutputStream textOut(*m_pOut);
 
 	// create declarations of non-inlined conditions and functions
 	m_pOutLang->SingleLineCommentCmd( wxT("Generic code items' definitions") );
-	
+
 	SerializableList lstCodeItems;
 	IPluginManager::Get()->GetProject()->GetItems( CLASSINFO(udGenericVariableItem), lstCodeItems );
 	IPluginManager::Get()->GetProject()->GetItems( CLASSINFO(udGenericFunctionItem), lstCodeItems );
-	
+
 	SerializableList::compatibility_iterator node = lstCodeItems.GetFirst();
 	while( node )
 	{
@@ -155,7 +155,7 @@ bool udCodeItemsGenerator::GenerateCommonDefinition()
 				if( pFcn->GetImplementation() == uddvFUNCTION_USERIMPLEMENTATION )
 				{
 					if( pPrevType && (pPrevType != pCodeItem->GetClassInfo()) ) m_pOutLang->NewLine();
-					
+
 					m_pOutLang->WriteCodeBlocks( pCodeItem->ToString( udCodeItem::cfDEFINITION, m_pOutLang) );
 					m_pOutLang->BeginCmd();
 					/*if( pCodeItem->GetCode().IsEmpty() ) m_pOutLang->WriteCodeBlocks( m_pOutLang->Dummy() );
@@ -163,23 +163,23 @@ bool udCodeItemsGenerator::GenerateCommonDefinition()
 					{*/
 						// insert code marks here needed for code synchronization
 						m_pOutLang->SingleLineCommentCmd( udGenerator::GetBeginCodeMark( pCodeItem ) );
-						
+
 						m_pOutLang->WriteCodeBlocks( pCodeItem->GetCode() );
-						
+
 						m_pOutLang->SingleLineCommentCmd( udGenerator::GetEndCodeMark( pCodeItem ) );
 					/*}*/
 					m_pOutLang->EndCmd();
 				}
 			}
-				
+
 			pPrevType = pCodeItem->GetClassInfo();
 		}
-			
+
 		node = node->GetNext();
 	}
-	
+
 	textOut << m_pOutLang->GetCodeBuffer();
-	
+
 	return true;
 }
 

@@ -11,7 +11,7 @@ udElifAlgorithm::udElifAlgorithm()
     m_mapElementProcessors[wxT("umlSubStateItem")] = new udEISubStateProcessor();
     m_mapElementProcessors[wxT("umlInitialItem")] = new udEISimpleStateProcessor();
     m_mapElementProcessors[wxT("umlFinalItem")] = new udEIFinalItemProcessor();
-	
+
     m_mapElementProcessors[wxT("umlCompStateItem")] = new udEISimpleStateProcessor();
     m_mapElementProcessors[wxT("umlDecisionItem")] = new udEISimpleStateProcessor();
     m_mapElementProcessors[wxT("umlHistoryItem")] = new udEIHistoryProcessor();
@@ -32,7 +32,7 @@ udElifAlgorithm::udElifAlgorithm(udGenerator *parent) : udAlgorithm(parent)
     m_mapElementProcessors[wxT("umlSubStateItem")] = new udEISubStateProcessor(parent);
     m_mapElementProcessors[wxT("umlInitialItem")] = new udEISimpleStateProcessor(parent);
     m_mapElementProcessors[wxT("umlFinalItem")] = new udEIFinalItemProcessor(parent);
-	
+
     m_mapElementProcessors[wxT("umlCompStateItem")] = new udEISimpleStateProcessor(parent);
     m_mapElementProcessors[wxT("umlDecisionItem")] = new udEISimpleStateProcessor(parent);
     m_mapElementProcessors[wxT("umlHistoryItem")] = new udEIHistoryProcessor(parent);
@@ -69,10 +69,10 @@ void udElifAlgorithm::ProcessAlgorithm(udDiagramItem *src)
 
     wxSFDiagramManager *pDiagManager = &src->GetDiagramManager();
     udLanguage *pLang = m_pParentGenerator->GetActiveLanguage();
-	
+
 	udSStateChartDiagramItem *pSCH = wxDynamicCast( src, udSStateChartDiagramItem );
 	if( ! pSCH ) return;
-	
+
 	bool fNonBlocking = pSCH->IsNonBlocking();
 	bool fHasFinalState = pDiagManager->Contains(CLASSINFO(umlFinalItem));
 
@@ -103,7 +103,7 @@ void udElifAlgorithm::ProcessAlgorithm(udDiagramItem *src)
         m_lstProcessedElements.Clear();
 
         wxSFShapeBase *pHistory, *pTarget, *pInitial = lstInitialStates.Item(0)->GetData();
-		
+
         // declare state variable
         pLang->SingleLineCommentCmd(wxT("set initial state"));
         //pLang->VariableDeclAssignCmd(wxT("STATE_T"), wxT("state"), wxString::Format(wxT("%d"), ((udDiagElementItem*)pInitial->GetUserData())->GetElementId()));
@@ -111,21 +111,21 @@ void udElifAlgorithm::ProcessAlgorithm(udDiagramItem *src)
 			pLang->VariableDeclAssignCmd(wxT("static STATE_T"), wxT("state"), m_pParentGenerator->MakeIDName(pInitial));
 		else
 			pLang->VariableDeclAssignCmd(wxT("STATE_T"), wxT("state"), m_pParentGenerator->MakeIDName(pInitial));
-		
+
 		// declare all history states and set history variables to proper values
 		if( src->IsKindOf( CLASSINFO(udHStateChartDiagramItem) ) )
 		{
 			ShapeList lstHistoryStates, lstOutTrans;
 			pDiagManager->GetShapes( CLASSINFO( umlHistoryItem ), lstHistoryStates );
-			
+
 			if( !lstHistoryStates.IsEmpty() ) pLang->SingleLineCommentCmd(wxT("set history states"));
-			
+
 			ShapeList::compatibility_iterator node = lstHistoryStates.GetFirst();
 			while( node )
 			{
 				// find first processed state in a history level
 				pHistory = node->GetData();
-				
+
 				lstOutTrans.Clear();
 				pDiagManager->GetNeighbours( pHistory, lstOutTrans, CLASSINFO( umlTransitionItem ),  wxSFShapeBase::lineSTARTING, sfDIRECT );
 				// there can be only one outcomming transition in hierarchical state with history
@@ -137,11 +137,11 @@ void udElifAlgorithm::ProcessAlgorithm(udDiagramItem *src)
 					else
 						pLang->VariableDeclAssignCmd( wxT("STATE_T"), pLang->MakeValidIdentifier( udLABEL::GetContent( pHistory, udLABEL::ltTITLE ) ).Lower(), m_pParentGenerator->MakeIDName(pTarget) );
 				}
-				
+
 				node = node->GetNext();
 			}
 		}
-		
+
         pLang->NewLine();
         // create infinite loop
 		if( !fNonBlocking )
@@ -212,7 +212,7 @@ void udElifAlgorithm::ProcessState(wxSFShapeBase *state)
     else
     {
         pLang->SingleLineCommentCmd(wxString::Format(wxT( "!!! WARNING: UNSUPPORTED ELEMENT ('%s') !!!"), ((udProjectItem*)state->GetUserData())->GetName().c_str()));
-        IPluginManager::Get()->Log(wxString::Format(wxT("WARNING: '%s' element is not supported by this algorithm."), ((udProjectItem*)state->GetUserData())->GetName().c_str()));
+        IPluginManager::Get()->Log(wxString::Format(_("WARNING: '%s' element is not supported by this algorithm."), ((udProjectItem*)state->GetUserData())->GetName().c_str()));
     }
 
     // set the state as processes

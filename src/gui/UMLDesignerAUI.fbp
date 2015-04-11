@@ -569,7 +569,7 @@
                         <property name="bitmap">Load From File; res/project/cube_green.xpm</property>
                         <property name="checked">0</property>
                         <property name="enabled">1</property>
-                        <property name="help">Crate new package</property>
+                        <property name="help">Create new package</property>
                         <property name="id">IDM_PROJ_PACKAGE</property>
                         <property name="kind">wxITEM_NORMAL</property>
                         <property name="label">Create diagram package</property>

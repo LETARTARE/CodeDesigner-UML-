@@ -20,6 +20,8 @@
 #include "projectbase/codegen/Language.h"
 #include "projectbase/codegen/Generator.h"
 #include "codegen/base/ProjectGenerator.h"
+/// LETARTARE
+#include <wx/intl.h>
 
 class UMLDesignerFrame;
 
@@ -38,14 +40,14 @@ public:
 		logERRORS = 4,
 		logALL = 255
 	};
-	
+
 	enum RUNMODE
 	{
 		runSTANDARD,
 		runWITHPROJECT,
 		runSILENT
 	};
-	
+
     // public functions
     virtual bool OnInit();
     virtual int OnExit();
@@ -63,7 +65,7 @@ public:
     udLanguage* GetLanguage(const wxString& name);
     LanguageMap& GetLanguages(){return m_mapLanguages;}
     ProjectGeneratorMap& GetProjectGenerators(){return m_mapProjGenerators;}
-	
+
 	udSettings& GetSettings(){return m_Settings;}
 	udDiagramBank& GetDiagramBank(){return m_DiagBank;}
 	udPluginManager& GetPluginManager(){return m_PluginManager;}
@@ -72,9 +74,11 @@ public:
 	static int GetLogMask(){return m_nLogMask;}
 	static void ClearLog();
     static void Log(const wxString& msg);
-	
+
 	void ClearLanguages();
 	void InitLanguages();
+// LETARTARE
+    bool InitLocale();
 
 protected:
     // protected data memners
@@ -86,13 +90,16 @@ protected:
 	static int m_nLogMask;
 	wxString  m_sAppPath;
 	RUNMODE m_nRunMode;
-	
+
 	udAppSettings m_Settings;
 	udDiagramBank m_DiagBank;
 	udPluginManager m_PluginManager;
-	
+
 	// protected functions
 	wxString FindAppPath();
+/// LETARTARE
+    wxLanguage m_lang;  // language specified by user
+    wxLocale m_locale;  // locale we'll be using
 };
 
 DECLARE_APP(UMLDesignerApp);

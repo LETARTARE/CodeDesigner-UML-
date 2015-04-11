@@ -36,11 +36,11 @@ wxTreeItemId udCodeItemsTree::CreateTreeItems(udProjectItem* item, wxTreeItemId 
 		#endif
 
 		int nImageIndex = udArt::GetImageIndex(item->GetClassInfo()->GetClassName());
-		
+
         // create tree item relevat to project items
         if( item->IsKindOf( CLASSINFO(udRootItem)) )
         {
-			treeId = AddRoot( wxT("Reusable code fragments"), nImageIndex, nImageIndex, new udTreeItem(this, item));
+			treeId = AddRoot( _("Reusable code fragments"), nImageIndex, nImageIndex, new udTreeItem(this, item));
 			//EnsureVisible( treeId );
 			//Expand( treeId );
 			m_mapTreeItems[ (wxUIntPtr)item ] = treeId;
@@ -51,18 +51,18 @@ wxTreeItemId udCodeItemsTree::CreateTreeItems(udProjectItem* item, wxTreeItemId 
 			//EnsureVisible( treeId );
 			//Expand( treeId );
 		}
-		else if( item->IsKindOf( CLASSINFO(udVariableItem)) || 
-				 item->IsKindOf( CLASSINFO(udFunctionItem)) ) 
+		else if( item->IsKindOf( CLASSINFO(udVariableItem)) ||
+				 item->IsKindOf( CLASSINFO(udFunctionItem)) )
 		{
 			treeId = CreateItem( parent, item, nImageIndex );
 		}
-		
+
 		// show new tree item
 		if( treeId.IsOk() )
 		{
 			EnsureVisible( treeId );
 			Expand( treeId );
-		
+
 			// create item's children as well
 			SerializableList::compatibility_iterator node = item->GetFirstChildNode();
 			while(node)
@@ -72,6 +72,6 @@ wxTreeItemId udCodeItemsTree::CreateTreeItems(udProjectItem* item, wxTreeItemId 
 			}
 		}
 	}
-	
+
 	return treeId;
 }

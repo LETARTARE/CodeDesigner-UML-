@@ -67,10 +67,10 @@ void udLoopCaseAlgorithm::ProcessAlgorithm(udDiagramItem *src)
 
     wxSFDiagramManager *pDiagManager = &src->GetDiagramManager();
     udLanguage *pLang = m_pParentGenerator->GetActiveLanguage();
-	
+
 	udSStateChartDiagramItem *pSCH = wxDynamicCast( src, udSStateChartDiagramItem );
 	if( ! pSCH ) return;
-	
+
 	bool fNonBlocking = pSCH->IsNonBlocking();
 	bool fHasFinalState = pDiagManager->Contains(CLASSINFO(umlFinalItem));
 
@@ -93,7 +93,7 @@ void udLoopCaseAlgorithm::ProcessAlgorithm(udDiagramItem *src)
 				pLang->FunctionDefCmd(wxT("STATE_T"), m_pParentGenerator->MakeValidIdentifier(pSCH->GetName()), wxEmptyString );
 			else
 				pLang->FunctionDefCmd(pLang->GetDataTypeString(udLanguage::DT_VOID), m_pParentGenerator->MakeValidIdentifier(pSCH->GetName()), wxEmptyString );
-		}			
+		}
 		pLang->BeginCmd();
 	}
 
@@ -102,46 +102,46 @@ void udLoopCaseAlgorithm::ProcessAlgorithm(udDiagramItem *src)
         m_lstProcessedElements.Clear();
 
         wxSFShapeBase *pHistory, *pTarget, *pInitial = lstInitialStates.GetFirst()->GetData();
-		
+
         // declare state variable
         pLang->SingleLineCommentCmd( wxT("set initial state") );
-		
+
 		if( fNonBlocking )
 			pLang->VariableDeclAssignCmd( wxT("static STATE_T"), wxT("state"), m_pParentGenerator->MakeIDName(pInitial) );
 		else
 			pLang->VariableDeclAssignCmd( wxT("STATE_T"), wxT("state"), m_pParentGenerator->MakeIDName(pInitial) );
-		
+
 		// declare all history states and set history variables to proper values
 		if( src->IsKindOf( CLASSINFO(udHStateChartDiagramItem) ) )
 		{
 			ShapeList lstHistoryStates, lstOutTrans;
 			pDiagManager->GetShapes( CLASSINFO( umlHistoryItem ), lstHistoryStates );
-			
+
 			if( !lstHistoryStates.IsEmpty() ) pLang->SingleLineCommentCmd(wxT("set history states"));
-			
+
 			ShapeList::compatibility_iterator node = lstHistoryStates.GetFirst();
 			while( node )
 			{
 				// find first processed state in a history level
 				pHistory = node->GetData();
-				
+
 				lstOutTrans.Clear();
 				pDiagManager->GetNeighbours( pHistory, lstOutTrans, CLASSINFO( umlTransitionItem ),  wxSFShapeBase::lineSTARTING, sfDIRECT );
 				// there can be only one outcomming transition in hierarchical state with history
 				if( !lstOutTrans.IsEmpty() )
 				{
 					pTarget = lstOutTrans.GetFirst()->GetData();
-				
+
 					if( fNonBlocking )
 						pLang->VariableDeclAssignCmd( wxT("static STATE_T"), pLang->MakeValidIdentifier( udLABEL::GetContent( pHistory, udLABEL::ltTITLE ) ).Lower(), m_pParentGenerator->MakeIDName(pTarget) );
 					else
 						pLang->VariableDeclAssignCmd( wxT("STATE_T"), pLang->MakeValidIdentifier( udLABEL::GetContent( pHistory, udLABEL::ltTITLE ) ).Lower(), m_pParentGenerator->MakeIDName(pTarget) );
 				}
-				
+
 				node = node->GetNext();
 			}
 		}
-		
+
         pLang->NewLine();
         // create infinite loop
 		if( !fNonBlocking )
@@ -163,7 +163,7 @@ void udLoopCaseAlgorithm::ProcessAlgorithm(udDiagramItem *src)
 			}
 			pLang->SingleLineCommentCmd( wxT("State machine") );
 		}
-			
+
         pLang->SwitchCmd( wxT("state") );
         pLang->BeginCmd();
 
@@ -193,7 +193,7 @@ void udLoopCaseAlgorithm::ProcessState(wxSFShapeBase *state)
 
     wxSFDiagramManager *pDiagManager = state->GetShapeManager();
 	udLanguage *pLang = m_pParentGenerator->GetActiveLanguage();
-	
+
 	pLang->SingleLineCommentCmd(wxT("State ID: ") + m_pParentGenerator->MakeIDName(state));
 
     // find state neighbours
@@ -206,7 +206,7 @@ void udLoopCaseAlgorithm::ProcessState(wxSFShapeBase *state)
     }
     else
         m_pNextElement = NULL;
-	
+
     // process given element
     udElementProcessor *pProcessor = GetElementProcessor(state->GetClassInfo()->GetClassName());
     if(pProcessor)
@@ -216,7 +216,7 @@ void udLoopCaseAlgorithm::ProcessState(wxSFShapeBase *state)
     else
     {
         pLang->SingleLineCommentCmd(wxString::Format(wxT( "!!! WARNING: UNSUPPORTED ELEMENT ('%s') !!!"), ((udProjectItem*)state->GetUserData())->GetName().c_str()));
-        IPluginManager::Get()->Log(wxString::Format(wxT("WARNING: '%s' element is not supported by this algorithm."), ((udProjectItem*)state->GetUserData())->GetName().c_str()));
+        IPluginManager::Get()->Log(wxString::Format(_("WARNING: '%s' element is not supported by this algorithm."), ((udProjectItem*)state->GetUserData())->GetName().c_str()));
     }
 
     // set the state as processes
@@ -230,7 +230,7 @@ void udLoopCaseAlgorithm::ProcessState(wxSFShapeBase *state)
 		wxSFShapeBase *pNext = node->GetData();
 
 		ProcessState( pNext );
-			
+
         node = node->GetNext();
     }
 }

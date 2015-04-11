@@ -30,7 +30,7 @@ void udAppSettings::CreateCategories()
 	AddItem( GetRootItem(), new udDiagramsCategory() );
 	AddItem( GetRootItem(), new udEditorCategory() );
 	AddItem( GetRootItem(), new udGeneratorCategory() );
-	
+
 	AddItem( GetRootItem(), new udHiddenGUICategory() );
 }
 
@@ -45,7 +45,7 @@ udFrameCategory::udFrameCategory() : udSettingsCategory( wxT("Main frame") )
 	// initialize application settings
 	m_colBackground = udFRAME::GetBcgColour();
 	m_fShowSplash = true;
-	
+
 	XS_SERIALIZE( m_colBackground, wxT("Background colour") );
 	XS_SERIALIZE( m_fShowSplash, wxT("Show splash screen") );
 }
@@ -66,15 +66,15 @@ udDiagramsCategory::udDiagramsCategory() : udSettingsCategory( wxT("Diagrams") )
 	m_fShowGrid = true;
 	m_fUseGraphicsContext = false;
 	m_fExportBackground = false;
-	
+
 	m_colHighlightCol = wxColour( 128, 128, 255 );
 	m_colBackgroundFrom = wxColour( 255, 255, 255 );
 	m_colBackgroundTo = wxColour( 200, 200, 255 );
 	m_colDisabledBackgroundFrom = wxColour( 255, 255, 255 );
 	m_colDisabledBackgroundTo = wxColour( 255, 200, 200 );
-	
+
 	m_nDefaultFont = sfdvTEXTSHAPE_FONT;
-	
+
 	// initialize categories' properties
 	XS_SERIALIZE( m_fShowGrid, wxT("Show grid") );
 	XS_SERIALIZE( m_fUseGraphicsContext, wxT("Use enhanced graphics") );
@@ -107,7 +107,7 @@ udHiddenGUICategory::udHiddenGUICategory() : udHiddenCategory( wxT("Hidden GUI c
 	m_fOrganizeCI = true;
 	m_fLinkDesigner = true;
 	m_nProjManSashPos = 350;
-	
+
 	// initialize categories' properties
 	XS_SERIALIZE( m_sPerspective, wxT("Perspective") );
 	XS_SERIALIZE( m_fShowThumbElements, wxT("Show elements in thumbnail") );
@@ -132,12 +132,12 @@ IMPLEMENT_DYNAMIC_CLASS(udGeneratorCategory, udSettingsCategory);
 udGeneratorCategory::udGeneratorCategory() : udSettingsCategory( wxT("Code generator") )
 {
 	// initialize application settings
-	m_sBaseFileName = wxT("CDCode");
-	m_sCodeItemsFileName = wxT("CDCode_CI");
+	m_sBaseFileName = _("CDCode");
+	m_sCodeItemsFileName = _("CDCode_CI");
 	m_sOutDir = wxGetHomeDir();
 	m_fGenerateDescription = false;
 	m_fSyncBeforeGenerate = true;
-	
+
 	// initialize categories' properties
 	XS_SERIALIZE_DIR( m_sOutDir, wxT("Output directory") );
 	XS_SERIALIZE( m_sBaseFileName, wxT("Base file name") );
@@ -181,7 +181,7 @@ udHiddenProjectCategory::udHiddenProjectCategory()
 {
     m_sActiveLanguage = wxT("udCLanguage");
 	m_nProjectVersion = 1;
-	
+
     XS_SERIALIZE(m_sActiveLanguage, wxT("active_language"));
     XS_SERIALIZE(m_nProjectVersion, wxT("project_version"));
 }
@@ -208,7 +208,7 @@ udEditorCategory::udEditorCategory() : udSettingsCategory( wxT("Editor") )
 #else
 	m_EditorFont = wxFont( 9, wxMODERN, wxNORMAL, wxNORMAL );
 #endif
-	
+
 	// initialize categories' properties
 	XS_SERIALIZE( m_fUseTabs, wxT("Use tabulators") );
 	XS_SERIALIZE( m_nTabWidth, wxT("Tabulator width") );

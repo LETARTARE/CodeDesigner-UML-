@@ -15,7 +15,8 @@ END_EVENT_TABLE();
 
 // constructor and destructor ////////////////////////////////////////////////////////////////
 
-udSettingsDialog::udSettingsDialog(wxWindow *parent, udSettings& settings, const wxString& title) :  m_Settings( settings ), _SettingsDialog( parent )
+udSettingsDialog::udSettingsDialog(wxWindow *parent, udSettings& settings, const wxString& title)
+	:  _SettingsDialog( parent )  ,  m_Settings( settings )
 {
 	SetTitle( title );
 	m_sRootName = wxT("Settings");
@@ -30,10 +31,10 @@ udSettingsDialog::~udSettingsDialog()
 void udSettingsDialog::InitializeCategories()
 {
 	m_pCategoryTree->DeleteAllItems();
-	
+
 	// create categories tree root
 	m_pCategoryTree->AddRoot( m_sRootName );
-	
+
 	// create categories tree
 	SerializableList::compatibility_iterator node = m_Settings.GetRootItem()->GetFirstChildNode();
 	while( node )
@@ -42,7 +43,7 @@ void udSettingsDialog::InitializeCategories()
 		node = node->GetNext();
 	}
 	m_pCategoryTree->ExpandAll();
-	
+
 	// initialize property grid
 	m_pCategoryTree->SelectItem( m_pCategoryTree->GetFirstChild( m_pCategoryTree->GetRootItem(), nCookie ) );
 }
@@ -52,7 +53,7 @@ void udSettingsDialog::CreateCategory(udSettingsCategory* category, const wxTree
 	if( category && !category->IsKindOf( CLASSINFO(udHiddenCategory) ) )
 	{
 		wxTreeItemId newItem = m_pCategoryTree->AppendItem( parent, category->GetName() );
-		
+
 		SerializableList::compatibility_iterator node = category->GetFirstChildNode();
 		while( node )
 		{
@@ -69,7 +70,7 @@ void udSettingsDialog::CreateCategoryContent(udSettingsCategory* category)
 	// create cathegory title
 	m_pPropertyGrid->Clear();
 	m_pPropertyGrid->Append( new wxPropertyCategory( category->GetName() ) );
-		
+
 	PropertyList::compatibility_iterator node = category->GetProperties().GetFirst();
 	while( node )
 	{
@@ -89,7 +90,7 @@ void udSettingsDialog::CreateCategoryContent(udSettingsCategory* category)
 void udSettingsDialog::OnChangeCategory(wxTreeEvent& event)
 {
 	wxTreeItemId treeId = event.GetItem();
-	
+
 	if( treeId.IsOk() )
 	{
 		udSettingsCategory *pCategory = m_Settings.GetCategory( m_pCategoryTree->GetItemText( treeId ) );
@@ -108,19 +109,19 @@ void udSettingsDialog::OnChangeCategory(wxTreeEvent& event)
 void udSettingsDialog::OnInit(wxInitDialogEvent& event)
 {
 	InitializeCategories();
-	
+
 	// store current settings content
 	wxStringOutputStream out( &m_sPrevSettings );
 	if( out.IsOk() )
 	{
 		m_Settings.SerializeToXml( out );
 	}
-	
+
 	event.Skip();
 }
 
 void udSettingsDialog::OnOk(wxCommandEvent& event)
-{	
+{
 	EndModal( wxID_OK );
 }
 
@@ -130,24 +131,24 @@ void udSettingsDialog::OnCancel(wxCommandEvent& event)
 	m_Settings.RemoveAll();
 	// restore previous settings content
 	wxStringInputStream in( m_sPrevSettings );
-	if( in.IsOk() ) 
+	if( in.IsOk() )
 	{
 		m_Settings.DeserializeFromXml( in );
 	}
-	
+
 	EndModal( wxID_CANCEL );
 }
 
 void udSettingsDialog::OnPropertyGridChange(wxPropertyGridEvent& event)
 {
 	udXS2PG xs2pg;
-	
+
 	// get name of changed property
 	const wxString& name = event.GetPropertyName();
-	
+
 	// assign property value to relevant settings property
 	xsProperty *pProperty = m_Settings.GetProperty( name );
-	
+
 	IOFcn_t ReadFcn = xs2pg.GetReadFcn( pProperty->m_sDataType );
 	if( ReadFcn )
 	{
@@ -157,11 +158,11 @@ void udSettingsDialog::OnPropertyGridChange(wxPropertyGridEvent& event)
 
 void udSettingsDialog::OnDefaults(wxCommandEvent& event)
 {
-	if( wxMessageBox( wxT("Are you sure you want to set all properties to default values?"), wxT("CodeDesigner"), wxICON_QUESTION | wxYES_NO ) == wxYES )
+	if( wxMessageBox( _("Are you sure you want to set all properties to default values?"), wxT("CodeDesigner"), wxICON_QUESTION | wxYES_NO ) == wxYES )
 	{
 		m_Settings.RemoveAll();
 		m_Settings.CreateCategories();
-		
+
 		InitializeCategories();
 	}
 }

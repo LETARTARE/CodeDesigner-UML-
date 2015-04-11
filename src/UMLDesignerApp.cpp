@@ -39,11 +39,67 @@ int UMLDesignerApp::m_nLogMask = logALL;
 
 IMPLEMENT_APP(UMLDesignerApp);
 
+////////////////////////////////////////////////////////////////////////////////
+/// LETARTARE  from "wxMSW-3.02\samples\internat"
+// language data
+static const wxLanguage langIds[] =
+{
+    wxLANGUAGE_DEFAULT,
+    wxLANGUAGE_FRENCH,
+    wxLANGUAGE_GERMAN,
+    wxLANGUAGE_CZECH
+} ;
+// note that it makes no sense to translate these strings, they are
+// shown before we set the locale anyhow
+const wxString langNames[] =
+{
+    "System default",
+    "French",
+    "German",
+    "Czech"
+};
+// the arrays must be in sync
+wxCOMPILE_TIME_ASSERT( WXSIZEOF(langNames) == WXSIZEOF(langIds),
+                       LangArraysMismatch );
+
+
+bool UMLDesignerApp::InitLocale()
+{
+    int lng = 1;   /// French
+    m_lang = langIds[lng];
+  //  wxLogMessage (wxString::Format(_T("id system : %u "), wxLocale::GetSystemLanguage() ));
+    // don't use wxLOCALE_LOAD_DEFAULT flag so that Init() doesn't return
+    // false just because it failed to load wxstd catalog
+    if ( !m_locale.Init(m_lang, wxLOCALE_DONT_LOAD_DEFAULT) )
+    {
+        wxLogWarning(_("This language is not supported by the system."));
+    }
+  //  wxLogMessage (wxString::Format(_T("id language : %u "), m_locale.GetLanguage() ));
+    // normally this wouldn't be necessary as the catalog files would be found
+    // in the default locations, but when the program is not installed the
+    // catalogs are in the build directory where we wouldn't find them by
+    // default
+    wxLocale::AddCatalogLookupPathPrefix(_T("i18n"));
+    // Initialize the catalogs we'll be using
+ //   const wxLanguageInfo* pInfo = wxLocale::GetLanguageInfo(m_lang);
+ //   wxLogMessage ( pInfo->GetLocaleName());
+    bool catalogLoaded = m_locale.AddCatalog(_T("codedesigner")) ;
+    /*
+    if (! catalogLoaded)
+    {
+        wxLogError(_("Couldn't find/load the 'codedesigner' catalog for locale '%s'."),
+                   pInfo ? pInfo->GetLocaleName() : _("unknown"));
+    }
+    */
+   return catalogLoaded;
+}
+////////////////////////////////////////////////////////////////////////////////
+
 bool UMLDesignerApp::OnInit()
 {
 	// process command line parameters
 	m_nRunMode = runSTANDARD;
-	
+
 	// should some project to be opened or generated now?
 	if( argc == 2 && wxFileExists( wxString( argv[1] ) ) )
 	{
@@ -55,115 +111,118 @@ bool UMLDesignerApp::OnInit()
 	}
 	else if( argc > 2 )
 	{
-		wxPrintf(wxT("CodeDesigner's usage:\n    CodeDesigner [-g][project]\n    g - generate opened project immediately\n    project - path to a project file to be opened by CodeDesigner\n\n"));
+		wxPrintf(_("CodeDesigner's usage:\n    CodeDesigner [-g][project]\n    g - generate opened project immediately\n    project - path to a project file to be opened by CodeDesigner\n\n"));
 		fflush(stdout);
 	}
-	
+
 	SetAppName( wxT("codedesigner") );
-	
+
 	wxInitAllImageHandlers();
-	
+
 	m_pMainFrame = NULL;
 	m_sAppPath = FindAppPath() + wxFileName::GetPathSeparator();
-	
+
 	// set CWD to the app dir
 	wxSetWorkingDirectory( m_sAppPath );
-	
+
 	// initialize XS 2 PG bridge
 	udXS2PG::Initialize();
-	
+
 	// register new IO handlers
 	XS_REGISTER_IO_HANDLER(wxT("filename"), xsFileNamePropIO);
 	XS_REGISTER_IO_HANDLER(wxT("dirname"), xsDirNamePropIO);
-	
+
 	// create application settings
 	if( !wxDirExists( udvSETTINGS_DIR ) ) wxMkdir( udvSETTINGS_DIR );
-	
+
 	// load plugins
 	m_PluginManager.LoadPlugins();
 
 	// try to load application settings
 	if( !m_Settings.DeserializeFromXml( udvSETTINGS_PATH ) )
 	{
-		if( wxFileExists( udvSETTINGS_PATH ) ) wxMessageBox( wxT("Application settings couldn't be read so default values will be used."), wxT("CodeDesigner"), wxOK | wxICON_WARNING );
+		if( wxFileExists( udvSETTINGS_PATH ) ) wxMessageBox( _("Application settings couldn't be read so default values will be used."), wxT("CodeDesigner"), wxOK | wxICON_WARNING );
 	}
-	
+/// LETARTARE
+    InitLocale();
+
 	// show splash screen
 	if( m_nRunMode != runSILENT && m_Settings.GetProperty( wxT("Show splash screen") )->AsBool() )
 	{
 		new wxSplashScreen( wxBitmap( GetResourcesPath() + wxT("app/gui/splash.png"), wxBITMAP_TYPE_PNG ),  wxSPLASH_CENTRE_ON_SCREEN|wxSPLASH_TIMEOUT, 4000, NULL, wxID_ANY );
 		wxYield();
 	}
-	
+
+
     // initialize languages
     InitLanguages();
-	
+
 	// initialize common comment generators
 	udGenerator::InitAllStdCommentProcessors();
-		
+
 	// initialize projects
 	m_pProject = new udProject();
-	
+
 	UMLDesignerFrame::EnableInternalEvents( false );
-	
+
 	// try to load diagram bank
 	if( wxFileExists( udvDIAGBANK_PATH ) )
 	{
 		if( !m_DiagBank.DeserializeFromXml( udvDIAGBANK_PATH ) )
 		{
 			wxCopyFile( udvDIAGBANK_PATH, udvDIAGBANK_PATH + wxT(".backup") );
-			wxMessageBox( wxT("Diagram bank file couldn't be read correctly (probably some previously used plugins aren't loaded at this time) so the current file was archived and new one is in use."), wxT("CodeDesigner"), wxOK | wxICON_WARNING );
-			
+			wxMessageBox( _("Diagram bank file couldn't be read correctly (probably some previously used plugins aren't loaded at this time) so the current file was archived and new one is in use."), wxT("CodeDesigner"), wxOK | wxICON_WARNING );
+
 			m_DiagBank.RemoveAll();
 			m_DiagBank.CreateCategories();
 		}
 	}
 	else
 		m_DiagBank.CreateCategories();
-		
+
 
 	UMLDesignerFrame::EnableInternalEvents( true );
-	
+
 	switch( m_nRunMode )
 	{
 		case runSTANDARD:
 			m_pMainFrame = new UMLDesignerFrame(0L);
 			SetTopWindow(m_pMainFrame);
 			break;
-			
+
 		case runWITHPROJECT:
 			m_pMainFrame = new UMLDesignerFrame(0L);
 			SetTopWindow(m_pMainFrame);
-			
+
 			m_pMainFrame->OpenProjectFile( wxString( argv[1] ) );
 			break;
-			
+
 		case runSILENT:
 		{
 			wxString sPath =  wxString( argv[2] );
 			m_pProject->DeserializeFromXml( sPath );
 			m_pProject->SetProjectDirectory( sPath.BeforeLast( wxFileName::GetPathSeparator() ) );
 			m_pProject->SetProjectPath( sPath );
-		
+
 			// generate project here and then quit silently
 			wxString sLang = m_pProject->GetSettings().GetPropertyAsString( wxT("active_language"), wxT("udCPPLanguage") );
-			
+
 			udLanguage *pLang = m_mapLanguages[sLang];
 			udProjectGenerator *pProjGen = m_mapProjGenerators[sLang];
-			
+
 			if( pLang && pProjGen )
 			{
 				UMLDesignerFrame::EnableInternalEvents( false );
-				
+
 				pProjGen->SetActiveLanguage( pLang );
 				pProjGen->Generate( udProject::Get() );
-				
+
 				UMLDesignerFrame::EnableInternalEvents( true );
 			}
 		}
 		break;
 	}
-	
+
 	if( m_nRunMode != runSILENT )
 	{
 		m_pMainFrame->Show();
@@ -177,14 +236,14 @@ bool UMLDesignerApp::OnInit()
 		OnExit();
 		return false;
 	}
-	
+
 	/*return true;*/
 }
 
 int UMLDesignerApp::OnExit()
 {
 	UMLDesignerFrame::EnableInternalEvents( false );
-	
+
     // clear languages
     ClearLanguages();
 
@@ -196,24 +255,24 @@ int UMLDesignerApp::OnExit()
         pit++;
     }
     m_mapProjGenerators.clear();
-	
+
 	// clean-up code generator
 	udGenerator::CleanCommentProcessors();
-	
+
 	// store settings
 	m_Settings.SerializeToXml( udvSETTINGS_PATH );
 	m_Settings.RemoveAll();
-	
+
 	// store diagram bank
 	m_DiagBank.SerializeToXml( udvDIAGBANK_PATH );
 	m_DiagBank.RemoveAll();
-	
+
 	// deinitialize projects
 	delete m_pProject;
-	
+
 	// unload plugins
 	m_PluginManager.UnloadPlugins();
-	
+
 	// clean-up XS 2 PG bridge
 	udXS2PG::CleanUp();
 
@@ -289,11 +348,11 @@ void UMLDesignerApp::Log(const wxString& msg)
 		}
 		else
 		{
-			if( (m_nLogMask & logERRORS) && msg.Contains(wxT("ERROR")) )
+			if( (m_nLogMask & logERRORS) && msg.Contains(_("ERROR")) )
 			{
 				wxLogError(msg);
 			}
-			else if( (m_nLogMask & logWARNINGS ) && msg.Contains(wxT("WARNING")) )
+			else if( (m_nLogMask & logWARNINGS ) && msg.Contains(_("WARNING")) )
 			{
 				wxLogWarning(msg);
 			}

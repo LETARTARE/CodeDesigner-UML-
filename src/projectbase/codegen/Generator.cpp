@@ -34,7 +34,7 @@ udGenerator::~udGenerator()
 bool udGenerator::Initialize()
 {
     m_lstProcessedDiagrams.Clear();
-	
+
 	// initialize output language
     if(m_pOutLang)
     {
@@ -43,13 +43,13 @@ bool udGenerator::Initialize()
     }
     else
         return false;
-		
+
 	// initialize code generation algoritm
     if(m_pAlgorithm)
     {
         if(!m_pAlgorithm->GetParentGenerator()) m_pAlgorithm->SetParentGenerator(this);
     }
-	
+
 	// check whether code comments are enabled
 	udSettings &Settings = IPluginManager::Get()->GetProjectSettings();
 	m_fComments = Settings.GetProperty( wxT("Generate code descriptions") )->AsBool();
@@ -89,41 +89,41 @@ wxString udGenerator::MakeIDName(udProjectItem *element)
 bool udGenerator::Generate(udDiagramItem *src, bool recursive)
 {
 	m_fRecursive = recursive;
-	
+
     /*if(!src)
     {
-        UMLDesignerApp::Log(wxT("ERROR: No source diagram is specified."));
+        UMLDesignerApp::Log(_("ERROR: No source diagram is specified."));
         return false;
     }*/
 
     // initialize generator
-    IPluginManager::Get()->Log(wxT("Initializing generator..."));
+    IPluginManager::Get()->Log(_("Initializing generator..."));
     if(this->Initialize())
     {
-        IPluginManager::Get()->Log(wxT("Initialization is done."));
+        IPluginManager::Get()->Log(_("Initialization is done."));
     }
     else
     {
-        IPluginManager::Get()->Log(wxT("ERROR: Initialization has failed."));
+        IPluginManager::Get()->Log(_("ERROR: Initialization has failed."));
         return false;
     }
 
     // generate code
-	IPluginManager::Get()->Log(wxT("Starting code generation..."));
+	IPluginManager::Get()->Log(_("Starting code generation..."));
     bool fSuccess = _Generate(src);
-	IPluginManager::Get()->Log(wxT("Code generation is done."));
+	IPluginManager::Get()->Log(_("Code generation is done."));
 
     // clean up
-    IPluginManager::Get()->Log(wxT("Cleaning up the generator..."));
+    IPluginManager::Get()->Log(_("Cleaning up the generator..."));
     this->CleanUp();
-    IPluginManager::Get()->Log(wxT("Clean up process is done."));
+    IPluginManager::Get()->Log(_("Clean up process is done."));
 
 	if( fSuccess )
 	{
-		IPluginManager::Get()->Log(wxT("Generation process is done."));
+		IPluginManager::Get()->Log(_("Generation process is done."));
 	}
 	else
-		IPluginManager::Get()->Log(wxT("Generation process is done with 'ERROR' status."));
+		IPluginManager::Get()->Log(_("Generation process is done with 'ERROR' status."));
 
     return fSuccess;
 }
@@ -131,37 +131,37 @@ bool udGenerator::Generate(udDiagramItem *src, bool recursive)
 bool udGenerator::_Generate(udDiagramItem *src)
 {
 	bool fSuccess = true;
-	
+
 	if( src )
 	{
 		udDiagramItem *m_pOptimizedSource = NULL;
 		udDiagramItem *m_pPreprocessedSource = NULL;
-	
+
 		if( m_lstProcessedDiagrams.IndexOf( src ) != wxNOT_FOUND ) return true;
 
-		IPluginManager::Get()->Log(wxString::Format(wxT("Processing diagram '%s' ..."), src->GetName().c_str()));
+		IPluginManager::Get()->Log(wxString::Format(_("Processing diagram '%s' ..."), src->GetName().c_str()));
 
 		// preprocess source diagram's structure
 		if(m_pPreprocessor)
 		{
-			IPluginManager::Get()->Log(wxT("Preprocessing..."));
+			IPluginManager::Get()->Log(_("Preprocessing..."));
 			m_pPreprocessedSource = m_pPreprocessor->Process(src);
-			IPluginManager::Get()->Log(wxT("Done."));
+			IPluginManager::Get()->Log(_("Done."));
 		}
 		else
 			m_pPreprocessedSource = src;
-			
+
 		// verify source structure if requested
 		if(m_pVerifier)
 		{
-			IPluginManager::Get()->Log(wxT("Verifying..."));
+			IPluginManager::Get()->Log(_("Verifying..."));
 			if(!m_pVerifier->Verify(m_pPreprocessedSource))
 			{
-				IPluginManager::Get()->Log(wxT("Verification is done with 'ERROR' status."));
+				IPluginManager::Get()->Log(_("Verification is done with 'ERROR' status."));
 				fSuccess = false;
 			}
 			else
-				IPluginManager::Get()->Log(wxT("Verification is done with 'OK' status."));
+				IPluginManager::Get()->Log(_("Verification is done with 'OK' status."));
 		}
 
 		if( fSuccess )
@@ -169,23 +169,23 @@ bool udGenerator::_Generate(udDiagramItem *src)
 			// optimize source diagram's structure
 			if(m_pOptimizer)
 			{
-				IPluginManager::Get()->Log(wxT("Optimizing..."));
+				IPluginManager::Get()->Log(_("Optimizing..."));
 				m_pOptimizedSource = m_pOptimizer->Optimize(m_pPreprocessedSource);
-				IPluginManager::Get()->Log(wxT("Done."));
+				IPluginManager::Get()->Log(_("Done."));
 			}
 			else
 				m_pOptimizedSource = m_pPreprocessedSource;
-				
+
 			// processing the source diagram
 			if(m_pOptimizedSource)
 			{
 				fSuccess = this->ProcessDiagram(m_pOptimizedSource);
-				IPluginManager::Get()->Log(wxString::Format(wxT("Diagram '%s' was processed."), src->GetName().c_str()));
+				IPluginManager::Get()->Log(wxString::Format(_("Diagram '%s' was processed."), src->GetName().c_str()));
 			}
 		}
-		
+
 		m_lstProcessedDiagrams.Append( src );
-		
+
 		// delete optimized diagram
 		if( m_pOptimizedSource && (m_pOptimizedSource != src) ) delete m_pOptimizedSource;
 		if( m_pPreprocessedSource && (m_pPreprocessedSource != src) && (m_pPreprocessedSource != m_pOptimizedSource) ) delete m_pPreprocessedSource;
@@ -221,7 +221,7 @@ wxString udGenerator::GetEndCodeMark(const udCodeItem *item)
 void udGenerator::InitAllStdCommentProcessors()
 {
 	// TODO: implement 'InitAllStdCommentProcessors'
-	
+
 	RegisterCommentProcessor( wxT("udGenericFunctionItem"), new udFunctionComment() );
 	RegisterCommentProcessor( wxT("udGenericVariableItem"), new udVariableComment() );
 }
@@ -240,7 +240,7 @@ void udGenerator::CleanCommentProcessors()
 wxString udGenerator::GetComment(const udProjectItem* obj, udLanguage *lang)
 {
 	wxASSERT( obj );
-	
+
 	if( obj )
 	{
 		if( m_fComments )
@@ -253,14 +253,14 @@ wxString udGenerator::GetComment(const udProjectItem* obj, udLanguage *lang)
 			}
 		}
 	}
-	
+
 	return wxEmptyString;
 }
 
 void udGenerator::RegisterCommentProcessor(const wxString& type, udCommentProcessor* processor)
 {
 	wxASSERT( processor );
-	
+
 	if( processor )
 	{
 		UnregisterCommentProcessor( type );
@@ -290,7 +290,7 @@ wxString udCommentProcessor::MakeComment(const udProjectItem* obj, udLanguage* l
 {
 	wxASSERT( obj );
 	wxASSERT( lang );
-	
+
 	if( obj && lang )
 	{
 		udCommentDialect *pDialect = m_mapDialect[ lang->GetClassInfo()->GetClassName() ];
@@ -299,14 +299,14 @@ wxString udCommentProcessor::MakeComment(const udProjectItem* obj, udLanguage* l
 			return pDialect->MakeComment( obj, lang );
 		}
 	}
-	
+
 	return wxEmptyString;
 }
 
 void udCommentProcessor::RegisterDialect(const wxString& langtype, udCommentDialect* dialect)
 {
 	wxASSERT( dialect );
-	
+
 	if( dialect )
 	{
 		UnregisterDialect( langtype );

@@ -29,7 +29,7 @@ void uddCircleElement::Initiliaze()
     // set basic properties
     m_nRectSize = wxRealPoint(20, 20);
     RemoveStyle(sfsSIZE_CHANGE);
-	
+
 	AcceptConnection(wxT("uddNoteConnItem"));
 	AcceptSrcNeighbour(wxT("All"));
     AcceptTrgNeighbour(wxT("All"));

@@ -1,18 +1,18 @@
 /*********************************************************************
  * Name:      	ProjectBase.cpp
- * Purpose:    
- * Author:    
- * Created:   
- * Copyright: 
+ * Purpose:
+ * Author:
+ * Created:
+ * Copyright:
  * License:   	wxWidgets license (www.wxwidgets.org)
- * 
+ *
  * Notes:		Note, that preprocessor symbol WXMAKINGDLL_MYLIB
  * 				tested in defs.h file must be defined in the compiler
- * 				settings if the symbols should be exported from 
+ * 				settings if the symbols should be exported from
  * 				DYNAMIC library. If not defined then all declarations
  * 				will be local (usefull for STATIC library).
  *********************************************************************/
- 
+
 // include main wxWidgets header file
 #include <wx/wx.h>
 #include <wx/wupdlock.h>
@@ -50,7 +50,7 @@ udProjectItem::udProjectItem()
 	m_sName = wxT("");
 	m_sDescription = wxT("");
 	m_fMustBeUnique = true;
-	
+
 	XS_SERIALIZE(m_sName, wxT("name"));
 	XS_SERIALIZE(m_sDescription, wxT("description"));
 }
@@ -60,7 +60,7 @@ udProjectItem::udProjectItem(const udProjectItem& obj) : IProjectItem(obj)
 	m_sName = obj.m_sName;
 	m_sDescription = obj.m_sDescription;
 	m_fMustBeUnique = obj.m_fMustBeUnique;
-	
+
 	m_arrAcceptedChild = obj.m_arrAcceptedChild;
 	m_arrAcceptedSibbling = obj.m_arrAcceptedSibbling;
 
@@ -74,7 +74,7 @@ udProjectItem::~udProjectItem()
 	if( pManager )
 	{
 		pManager->SendProjectEvent( wxEVT_CD_ITEM_REMOVED, wxID_ANY, this );
-			
+
 		udProjectItem *pParent = wxDynamicCast( GetParent(), udProjectItem );
 		if( pParent ) pManager->SendProjectEvent( wxEVT_CD_ITEM_CHANGED, wxID_ANY, pParent ); //, NULL, udfDELAYED );*/
 	}
@@ -89,7 +89,7 @@ void udProjectItem::OnCreate()
 void udProjectItem::OnCreateCopy()
 {
 	this->OnTreeTextChange( this->GetUniqueName( this->GetName() ) );
-} 
+}
 
 void udProjectItem::OnSelection()
 {
@@ -102,18 +102,18 @@ void udProjectItem::OnActivation()
 void udProjectItem::OnContextMenu(wxWindow* parent, const wxPoint& pos)
 {
 	wxMenu *pPopupMenu = this->CreateMenu();
-	
+
 	if( pPopupMenu && parent )
 	{
 		parent->PopupMenu(pPopupMenu, pos);
 	}
-	
+
 	delete pPopupMenu;
 }
 
 void udProjectItem::OnEditItem(wxWindow* parent)
 {
-	wxASSERT_MSG(false, wxString::Format(wxT("Properties dialog for '%s' isn't implemented yet."), this->GetClassInfo()->GetClassName()));
+	wxASSERT_MSG(false, wxString::Format(_("Properties dialog for '%s' isn't implemented yet."), this->GetClassInfo()->GetClassName()));
 }
 
 void udProjectItem::OnTreeTextChange(const wxString &txt)
@@ -128,7 +128,7 @@ void udProjectItem::OnShapeTextChange(const wxString &txt, udLABEL::TYPE type, i
 bool udProjectItem::OnTreeItemBeginDrag(const wxPoint &event)
 {
 	// signalise that the event have been handled by this item so DnD on a parent tree should NOT be started
-	
+
 	return true;
 }
 
@@ -159,7 +159,7 @@ XS_IMPLEMENT_CLONABLE_CLASS(udLinkItem, udProjectItem);
 
 udLinkItem::udLinkItem()
 {
-	m_sDescription = wxT("Link description...");
+	m_sDescription = _("Link description...");
 	m_fMustBeUnique = false;
 }
 
@@ -195,9 +195,9 @@ void udLinkItem::OnActivation()
 {
     /*udProjectItem *pOriginal = GetOriginal();
     if( pOriginal ) pOriginal->OnActivation();*/
-	
+
 	udDiagramItem *pDiag = udPROJECT::GetParentDiagram(this);
-	
+
     if( pDiag )
 	{
 		if( !pDiag->GetDiagramPage() )
@@ -206,10 +206,10 @@ void udLinkItem::OnActivation()
 		}
 		else
 			this->OnEditItem( pDiag->GetDiagramPage() );
-			
+
 		if( IPluginManager::Get()->IsProjManLinked() ) pDiag->GetDiagramPage()->ScrollToShape((wxSFShapeBase*)GetParent());
 	}
-	
+
     OnSelection();
 }
 
@@ -217,22 +217,22 @@ void udLinkItem::OnEditItem(wxWindow* parent)
 {
 	/*udProjectItem *pOriginal = GetOriginal();
     if( pOriginal ) pOriginal->OnEditItem(parent);*/
-	
+
 	udElementDialog dlg( parent, IPluginManager::Get()->GetSelectedLanguage() );
 	udWindowManager dlgman( dlg, wxT("element_dialog") );
-	
+
 	dlg.SetCodeName( m_sName );
 	dlg.SetDescription( m_sDescription );
-	
-	dlg.SetTitle( wxT("Link properties") );
-	
+
+	dlg.SetTitle( _("Link properties") );
+
 	if( dlg.ShowModal() == wxID_OK )
 	{
 		m_sDescription = dlg.GetDescription();
-		
+
 		OnTreeTextChange( dlg.GetCodeName() );
 	}
-	
+
 	IPluginManager::Get()->SendProjectEvent( wxEVT_CD_ITEM_CHANGED, wxID_ANY, this );
 }
 
@@ -252,8 +252,8 @@ XS_IMPLEMENT_CLONABLE_CLASS(udElementLinkItem, udLinkItem);
 
 udElementLinkItem::udElementLinkItem()
 {
-	m_sName = wxT("Diagram element link");
-	
+	m_sName = _("Diagram element link");
+
     m_sOriginalDiagram = wxT("");
     m_sOriginalElement = wxT("");
 
@@ -308,31 +308,31 @@ void udElementLinkItem::OnContextMenu(wxWindow* parent, const wxPoint& pos)
 {
 	udDiagElementItem *pOrig = wxDynamicCast( GetOriginal(), udDiagElementItem );
 	if( !pOrig ) return;
-	
+
 	/*// re-create this menu due to possible updates
 	wxMenu *pPopupMenu = pOrig->CreateMenu();*/
-	
+
 	const wxString &sAppPath = IPluginManager::Get()->GetResourcesPath();
-	
-	// create popup menu	
+
+	// create popup menu
 	wxMenu *pPopupMenu = new wxMenu();
-	
-	wxMenuItem *pItem = new wxMenuItem(pPopupMenu, wxID_COPY, wxT("Copy\tCtrl+C"));
+
+	wxMenuItem *pItem = new wxMenuItem(pPopupMenu, wxID_COPY, _("Copy\tCtrl+C"));
 	//pItem->SetBitmap(wxArtProvider::GetBitmap(wxART_COPY, wxART_MENU));
 	pItem->SetBitmap(wxBitmap(sAppPath + wxT("app/gui/editcopy.png"), wxBITMAP_TYPE_PNG));
 	pPopupMenu->Append(pItem);
 
-	pItem = new wxMenuItem(pPopupMenu, IDM_DELAYED_CUTELEMENT, wxT("Cut\tCtrl+X"));
+	pItem = new wxMenuItem(pPopupMenu, IDM_DELAYED_CUTELEMENT, _("Cut\tCtrl+X"));
 	//pItem->SetBitmap(wxArtProvider::GetBitmap(wxART_CUT, wxART_MENU));
 	pItem->SetBitmap(wxBitmap(sAppPath + wxT("app/gui/editcut.png"), wxBITMAP_TYPE_PNG));
 	pPopupMenu->Append(pItem);
 
 	pPopupMenu->AppendSeparator();
-    pPopupMenu->Append(IDM_DELAYED_EDITELEMENT, wxT("Edit properties..."), wxT("Edit diagram element"));
+    pPopupMenu->Append(IDM_DELAYED_EDITELEMENT, _("Edit properties..."), _("Edit diagram element"));
 
 	pPopupMenu->AppendSeparator();
-    pPopupMenu->Append(IDM_DELAYED_REMOVEELEMENT, wxT("Remove element"), wxT("Remove diagram element"));
-	
+    pPopupMenu->Append(IDM_DELAYED_REMOVEELEMENT, _("Remove element"), _("Remove diagram element"));
+
 	// update element's context menu in accordance to original element
 	wxSFShapeBase *pShape = wxDynamicCast( GetParent(), wxSFShapeBase );
 	if( pShape &&
@@ -341,30 +341,30 @@ void udElementLinkItem::OnContextMenu(wxWindow* parent, const wxPoint& pos)
 	{
 		wxMenu *pSubmenu;
 
-		int nCreateID = pPopupMenu->FindItem( wxT("Create") );
+		int nCreateID = pPopupMenu->FindItem( _("Create") );
 		if( nCreateID == wxNOT_FOUND )
 		{
 			// create new "Create" submenu
 			pSubmenu =  new wxMenu();
-			
-			pPopupMenu->Insert( 0, wxID_ANY, wxT("Create"), pSubmenu );
+
+			pPopupMenu->Insert( 0, wxID_ANY, _("Create"), pSubmenu );
 			pPopupMenu->InsertSeparator( 1 );
 		}
 		else
 			pSubmenu = pPopupMenu->FindItem( nCreateID )->GetSubMenu();
-			
+
 		if( pSubmenu->GetMenuItemCount() ) pSubmenu->AppendSeparator();
-		
+
 		pOrig->UpdateSubmenu(pSubmenu, pShape->GetAcceptedConnections(), udfDONT_CLEAR_CONTENT);
 	}
 	else
 	{
-		pPopupMenu->Insert(0, IDM_DIAG_NAVIGATETO, wxT("Navigate to element"), wxT("Scroll the diagram so the element will be in its center"));
+		pPopupMenu->Insert(0, IDM_DIAG_NAVIGATETO, _("Navigate to element"), _("Scroll the diagram so the element will be in its center"));
 		pPopupMenu->InsertSeparator(1);
 	}
-	
+
 	parent->PopupMenu(pPopupMenu, pos);
-	
+
 	delete pPopupMenu;
 }
 
@@ -377,7 +377,7 @@ void udElementLinkItem::UpdateLabels(const wxString &diagram, const wxString& el
 
 //    m_sName = IPluginManager::Get()->GetProject()->MakeUniqueName( m_sOriginalDiagram + wxT(":") + m_sOriginalElement );
 	SetName( m_sOriginalDiagram + wxT(":") + m_sOriginalElement );
-	
+
     wxSFShapeBase *pShape = (wxSFShapeBase*)GetParent();
 
     udLABEL::SetContent(GetName(), pShape, udLABEL::ltTITLE);
@@ -399,14 +399,14 @@ XS_IMPLEMENT_CLONABLE_CLASS(udDiagramLinkItem, udLinkItem);
 udDiagramLinkItem::udDiagramLinkItem()
 {
 	m_sOriginalDiagram = wxT("");
-	
+
 	XS_SERIALIZE(m_sOriginalDiagram, wxT("original_diagram"));
 }
 
 udDiagramLinkItem::udDiagramLinkItem(const udDiagramLinkItem& obj) : udLinkItem(obj)
 {
 	m_sOriginalDiagram = obj.m_sOriginalDiagram;
-	
+
 	XS_SERIALIZE(m_sOriginalDiagram, wxT("original_diagram"));
 }
 
@@ -448,17 +448,17 @@ wxMenu* udAccessType::CreateAccessMenu()
 {
 	udLanguage *pLang = IPluginManager::Get()->GetSelectedLanguage();
 	wxMenu *pMenu = new wxMenu();
-	
+
 	wxString sAT;
 	int i = 0;
-	
+
 	while( (sAT = pLang->GetAccessTypeString( (udLanguage::ACCESSTYPE)i )) != wxEmptyString )
 	{
 		pMenu->AppendCheckItem( IDM_CODE_ACCESSTYPE + i++, sAT );
 	}
-	
+
 	if( i ) pMenu->Check( IDM_CODE_ACCESSTYPE + (int)m_nAccessType, true );
-	
+
 	return pMenu;
 }
 
@@ -472,7 +472,7 @@ XS_IMPLEMENT_CLONABLE_CLASS(udCodeLinkItem, udLinkItem);
 
 udCodeLinkItem::udCodeLinkItem() : udAccessType()
 {
-	m_sName = wxT("Code item link");
+	m_sName = _("Code item link");
     m_sOriginalCodeItem = wxT("");
 	m_sScope = wxT("<global>");
 
@@ -485,7 +485,7 @@ udCodeLinkItem::udCodeLinkItem(const udCodeItem *orig) : udLinkItem(), udAccessT
 	m_sName = orig->GetName();
 	m_sOriginalCodeItem = orig->GetSignature();
 	m_sScope = orig->GetScope();
-	
+
 	XS_SERIALIZE(m_sOriginalCodeItem, wxT("original_code"));
 	XS_SERIALIZE(m_sScope, wxT("scope"));
 }
@@ -519,10 +519,10 @@ udProjectItem* udCodeLinkItem::GetOriginal()
 	{
 		pCodeItem = (udCodeItem*)node->GetData();
 		if( pCodeItem->GetSignature() == m_sOriginalCodeItem ) return pCodeItem;
-		
+
 		node = node->GetNext();
 	}
-	
+
     return NULL;
 }
 
@@ -535,13 +535,13 @@ void udCodeLinkItem::OnEditItem(wxWindow* parent)
 {
 	udCodeLinkDialog dlg( parent, wxDynamicCast( GetOriginal(), udCodeItem ), IPluginManager::Get()->GetSelectedLanguage() );
 	udWindowManager dlgman( dlg, wxT("code_link_dialog") );
-	
+
 	dlg.SetCodeName( m_sName );
-	
+
 	if( dlg.ShowModal() == wxID_OK )
 	{
 		OnTreeTextChange( dlg.GetCodeName() );
-		
+
 		IPluginManager::Get()->SendProjectEvent( wxEVT_CD_ITEM_CHANGED, wxID_ANY, this );
 	}
 }
@@ -549,11 +549,11 @@ void udCodeLinkItem::OnEditItem(wxWindow* parent)
 void udCodeLinkItem::OnTreeTextChange(const wxString& txt)
 {
 	// this function is not called directly from tree event...
-	
+
 	udProjectItem::OnTreeTextChange( txt );
-	
+
 	// try to update parent element (if any)
-	IPluginManager::Get()->SendProjectEvent( wxEVT_CD_ITEM_CHANGED, wxID_ANY, wxDynamicCast( GetParent(), udProjectItem ), NULL, wxEmptyString, udfDELAYED );	
+	IPluginManager::Get()->SendProjectEvent( wxEVT_CD_ITEM_CHANGED, wxID_ANY, wxDynamicCast( GetParent(), udProjectItem ), NULL, wxEmptyString, udfDELAYED );
 }
 
 bool udCodeLinkItem::OnTreeItemBeginDrag(const wxPoint &pos)
@@ -561,7 +561,7 @@ bool udCodeLinkItem::OnTreeItemBeginDrag(const wxPoint &pos)
 	// if a shift key is pressed down then re-arrange it by a DnD operation built-in in a tree control
 	wxMouseState cState = wxGetMouseState();
 	if( cState.ShiftDown() ) return false;
-	
+
     udDiagramCanvas *pCanvas = IPluginManager::Get()->GetActiveCanvas();
     if( pCanvas )
 	{
@@ -577,7 +577,7 @@ bool udCodeLinkItem::OnTreeItemBeginDrag(const wxPoint &pos)
 		pCanvas->DoDragDrop( lstDnD, Conv2Point(pShape->GetAbsolutePosition()) );
 
 		// delete temporary dragged shape
-		delete pShape;		
+		delete pShape;
 	}
 
 	return true;
@@ -588,9 +588,9 @@ void udCodeLinkItem::OnTreeItemEndDrag(const wxPoint &pos)
 	udProjectItem *pTargetParent = wxDynamicCast( GetParent(), udProjectItem );
 
 	udProjectItem *pSourceItem = IPluginManager::Get()->GetSelectedProjectItem();
-	
+
 	if( pTargetParent && pSourceItem && IsSibblingAccepted( pSourceItem->GetClassInfo()->GetClassName() ) )
-	{		
+	{
 		udProjectItem *pSourceParent = wxDynamicCast( pSourceItem->GetParent(), udProjectItem );
 		if( pSourceParent )
 		{
@@ -602,13 +602,13 @@ void udCodeLinkItem::OnTreeItemEndDrag(const wxPoint &pos)
 				// move the item to correct position in the new parent
 				pTargetParent->GetChildrenList().DeleteObject( pSourceItem );
 				pTargetParent->GetChildrenList().Insert( nIndex, pSourceItem );
-			
+
 				// update tree items and other related stuff
 				IPluginManager::Get()->SendProjectEvent( wxEVT_CD_ITEM_CHANGED, wxID_ANY, pTargetParent );
-				
+
 				if( pTargetParent != pSourceParent )
 				{
-					IPluginManager::Get()->SendProjectEvent( wxEVT_CD_ITEM_CHANGED, wxID_ANY, pSourceParent );					
+					IPluginManager::Get()->SendProjectEvent( wxEVT_CD_ITEM_CHANGED, wxID_ANY, pSourceParent );
 				}
 			}
 		}
@@ -630,7 +630,7 @@ udCodeItem::udCodeItem()
 	m_fInverted = false;
 	m_sScope = wxT("<global>");
 	m_sSignature = wxT("");
-	
+
 	AcceptSibbling(wxT("udGenericFunctionItem"));
 	AcceptSibbling(wxT("udGenericVariableItem"));
 	AcceptSibbling(wxT("udActionItem"));
@@ -640,20 +640,20 @@ udCodeItem::udCodeItem()
 	AcceptSibbling(wxT("udMemberFunctionItem"));
 	AcceptSibbling(wxT("udConstructorFunctionItem"));
 	AcceptSibbling(wxT("udDestructorFunctionItem"));
-	
+
 	XS_SERIALIZE( m_sCode, wxT("code") );
 	XS_SERIALIZE( m_sScope, wxT("scope") );
 	XS_SERIALIZE( m_sSignature, wxT("signature") );
 }
 
 udCodeItem::udCodeItem(const udCodeItem &obj) : udProjectItem(obj)
-{	
+{
 	m_sCode = obj.m_sCode;
 	m_fInline = obj.m_fInline;
 	m_fInverted = obj.m_fInverted;
 	m_sScope = obj.m_sScope;
 	m_sSignature = obj.m_sSignature;
-	
+
 	XS_SERIALIZE( m_sCode, wxT("code") );
 	XS_SERIALIZE( m_sScope, wxT("scope") );
 	XS_SERIALIZE( m_sSignature, wxT("signature") );
@@ -673,11 +673,11 @@ wxString udCodeItem::ToString(CODEFORMAT format, udLanguage *lang)
 wxMenu* udCodeItem::CreateMenu()
 {
 	wxMenu *pPopupMenu = new wxMenu();
-	
-    pPopupMenu->Append(IDM_DELAYED_EDIT, wxT("Edit properties..."), wxT("Edit action properties."));
+
+    pPopupMenu->Append(IDM_DELAYED_EDIT, _("Edit properties..."), _("Edit action properties."));
     pPopupMenu->AppendSeparator();
-    pPopupMenu->Append(IDM_DELAYED_REMOVE, wxT("Remove code item"), wxT("Remove code item."));
-	
+    pPopupMenu->Append(IDM_DELAYED_REMOVE, _("Remove code item"), _("Remove code item."));
+
 	return pPopupMenu;
 }
 
@@ -695,13 +695,13 @@ bool udCodeItem::OnTreeItemBeginDrag(const wxPoint &pos)
 }
 
 void udCodeItem::OnTreeItemEndDrag(const wxPoint& pos)
-{	
+{
 	udProjectItem *pSourceItem = IPluginManager::Get()->GetSelectedProjectItem();
 	if (!pSourceItem ) return;
-	
+
 	udProjectItem *pSourceParent = wxDynamicCast( pSourceItem->GetParent(), udProjectItem );
 	if ( !pSourceParent ) return;
-	
+
 	if( pSourceItem->IsKindOf(CLASSINFO(udCodeItem)) && IsSibblingAccepted(pSourceItem->GetClassInfo()->GetClassName()) )
 	{
 		udProjectItem *pTargetParent = wxDynamicCast( GetParent(), udProjectItem );
@@ -715,10 +715,10 @@ void udCodeItem::OnTreeItemEndDrag(const wxPoint& pos)
 				// move the item to correct position in the new parent
 				pTargetParent->GetChildrenList().DeleteObject( pSourceItem );
 				pTargetParent->GetChildrenList().Insert( nIndex, pSourceItem );
-				
+
 				// update tree items and other related stuff
 				IPluginManager::Get()->SendProjectEvent( wxEVT_CD_ITEM_CHANGED, wxID_ANY, pTargetParent );
-					
+
 				if( pTargetParent != pSourceParent )
 				{
 					IPluginManager::Get()->SendProjectEvent( wxEVT_CD_ITEM_CHANGED, wxID_ANY, pSourceParent );
@@ -731,10 +731,10 @@ void udCodeItem::OnTreeItemEndDrag(const wxPoint& pos)
 		// get list of source item's successors and check whether the target item isn't in the list
 		SerializableList lstChildren;
 		pSourceItem->GetChildrenRecursively( CLASSINFO(udProjectItem), lstChildren );
-			
+
 		if(lstChildren.IndexOf( this ) != wxNOT_FOUND )
 		{
-			wxMessageBox( wxT("Couldn't move item to its successor."), wxT("CodeDesigner"), wxICON_WARNING | wxOK );
+			wxMessageBox( _("Couldn't move item to its successor."), wxT("CodeDesigner"), wxICON_WARNING | wxOK );
 		}
 		else
 		{
@@ -743,7 +743,7 @@ void udCodeItem::OnTreeItemEndDrag(const wxPoint& pos)
 
 			// update tree items and other related stuffs );
 			IPluginManager::Get()->SendProjectEvent( wxEVT_CD_ITEM_CHANGED, wxID_ANY, this );
-					
+
 			if( pSourceParent != this )
 			{
 				IPluginManager::Get()->SendProjectEvent( wxEVT_CD_ITEM_CHANGED, wxID_ANY, pSourceParent );
@@ -755,28 +755,28 @@ void udCodeItem::OnTreeItemEndDrag(const wxPoint& pos)
 void udCodeItem::OnTreeTextChange(const wxString& txt)
 {
 	if( m_sName != txt ) {
-		
+
 		wxString sPrevName = m_sName;
-		
+
 		udProjectItem::OnTreeTextChange( txt );
-		
+
 		// update linked items
 		SerializableList lstLinks;
 		IPluginManager::Get()->GetProject()->GetCodeLinks( udfVALID, GetClassInfo(), m_sSignature, m_sScope, lstLinks );
-		
+
 		UpdateSignature();
-		
+
 		SerializableList::compatibility_iterator node = lstLinks.GetFirst();
 		while( node )
 		{
 			udCodeLinkItem *pLink = (udCodeLinkItem*)node->GetData();
-			
+
 			if( pLink->GetName() == sPrevName ) pLink->OnTreeTextChange( m_sName );
 			pLink->SetOrigCodeItem( m_sSignature );
-			
+
 			node = node->GetNext();
 		}
-		
+
 		// update child parameters if any
 		node = GetFirstChildNode();
 		while( node )
@@ -787,7 +787,7 @@ void udCodeItem::OnTreeTextChange(const wxString& txt)
 				pPar->SetScope( GetScope() + wxT("::") + GetName() );
 				pPar->UpdateSignature();
 			}
-			
+
 			node = node->GetNext();
 		}
 	}
@@ -798,11 +798,11 @@ void udCodeItem::OnTreeTextChange(const wxString& txt)
 bool udCodeItem::DragCodeItem(udCodeLinkItem *link)
 {
 	if( !link ) return true;
-	
+
 	// if a shift key is pressed down then re-arrange it by a DnD operation built-in in a tree control
 	wxMouseState cState = wxGetMouseState();
 	if( cState.ShiftDown() ) return false;
-	
+
     udDiagramCanvas *pCanvas = IPluginManager::Get()->GetActiveCanvas();
     if( pCanvas )
 	{
@@ -818,7 +818,7 @@ bool udCodeItem::DragCodeItem(udCodeLinkItem *link)
 		pCanvas->DoDragDrop( lstDnD, Conv2Point(pShape->GetAbsolutePosition()) );
 
 		// delete temporary dragged shape
-		delete pShape;		
+		delete pShape;
 	}
 
 	return true;
@@ -829,7 +829,7 @@ bool udCodeItem::DragCodeItem(udCodeLinkItem *link)
 void udCodeItem::UpdateSignature()
 {
 	m_sSignature = m_sScope + wxT("::") + m_sName + wxString::Format( wxT("#%d"), GetId() );
-	
+
 	wxString sDataType;
 	for( SerializableList::const_iterator it = m_lstChildItems.begin(); it != m_lstChildItems.end(); ++it )
 	{
@@ -838,9 +838,9 @@ void udCodeItem::UpdateSignature()
 		{
 			if( ci->GetDataType() == udLanguage::DT_USERDEFINED ) sDataType = ci->GetUserDataType();
 			else sDataType = udLanguage::GetFormalDataTypeString( ci->GetDataType() ) ;
-				
+
 			m_sSignature += wxT("<") + ci->GetName() + wxT(":") + sDataType + wxT(">");
-			
+
 		}
 	}
 }
@@ -855,26 +855,26 @@ XS_IMPLEMENT_CLONABLE_CLASS(udVariableItem, udCodeItem);
 
 udVariableItem::udVariableItem()
 {
-	m_sName = wxT("Variable");
-	m_sDescription = wxT("Variable's description...");
-	
+	m_sName = _("Variable");
+	m_sDescription = _("Variable's description...");
+
 	/*AcceptSibbling(wxT("udFunctionItem"));
 	AcceptSibbling(wxT("udVariableItem"));
 	AcceptSibbling(wxT("udActionItem"));
 	AcceptSibbling(wxT("udConditionItem"));
 	AcceptSibbling(wxT("udEventItem"));*/
-	
+
 	m_nValueType = udLanguage::VT_VALUE;
 	m_sValue = wxT("");
-	
+
 	m_nDataType = udLanguage::DT_INT;
 	m_nDataModifier = udLanguage::DM_EXTERN;
-	
+
 	m_nUserDeclPlace = dlBUILTIN;
 	m_sUserDataType = wxT("");
 	m_sUserDeclaration = wxT("");
 	m_sUserDeclFile = wxT("");
-	
+
 	MarkSerializableDataMembers();
 }
 
@@ -883,7 +883,7 @@ udVariableItem::udVariableItem(const udVariableItem &obj)
 {
 	m_nValueType = obj.m_nValueType;
 	m_sValue = obj.m_sValue;
-	
+
 	m_nDataType = obj.m_nDataType;
 	m_nDataModifier = obj.m_nDataModifier;
 
@@ -891,7 +891,7 @@ udVariableItem::udVariableItem(const udVariableItem &obj)
 	m_sUserDataType = obj.m_sUserDataType;
 	m_sUserDeclaration = obj.m_sUserDeclaration;
 	m_sUserDeclFile = obj.m_sUserDeclFile;
-	
+
 	MarkSerializableDataMembers();
 }
 
@@ -925,22 +925,22 @@ wxString udVariableItem::ToString(CODEFORMAT format, udLanguage *lang)
 			}
 			else*/
 			return m_sName;
-				
+
 		case udCodeItem::cfDECLARATION:
 			if( lang )
 			{
 				lang->PushCode();
-				
+
 				switch( m_nDataModifier )
 				{
 					case udLanguage::DM_STATIC:
 						// do nothing
 						break;
-						
+
 					case udLanguage::DM_EXTERN:
 						lang->VariableDeclCmd( GetDataTypeString( format, lang ), lang->MakeValidIdentifier( m_sName ) );
 						break;
-					
+
 					default:
 						if( !m_sValue.IsEmpty() )
 						{
@@ -951,21 +951,21 @@ wxString udVariableItem::ToString(CODEFORMAT format, udLanguage *lang)
 						break;
 				}
 				wxString sOut = lang->GetCodeBuffer();
-				
+
 				lang->PopCode();
 				return sOut.Trim().Trim(false);
 			}
 			else
 				return m_sName;
-			
+
 		case udCodeItem::cfDEFINITION:
 			if( lang )
 			{
 				lang->PushCode();
-				
+
 				switch( m_nDataModifier )
 				{
-					case udLanguage::DM_STATIC:						
+					case udLanguage::DM_STATIC:
 					case udLanguage::DM_EXTERN:
 						if( !m_sValue.IsEmpty() )
 						{
@@ -974,14 +974,14 @@ wxString udVariableItem::ToString(CODEFORMAT format, udLanguage *lang)
 						else
 							lang->VariableDeclCmd( GetDataTypeString( format, lang ), lang->MakeValidIdentifier( m_sName) );
 						break;
-						
+
 					default:
 						if( !lang->HasSeparatedDecl() && !m_sValue.IsEmpty() ) lang->VariableDeclAssignCmd( GetDataTypeString( format, lang ), lang->MakeValidIdentifier( m_sName), m_sValue );
-						break;		
+						break;
 				}
 
 				wxString sOut = lang->GetCodeBuffer();
-					
+
 				lang->PopCode();
 				return sOut.Trim().Trim(false);
 			}
@@ -991,7 +991,7 @@ wxString udVariableItem::ToString(CODEFORMAT format, udLanguage *lang)
 				else
 					return m_sName;
 			}
-		
+
 		case udCodeItem::cfCALL:
 			if( lang )
 			{
@@ -999,7 +999,7 @@ wxString udVariableItem::ToString(CODEFORMAT format, udLanguage *lang)
 			}
 			else
 				return m_sName;
-		
+
 		default:
 			return m_sName;
 	}
@@ -1009,7 +1009,7 @@ void udVariableItem::OnEditItem(wxWindow* parent)
 {
 	udVariableDialog dlg( parent, this, IPluginManager::Get()->GetSelectedLanguage() );
 	udWindowManager dlgman( dlg, wxT("variable_dialog") );
-	
+
 	dlg.SetCodeName( m_sName );
 	dlg.SetDescription( m_sDescription );
 	dlg.SetDataType( m_nDataType );
@@ -1020,7 +1020,7 @@ void udVariableItem::OnEditItem(wxWindow* parent)
 	dlg.SetUserDataType( m_sUserDataType );
 	dlg.SetUserDeclFile( m_sUserDeclFile );
 	dlg.SetUserDeclPlace( m_nUserDeclPlace );
-	
+
 	if( dlg.ShowModal() == wxID_OK )
 	{
 		m_sDescription = dlg.GetDescription();
@@ -1032,9 +1032,9 @@ void udVariableItem::OnEditItem(wxWindow* parent)
 		m_sUserDataType = dlg.GetUserDataType();
 		m_sUserDeclFile = dlg.GetUserDeclFile();
 		m_nUserDeclPlace = dlg.GetUserDeclPlace();
-		
+
 		this->OnTreeTextChange( dlg.GetCodeName() );
-		
+
 		IPluginManager::Get()->SendProjectEvent( wxEVT_CD_ITEM_CHANGED, wxID_ANY, this );
 	}
 }
@@ -1046,7 +1046,7 @@ wxString udVariableItem::GetDataTypeString(CODEFORMAT format, udLanguage *lang)
 	if( lang )
 	{
 		wxString sDataType, sDataTypeName;
-		
+
 		if( m_nDataType == udLanguage::DT_USERDEFINED )
 		{
 			if( lang->HasUserDataType() ) sDataTypeName = m_sUserDataType;
@@ -1054,32 +1054,32 @@ wxString udVariableItem::GetDataTypeString(CODEFORMAT format, udLanguage *lang)
 		}
 		else
 			sDataTypeName = lang->GetDataTypeString( m_nDataType );
-			
+
 		switch( format )
 		{
 			case udCodeItem::cfFORMAL:
 			case udCodeItem::cfDECLARATION:
 				sDataType = GetModifierString( lang ) + wxT(" ") + sDataTypeName + lang->GetValueType( m_nValueType ).Sign();
 				break;
-				
+
 			case udCodeItem::cfDEFINITION:
 				sDataType = sDataTypeName + lang->GetValueType( m_nValueType ).Sign();
 				break;
-				
+
 			default:
 				break;
 		}
-		
+
 		return sDataType.Trim(false);
 	}
-	
+
 	return wxEmptyString;
 }
 
 wxString udVariableItem::GetModifierString(udLanguage *lang)
 {
 	if( lang && (m_nDataModifier != udLanguage::DM_NONE) ) return lang->GetModifierString( m_nDataModifier );
-	
+
 	return wxEmptyString;
 }
 
@@ -1107,7 +1107,7 @@ udParamItem::udParamItem() : udVariableItem()
 {
 	m_fMustBeUnique = false;
 	m_nDataModifier = udLanguage::DM_NONE;
-	
+
 	AcceptSibbling(wxT("udParamItem"));
 }
 
@@ -1116,7 +1116,7 @@ udParamItem::udParamItem() : udVariableItem()
 void udParamItem::OnTreeTextChange(const wxString& txt)
 {
 	udProjectItem::OnTreeTextChange( txt );
-	
+
 	// update parent function
 	udFunctionItem *parfcn = wxDynamicCast( GetParent(), udFunctionItem );
 	if( parfcn )
@@ -1144,35 +1144,35 @@ wxString udParamItem::ToString(CODEFORMAT format, udLanguage* lang)
 			else
 				return m_sName;
 				// return udVariableItem::ToString( format, lang );
-				
+
 		case udCodeItem::cfDECLARATION:
 			if( lang )
 			{
 				lang->PushCode();
-				
+
 				if( m_sValue.IsEmpty() )
 				{
 					lang->VariableDeclCmd( GetDataTypeString( format, lang ), lang->MakeValidIdentifier( m_sName ) );
 				}
 				else
 					lang->VariableDeclAssignCmd( GetDataTypeString( format, lang ), lang->MakeValidIdentifier( m_sName ), m_sValue );
-					
+
 				wxString sOut = lang->GetCodeBuffer();
-				
+
 				lang->PopCode();
 				return sOut.Trim().Trim(false);
 			}
 			else
 				return m_sName;
-			
+
 		case udCodeItem::cfDEFINITION:
 			if( lang )
 			{
 				lang->PushCode();
-				
+
 				lang->VariableDeclCmd( GetDataTypeString( format, lang ), lang->MakeValidIdentifier( m_sName) );
 				wxString sOut = lang->GetCodeBuffer();
-					
+
 				lang->PopCode();
 				return sOut.Trim().Trim(false);
 			}
@@ -1182,13 +1182,13 @@ wxString udParamItem::ToString(CODEFORMAT format, udLanguage* lang)
 				else
 					return m_sName;
 			}
-		
+
 		case udCodeItem::cfCALL:
 			/*if( m_sValue.IsEmpty() ) return udVariableItem::ToString( format, lang );
 			else
 				return m_sValue;*/
 			return m_sName;
-		
+
 		default:
 			return m_sName;
 	}
@@ -1199,7 +1199,7 @@ wxString udParamItem::GetDataTypeString(CODEFORMAT format, udLanguage* lang)
 	if( lang )
 	{
 		wxString sDataType, sDataTypeName;
-		
+
 		if( m_nDataType == udLanguage::DT_USERDEFINED )
 		{
 			if( lang->HasUserDataType() ) sDataTypeName = m_sUserDataType;
@@ -1207,7 +1207,7 @@ wxString udParamItem::GetDataTypeString(CODEFORMAT format, udLanguage* lang)
 		}
 		else
 			sDataTypeName = lang->GetDataTypeString( m_nDataType );
-			
+
 		switch( format )
 		{
 			case udCodeItem::cfFORMAL:
@@ -1215,14 +1215,14 @@ wxString udParamItem::GetDataTypeString(CODEFORMAT format, udLanguage* lang)
 			case udCodeItem::cfDEFINITION:
 				sDataType = GetModifierString( lang ) + wxT(" ") + sDataTypeName + lang->GetValueType( m_nValueType ).Sign();
 				break;
-				
+
 			default:
 				break;
 		}
-		
+
 		return sDataType.Trim(false);
 	}
-	
+
 	return wxEmptyString;
 }
 
@@ -1236,11 +1236,11 @@ XS_IMPLEMENT_CLONABLE_CLASS(udFunctionItem, udCodeItem);
 
 udFunctionItem::udFunctionItem()
 {
-	m_sName = wxT("Function");
-	m_sDescription = wxT("Function's descritpion...");
-	
+	m_sName = _("Function");
+	m_sDescription = _("Function's descritpion...");
+
 	AcceptChild(wxT("udParamItem"));
-	
+
 	m_fInline = false;
 	m_nRetValDataType = udLanguage::DT_VOID;
 	m_nRetValModifier = udLanguage::DM_NONE;
@@ -1257,7 +1257,7 @@ udFunctionItem::udFunctionItem()
 
 udFunctionItem::udFunctionItem(const udFunctionItem &obj)
 : udCodeItem(obj)
-{	
+{
 	m_fInline = obj.m_fInline;
 	m_nRetValDataType = obj.m_nRetValDataType;
 	m_nRetValModifier = obj.m_nRetValModifier;
@@ -1268,7 +1268,7 @@ udFunctionItem::udFunctionItem(const udFunctionItem &obj)
 	m_sUserRetValDeclFile = obj.m_sUserRetValDeclFile;
 	m_nFcnModifier = obj.m_nFcnModifier;
 	m_sImplementation = obj.m_sImplementation;
-	
+
 	MarkSerializableDataMembers();
 }
 
@@ -1295,7 +1295,7 @@ void udFunctionItem::MarkSerializableDataMembers()
 wxString udFunctionItem::ToString(CODEFORMAT format, udLanguage *lang)
 {
 	wxString sParameters = GetParametersString( format, lang);
-	
+
 	// create output string
 	switch( format )
 	{
@@ -1316,36 +1316,36 @@ wxString udFunctionItem::ToString(CODEFORMAT format, udLanguage *lang)
 			}
 			else
 				return m_sName + wxT("(") + sParameters + wxT(")");
-				
+
 		case udCodeItem::cfDECLARATION:
 			if( lang )
 			{
 				lang->PushCode();
-				
+
 				lang->FunctionDeclCmd( GetDataTypeString( lang ), lang->MakeValidIdentifier( m_sName ), sParameters );
 				wxString sOut = lang->GetCodeBuffer();
-				
+
 				lang->PopCode();
 				return sOut.Trim().Trim(false);
 			}
 			else
 				return m_sName + wxT("(") + sParameters + wxT(")");
-				
-			
+
+
 		case udCodeItem::cfDEFINITION:
 			if( lang )
 			{
 				lang->PushCode();
-				
+
 				lang->FunctionDefCmd( GetDataTypeString( lang ), lang->MakeValidIdentifier( m_sName ), sParameters );
 				wxString sOut = lang->GetCodeBuffer();
-				
+
 				lang->PopCode();
 				return sOut.Trim().Trim(false);
 			}
 			else
 				return m_sName + wxT("(") + sParameters + wxT(")");
-		
+
 		default:
 			return m_sName;
 	}
@@ -1355,9 +1355,9 @@ void udFunctionItem::OnEditItem(wxWindow* parent)
 {
 	udFunctionDialog dlg( parent, this, IPluginManager::Get()->GetSelectedLanguage() );
 	udWindowManager dlgman( dlg, wxT("function_dialog") );
-	
+
 	udDiagramItem *pDiag = IPluginManager::Get()->GetProject()->GetDiagram( m_sImplementation );
-	
+
 	dlg.SetCodeName( m_sName );
 	dlg.SetCode( m_sCode );
 	dlg.SetDescription( m_sDescription );
@@ -1371,7 +1371,7 @@ void udFunctionItem::OnEditItem(wxWindow* parent)
 	dlg.SetUserDeclPlace( m_nUserRetValDeclPlace );
 	dlg.SetImplementation( m_sImplementation );
 	dlg.SetInline( m_fInline );
-	
+
 	if( dlg.ShowModal() == wxID_OK )
 	{
 		m_sCode = dlg.GetCode();
@@ -1387,13 +1387,13 @@ void udFunctionItem::OnEditItem(wxWindow* parent)
 		m_sImplementation = dlg.GetImplementation();
 		m_fInline = dlg.GetInline();
 	}
-	
+
 	OnTreeTextChange( dlg.GetCodeName() );
-	
+
 	if( pDiag ) IPluginManager::Get()->SendProjectEvent( wxEVT_CD_ITEM_CHANGED, wxID_ANY, pDiag );
-	
+
 	IPluginManager::Get()->SendProjectEvent( wxEVT_CD_ITEM_CHANGED, wxID_ANY, this );
-		
+
 }
 
 // public functions /////////////////////////////////////////////////////////////////
@@ -1405,12 +1405,12 @@ wxString udFunctionItem::GetDataTypeString(udLanguage *lang)
 		wxString sModifier;
 		//if( m_nFcnModifier != udLanguage::FM_NONE) sModifier = lang->GetModifierString( m_nFcnModifier );
 		if( m_nRetValModifier != udLanguage::DM_NONE ) sModifier << wxT(" ") << lang->GetModifierString( m_nRetValModifier );
-		
+
 		wxString sDataType;
 		if( m_nRetValDataType != udLanguage::DT_USERDEFINED ) sDataType = lang->GetDataTypeString( m_nRetValDataType );
 		else if( lang->HasUserDataType() ) sDataType = m_sUserRetValDataType;
 		if( m_nRetValType != udLanguage::VT_VALUE ) sDataType += lang->GetValueType( m_nRetValType ).Sign();
-			
+
 		wxString sOut = sModifier + wxT(" ") + sDataType;
 		return sOut.Trim().Trim(false);
 	}
@@ -1424,7 +1424,7 @@ wxString udFunctionItem::GetModifierString(udLanguage *lang)
 	{
 		wxString sModifier;
 		if( m_nFcnModifier != udLanguage::FM_NONE) sModifier = lang->GetModifierString( m_nFcnModifier );
-		
+
 		return sModifier;
 	}
 	else
@@ -1434,18 +1434,18 @@ wxString udFunctionItem::GetModifierString(udLanguage *lang)
 wxString udFunctionItem::GetParametersString(CODEFORMAT format, udLanguage *lang)
 {
 	wxString sParameters;
-	
+
 	// get formal parameters
 	udParamItem *pPar = (udParamItem*)GetFirstChild(CLASSINFO(udParamItem));
 	while( pPar )
 	{
 		if( !sParameters.IsEmpty() ) sParameters << wxT(", ");
 		sParameters << pPar->ToString(format, lang);
-		
+
 		pPar = (udParamItem*)pPar->GetSibbling(CLASSINFO(udParamItem));
 	}
 	if( lang && !lang->Delimiter().IsEmpty() ) sParameters.Replace( lang->Delimiter(), wxT("") );
-	
+
 	return sParameters;
 }
 
@@ -1460,7 +1460,7 @@ XS_IMPLEMENT_CLONABLE_CLASS(udGenericFunctionItem, udFunctionItem);
 wxString udGenericFunctionItem::ToString(udCodeItem::CODEFORMAT format, udLanguage* lang)
 {
 	wxString sParameters = GetParametersString( format, lang);
-	
+
 	// create output string
 	switch( format )
 	{
@@ -1474,14 +1474,14 @@ wxString udGenericFunctionItem::ToString(udCodeItem::CODEFORMAT format, udLangua
 			}
 			else
 				return m_sName + wxT("(") + sParameters + wxT(")");
-				
+
 		case udCodeItem::cfDECLARATION:
 			return udFunctionItem::ToString( format, lang );
-				
-			
+
+
 		case udCodeItem::cfDEFINITION:
 			return udFunctionItem::ToString( format, lang );
-		
+
 		default:
 			return m_sName;
 	}
@@ -1508,7 +1508,7 @@ udFunctionLinkItem::udFunctionLinkItem(const udCodeItem* orig) : udCodeLinkItem(
 udFunctionLinkItem::udFunctionLinkItem(const udFunctionLinkItem& obj) : udCodeLinkItem(obj)
 {
 	m_mapCallParams = obj.m_mapCallParams;
-	
+
 	XS_SERIALIZE(m_mapCallParams, wxT("call_parameters"));
 }
 
@@ -1518,14 +1518,14 @@ wxString udFunctionLinkItem::GetUpdatedFunctionCall(udCodeItem::CODEFORMAT forma
 {
 	wxString sUpdParam;
 	wxString sFcnCall = udCodeLinkItem::ToString( format, lang );
-	
+
 	if( this->GetOriginal() )
 	{
 		udParamItem *pParam = (udParamItem*)this->GetOriginal()->GetFirstChild( CLASSINFO(udParamItem) );
 		while( pParam )
 		{
 			sUpdParam = m_mapCallParams[pParam->GetName()];
-			
+
 			if( !sUpdParam.IsEmpty() ) sFcnCall.Replace( pParam->ToString( udCodeItem::cfCALL, lang), sUpdParam );
 			else
 			{
@@ -1533,11 +1533,11 @@ wxString udFunctionLinkItem::GetUpdatedFunctionCall(udCodeItem::CODEFORMAT forma
 				else
 					sFcnCall.Replace( pParam->GetName(), pParam->GetValue() );
 			}
-			
+
 			pParam = (udParamItem*)pParam->GetSibbling( CLASSINFO(udParamItem) );
 		}
 	}
-	
+
 	return sFcnCall;
 }
 
@@ -1548,10 +1548,10 @@ wxString udFunctionLinkItem::ToString(udCodeItem::CODEFORMAT format, udLanguage 
 	switch( format )
 	{
 		case udCodeItem::cfFORMAL:
-		
+
 		case udCodeItem::cfCALL:
 			return GetUpdatedFunctionCall( format, lang );
-			
+
 		default:
 			return udCodeLinkItem::ToString( format, lang );
 	}
@@ -1561,13 +1561,13 @@ void udFunctionLinkItem::OnEditItem(wxWindow* parent)
 {
 	udFunctionLinkDialog dlg( parent, this, IPluginManager::Get()->GetSelectedLanguage() );
 	udWindowManager dlgman( dlg, wxT("function_link_dialog") );
-	
+
 	dlg.SetCodeName( m_sName );
-	
+
 	if( dlg.ShowModal() == wxID_OK )
 	{
 		OnTreeTextChange( dlg.GetCodeName() );
-		
+
 		IPluginManager::Get()->SendProjectEvent( wxEVT_CD_ITEM_CHANGED, wxID_ANY, this );
 	}
 }
@@ -1582,15 +1582,15 @@ XS_IMPLEMENT_CLONABLE_CLASS(udDiagramItem, udProjectItem);
 
 udDiagramItem::udDiagramItem() : udProjectItem()
 {
-	m_sName = wxT("Diagram");
+	m_sName = _("Diagram");
     m_sDiagramType = wxT("Undefined");
-	m_sDescription = wxT("Diagram's description...");
+	m_sDescription = _("Diagram's description...");
 	m_sOutputFile = wxT("<default>");
 	m_sActiveAlgorithm = wxT("<default>");
 	m_sActiveGenerator = wxT("<default>");
-	
+
 	m_fGenerate = true;
-	
+
 	m_pSubElement = NULL;
     m_pCurrentUMLCanvas = NULL;
 
@@ -1610,7 +1610,7 @@ udDiagramItem::udDiagramItem(const udDiagramItem &obj) : udProjectItem(obj)
 	m_sOutputFile = obj.m_sOutputFile;
 	m_sActiveAlgorithm = obj.m_sActiveAlgorithm;
 	m_sActiveGenerator = obj.m_sActiveGenerator;
-	
+
 	m_fGenerate = obj.m_fGenerate;
 
 	m_pSubElement = NULL;
@@ -1653,15 +1653,15 @@ udDiagramCanvas* udDiagramItem::ShowDiagramPage()
 			// update all diagram elements if changed while the canvas was hiden
 			m_DiagramManager.UpdateAll();
 			m_DiagramManager.UpdateAllInnerContent();
-			
+
             m_pCurrentUMLCanvas->DeselectAll();
-			
+
 			// create new notebook page
             IPluginManager::Get()->GetMainNotebook()->AddPage( m_pCurrentUMLCanvas, m_sName, true);
-			
+
 			UpdateDiagramPageLabel();
 			m_pCurrentUMLCanvas->UpdateVirtualSize();
-			
+
 			IPluginManager::Get()->ConnectDiagramEvents( m_pCurrentUMLCanvas, true );
         }
     }
@@ -1675,7 +1675,7 @@ void udDiagramItem::UpdateDiagramPageLabel()
 	{
 		wxString sPostFix;
 		int pageIndex = IPluginManager::Get()->GetMainNotebook()->GetPageIndex( m_pCurrentUMLCanvas );
-	
+
 		udFunctionItem *pFcn = IPluginManager::Get()->GetProject()->GetFunctionImplementedBy( this );
 		if( pFcn )
 		{
@@ -1686,7 +1686,7 @@ void udDiagramItem::UpdateDiagramPageLabel()
 			else
 				sPostFix = wxT(" [") + pFcn->GetName() + wxT("]");
 		}
-		
+
 		IPluginManager::Get()->GetMainNotebook()->SetPageText( pageIndex, m_sName + sPostFix );
 	}
 }
@@ -1698,18 +1698,18 @@ void udDiagramItem::CloseDiagramPage()
     if( m_pCurrentUMLCanvas )
     {
 		m_pCurrentUMLCanvas->DeleteAllTextCtrls();
-		
+
 		IPluginManager::Get()->GetThumbnail()->SetCanvas(NULL);
-		
+
 		IPluginManager::Get()->ConnectDiagramEvents( m_pCurrentUMLCanvas, false );
 
         // get index of notebook page owning the diagram
         int pageIndex = IPluginManager::Get()->GetMainNotebook()->GetPageIndex( m_pCurrentUMLCanvas );
-		
+
 		// clear reference to digram canvas in diagram manager
 		m_DiagramManager.SetShapeCanvas(NULL);
 		m_pCurrentUMLCanvas = NULL;
-		
+
         // delete page without notification
        IPluginManager::Get()->GetMainNotebook()->DeletePage(pageIndex);
     }
@@ -1718,11 +1718,11 @@ void udDiagramItem::CloseDiagramPage()
 void udDiagramItem::OnDestroyDiagramPage()
 {
 	if( m_pCurrentUMLCanvas ) m_pCurrentUMLCanvas->DeleteAllTextCtrls();
-	
+
 	IPluginManager::Get()->GetThumbnail()->SetCanvas(NULL);
-	
+
 	IPluginManager::Get()->ConnectDiagramEvents( m_pCurrentUMLCanvas, false );
-		
+
 	// clear reference to digram canvas in diagram manager
     m_DiagramManager.SetShapeCanvas(NULL);
     m_pCurrentUMLCanvas = NULL;
@@ -1731,9 +1731,9 @@ void udDiagramItem::OnDestroyDiagramPage()
 udDiagramCanvas* udDiagramItem::CreateCanvas()
 {
 	udDiagramCanvas *pCanvas = new udDiagramCanvas(&m_DiagramManager, IPluginManager::Get()->GetMainNotebook(), wxID_ANY);
-	
+
 	m_DiagramManager.ClearAcceptedShapes();
-	
+
 	PaletteArray *palette = m_mapElementPalettes[m_sDiagramType];
 	if( palette )
 	{
@@ -1742,15 +1742,15 @@ udDiagramCanvas* udDiagramItem::CreateCanvas()
 			m_DiagramManager.AcceptShape(palette->Item(i).m_sClassName);
 		}
 	}
-	
+
 	palette = m_mapElementPalettes[udnCOMMON_ITEMS];
 	for(size_t i = 0; i < palette->GetCount(); i++)
 	{
 		m_DiagramManager.AcceptShape(palette->Item(i).m_sClassName);
 	}
-	
+
 	m_DiagramManager.AcceptShape( wxT("uddDnDElement") );
-	
+
 	return pCanvas;
 }
 
@@ -1766,7 +1766,7 @@ void udDiagramItem::OnTreeTextChange(const wxString &txt)
 	if( m_sName != txt )
 	{
 		wxString m_sOldName = m_sName;
-		
+
 		// update 'linked' functions
 		udFunctionItem *pFcn;
 		while( (pFcn = IPluginManager::Get()->GetProject()->GetFunctionImplementedBy( this )) )
@@ -1799,7 +1799,7 @@ bool udDiagramItem::OnTreeItemBeginDrag(const wxPoint& pos)
 	// only top diagrams can be moved
 	//if( this->IsKindOf( CLASSINFO(udSubDiagramItem) ) ) return true;
 	if( m_pSubElement ) return true;
-	
+
 	// if a shift key is pressed down then re-arrange it by a DnD operation built-in in a tree control
 	wxMouseState cState = wxGetMouseState();
 	if( cState.ShiftDown() ) return false;
@@ -1814,7 +1814,7 @@ bool udDiagramItem::OnTreeItemBeginDrag(const wxPoint& pos)
 
     pLink->SetOrigDiagram( GetName() );
 	pLink->SetName( GetName() );
- 	
+
 	// create new temporary shape carying dragged data
 	wxSFShapeBase *pShape = new uddDnDElement();
 
@@ -1826,8 +1826,8 @@ bool udDiagramItem::OnTreeItemBeginDrag(const wxPoint& pos)
 	pCanvas->DoDragDrop( lstDnD, Conv2Point(pShape->GetAbsolutePosition()) );
 
 	// delete temporary dragged shape
-	delete pShape;	
-	
+	delete pShape;
+
 	return true;
 
 }
@@ -1856,7 +1856,7 @@ void udDiagramItem::Deserialize(wxXmlNode* node)
     // deserialize standard defined properties
     udProjectItem::Deserialize(node);
 
-    // deserialize non-standard properties	
+    // deserialize non-standard properties
     wxXmlNode *propNode = node->GetChildren();
 	while(propNode)
 	{
@@ -1872,35 +1872,35 @@ void udDiagramItem::OnEditItem(wxWindow* parent)
 {
 	udDiagramDialog dlg( parent, this, IPluginManager::Get()->GetSelectedLanguage() );
 	udWindowManager dlgman( dlg, wxT("diagram_dialog") );
-	
+
 	dlg.SetCodeName( m_sName );
 	dlg.SetDescription( m_sDescription );
 	dlg.SetGenerateCode( m_fGenerate );
 	dlg.SetOutputFile( m_sOutputFile );
-	
+
 	if( dlg.ShowModal() == wxID_OK )
 	{
 		m_sDescription = dlg.GetDescription();
 		m_fGenerate = dlg.GetGenerateCode();
-		
+
 		if( dlg.GetOutputFile().Contains( wxT(".") ) )
 		{
 			m_sOutputFile = dlg.GetOutputFile().BeforeLast( '.' );
 		}
 		else
 			m_sOutputFile = dlg.GetOutputFile();
-		
+
 		udGenerator *pGen = udPROJECT::CreateGenerator( dlg.GetGenerator() );
 		if(pGen)
 		{
 			SetActiveGenerator( pGen->GetClassInfo()->GetClassName() );
-			
+
 			udAlgorithm *pAlg = pGen->FindAlgorithm( dlg.GetAlgorithm() );
 			if(pAlg)
 			{
 				SetActiveAlgorithm( pAlg->GetClassInfo()->GetClassName() );
 			}
-			
+
 			delete pGen;
 		}
 		else
@@ -1908,9 +1908,9 @@ void udDiagramItem::OnEditItem(wxWindow* parent)
 			SetActiveGenerator(wxT(""));
 			SetActiveAlgorithm(wxT(""));
 		}
-			
+
 		OnTreeTextChange( dlg.GetCodeName() );
-		
+
 		IPluginManager::Get()->SendProjectEvent( wxEVT_CD_ITEM_CHANGED, wxID_ANY, this );
 	}
 }
@@ -1925,27 +1925,27 @@ void udDiagramItem::GetSpecificCodeItems( wxClassInfo *type, SerializableList& c
 wxMenu* udDiagramItem::CreateMenu()
 {
 	const wxString &sAppPath = IPluginManager::Get()->GetResourcesPath();
-	
+
 	// create popup menu
 	wxMenu *pPopupMenu = new wxMenu();
-	
-    pPopupMenu->Append(IDM_DIAG_SHOW, wxT("Show diagram"), wxT("Show diagram."));
 
-	wxMenuItem *pItem = new wxMenuItem(pPopupMenu, IDM_DIAG_SHOWPREVIEW, wxT("Code preview"));
+    pPopupMenu->Append(IDM_DIAG_SHOW, _("Show diagram"), _("Show diagram."));
+
+	wxMenuItem *pItem = new wxMenuItem(pPopupMenu, IDM_DIAG_SHOWPREVIEW, _("Code preview"));
 	//pItem->SetBitmap(udArt::GetBitmap(wxT("udICON_PREVIEW")));
 	pItem->SetBitmap(wxBitmap(sAppPath + wxT("app/gui/spellcheck.png"), wxBITMAP_TYPE_PNG));
 	pPopupMenu->Append(pItem);
 
 	pPopupMenu->AppendSeparator();
-	
-	pPopupMenu->Append(IDM_DIAG_STORETOBANK, wxT("Store to bank"));
-	
+
+	pPopupMenu->Append(IDM_DIAG_STORETOBANK, _("Store to bank"));
+
 	pPopupMenu->AppendSeparator();
 
-    pPopupMenu->Append(IDM_DELAYED_EDIT, wxT("Edit properties..."), wxT("Edit diagram properties."));
+    pPopupMenu->Append(IDM_DELAYED_EDIT, _("Edit properties..."), _("Edit diagram properties."));
 	pPopupMenu->AppendSeparator();
-    pPopupMenu->Append(IDM_DELAYED_REMOVE, wxT("Remove diagram"), wxT("Remove diagram and all included items."));
-	
+    pPopupMenu->Append(IDM_DELAYED_REMOVE, _("Remove diagram"), _("Remove diagram and all included items."));
+
 	return pPopupMenu;
 }
 
@@ -1960,9 +1960,9 @@ XS_IMPLEMENT_CLONABLE_CLASS(udDiagElementItem, udProjectItem);
 udDiagElementItem::udDiagElementItem() : udProjectItem(), udAccessType()
 {
 	SetId( 0 );
-	
-    m_sName = wxT("Diagram element");
-	m_sDescription = wxT("Diagram element's description...");
+
+    m_sName = _("Diagram element");
+	m_sDescription = _("Diagram element's description...");
 }
 
 udDiagElementItem::udDiagElementItem(const udDiagElementItem &obj)
@@ -1980,12 +1980,12 @@ udDiagElementItem::~udDiagElementItem()
 {
 	long nId = 0;
 	bool fUsed;
-	
+
 	do
 	{
 		fUsed = false;
 		nId++;
-		
+
 		for( SerializableList::iterator it = m_lstChildItems.begin(); it != m_lstChildItems.end(); ++it )
 		{
 			if( (*it)->GetId() == nId )
@@ -1996,7 +1996,7 @@ udDiagElementItem::~udDiagElementItem()
 		}
 	}
 	while( fUsed );
-	
+
 	return nId;
 }*/
 
@@ -2005,11 +2005,11 @@ void udDiagElementItem::AssignCodeItem(udProjectItem* item)
 	/*if( item )
 	{
 		udCodeItem *pOriginal = NULL;
-		
+
 		if( item->IsKindOf( CLASSINFO(udCodeLinkItem) ) ) pOriginal = (udCodeItem*)((udCodeLinkItem*)item)->GetOriginal();
 		else
 			pOriginal = wxDynamicCast( item, udCodeItem );
-			
+
 		if( pOriginal )
 		{
 			// assign give code link to the diagram element
@@ -2017,7 +2017,7 @@ void udDiagElementItem::AssignCodeItem(udProjectItem* item)
 			AddChild( item );
 		}
 	}*/
-		
+
 	if( item )
 	{
 		// assign give code link to the diagram element
@@ -2029,17 +2029,17 @@ void udDiagElementItem::ClearCodeItems( wxClassInfo *origtype )
 {
 	udCodeItem *pOriginal;
 	udProjectItem *pItem;
-	
+
 	IPluginManager::Get()->EnableInternalEvents(false);
-	
+
 	SerializableList::compatibility_iterator node = GetFirstChildNode();
-	while( node ) 
+	while( node )
 	{
 		pItem = (udProjectItem*) node->GetData();
-		
+
 		// find original project item encapsulated by the node
 		if( pItem->IsKindOf( CLASSINFO(udCodeLinkItem) ) )
-		{			
+		{
 			pOriginal = (udCodeItem*)((udCodeLinkItem*) pItem)->GetOriginal();
 		}
 		else
@@ -2050,13 +2050,13 @@ void udDiagElementItem::ClearCodeItems( wxClassInfo *origtype )
 		{
 			delete pItem;
 			GetChildrenList().DeleteNode( node );
-			
+
 			node = GetFirstChildNode();
 		}
 		else
 			node = node->GetNext();
 	}
-	
+
 	IPluginManager::Get()->EnableInternalEvents(true);
 }
 
@@ -2064,7 +2064,7 @@ void udDiagElementItem::GetCodeItems(wxClassInfo* type, SerializableList& list, 
 {
 	udCodeLinkItem *pLink;
 	xsSerializable *pCodeItem;
-	
+
 	SerializableList::compatibility_iterator pNode = GetFirstChildNode();
 	while( pNode )
 	{
@@ -2086,7 +2086,7 @@ void udDiagElementItem::GetCodeItems(wxClassInfo* type, SerializableList& list, 
 				}
 			}
 		}
-		
+
 		pNode = pNode->GetNext();
 	}
 }
@@ -2094,16 +2094,16 @@ void udDiagElementItem::GetCodeItems(wxClassInfo* type, SerializableList& list, 
 udProjectItem* udDiagElementItem::GetCodeItem(wxClassInfo* type, const wxString& name, bool original)
 {
 	udProjectItem *pItem;
-	
+
 	SerializableList lstCodeItems;
 	GetCodeItems( type, lstCodeItems, original );
-	
+
 	for( SerializableList::iterator it = lstCodeItems.begin(); it != lstCodeItems.end(); ++it )
 	{
 		pItem = (udProjectItem*) *it;
 		if( pItem->GetName() == name ) return pItem;
 	}
-	
+
 	return NULL;
 }
 
@@ -2111,12 +2111,12 @@ void udDiagElementItem::RestoreCallParams()
 {
 	wxString sFcnName, sParamName;
 	udFunctionLinkItem *pFcnLink;
-	
+
 	for( StringMap::iterator it = m_mapStoredCallParams.begin(); it != m_mapStoredCallParams.end(); ++it )
 	{
 		sFcnName = it->first.BeforeFirst(':');
 		sParamName = it->first.AfterFirst(':');
-		
+
 		pFcnLink = wxDynamicCast( GetCodeItem( CLASSINFO(udFunctionLinkItem), sFcnName ), udFunctionLinkItem );
 		if( pFcnLink )
 		{
@@ -2128,7 +2128,7 @@ void udDiagElementItem::RestoreCallParams()
 void udDiagElementItem::StoreCallParams()
 {
 	m_mapStoredCallParams.clear();
-	
+
 	udFunctionLinkItem *pFcnLink = (udFunctionLinkItem*) GetFirstChild( CLASSINFO(udFunctionLinkItem) );
 	while( pFcnLink )
 	{
@@ -2136,7 +2136,7 @@ void udDiagElementItem::StoreCallParams()
 		{
 			m_mapStoredCallParams[ wxString::Format( wxT("%s:%s"), pFcnLink->GetName().c_str(), it->first.c_str() )] = it->second;
 		}
-		
+
 		pFcnLink = (udFunctionLinkItem*) pFcnLink->GetSibbling( CLASSINFO(udFunctionLinkItem) );
 	}
 }
@@ -2144,10 +2144,10 @@ void udDiagElementItem::StoreCallParams()
 wxString udDiagElementItem::RemoveCallParams(const wxString& txt)
 {
 	int nBraceCount = 0;
-	
+
 	wxString sOut;
 	wxChar cZn;
-	
+
 	for( size_t i = 0; i < txt.Len(); i++ )
 	{
 		cZn = txt.GetChar(i);
@@ -2155,7 +2155,7 @@ wxString udDiagElementItem::RemoveCallParams(const wxString& txt)
 		else if( cZn == ')' ) nBraceCount--;
 		else if( nBraceCount == 0 ) sOut += cZn;
 	}
-	
+
 	return sOut;
 }
 
@@ -2164,12 +2164,12 @@ void udDiagElementItem::UpdateAffectedCodeItems(const wxString& prevname, const 
 	// update referenced code
 	SerializableList m_References;
 	udPROJECT::FindCodeReferences( prevname, m_References );
-	
+
 	if( !m_References.IsEmpty() )
 	{
 		udUpdateCodeDialog dlg( IPluginManager::Get()->GetActiveCanvas(), &m_References, IPluginManager::Get()->GetSelectedLanguage() );
 		udWindowManager dlgman( dlg, wxT("update_code_dialog") );
-	
+
 		dlg.SetPattern( prevname );
 		dlg.SetNewPattern( newname );
 		dlg.ShowModal();
@@ -2181,7 +2181,7 @@ void udDiagElementItem::UpdateAffectedCodeItems(const wxString& prevname, const 
 void udDiagElementItem::OnActivation()
 {
 	udDiagramItem *pDiag = udPROJECT::GetParentDiagram(this);
-	
+
     if( pDiag )
 	{
 		if( !pDiag->GetDiagramPage() )
@@ -2190,10 +2190,10 @@ void udDiagElementItem::OnActivation()
 		}
 		else
 			this->OnEditItem( pDiag->GetDiagramPage() );
-			
+
 		if( IPluginManager::Get()->IsProjManLinked() ) pDiag->GetDiagramPage()->ScrollToShape((wxSFShapeBase*)GetParent());
 	}
-	
+
     OnSelection();
 }
 
@@ -2219,17 +2219,17 @@ void udDiagElementItem::OnEditItem(wxWindow* parent)
 {
 	udElementDialog dlg( parent, IPluginManager::Get()->GetSelectedLanguage() );
 	udWindowManager dlgman( dlg, wxT("element_dialog") );
-	
+
 	dlg.SetCodeName( m_sName );
 	dlg.SetDescription( m_sDescription );
-	
+
 	if( dlg.ShowModal() == wxID_OK )
 	{
 		m_sDescription = dlg.GetDescription();
-		
+
 		OnTreeTextChange( dlg.GetCodeName() );
 	}
-	
+
 	IPluginManager::Get()->SendProjectEvent( wxEVT_CD_ITEM_CHANGED, wxID_ANY, this );
 }
 
@@ -2238,13 +2238,13 @@ void udDiagElementItem::OnTreeTextChange(const wxString &txt)
 	if( m_sName != txt )
 	{
 		udLanguage *lang = IPluginManager::Get()->GetSelectedLanguage();
-		
+
 		wxString sPrevName = m_sName;
 		wxString sPrevID = this->GetUniqueId( lang );
-		
+
 		// m_sName is modified here!
 		udProjectItem::OnTreeTextChange(txt);
-		
+
 		wxSFShapeBase *pParentShape = (wxSFShapeBase*)GetParent();
 		if( pParentShape )
 		{
@@ -2267,10 +2267,10 @@ void udDiagElementItem::OnTreeTextChange(const wxString &txt)
 
 			node = node->GetNext();
 		}
-		
+
 		// update code items
 		UpdateAffectedCodeItems( sPrevID, this->GetUniqueId( lang ) );
-		
+
 		/*udLanguage *pLang = IPluginManager::Get()->GetSelectedLanguage();
 		wxString sCurrentID = wxT("ID_") + pLang->MakeValidIdentifier( sPrevName ).Upper();
 		wxString sNewID = wxT("ID_") + pLang->MakeValidIdentifier( txt ).Upper();
@@ -2299,7 +2299,7 @@ bool udDiagElementItem::OnTreeItemBeginDrag(const wxPoint &pos)
 	// if only SHIFT key is pressed down then cancel the operation
 	wxMouseState cState = wxGetMouseState();
 	if( cState.ShiftDown() ) return true;
-	
+
     wxASSERT(GetParent());
     if( !GetParent() )return true;
 
@@ -2314,7 +2314,7 @@ bool udDiagElementItem::OnTreeItemBeginDrag(const wxPoint &pos)
 
     pLink->SetOrigElement( GetName() );
     pLink->SetOrigDiagram( ((udDiagramManager*)pOrigShape->GetParentManager())->GetParentProjItem()->GetName() );
-	
+
 	if( cState.AltDown() && cState.ControlDown() )
 	{
 		// make 'link' name
@@ -2324,11 +2324,11 @@ bool udDiagElementItem::OnTreeItemBeginDrag(const wxPoint &pos)
 		// make standard name
 		pLink->SetName( GetName() );
     //pLink->SetName( wxString::Format(wxT("%d"), udProject::OccurenceCount( pLink->GetOrigDiagram() + wxT(":") + pLink->GetOrigElement() ) + 1) );
-	
+
 	// create new temporary shape carying dragged data
 	wxSFShapeBase *pShape;
 	// CTRL = make copy
-	
+
 	// ALT = make link
 	if( cState.AltDown() && cState.ControlDown() )
 	{
@@ -2355,14 +2355,14 @@ bool udDiagElementItem::OnTreeItemBeginDrag(const wxPoint &pos)
 		// assign link item to temporary shape
 		pShape->SetUserData( pLink );
 	}
-	
+
 	lstDnD.Append( pShape );
 
 	pCanvas->DoDragDrop( lstDnD, Conv2Point(pShape->GetAbsolutePosition()) );
 
 	// delete temporary dragged shape
-	delete pShape;	
-	
+	delete pShape;
+
 	return true;
 }
 
@@ -2370,7 +2370,7 @@ void udDiagElementItem::OnTreeItemEndDrag(const wxPoint &pos)
 {
 	udProjectItem *pSourceItem = IPluginManager::Get()->GetSelectedProjectItem();
 	//udCodeLinkItem *pSourceItem = wxDynamicCast(IPluginManager::Get()->GetSelectedProjectItem(), udCodeLinkItem );
-	
+
 	if( pSourceItem && IsChildAccepted(pSourceItem->GetClassInfo()->GetClassName()) )
 	{
 		udProjectItem *pSourceParent = wxDynamicCast( pSourceItem->GetParent(), udProjectItem );
@@ -2381,7 +2381,7 @@ void udDiagElementItem::OnTreeItemEndDrag(const wxPoint &pos)
 
 			// update tree items and other related stuff
 			IPluginManager::Get()->SendProjectEvent( wxEVT_CD_ITEM_CHANGED, wxID_ANY, this );
-				
+
 			if( pSourceParent != this )
 			{
 				IPluginManager::Get()->SendProjectEvent( wxEVT_CD_ITEM_CHANGED, wxID_ANY, pSourceParent );
@@ -2399,35 +2399,35 @@ void udDiagElementItem::OnShapeTextChange(const wxString &txt, udLABEL::TYPE typ
 //		{
 //			udLABEL::SetContent(utxt, (wxSFShapeBase*)GetParent(), udLABEL::ltTITLE);
 //		}
-	
+
 		udDiagElementItem::OnTreeTextChange(txt);
 		udLABEL::SetContent( GetName(), (wxSFShapeBase*)GetParent(), udLABEL::ltTITLE);
 	}
 }
 
 wxMenu* udDiagElementItem::CreateMenu()
-{	
+{
 	const wxString &sAppPath = IPluginManager::Get()->GetResourcesPath();
-	
-	// create popup menu	
+
+	// create popup menu
 	wxMenu *pPopupMenu = new wxMenu();
-	
-	wxMenuItem *pItem = new wxMenuItem(pPopupMenu, wxID_COPY, wxT("Copy\tCtrl+C"));
+
+	wxMenuItem *pItem = new wxMenuItem(pPopupMenu, wxID_COPY, _("Copy\tCtrl+C"));
 	//pItem->SetBitmap(wxArtProvider::GetBitmap(wxART_COPY, wxART_MENU));
 	pItem->SetBitmap(wxBitmap(sAppPath + wxT("app/gui/editcopy.png"), wxBITMAP_TYPE_PNG));
 	pPopupMenu->Append(pItem);
 
-	pItem = new wxMenuItem(pPopupMenu, IDM_DELAYED_CUTELEMENT, wxT("Cut\tCtrl+X"));
+	pItem = new wxMenuItem(pPopupMenu, IDM_DELAYED_CUTELEMENT, _("Cut\tCtrl+X"));
 	//pItem->SetBitmap(wxArtProvider::GetBitmap(wxART_CUT, wxART_MENU));
 	pItem->SetBitmap(wxBitmap(sAppPath + wxT("app/gui/editcut.png"), wxBITMAP_TYPE_PNG));
 	pPopupMenu->Append(pItem);
 
 	pPopupMenu->AppendSeparator();
-    pPopupMenu->Append(IDM_DELAYED_EDITELEMENT, wxT("Edit properties..."), wxT("Edit diagram element"));
+    pPopupMenu->Append(IDM_DELAYED_EDITELEMENT, _("Edit properties..."), _("Edit diagram element"));
 
 	pPopupMenu->AppendSeparator();
-    pPopupMenu->Append(IDM_DELAYED_REMOVEELEMENT, wxT("Remove element"), wxT("Remove diagram element"));
-	
+    pPopupMenu->Append(IDM_DELAYED_REMOVEELEMENT, _("Remove element"), _("Remove diagram element"));
+
 	return pPopupMenu;
 }
 
@@ -2435,7 +2435,7 @@ void udDiagElementItem::OnContextMenu(wxWindow* parent, const wxPoint& pos)
 {
 	// re-create this menu due to possible updates
 	wxMenu *pPopupMenu = this->CreateMenu();
-	
+
 	// update element's context menu
 	if( pPopupMenu && parent )
 	{
@@ -2446,20 +2446,20 @@ void udDiagElementItem::OnContextMenu(wxWindow* parent, const wxPoint& pos)
 		{
 			wxMenu *pSubmenu;
 
-			int nCreateID = pPopupMenu->FindItem( wxT("Create") );
+			int nCreateID = pPopupMenu->FindItem( _("Create") );
 			if( nCreateID == wxNOT_FOUND )
 			{
 				// create new "Create" submenu
 				pSubmenu =  new wxMenu();
-				
-				pPopupMenu->Insert( 0, wxID_ANY, wxT("Create"), pSubmenu );
+
+				pPopupMenu->Insert( 0, wxID_ANY, _("Create"), pSubmenu );
 				pPopupMenu->InsertSeparator( 1 );
 			}
 			else
 				pSubmenu = pPopupMenu->FindItem( nCreateID )->GetSubMenu();
-				
+
 			if( pSubmenu->GetMenuItemCount() ) pSubmenu->AppendSeparator();
-			
+
 			if( pShape->GetAcceptedChildren().Index( wxT("All") ) == wxNOT_FOUND )
 			{
 				if( UpdateSubmenu(pSubmenu, pShape->GetAcceptedChildren(), udfDONT_CLEAR_CONTENT) ) pSubmenu->AppendSeparator();
@@ -2475,7 +2475,7 @@ void udDiagElementItem::OnContextMenu(wxWindow* parent, const wxPoint& pos)
 					if( pPaletteItem->m_nType == udPaletteItem::pitELEMENT ) arrComponents.Add( pPaletteItem->m_sClassName );
 				}
 				// common items
-				palette = m_mapElementPalettes[wxT("Common Items")];
+				palette = m_mapElementPalettes[udnCOMMON_ITEMS];
 				for( size_t i = 0; i < palette->GetCount(); i++)
 				{
 					udPaletteItem *pPaletteItem = &palette->Item(i);
@@ -2483,18 +2483,18 @@ void udDiagElementItem::OnContextMenu(wxWindow* parent, const wxPoint& pos)
 				}
 				if( UpdateSubmenu(pSubmenu, arrComponents, udfDONT_CLEAR_CONTENT) ) pSubmenu->AppendSeparator();
 			}
-			
+
 			UpdateSubmenu(pSubmenu, pShape->GetAcceptedConnections(), udfDONT_CLEAR_CONTENT);
 		}
 		else
 		{
-			pPopupMenu->Insert(0, IDM_DIAG_NAVIGATETO, wxT("Navigate to element"), wxT("Scroll the diagram so the element will be in its center"));
+			pPopupMenu->Insert(0, IDM_DIAG_NAVIGATETO, _("Navigate to element"), _("Scroll the diagram so the element will be in its center"));
 			pPopupMenu->InsertSeparator(1);
 		}
-		
+
 		parent->PopupMenu(pPopupMenu, pos);
 	}
-	
+
 	delete pPopupMenu;
 }
 
@@ -2570,23 +2570,23 @@ wxString udDiagElementItem::GetUniqueName(const wxString& name)
 		udProjectItem *pItem  = NULL;
 		SerializableList lstElements;
 		udPROJECT::GetDiagramElements( pDiag, CLASSINFO(udDiagElementItem), lstElements, sfNORECURSIVE );
-		
+
 		SerializableList::compatibility_iterator node = lstElements.GetFirst();
 		while( node )
 		{
 			pItem = (udProjectItem*)node->GetData();
-			if( pItem->GetName() == uname ) { 
+			if( pItem->GetName() == uname ) {
 				occurence++;
 				uname = wxString::Format( wxT("%s %d"), name, occurence );
 				node = lstElements.GetFirst();
-				
+
 			} else {
 				node = node->GetNext();
 			}
 		}
-		
+
 		return uname;
-		
+
 	} else
 		return name;
 }
@@ -2640,10 +2640,10 @@ void udSubDiagramElementItem::OnCreate()
 		//m_pSubDiagram->SetDiagram( (udDiagramItem*) wxCreateDynamicObject( pParent->GetClassInfo()->GetClassName() ) );
 		bool unique = m_pSubDiagram->MustBeUnique();
 		m_pSubDiagram->SetMustBeUnique( false );
-		
+
 		m_pSubDiagram->SetName( m_sName );
 		m_pSubDiagram->SetDiagramType( pParent->GetDiagramType() );
-		
+
 		m_pSubDiagram->SetMustBeUnique( unique );
 	}
 }
@@ -2655,9 +2655,9 @@ void udSubDiagramElementItem::OnTreeTextChange(const wxString &txt)
 	// create also name of encapsulated diagram
 	bool unique = m_pSubDiagram->MustBeUnique();
 	m_pSubDiagram->SetMustBeUnique( false );
-		
+
 	m_pSubDiagram->OnTreeTextChange(m_sName);
-	
+
 	m_pSubDiagram->SetMustBeUnique( unique );
 }
 
@@ -2668,9 +2668,9 @@ void udSubDiagramElementItem::OnShapeTextChange(const wxString &txt, udLABEL::TY
 	// create also name of encapsulated diagram
 	bool unique = m_pSubDiagram->MustBeUnique();
 	m_pSubDiagram->SetMustBeUnique( false );
-	
+
 	m_pSubDiagram->OnTreeTextChange(m_sName);
-	
+
 	m_pSubDiagram->SetMustBeUnique( unique );
 }
 
@@ -2679,24 +2679,24 @@ void udSubDiagramElementItem::OnShapeTextChange(const wxString &txt, udLABEL::TY
 wxMenu* udSubDiagramElementItem::CreateMenu()
 {
 	const wxString &sAppPath = IPluginManager::Get()->GetResourcesPath();
-	
-    // create popup menu
-	
-	wxMenu *pPopupMenu = udDiagElementItem::CreateMenu();
-	
-    pPopupMenu->Insert(0, IDM_DIAG_SHOW, wxT("Show diagram"), wxT("Show diagram."));
 
-	wxMenuItem *pItem = new wxMenuItem(pPopupMenu, IDM_DIAG_SHOWPREVIEW, wxT("Code preview"));
+    // create popup menu
+
+	wxMenu *pPopupMenu = udDiagElementItem::CreateMenu();
+
+    pPopupMenu->Insert(0, IDM_DIAG_SHOW, _("Show diagram"), _("Show diagram."));
+
+	wxMenuItem *pItem = new wxMenuItem(pPopupMenu, IDM_DIAG_SHOWPREVIEW, _("Code preview"));
 	//pItem->SetBitmap(udArt::GetBitmap(wxT("udICON_PREVIEW")));
 	pItem->SetBitmap(wxBitmap(sAppPath + wxT("app/gui/spellcheck.png"), wxBITMAP_TYPE_PNG));
 	pPopupMenu->Insert(1, pItem);
 
 	pPopupMenu->InsertSeparator(2);
-	
-	pPopupMenu->Insert(3, IDM_DIAG_STORETOBANK, wxT("Store to bank"));
-	
+
+	pPopupMenu->Insert(3, IDM_DIAG_STORETOBANK, _("Store to bank"));
+
 	pPopupMenu->InsertSeparator(4);
-	
+
 	return pPopupMenu;
 }
 
