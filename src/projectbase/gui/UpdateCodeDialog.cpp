@@ -86,7 +86,7 @@ void udUpdateCodeDialog::OnUpdate(wxCommandEvent& event)
 
 void udUpdateCodeDialog::UpdateCodePreview(int selection)
 {
-	if( selection > -1 && selection < m_References->GetCount() )
+	if( selection > -1 && selection < (int)m_References->GetCount() )
 	{
 		udCodeItem *pItem = (udCodeItem*)m_References->Item( selection )->GetData();
 

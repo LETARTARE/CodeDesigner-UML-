@@ -70,7 +70,7 @@ void udManagePluginsDialog::FillPluginInfo(int index)
 {
 	PluginInfoArray& arrPluginsInfo = wxGetApp().GetPluginManager().GetPluginsInfo();
 
-	if( arrPluginsInfo.GetCount() > index)
+	if( (int)arrPluginsInfo.GetCount() > index)
 	{
 		udPluginInfo& info = arrPluginsInfo[index];
 
