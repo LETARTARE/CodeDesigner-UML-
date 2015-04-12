@@ -17,12 +17,12 @@
 #define udfDELAYED true
 #define udfNON_DELAYED false
 
-#define udnSTATE_CHART wxT("State Chart")
-#define udnSIMPLE_STATE_CHART wxT("Simple State Chart")
-#define udnUSE_CASE_DIAGRAM wxT("Use Case Diagram")
-#define udnCLASS_DIAGRAM wxT("Class Diagram")
-#define udnCOMMON_ITEMS wxT("Common Items")
-#define udnUNKNOWN wxT("Unknown")
+//#define udnSTATE_CHART wxT("State Chart")
+//#define udnSIMPLE_STATE_CHART wxT("Simple State Chart")
+//#define udnUSE_CASE_DIAGRAM wxT("Use Case Diagram")
+//#define udnCLASS_DIAGRAM wxT("Class Diagram")
+//#define udnCOMMON_ITEMS wxT("Common Items")
+//#define udnUNKNOWN wxT("Unknown")
 
 #define udvID_OFFSET 500000
 #define udvPROJECT_VERSION 2
@@ -61,7 +61,7 @@ public:
 };
 
 //WX_DECLARE_OBJARRAY( udPanelItem, PanelsArray );
-WX_DECLARE_HASH_MAP( int, udPanelItem*, wxIntegerHash, wxIntegerEqual, PanelMap ); 
+WX_DECLARE_HASH_MAP( int, udPanelItem*, wxIntegerHash, wxIntegerEqual, PanelMap );
 
 class udDiagramType
 {
@@ -85,16 +85,16 @@ public:
 		pitPROJITEM,
 		pitCODEITEM
 	};
-	
-	udProjectItemType(const wxString& classname, const wxString& viewname, PROJITEMTYPE type) 
+
+	udProjectItemType(const wxString& classname, const wxString& viewname, PROJITEMTYPE type)
 	: m_sClassName(classname), m_sViewName(viewname), m_nProjItemType(type) {;}
-	
+
 	wxString m_sClassName;
 	wxString m_sViewName;
 	PROJITEMTYPE m_nProjItemType;
 };
 
-WX_DECLARE_HASH_MAP( int, udProjectItemType*, wxIntegerHash, wxIntegerEqual, ProjectItemMap ); 
+WX_DECLARE_HASH_MAP( int, udProjectItemType*, wxIntegerHash, wxIntegerEqual, ProjectItemMap );
 
 class UMLDesignerFrame: public _MainFrame
 {
@@ -105,20 +105,20 @@ class UMLDesignerFrame: public _MainFrame
 		udLanguage* GetSelectedLanguage();
         udDiagramItem* GetActiveDiagram();
         udDiagramCanvas* GetActiveCanvas();
-        
+
 		udLog* GetLogWindow(){return m_pLogPanel;}
-		
+
 		udProjectManager* GetProjectManager(){ return m_pProjectManager; }
-		udProjStructTree* GetProjectTree(){ return (udProjStructTree*)m_pProjectManager->GetView( wxT("Project items") ); }
-		udCodeItemsTree* GetCodeTree(){ return (udCodeItemsTree*)m_pProjectManager->GetView( wxT("Code items") ); }
+		udProjStructTree* GetProjectTree(){ return (udProjStructTree*)m_pProjectManager->GetView( _("Project items") ); }
+		udCodeItemsTree* GetCodeTree(){ return (udCodeItemsTree*)m_pProjectManager->GetView( _("Code items") ); }
 		wxAuiNotebook* GetMainNotebook(){ return m_auintbDesignArea; }
 		wxSFThumbnail* GetThumbnail(){	return m_pThumbnail; }
-		
+
 		void OpenProjectFile(const wxString& path);
-		
+
 		static void EnableInternalEvents(bool enab) { m_fDispatchEvents = enab; }
 		static bool InternalEventsEnabled() { return m_fDispatchEvents; }
-		
+
 		void ConnectDiagramEvents(udDiagramCanvas *diagram, bool enable);
 		void DispatchEvent(wxEvent& evt, bool delayed);
 		void RegisterEventListener(wxEvtHandler *handler);
@@ -127,7 +127,7 @@ class UMLDesignerFrame: public _MainFrame
 
         void InitializeProject(udProject *proj);
         void InitializeChoices();
-		
+
 		void SetProjectModified(bool modified);
 		bool IsProjectModified(){return m_fModified;}
 		void SaveDiagramState(udDiagramItem *diag);
@@ -143,15 +143,15 @@ class UMLDesignerFrame: public _MainFrame
 		udDiagramType* FindDiagramInfoById(long id);
 		udDiagramType* FindDiagramInfoByName(const wxString& name);
 		udDiagramType* FindDiagramInfoByClassName(const wxString& name);
-		
+
 		udGeneratorInfo* FindGeneratorInfoByName(const wxString& name);
 		udGeneratorInfo* FindGeneratorInfoByClassName(const wxString& classname);
-		
+
 		DiagramsArray& GetDiagrams(){return m_arrDiagrams;}
 		GeneratorsArray& GetGenerators(){return m_arrGenerators;}
-		
+
 		StringMap& GetCodePackages(){return m_mapDefaultPkgNames;}
-		
+
 		void SetSelectedProjectItem(udProjectItem *item){m_pProcessedItem = item;}
 		udProjectItem* GetSelectedProjectItem(){return m_pProcessedItem;}
 
@@ -169,10 +169,10 @@ class UMLDesignerFrame: public _MainFrame
 		udLog* m_pLogPanel;
 		udProjectManager* m_pProjectManager;
 		udProjectItem* m_pProcessedItem;
-		
+
 		wxSFThumbnail* m_pThumbnail;
 		udCodeEditorPanel* m_pInstantEditor;
-		
+
 		/*#ifdef __WXGTK__*/
 		wxAuiToolBar* m_tbMainFrame;
         wxAuiToolBar* m_tbProjectItems;
@@ -184,7 +184,7 @@ class UMLDesignerFrame: public _MainFrame
         wxToolBar* m_tbDesign;
         wxToolBar* m_tbGenerator;
 		#endif*/
-	
+
         wxChoice* m_chGenerators;
         wxChoice* m_chAlgorithms;
         wxChoice* m_chLanguages;
@@ -196,11 +196,11 @@ class UMLDesignerFrame: public _MainFrame
 		//PanelsArray m_arrGUIComponents;
 		DiagramsArray m_arrDiagrams;
 		GeneratorsArray m_arrGenerators;
-		
+
 		PanelMap m_mapGUIComponents;
 		ProjectItemMap m_mapProjectItems;
 		StringMap m_mapDefaultPkgNames;
-		
+
 		ListenerList m_lstListeners;
 
 		bool m_fModified;
@@ -222,9 +222,9 @@ class UMLDesignerFrame: public _MainFrame
 		void CreateInstantEditor();
 
 		void UpdateAfterCopy(ShapeList& elements);
-		
+
 		void InsertIntoRecentFiles(wxString file);
-		
+
 		// static protected members
 		static bool m_fDispatchEvents;
 
@@ -268,10 +268,10 @@ class UMLDesignerFrame: public _MainFrame
         virtual void OnUpdateProjectItemSelected( wxUpdateUIEvent &event );
         virtual void OnUpdateCanvasActivated( wxUpdateUIEvent &event );
         virtual void OnUpdateGeneratorActivated( wxUpdateUIEvent &event );
-		
+
 		virtual void OnUpdateStoreToBank( wxUpdateUIEvent& event );
 		virtual void OnUpdateInsertFromBank( wxUpdateUIEvent& event );
-		
+
 		virtual void OnPageClosing( wxAuiNotebookEvent &event );
         virtual void OnPageChanged( wxAuiNotebookEvent &event );
 
@@ -307,7 +307,7 @@ class UMLDesignerFrame: public _MainFrame
         void OnUpdatePalettes( wxUpdateUIEvent &event );
         void OnUpdateAlignSelected( wxUpdateUIEvent &event );
         void OnUpdateGrid( wxUpdateUIEvent &event );
-		
+
 		void OnProjectItemSelected(udProjectEvent& event);
 		void OnProjectItemChanged(udProjectEvent& event);
 		void OnProjectItemAdded(udProjectEvent& event);

@@ -34,6 +34,8 @@ void udProjStructTree::CreateDiagramItems(udProjectItem* item, wxTreeItemId pare
 		InsertPaletteItems(pDiagramItem->GetDiagramType(), pDiagramItem, parent);
         // insert common items if contained
         InsertPaletteItems(udnCOMMON_ITEMS, pDiagramItem, parent);
+        /// NO TRANSLATE ?
+    //    InsertPaletteItems(_("Common Items"), pDiagramItem, parent);
     }
 }
 
@@ -59,7 +61,7 @@ void udProjStructTree::CreateElementItem(wxSFShapeBase* item)
     if(treeItem.IsOk())
     {
 		wxString sName;
-		
+
 		#ifdef __WXMSW__
 		wxWindowUpdateLocker noUpdate( this );
 		#endif
@@ -205,7 +207,7 @@ wxTreeItemId udProjStructTree::CreateTreeItems(udProjectItem* item, wxTreeItemId
 		#endif
 
 		int nImageIndex = udArt::GetImageIndex( item->GetClassInfo()->GetClassName() );
-		
+
         // create tree item relevat to project items
         if( item->IsKindOf(CLASSINFO(udRootItem)) )
         {
@@ -222,10 +224,10 @@ wxTreeItemId udProjStructTree::CreateTreeItems(udProjectItem* item, wxTreeItemId
         {
 			newItem = CreateItem( parent, item, nImageIndex );
 			EnsureVisible(newItem);
-			
+
 			CreateDiagramItems(item, newItem);
         }
-        else if( item->IsKindOf(CLASSINFO(udCodeLinkItem)) || 
+        else if( item->IsKindOf(CLASSINFO(udCodeLinkItem)) ||
 				 item->IsKindOf(CLASSINFO(udCodeItem)) )
 		{
 			udTreeItem *parentItem = (udTreeItem*) GetItemData( parent );
@@ -235,7 +237,7 @@ wxTreeItemId udProjStructTree::CreateTreeItems(udProjectItem* item, wxTreeItemId
         if(newItem.IsOk())
         {
             // EnsureVisible(newItem);
-        
+
 			// create item's children as well
 			SerializableList::compatibility_iterator node = item->GetFirstChildNode();
 			while(node)
@@ -257,12 +259,12 @@ void udProjStructTree::UpdateItem(udProjectItem* item)
 		// update tree item's label
 		wxString sText = item->GetName();
 		SetItemText( treeId, sText );
-		
+
 		// re-create its child items
 		DeleteChildren(treeId);
-		
+
 		if( item->IsKindOf( CLASSINFO(udDiagramItem) ) )
-		{			
+		{
 			this->CreateDiagramItems( item, treeId );
 		}
 		else if( item->IsKindOf( CLASSINFO(udSubDiagramElementItem) ) )

@@ -29,8 +29,8 @@ uddLabelElement::~uddLabelElement()
 void uddLabelElement::Initiliaze()
 {
     // set basic properties
-    SetText(wxT("Element"));
-	
+    SetText(_("Element"));
+
 	AcceptChild(wxT("uddDnDElement"));
 	//AcceptConnection(wxT("uddNoteConnItem"));
 	//AcceptSrcNeighbour(wxT("All"));
@@ -42,7 +42,7 @@ void uddLabelElement::Initiliaze()
 	udSettings& settings = IPluginManager::Get()->GetAppSettings();
 	SetFont( settings.GetProperty(wxT("Default font"))->AsFont() );
 	SetHoverColour( settings.GetProperty(wxT("Hover colour"))->AsColour() );
-	
+
     SetStyle( sfsPOSITION_CHANGE | sfsHOVERING | sfsPROCESS_DEL | sfsSHOW_HANDLES);
 }
 
@@ -59,12 +59,12 @@ void uddLabelElement::DisableUselessProperties()
     EnablePropertySerialization(wxT("hover_color"), false);
     EnablePropertySerialization(wxT("font"), false);
 	EnablePropertySerialization(wxT("custom_dock_point"), false);
-	
+
 	EnablePropertySerialization(wxT("accepted_connections"), false);
 	EnablePropertySerialization(wxT("accepted_children"), false);
 	EnablePropertySerialization(wxT("accepted_src_neighbours"), false);
 	EnablePropertySerialization(wxT("accepted_trg_neighbours"), false);
-	
+
 	EnablePropertySerialization(wxT("edittype"), false);
 	EnablePropertySerialization(wxT("multiline"), false);
 	EnablePropertySerialization(wxT("label_type"), false);

@@ -31,8 +31,8 @@ XS_IMPLEMENT_CLONABLE_CLASS(udRootItem, udProjectItem);
 
 udRootItem::udRootItem() : udProjectItem()
 {
-    m_sName = wxT("Project items");
-	
+    m_sName = _("Project items");
+
 	RemoveProperty( GetProperty( wxT("description") ) );
 }
 
@@ -50,24 +50,24 @@ udRootItem::~udRootItem()
 wxMenu* udRootItem::CreateMenu()
 {
 	const wxString &sResPath = wxGetApp().GetResourcesPath();
-	
+
 	// create popup menu
 	wxMenu *pPopupMenu = new wxMenu();
-	
-	wxMenuItem *pItem = new wxMenuItem(pPopupMenu, IDM_PROJ_PACKAGE, wxT("Create diagram package"), wxT("Create new package and add it to the project root"));
+
+	wxMenuItem *pItem = new wxMenuItem(pPopupMenu, IDM_PROJ_PACKAGE, _("Create diagram package"), _("Create new package and add it to the project root"));
 	pItem->SetBitmap(wxBitmap(sResPath + wxT("app/project/cube_green.xpm"), wxBITMAP_TYPE_XPM));
 	pPopupMenu->Append(pItem);
 
-	pItem = new wxMenuItem(pPopupMenu, IDM_PROJ_CODEPACKAGE, wxT("Create code package"), wxT("Create new code package and add it to the project root"));
+	pItem = new wxMenuItem(pPopupMenu, IDM_PROJ_CODEPACKAGE, _("Create code package"), _("Create new code package and add it to the project root"));
 	pItem->SetBitmap(wxBitmap(sResPath + wxT("app/project/cube_yellow.xpm"), wxBITMAP_TYPE_XPM));
 	pPopupMenu->Append(pItem);
 
 	pPopupMenu->AppendSeparator();
 
-	pItem = new wxMenuItem(pPopupMenu, IDM_DELAYED_REMOVEALL, wxT("Remove all"));
+	pItem = new wxMenuItem(pPopupMenu, IDM_DELAYED_REMOVEALL, _("Remove all"));
 	//pItem->SetBitmap(wxBitmap(delete_xpm));
 	pPopupMenu->Append(pItem);
-	
+
 	return pPopupMenu;
 }
 
@@ -76,7 +76,7 @@ void udRootItem::OnTreeItemEndDrag(const wxPoint& pos)
 	udProjectTree *pView = wxGetApp().GetMainFrame()->GetProjectManager()->GetActiveView();
 
 	udProjectItem *pSourceItem = wxGetApp().GetMainFrame()->GetSelectedProjectItem();
-	
+
 	if( pSourceItem && (
 		pSourceItem->IsKindOf( CLASSINFO(udPackageItem) ) ||
 		pSourceItem->IsKindOf( CLASSINFO(udCodeItem) ) ||
@@ -84,7 +84,7 @@ void udRootItem::OnTreeItemEndDrag(const wxPoint& pos)
 	{
 		// reparent item
 		pSourceItem->Reparent( this );
-		
+
 		// update the code tree
 		pView->UpdateItem( this );
 	}
@@ -116,7 +116,7 @@ void udRootItem::Deserialize(wxXmlNode* node)
     // deserialize standard defined properties
     udProjectItem::Deserialize(node);
 
-    // deserialize non-standard properties	
+    // deserialize non-standard properties
     wxXmlNode *propNode = node->GetChildren();
 	while(propNode)
 	{
@@ -139,9 +139,9 @@ XS_IMPLEMENT_CLONABLE_CLASS(udPackageItem, udProjectItem);
 
 udPackageItem::udPackageItem() : udProjectItem()
 {
-    m_sName = wxT("Package");
+    m_sName = _("Package");
 	m_fMustBeUnique = false;
-	
+
 	AcceptChild(wxT("udPackageItem"));
 	AcceptChild(wxT("udSStateChartDiagramItem"));
 	AcceptChild(wxT("udHStateChartDiagramItem"));
@@ -151,7 +151,7 @@ udPackageItem::udPackageItem() : udProjectItem()
 }
 
 udPackageItem::udPackageItem(const udPackageItem &obj) : udProjectItem(obj)
-{	
+{
 	RemoveProperty( GetProperty( wxT("description") ) );
 }
 
@@ -164,9 +164,9 @@ udPackageItem::~udPackageItem()
 wxMenu* udPackageItem::CreateMenu()
 {
 	// create popup menu
-	wxMenu *pPopupMenu = new wxMenu(); 
-	
-	wxMenuItem *pItem = new wxMenuItem(pPopupMenu, IDM_PROJ_PACKAGE, wxT("Create diagram package"), wxT("Create new package and add it to the project root"));
+	wxMenu *pPopupMenu = new wxMenu();
+
+	wxMenuItem *pItem = new wxMenuItem(pPopupMenu, IDM_PROJ_PACKAGE, _("Create diagram package"), _("Create new package and add it to the project root"));
 	pItem->SetBitmap(udArt::GetBitmap(wxT("udPackageItem")));
 	pPopupMenu->Append(pItem);
 
@@ -175,19 +175,19 @@ wxMenu* udPackageItem::CreateMenu()
 	DiagramsArray arrDiagrams = wxGetApp().GetMainFrame()->GetDiagrams();
 	for( size_t i = 0; i < arrDiagrams.GetCount(); i++ )
 	{
-        pItem = new wxMenuItem(pPopupMenu, arrDiagrams[i].m_nId, wxT("Create ") + arrDiagrams[i].m_sName, wxT("Create new ") + arrDiagrams[i].m_sName + wxT(" and add it to the current package."));
+        pItem = new wxMenuItem(pPopupMenu, arrDiagrams[i].m_nId, _("Create ") + arrDiagrams[i].m_sName, _("Create new ") + arrDiagrams[i].m_sName + _(" and add it to the current package."));
         pItem->SetBitmap(udArt::GetBitmap(arrDiagrams[i].m_sClassName));
         pPopupMenu->Append(pItem);
 	}
-	
+
 	pPopupMenu->AppendSeparator();
-	
-	pPopupMenu->Append(IDM_DIAG_INSERTFROMBANK, wxT("Insert diagram from bank"));
+
+	pPopupMenu->Append(IDM_DIAG_INSERTFROMBANK, _("Insert diagram from bank"));
 
     //pPopupMenu->AppendSeparator();
-    //pPopupMenu->Append(IDM_DELAYED_EDIT, wxT("Edit properties..."), wxT("Edit package properties."));
+    //pPopupMenu->Append(IDM_DELAYED_EDIT, _("Edit properties..."), _("Edit package properties."));
     pPopupMenu->AppendSeparator();
-    pPopupMenu->Append(IDM_DELAYED_REMOVE, wxT("Remove package"), wxT("Remove package and all included items."));
+    pPopupMenu->Append(IDM_DELAYED_REMOVE, _("Remove package"), _("Remove package and all included items."));
 
 	return pPopupMenu;
 }
@@ -196,7 +196,7 @@ bool udPackageItem::OnTreeItemBeginDrag(const wxPoint& pos)
 {
 	// if a shift key is pressed down then re-arrange it by a DnD operation built-in in a tree control
 	wxMouseState cState = wxGetMouseState();
-	if( cState.ShiftDown() ) return false;	
+	if( cState.ShiftDown() ) return false;
 	else
 		return true;
 }
@@ -204,7 +204,7 @@ bool udPackageItem::OnTreeItemBeginDrag(const wxPoint& pos)
 void udPackageItem::OnTreeItemEndDrag(const wxPoint& pos)
 {
 	udProjectItem *pSourceItem = wxGetApp().GetMainFrame()->GetSelectedProjectItem();
-	
+
 	if( pSourceItem && IsChildAccepted(pSourceItem->GetClassInfo()->GetClassName()) )
 	{
 		udProjectItem *pSourceParent = wxDynamicCast( pSourceItem->GetParent(), udProjectItem );
@@ -213,10 +213,10 @@ void udPackageItem::OnTreeItemEndDrag(const wxPoint& pos)
 			// get list of source item's successors and check whether the target item isn't in the list
 			SerializableList lstChildren;
 			pSourceItem->GetChildrenRecursively( CLASSINFO(udPackageItem), lstChildren );
-			
+
 			if(lstChildren.IndexOf( this ) != wxNOT_FOUND )
 			{
-				wxMessageBox( wxT("Couldn't move item to its successor."), wxT("CodeDesigner"), wxICON_WARNING | wxOK );
+				wxMessageBox( _("Couldn't move item to its successor."), wxT("CodeDesigner"), wxICON_WARNING | wxOK );
 			}
 			else
 			{
@@ -225,7 +225,7 @@ void udPackageItem::OnTreeItemEndDrag(const wxPoint& pos)
 
 				// update tree items and other related stuff
 				UMLDesignerFrame::SendProjectEvent( wxEVT_CD_ITEM_CHANGED, wxID_ANY, this );
-				
+
 				if( pSourceParent != this )
 				{
 					UMLDesignerFrame::SendProjectEvent( wxEVT_CD_ITEM_CHANGED, wxID_ANY, pSourceParent );
@@ -245,9 +245,9 @@ XS_IMPLEMENT_CLONABLE_CLASS(udCodePackageItem, udProjectItem);
 
 udCodePackageItem::udCodePackageItem() : udProjectItem()
 {
-    m_sName = wxT("Package");
+    m_sName = _("Package");
 	m_fMustBeUnique = false;
-	
+
 	AcceptChild(wxT("udCodePackageItem"));
 	AcceptChild(wxT("udActionItem"));
 	AcceptChild(wxT("udConditionItem"));
@@ -277,25 +277,25 @@ wxMenu* udCodePackageItem::CreateMenu()
 {
 	// create popup menu
 	wxMenu *pPopupMenu = new wxMenu();
-	
-	wxMenuItem *pItem = new wxMenuItem(pPopupMenu, IDM_PROJ_CODEPACKAGE, wxT("Create code package"), wxT("Create new code package"));
+
+	wxMenuItem *pItem = new wxMenuItem(pPopupMenu, IDM_PROJ_CODEPACKAGE, _("Create code package"), _("Create new code package"));
 	pItem->SetBitmap(udArt::GetBitmap(wxT("udCodePackageItem")));
 	pPopupMenu->Append(pItem);
-	
+
 	pPopupMenu->AppendSeparator();
-	
-	pItem = new wxMenuItem(pPopupMenu, IDM_PROJ_VARIABLE, wxT("Create generic variable"), wxT("Create new user-defined variable"));
+
+	pItem = new wxMenuItem(pPopupMenu, IDM_PROJ_VARIABLE, _("Create generic variable"), _("Create new user-defined variable"));
 	pItem->SetBitmap(udArt::GetBitmap(wxT("udGenericVariableItem")));
 	pPopupMenu->Append(pItem);
-	
-	pItem = new wxMenuItem(pPopupMenu, IDM_PROJ_FUNCTION, wxT("Create generic function"), wxT("Create new user-defined function"));
+
+	pItem = new wxMenuItem(pPopupMenu, IDM_PROJ_FUNCTION, _("Create generic function"), _("Create new user-defined function"));
 	pItem->SetBitmap(udArt::GetBitmap(wxT("udGenericFunctionItem")));
 	pPopupMenu->Append(pItem);
 
     pPopupMenu->AppendSeparator();
-	
-    pPopupMenu->Append(IDM_DELAYED_REMOVE, wxT("Remove package"), wxT("Remove all user-defined code items."));
-	
+
+    pPopupMenu->Append(IDM_DELAYED_REMOVE, _("Remove package"), _("Remove all user-defined code items."));
+
 	return pPopupMenu;
 }
 
@@ -303,7 +303,7 @@ bool udCodePackageItem::OnTreeItemBeginDrag(const wxPoint &pos)
 {
 	// if a shift key is pressed down then re-arrange it by a DnD operation built-in in a tree control
 	wxMouseState cState = wxGetMouseState();
-	if( cState.ShiftDown() ) return false;	
+	if( cState.ShiftDown() ) return false;
 	else
 		return true;
 }
@@ -311,7 +311,7 @@ bool udCodePackageItem::OnTreeItemBeginDrag(const wxPoint &pos)
 void udCodePackageItem::OnTreeItemEndDrag(const wxPoint &pos)
 {
 	udProjectItem *pSourceItem = wxGetApp().GetMainFrame()->GetSelectedProjectItem();
-	
+
 	if( pSourceItem && IsChildAccepted(pSourceItem->GetClassInfo()->GetClassName()) )
 	{
 		udProjectItem *pSourceParent = wxDynamicCast( pSourceItem->GetParent(), udProjectItem );
@@ -320,10 +320,10 @@ void udCodePackageItem::OnTreeItemEndDrag(const wxPoint &pos)
 			// get list of source item's successors and check whether the target item isn't in the list
 			SerializableList lstChildren;
 			pSourceItem->GetChildrenRecursively( CLASSINFO(udProjectItem), lstChildren );
-			
+
 			if(lstChildren.IndexOf( this ) != wxNOT_FOUND )
 			{
-				wxMessageBox( wxT("Couldn't move item to its successor."), wxT("CodeDesigner"), wxICON_WARNING | wxOK );
+				wxMessageBox( _("Couldn't move item to its successor."), wxT("CodeDesigner"), wxICON_WARNING | wxOK );
 			}
 			else
 			{
@@ -332,7 +332,7 @@ void udCodePackageItem::OnTreeItemEndDrag(const wxPoint &pos)
 
 				// update tree items and other related stuffs );
 				UMLDesignerFrame::SendProjectEvent( wxEVT_CD_ITEM_CHANGED, wxID_ANY, this );
-					
+
 				if( pSourceParent != this )
 				{
 					UMLDesignerFrame::SendProjectEvent( wxEVT_CD_ITEM_CHANGED, wxID_ANY, pSourceParent );
@@ -374,22 +374,22 @@ void udGroupElementItem::OnEditItem(wxWindow* parent)
 	{
 		udGroupDialog dlg(parent);
 		udWindowManager mgr(dlg, wxT("group_dialog"));
-		
+
 		wxBrush fill = pGroup->GetFill();
-		
+
 		dlg.SetCodeName( m_sName );
 		dlg.SetDescription( m_sDescription );
 		dlg.SetColour( fill.GetColour() );
-		
+
 		if( dlg.ShowModal() == wxID_OK )
-		{	
+		{
 			fill.SetColour( dlg.GetColour() );
 			pGroup->SetFill( fill );
-			
+
 			SetDescription( dlg.GetDescription() );
-			
+
 			OnTreeTextChange( dlg.GetCodeName() );
-			
+
 			IPluginManager::Get()->SendProjectEvent( wxEVT_CD_ITEM_CHANGED, wxID_ANY, this );
 		}
 	}
@@ -408,7 +408,7 @@ udProject::udProject()
 	SetSerializerOwner( wxT("CodeDesigner") );
 	SetSerializerRootName( wxT("project") );
 	SetSerializerVersion( wxT("1.0") );
-	
+
     CreateRootItem();
 }
 
@@ -431,18 +431,18 @@ void udProject::CreateRootItem()
 {
     // create root item
     udRootItem* root = new udRootItem();
-	
+
     root->SetId(GetNewId());
-	
+
 	// initialize project settings
 	root->GetSettings().CreateCategories();
-	
+
 	udSettings& Settings = wxGetApp().GetSettings();
 	wxString sPath = Settings.GetProperty(wxT("Output directory"))->ToString();
-	
+
 	m_sProjectPath = sPath; //wxGetCwd();
 	m_sProjectDir = sPath;
-	
+
 	root->GetSettings().GetProperty(wxT("Output directory"))->FromString( sPath );
 
     SetRootItem(root);
@@ -467,7 +467,7 @@ udDiagramItem* udProject::GetDiagram(udDiagramCanvas *canvas)
 	{
 		udDiagramItem *diagram;
 		SerializableList lstDiagrams;
-	
+
 	    GetDiagramsRecursively( CLASSINFO(udDiagramItem), lstDiagrams );
 		SerializableList::compatibility_iterator node = lstDiagrams.GetFirst();
 		while(node)
@@ -508,16 +508,16 @@ udDiagElementItem* udProject::GetDiagramElement(const wxString& diagram, const w
 udDiagElementItem* udProject::GetDiagramElement(const wxString& element)
 {
 	udDiagElementItem *pDiagElement;
-	
+
 	SerializableList lstDiagrams;
 	GetDiagramsRecursively(NULL, lstDiagrams);
-	
+
 	for( SerializableList::iterator it = lstDiagrams.begin(); it != lstDiagrams.end(); ++it )
 	{
 		pDiagElement = (udDiagElementItem*) udPROJECT::GetDiagramElement( (udDiagramItem*)*it, element );
 		if( pDiagElement ) return pDiagElement;
 	}
-	
+
 	return NULL;
 }
 
@@ -555,7 +555,7 @@ void udProject::GetCodeLinks(bool valid, wxClassInfo *type, const wxString& code
     SerializableList lstParents;
     udCodeLinkItem *pLink;
 	udProjectItem *pOriginal;
-	
+
     GetDiagramElements( CLASSINFO(udDiagElementItem), lstParents );
     SerializableList::compatibility_iterator node = lstParents.GetFirst();
     while( node )
@@ -670,7 +670,7 @@ void udProject::CheckCodeLinks()
 
 		pLink->GetParent()->GetChildrenList().DeleteObject( pLink );
 		delete pLink;
-		
+
         node = node->GetNext();
     }
 }
@@ -679,7 +679,7 @@ udProjectItem* udProject::GetProjectItem(wxClassInfo* type, const wxString& name
 {
 	SerializableList lstItems;
 	GetItems( type, lstItems );
-				
+
 	SerializableList::compatibility_iterator node = lstItems.GetFirst();
 	while( node )
 	{
@@ -693,7 +693,7 @@ udCodeItem* udProject::GetCodeItem(wxClassInfo* type, const wxString& name, cons
 {
 	SerializableList lstItems;
 	GetItems( type, lstItems );
-				
+
 	SerializableList::compatibility_iterator node = lstItems.GetFirst();
 	while( node )
 	{
@@ -701,10 +701,10 @@ udCodeItem* udProject::GetCodeItem(wxClassInfo* type, const wxString& name, cons
 		if( pItem &&
 			( pItem->GetName() == name ) &&
 			( pItem->GetScope() == scope ) ) return pItem;
-	
+
 		node = node->GetNext();
 	}
-	
+
 	return NULL;
 }
 
@@ -772,36 +772,36 @@ void udProject::GetDiagramCodeItems(udDiagramItem* diagram, wxClassInfo* type, S
 	SerializableList lstElements;
 	SerializableList lstLinks;
 	SerializableList lstDiagrams;
-	
+
 	lstDiagrams.Append( diagram );
 	udPROJECT::GetSubDiagrams( diagram, CLASSINFO(udDiagramItem), lstDiagrams );
-	
+
 	for( SerializableList::iterator it = lstDiagrams.begin(); it != lstDiagrams.end(); ++it )
 	{
 		udDiagramItem *pDiag = (udDiagramItem*)*it;
-		
+
 		// get specific dependencies
 		pDiag->GetSpecificCodeItems( type, codeitems );
-		
+
 		// add diagram's dependencies to the record
 		pFcn = GetFunctionImplementedBy( pDiag );
 		if( pFcn && (codeitems.IndexOf( pFcn ) == wxNOT_FOUND) )
 		{
 			codeitems.Append( pFcn );
 		}
-		
+
 		// get code items assigned to the diagram elements
 		lstElements.Clear();
-		
+
 		udPROJECT::GetDiagramElements( pDiag, CLASSINFO(udDiagElementItem), lstElements, sfRECURSIVE );
-		
+
 		for( SerializableList::iterator it = lstElements.begin(); it != lstElements.end(); ++it )
 		{
 			pElement = (udDiagElementItem*) *it;
-			
+
 			lstLinks.Clear();
 			pElement->GetCodeItems( CLASSINFO(udCodeLinkItem), lstLinks );
-			
+
 			for( SerializableList::iterator it2 = lstLinks.begin(); it2 != lstLinks.end(); ++it2 )
 			{
 				pItem = ((udCodeLinkItem*) *it2)->GetOriginal();
@@ -845,15 +845,15 @@ void udProject::AppendSubDiagramsShapes(ShapeList& elements)
 udFunctionItem* udProject::GetFunctionImplementedBy(const udDiagramItem* diag)
 {
 	wxASSERT( diag );
-	
+
 	SerializableList lstFunctions;
 	GetItems( CLASSINFO(udFunctionItem), lstFunctions );
-	
+
 	for( SerializableList::iterator it = lstFunctions.begin(); it != lstFunctions.end(); ++it )
 	{
 		if( ((udFunctionItem*)*it)->GetImplementation() == diag->GetName() ) return (udFunctionItem*)*it;
 	}
-	
+
 	return NULL;
 }
 

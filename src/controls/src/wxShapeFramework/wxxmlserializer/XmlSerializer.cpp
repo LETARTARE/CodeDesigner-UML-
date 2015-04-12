@@ -63,7 +63,7 @@ xsSerializable::xsSerializable(const xsSerializable& obj)
     m_nId = obj.m_nId;
 
     XS_SERIALIZE(m_nId, wxT("id"));
-	
+
 	// copy serialized children as well
 	SerializableList::compatibility_iterator node = obj.GetFirstChildNode();
 	while( node )
@@ -79,7 +79,7 @@ xsSerializable::~xsSerializable()
 	{
 		m_pParentManager->GetUsedIDs().erase( m_nId );
 	}
-	
+
     m_lstProperties.DeleteContents(true);
     m_lstProperties.Clear();
 
@@ -92,7 +92,7 @@ xsSerializable::~xsSerializable()
 void xsSerializable::SetId(long id)
 {
 	m_nId = id;
-	
+
 	if( m_pParentManager ) m_pParentManager->GetUsedIDs()[id] = this;
 }
 
@@ -103,7 +103,7 @@ xsSerializable* xsSerializable::AddChild(xsSerializable* child)
     if( child )
     {
 		InitChild( child );
-		
+
         m_lstChildItems.Append(child);
     }
 
@@ -117,7 +117,7 @@ xsSerializable* xsSerializable::InsertChild(size_t pos, xsSerializable* child)
     if( child )
     {
 		InitChild( child );
-		
+
         m_lstChildItems.Insert(pos, child);
     }
 
@@ -142,7 +142,7 @@ void xsSerializable::Reparent(xsSerializable* parent)
 void xsSerializable::RemoveChild(xsSerializable* child)
 {
 	wxASSERT( child );
-	
+
 	if( child )
 	{
 		m_lstChildItems.DeleteObject( child );
@@ -221,7 +221,7 @@ xsSerializable* xsSerializable::GetSibbling(wxClassInfo *type)
 		while( node )
 		{
 			node = node->GetNext();
-			
+
 			if( node && (node->GetData()->IsKindOf( type ) ) ) return node->GetData();
 		}
     }
@@ -280,7 +280,7 @@ void xsSerializable::GetChildrenRecursively(wxClassInfo *type, SerializableList&
 
         node = node->GetNext();
     }
-	
+
 	if( mode == searchBFS )
 	{
 		node = m_lstChildItems.GetFirst();
@@ -452,28 +452,28 @@ void xsSerializable::InitChild(xsSerializable* child)
 			if( child->m_pParentManager != m_pParentManager )
 			{
 				child->m_pParentManager = m_pParentManager;
-				
+
 				// assign unique ids to the child object
 				if( child->GetId() == -1 ) child->SetId(m_pParentManager->GetNewId());
 				else
 					m_pParentManager->GetUsedIDs()[child->GetId()] = child;
-				
+
 				// if the child has another children, set their parent manager and ID as well
 				xsSerializable *pItem;
 				SerializableList lstChildren;
 				child->GetChildrenRecursively( NULL, lstChildren );
-				
+
 				SerializableList::compatibility_iterator node = lstChildren.GetFirst();
 				while( node )
 				{
 					pItem = node->GetData();
-					
+
 					pItem->SetParentManager( m_pParentManager );
-					
+
 					if( pItem->GetId() == -1 ) pItem->SetId(m_pParentManager->GetNewId());
 					else
 						m_pParentManager->GetUsedIDs()[pItem->GetId()] = pItem;
-					
+
 					node = node->GetNext();
 				}
 			}
@@ -515,7 +515,7 @@ wxXmlSerializer::wxXmlSerializer(const wxXmlSerializer &obj)
 	m_fClone = obj.m_fClone;
 
 	m_pRoot = NULL;
-	
+
 	SetRootItem((xsSerializable*)obj.m_pRoot->Clone());
 
 	m_nRefCounter++;
@@ -618,9 +618,9 @@ bool wxXmlSerializer::Contains(xsSerializable *object) const
 bool wxXmlSerializer::Contains(wxClassInfo *type)
 {
 	SerializableList lstItems;
-		
+
 	GetItems( type, lstItems );
-		
+
 	return !lstItems.IsEmpty();
 }
 
@@ -638,9 +638,9 @@ void wxXmlSerializer::CopyItems(const wxXmlSerializer& src)
 	m_pRoot->GetChildrenList().DeleteContents( true );
 	m_pRoot->GetChildrenList().Clear();
 	m_pRoot->GetChildrenList().DeleteContents( false );
-	
+
 	m_mapUsedIDs.clear();
-	
+
 	SerializableList::compatibility_iterator node = src.GetRootItem()->GetFirstChildNode();
 	while( node )
 	{
@@ -665,7 +665,7 @@ xsSerializable*  wxXmlSerializer::AddItem(xsSerializable* parent, xsSerializable
 		else
 			m_pRoot->AddChild(item);
     }
-	
+
 	return item;
 }
 
@@ -679,7 +679,7 @@ void wxXmlSerializer::RemoveItem(xsSerializable* item)
     wxASSERT(item);
 
     if(item)
-    {		
+    {
         if( item->GetParent() )
         {
             item->GetParent()->GetChildrenList().DeleteObject(item);
@@ -709,22 +709,22 @@ void wxXmlSerializer::SetRootItem(xsSerializable* root)
 
 	// update pointers to parent manager
 	m_mapUsedIDs.clear();
-	
+
 	m_pRoot->m_pParentManager = this;
 	m_mapUsedIDs[m_pRoot->GetId()] = m_pRoot;
-	
+
 	xsSerializable *pItem;
 	SerializableList lstItems;
 	GetItems(NULL, lstItems);
-	
+
 	SerializableList::compatibility_iterator node = lstItems.GetFirst();
 	while( node )
 	{
 		pItem = node->GetData();
-		
+
 		pItem->m_pParentManager = this;
 		m_mapUsedIDs[pItem->GetId()] = pItem;
-		
+
 		node = node->GetNext();
 	}
 }
@@ -779,25 +779,25 @@ bool wxXmlSerializer::SerializeToXml(wxOutputStream& outstream, bool withroot)
 		}
 		catch (...)
 		{
-			m_sErr = wxT("Unable to save XML document.");
+			m_sErr = _("Unable to save XML document.");
 			return false;
 		}
 	}
-	
+
 	return true;
 }
 
 bool wxXmlSerializer::DeserializeFromXml(const wxString& file)
 {
 	wxFileInputStream instream(file);
-	
+
 	if(instream.IsOk())
 	{
 		return this->DeserializeFromXml(instream);
 	}
 	else
-		m_sErr = wxT("Unable to initialize input stream.");
-	
+		m_sErr = _("Unable to initialize input stream.");
+
 	return false;
 }
 
@@ -828,16 +828,16 @@ bool wxXmlSerializer::DeserializeFromXml(wxInputStream& instream)
 				return true;
 		    }
             else
-				m_sErr = wxT("No matching file owner or version.");
+				m_sErr = _("No matching file owner or version.");
 		}
 		else
-			m_sErr = wxT("Unknown file format.");
+			m_sErr = _("Unknown file format.");
 	}
 	catch (...)
 	{
-		m_sErr = wxT("Unable to load XML file.");
+		m_sErr = _("Unable to load XML file.");
 	}
-	
+
 	return false;
 }
 
@@ -956,18 +956,18 @@ int wxXmlSerializer::GetIDCount(long id)
 long wxXmlSerializer::GetNewId()
 {
 /*	long nId = 1;
-	
+
 	for ( IDMap::iterator it = m_mapUsedIDs.begin(); it != m_mapUsedIDs.end(); it++, nId++ )
 	{
 		if (it->first != nId) break;
 	}
-	
+
 	return nId;*/
-	
+
 	long nId = 1;
-	
+
 	while( m_mapUsedIDs.find( nId ) != m_mapUsedIDs.end() ) nId++;
-	
+
 	return nId;
 }
 

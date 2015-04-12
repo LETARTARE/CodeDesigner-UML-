@@ -31,7 +31,7 @@ udDiagramItem* udStateChartOptimizer::Optimize(udDiagramItem *src)
 {
 	bool fTryMore;
 	int nMaxOptCycles = 10;
-	
+
 	udSettings &Settings = IPluginManager::Get()->GetProjectSettings();
 
 	// create local copy of the optimized diagram
@@ -43,7 +43,7 @@ udDiagramItem* udStateChartOptimizer::Optimize(udDiagramItem *src)
 	{
 		fTryMore = false;
 
-		IPluginManager::Get()->Log(wxString::Format(wxT(">>> Iteration %d ..."), 11 - nMaxOptCycles));
+		IPluginManager::Get()->Log(wxString::Format(_(">>> Iteration %d ..."), 11 - nMaxOptCycles));
 		// perform required optimization steps
 		if( Settings.GetProperty( wxT("Merge direct branches") )->AsBool() && (m_nFlags & optMERGE_DIRECT_BRANCHES) )
 		{
@@ -143,7 +143,7 @@ bool udStateChartOptimizer::InvertConditions(udDiagramItem *src)
 					// copy actions form second transition to the first
 					pSecondTranElement->CopyActionItems( pFirstTranElement );
 					// clear actions in the second transition
-					pFirstTranElement->ClearCodeItems( CLASSINFO(udActionItem) );				
+					pFirstTranElement->ClearCodeItems( CLASSINFO(udActionItem) );
 
 					// swap targets
 					nTmpId = pSecondTrans->GetTrgShapeId();
@@ -173,7 +173,7 @@ bool udStateChartOptimizer::MergeTransitions(udDiagramItem *src)
 	wxSFLineShape *pTrans;
 	udTransElementItem *pLineElement;
 	ShapeList lstStates, lstTransitions, lstSubTrans, lstSubActs;
-	
+
 	udLanguage *pLang = m_pGenerator->GetActiveLanguage();
 
 	// get all (pseudo) states in the source diagram
@@ -218,7 +218,7 @@ bool udStateChartOptimizer::MergeTransitions(udDiagramItem *src)
 						{
 							pTrans = (wxSFLineShape*)anode->GetData();
 							pLineElement = (udTransElementItem*)pTrans->GetUserData();
-							
+
 							//pCondition = ((udTransElementItem*)pTrans->GetUserData())->GetCondition();
 							//sCondString = ((udTransElementItem*)pTrans->GetUserData())->GetConditionString( pLang );
 							if( !pLineElement->HasCondition() )
@@ -254,7 +254,7 @@ bool udStateChartOptimizer::MergeTransitions(udDiagramItem *src)
 						pLineElement->ClearCodeItems( CLASSINFO(udEventItem) );
 						// set new condition
 						pLineElement->AssignCodeItem( pNewCond );
-						
+
 						pLineElement->SetName(wxString::Format(wxT("Optimized transition %d"), nIndex));
 
 						nIndex++;

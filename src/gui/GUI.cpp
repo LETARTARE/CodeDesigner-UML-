@@ -43,356 +43,356 @@ _MainFrame::_MainFrame( wxWindow* parent, wxWindowID id, const wxString& title, 
 {
 	this->SetSizeHints( wxSize( -1,-1 ), wxDefaultSize );
 	this->SetBackgroundColour( wxSystemSettings::GetColour( wxSYS_COLOUR_BTNFACE ) );
-	
+
 	mbar = new wxMenuBar( 0 );
 	fileMenu = new wxMenu();
 	wxMenuItem* menuFileNew;
-	menuFileNew = new wxMenuItem( fileMenu, wxID_NEW, wxString( wxT("&New project") ) + wxT('\t') + wxT("Ctrl+N"), wxEmptyString, wxITEM_NORMAL );
+	menuFileNew = new wxMenuItem( fileMenu, wxID_NEW, wxString( _("&New project") ) + wxT('\t') + wxT("Ctrl+N"), wxEmptyString, wxITEM_NORMAL );
 	#ifdef __WXMSW__
 	menuFileNew->SetBitmaps( wxBitmap( filenew_xpm ) );
 	#elif (defined( __WXGTK__ ) || defined( __WXOSX__ ))
 	menuFileNew->SetBitmap( wxBitmap( filenew_xpm ) );
 	#endif
 	fileMenu->Append( menuFileNew );
-	
+
 	wxMenuItem* menuFileOpen;
-	menuFileOpen = new wxMenuItem( fileMenu, wxID_OPEN, wxString( wxT("&Open project...") ) + wxT('\t') + wxT("Ctrl+O"), wxEmptyString, wxITEM_NORMAL );
+	menuFileOpen = new wxMenuItem( fileMenu, wxID_OPEN, wxString( _("&Open project...") ) + wxT('\t') + wxT("Ctrl+O"), wxEmptyString, wxITEM_NORMAL );
 	#ifdef __WXMSW__
 	menuFileOpen->SetBitmaps( wxBitmap( fileopen_xpm ) );
 	#elif (defined( __WXGTK__ ) || defined( __WXOSX__ ))
 	menuFileOpen->SetBitmap( wxBitmap( fileopen_xpm ) );
 	#endif
 	fileMenu->Append( menuFileOpen );
-	
+
 	wxMenuItem* menuFileSave;
-	menuFileSave = new wxMenuItem( fileMenu, wxID_SAVE, wxString( wxT("Save") ) + wxT('\t') + wxT("CTRL+S"), wxEmptyString, wxITEM_NORMAL );
+	menuFileSave = new wxMenuItem( fileMenu, wxID_SAVE, wxString( _("Save") ) + wxT('\t') + wxT("CTRL+S"), wxEmptyString, wxITEM_NORMAL );
 	#ifdef __WXMSW__
 	menuFileSave->SetBitmaps( wxBitmap( filesave_xpm ) );
 	#elif (defined( __WXGTK__ ) || defined( __WXOSX__ ))
 	menuFileSave->SetBitmap( wxBitmap( filesave_xpm ) );
 	#endif
 	fileMenu->Append( menuFileSave );
-	
+
 	wxMenuItem* menuFileSaveAs;
-	menuFileSaveAs = new wxMenuItem( fileMenu, wxID_SAVEAS, wxString( wxT("&Save project as...") ) + wxT('\t') + wxT("Ctrl+Shift+S"), wxEmptyString, wxITEM_NORMAL );
+	menuFileSaveAs = new wxMenuItem( fileMenu, wxID_SAVEAS, wxString( _("&Save project as...") ) + wxT('\t') + wxT("Ctrl+Shift+S"), wxEmptyString, wxITEM_NORMAL );
 	#ifdef __WXMSW__
 	menuFileSaveAs->SetBitmaps( wxBitmap( filesave_xpm ) );
 	#elif (defined( __WXGTK__ ) || defined( __WXOSX__ ))
 	menuFileSaveAs->SetBitmap( wxBitmap( filesave_xpm ) );
 	#endif
 	fileMenu->Append( menuFileSaveAs );
-	
+
 	fileMenu->AppendSeparator();
-	
+
 	wxMenuItem* menuFileExportBMP;
-	menuFileExportBMP = new wxMenuItem( fileMenu, IDM_FILE_EXPORT, wxString( wxT("Export diagram to image...") ) , wxT("Export active diagram to BMP file"), wxITEM_NORMAL );
+	menuFileExportBMP = new wxMenuItem( fileMenu, IDM_FILE_EXPORT, wxString( _("Export diagram to image...") ) , _("Export active diagram to BMP file"), wxITEM_NORMAL );
 	fileMenu->Append( menuFileExportBMP );
-	
+
 	fileMenu->AppendSeparator();
-	
+
 	wxMenuItem* menuFilePrint;
-	menuFilePrint = new wxMenuItem( fileMenu, wxID_PRINT, wxString( wxT("&Print...") ) + wxT('\t') + wxT("Ctrl+P"), wxT("Print active diagram"), wxITEM_NORMAL );
+	menuFilePrint = new wxMenuItem( fileMenu, wxID_PRINT, wxString( _("&Print...") ) + wxT('\t') + wxT("Ctrl+P"), _("Print active diagram"), wxITEM_NORMAL );
 	#ifdef __WXMSW__
 	menuFilePrint->SetBitmaps( wxBitmap( fileprint_xpm ) );
 	#elif (defined( __WXGTK__ ) || defined( __WXOSX__ ))
 	menuFilePrint->SetBitmap( wxBitmap( fileprint_xpm ) );
 	#endif
 	fileMenu->Append( menuFilePrint );
-	
+
 	wxMenuItem* menuFilePreview;
-	menuFilePreview = new wxMenuItem( fileMenu, wxID_PREVIEW, wxString( wxT("Preview...") ) + wxT('\t') + wxT("Alt+P"), wxT("Preview active diagram"), wxITEM_NORMAL );
+	menuFilePreview = new wxMenuItem( fileMenu, wxID_PREVIEW, wxString( _("Preview...") ) + wxT('\t') + wxT("Alt+P"), _("Preview active diagram"), wxITEM_NORMAL );
 	#ifdef __WXMSW__
 	menuFilePreview->SetBitmaps( wxBitmap( filepreview_xpm ) );
 	#elif (defined( __WXGTK__ ) || defined( __WXOSX__ ))
 	menuFilePreview->SetBitmap( wxBitmap( filepreview_xpm ) );
 	#endif
 	fileMenu->Append( menuFilePreview );
-	
+
 	wxMenuItem* menuFilePageSetup;
-	menuFilePageSetup = new wxMenuItem( fileMenu, wxID_PAGE_SETUP, wxString( wxT("Page setup...") ) , wxT("Set page properties"), wxITEM_NORMAL );
+	menuFilePageSetup = new wxMenuItem( fileMenu, wxID_PAGE_SETUP, wxString( _("Page setup...") ) , _("Set page properties"), wxITEM_NORMAL );
 	fileMenu->Append( menuFilePageSetup );
-	
+
 	fileMenu->AppendSeparator();
-	
+
 	recentFilesMenu = new wxMenu();
-	wxMenuItem* recentFilesMenuItem = new wxMenuItem( fileMenu, wxID_ANY, wxT("Recent projects"), wxEmptyString, wxITEM_NORMAL, recentFilesMenu );
+	wxMenuItem* recentFilesMenuItem = new wxMenuItem( fileMenu, wxID_ANY, _("Recent projects"), wxEmptyString, wxITEM_NORMAL, recentFilesMenu );
 	fileMenu->Append( recentFilesMenuItem );
-	
+
 	fileMenu->AppendSeparator();
-	
+
 	wxMenuItem* menuFileQuit;
-	menuFileQuit = new wxMenuItem( fileMenu, wxID_EXIT, wxString( wxT("&Quit") ) + wxT('\t') + wxT("Alt+F4"), wxT("Quit the application"), wxITEM_NORMAL );
+	menuFileQuit = new wxMenuItem( fileMenu, wxID_EXIT, wxString( _("&Quit") ) + wxT('\t') + wxT("Alt+F4"), _("Quit the application"), wxITEM_NORMAL );
 	#ifdef __WXMSW__
 	menuFileQuit->SetBitmaps( wxBitmap( exit_xpm ) );
 	#elif (defined( __WXGTK__ ) || defined( __WXOSX__ ))
 	menuFileQuit->SetBitmap( wxBitmap( exit_xpm ) );
 	#endif
 	fileMenu->Append( menuFileQuit );
-	
-	mbar->Append( fileMenu, wxT("&File") ); 
-	
+
+	mbar->Append( fileMenu, _("&File") );
+
 	editMenu = new wxMenu();
 	wxMenuItem* menuEditUndo;
-	menuEditUndo = new wxMenuItem( editMenu, wxID_UNDO, wxString( wxT("&Undo") ) + wxT('\t') + wxT("Ctrl+Z"), wxEmptyString, wxITEM_NORMAL );
+	menuEditUndo = new wxMenuItem( editMenu, wxID_UNDO, wxString( _("&Undo") ) + wxT('\t') + wxT("Ctrl+Z"), wxEmptyString, wxITEM_NORMAL );
 	#ifdef __WXMSW__
 	menuEditUndo->SetBitmaps( wxBitmap( undo_xpm ) );
 	#elif (defined( __WXGTK__ ) || defined( __WXOSX__ ))
 	menuEditUndo->SetBitmap( wxBitmap( undo_xpm ) );
 	#endif
 	editMenu->Append( menuEditUndo );
-	
+
 	wxMenuItem* menuEditRedo;
-	menuEditRedo = new wxMenuItem( editMenu, wxID_REDO, wxString( wxT("&Redo") ) + wxT('\t') + wxT("Ctrl+Y"), wxEmptyString, wxITEM_NORMAL );
+	menuEditRedo = new wxMenuItem( editMenu, wxID_REDO, wxString( _("&Redo") ) + wxT('\t') + wxT("Ctrl+Y"), wxEmptyString, wxITEM_NORMAL );
 	#ifdef __WXMSW__
 	menuEditRedo->SetBitmaps( wxBitmap( redo_xpm ) );
 	#elif (defined( __WXGTK__ ) || defined( __WXOSX__ ))
 	menuEditRedo->SetBitmap( wxBitmap( redo_xpm ) );
 	#endif
 	editMenu->Append( menuEditRedo );
-	
+
 	editMenu->AppendSeparator();
-	
+
 	wxMenuItem* menuEditCopy;
-	menuEditCopy = new wxMenuItem( editMenu, wxID_COPY, wxString( wxT("&Copy") ) + wxT('\t') + wxT("Ctrl+C"), wxEmptyString, wxITEM_NORMAL );
+	menuEditCopy = new wxMenuItem( editMenu, wxID_COPY, wxString( _("&Copy") ) + wxT('\t') + wxT("Ctrl+C"), wxEmptyString, wxITEM_NORMAL );
 	#ifdef __WXMSW__
 	menuEditCopy->SetBitmaps( wxBitmap( editcopy_xpm ) );
 	#elif (defined( __WXGTK__ ) || defined( __WXOSX__ ))
 	menuEditCopy->SetBitmap( wxBitmap( editcopy_xpm ) );
 	#endif
 	editMenu->Append( menuEditCopy );
-	
+
 	wxMenuItem* menuEditCut;
-	menuEditCut = new wxMenuItem( editMenu, wxID_CUT, wxString( wxT("Cut") ) + wxT('\t') + wxT("Ctrl+X"), wxEmptyString, wxITEM_NORMAL );
+	menuEditCut = new wxMenuItem( editMenu, wxID_CUT, wxString( _("Cut") ) + wxT('\t') + wxT("Ctrl+X"), wxEmptyString, wxITEM_NORMAL );
 	#ifdef __WXMSW__
 	menuEditCut->SetBitmaps( wxBitmap( editcut_xpm ) );
 	#elif (defined( __WXGTK__ ) || defined( __WXOSX__ ))
 	menuEditCut->SetBitmap( wxBitmap( editcut_xpm ) );
 	#endif
 	editMenu->Append( menuEditCut );
-	
+
 	wxMenuItem* menuEditPaste;
-	menuEditPaste = new wxMenuItem( editMenu, wxID_PASTE, wxString( wxT("&Paste") ) + wxT('\t') + wxT("Ctrl+V"), wxEmptyString, wxITEM_NORMAL );
+	menuEditPaste = new wxMenuItem( editMenu, wxID_PASTE, wxString( _("&Paste") ) + wxT('\t') + wxT("Ctrl+V"), wxEmptyString, wxITEM_NORMAL );
 	#ifdef __WXMSW__
 	menuEditPaste->SetBitmaps( wxBitmap( editpaste_xpm ) );
 	#elif (defined( __WXGTK__ ) || defined( __WXOSX__ ))
 	menuEditPaste->SetBitmap( wxBitmap( editpaste_xpm ) );
 	#endif
 	editMenu->Append( menuEditPaste );
-	
+
 	editMenu->AppendSeparator();
-	
+
 	wxMenuItem* menuEditSelectAll;
-	menuEditSelectAll = new wxMenuItem( editMenu, IDM_EDIT_SELECTALL, wxString( wxT("Select &all") ) + wxT('\t') + wxT("CTRL+A"), wxT("Select all items in current diagram"), wxITEM_NORMAL );
+	menuEditSelectAll = new wxMenuItem( editMenu, IDM_EDIT_SELECTALL, wxString( _("Select &all") ) + wxT('\t') + wxT("CTRL+A"), _("Select all items in current diagram"), wxITEM_NORMAL );
 	editMenu->Append( menuEditSelectAll );
-	
+
 	editMenu->AppendSeparator();
-	
+
 	wxMenuItem* menuEditPreferences;
-	menuEditPreferences = new wxMenuItem( editMenu, IDM_EDIT_PREFERENCES, wxString( wxT("Preferences...") ) + wxT('\t') + wxT("Ctrl+Alt+P"), wxEmptyString, wxITEM_NORMAL );
+	menuEditPreferences = new wxMenuItem( editMenu, IDM_EDIT_PREFERENCES, wxString( _("Preferences...") ) + wxT('\t') + wxT("Ctrl+Alt+P"), wxEmptyString, wxITEM_NORMAL );
 	#ifdef __WXMSW__
 	menuEditPreferences->SetBitmaps( wxBitmap( configure_xpm ) );
 	#elif (defined( __WXGTK__ ) || defined( __WXOSX__ ))
 	menuEditPreferences->SetBitmap( wxBitmap( configure_xpm ) );
 	#endif
 	editMenu->Append( menuEditPreferences );
-	
-	mbar->Append( editMenu, wxT("&Edit") ); 
-	
+
+	mbar->Append( editMenu, _("&Edit") );
+
 	viewMenu = new wxMenu();
 	wxMenuItem* menuViewReset;
-	menuViewReset = new wxMenuItem( viewMenu, IDM_VIEW_RESET, wxString( wxT("Reset layout") ) , wxEmptyString, wxITEM_NORMAL );
+	menuViewReset = new wxMenuItem( viewMenu, IDM_VIEW_RESET, wxString( _("Reset layout") ) , wxEmptyString, wxITEM_NORMAL );
 	viewMenu->Append( menuViewReset );
-	
+
 	viewMenu->AppendSeparator();
-	
+
 	wxMenuItem* menuViewProjectPanel;
-	menuViewProjectPanel = new wxMenuItem( viewMenu, IDM_VIEW_PROJECT_PANEL, wxString( wxT("Project inspector") ) + wxT('\t') + wxT("Ctrl+1"), wxEmptyString, wxITEM_CHECK );
+	menuViewProjectPanel = new wxMenuItem( viewMenu, IDM_VIEW_PROJECT_PANEL, wxString( _("Project inspector") ) + wxT('\t') + wxT("Ctrl+1"), wxEmptyString, wxITEM_CHECK );
 	viewMenu->Append( menuViewProjectPanel );
-	
+
 	wxMenuItem* menuViewLogPanel;
-	menuViewLogPanel = new wxMenuItem( viewMenu, IDM_VIEW_LOG_PANEL, wxString( wxT("Log window") ) + wxT('\t') + wxT("Ctrl+2"), wxEmptyString, wxITEM_CHECK );
+	menuViewLogPanel = new wxMenuItem( viewMenu, IDM_VIEW_LOG_PANEL, wxString( _("Log window") ) + wxT('\t') + wxT("Ctrl+2"), wxEmptyString, wxITEM_CHECK );
 	viewMenu->Append( menuViewLogPanel );
-	
+
 	wxMenuItem* menuViewThumbPanel;
-	menuViewThumbPanel = new wxMenuItem( viewMenu, IDM_VIEW_THUMBNAIL_PANEL, wxString( wxT("Thumbnail") ) + wxT('\t') + wxT("Ctrl+3"), wxEmptyString, wxITEM_CHECK );
+	menuViewThumbPanel = new wxMenuItem( viewMenu, IDM_VIEW_THUMBNAIL_PANEL, wxString( _("Thumbnail") ) + wxT('\t') + wxT("Ctrl+3"), wxEmptyString, wxITEM_CHECK );
 	viewMenu->Append( menuViewThumbPanel );
-	
+
 	wxMenuItem* menuViewEditor;
-	menuViewEditor = new wxMenuItem( viewMenu, IDM_VIEW_EDITOR, wxString( wxT("Code editor") ) + wxT('\t') + wxT("Ctrl+4"), wxEmptyString, wxITEM_CHECK );
+	menuViewEditor = new wxMenuItem( viewMenu, IDM_VIEW_EDITOR, wxString( _("Code editor") ) + wxT('\t') + wxT("Ctrl+4"), wxEmptyString, wxITEM_CHECK );
 	viewMenu->Append( menuViewEditor );
-	
+
 	wxMenuItem* menuViewFileTB;
-	menuViewFileTB = new wxMenuItem( viewMenu, IDM_VIEW_FILE_TB, wxString( wxT("File toolbar") ) + wxT('\t') + wxT("Ctrl+5"), wxEmptyString, wxITEM_CHECK );
+	menuViewFileTB = new wxMenuItem( viewMenu, IDM_VIEW_FILE_TB, wxString( _("File toolbar") ) + wxT('\t') + wxT("Ctrl+5"), wxEmptyString, wxITEM_CHECK );
 	viewMenu->Append( menuViewFileTB );
-	
+
 	wxMenuItem* menuViewDiagramTB;
-	menuViewDiagramTB = new wxMenuItem( viewMenu, IDM_VIEW_DIAGRAM_TB, wxString( wxT("Diagram toolbar") ) + wxT('\t') + wxT("Ctrl+6"), wxEmptyString, wxITEM_CHECK );
+	menuViewDiagramTB = new wxMenuItem( viewMenu, IDM_VIEW_DIAGRAM_TB, wxString( _("Diagram toolbar") ) + wxT('\t') + wxT("Ctrl+6"), wxEmptyString, wxITEM_CHECK );
 	viewMenu->Append( menuViewDiagramTB );
-	
+
 	wxMenuItem* menuViewLayoutTB;
-	menuViewLayoutTB = new wxMenuItem( viewMenu, IDM_VIEW_LAYOUT_TB, wxString( wxT("Layout toolbar") ) + wxT('\t') + wxT("Ctrl+7"), wxEmptyString, wxITEM_CHECK );
+	menuViewLayoutTB = new wxMenuItem( viewMenu, IDM_VIEW_LAYOUT_TB, wxString( _("Layout toolbar") ) + wxT('\t') + wxT("Ctrl+7"), wxEmptyString, wxITEM_CHECK );
 	viewMenu->Append( menuViewLayoutTB );
-	
+
 	wxMenuItem* menuViewGeneratorTB;
-	menuViewGeneratorTB = new wxMenuItem( viewMenu, IDM_VIEW_GENERATOR_TB, wxString( wxT("Generator toolbar") ) + wxT('\t') + wxT("Ctrl+8"), wxEmptyString, wxITEM_CHECK );
+	menuViewGeneratorTB = new wxMenuItem( viewMenu, IDM_VIEW_GENERATOR_TB, wxString( _("Generator toolbar") ) + wxT('\t') + wxT("Ctrl+8"), wxEmptyString, wxITEM_CHECK );
 	viewMenu->Append( menuViewGeneratorTB );
-	
-	mbar->Append( viewMenu, wxT("&View") ); 
-	
+
+	mbar->Append( viewMenu, _("&View") );
+
 	projMenu = new wxMenu();
 	wxMenuItem* menuProjPackage;
-	menuProjPackage = new wxMenuItem( projMenu, IDM_PROJ_PACKAGE, wxString( wxT("Create diagram package") ) , wxT("Crate new package"), wxITEM_NORMAL );
+	menuProjPackage = new wxMenuItem( projMenu, IDM_PROJ_PACKAGE, wxString( _("Create diagram package") ) , _("Create new package"), wxITEM_NORMAL );
 	#ifdef __WXMSW__
 	menuProjPackage->SetBitmaps( wxBitmap( cube_green_xpm ) );
 	#elif (defined( __WXGTK__ ) || defined( __WXOSX__ ))
 	menuProjPackage->SetBitmap( wxBitmap( cube_green_xpm ) );
 	#endif
 	projMenu->Append( menuProjPackage );
-	
+
 	wxMenuItem* menuProjCodePackage;
-	menuProjCodePackage = new wxMenuItem( projMenu, IDM_PROJ_CODEPACKAGE, wxString( wxT("Create code package") ) , wxT("Create new code package"), wxITEM_NORMAL );
+	menuProjCodePackage = new wxMenuItem( projMenu, IDM_PROJ_CODEPACKAGE, wxString( _("Create code package") ) , _("Create new code package"), wxITEM_NORMAL );
 	#ifdef __WXMSW__
 	menuProjCodePackage->SetBitmaps( wxBitmap( cube_yellow_xpm ) );
 	#elif (defined( __WXGTK__ ) || defined( __WXOSX__ ))
 	menuProjCodePackage->SetBitmap( wxBitmap( cube_yellow_xpm ) );
 	#endif
 	projMenu->Append( menuProjCodePackage );
-	
+
 	projMenu->AppendSeparator();
-	
+
 	projMenu->AppendSeparator();
-	
+
 	wxMenuItem* menuProjVariable;
-	menuProjVariable = new wxMenuItem( projMenu, IDM_PROJ_VARIABLE, wxString( wxT("Create generic variable") ) , wxT("Create user-defined variable"), wxITEM_NORMAL );
+	menuProjVariable = new wxMenuItem( projMenu, IDM_PROJ_VARIABLE, wxString( _("Create generic variable") ) , _("Create user-defined variable"), wxITEM_NORMAL );
 	#ifdef __WXMSW__
 	menuProjVariable->SetBitmaps( wxBitmap( Variable_xpm ) );
 	#elif (defined( __WXGTK__ ) || defined( __WXOSX__ ))
 	menuProjVariable->SetBitmap( wxBitmap( Variable_xpm ) );
 	#endif
 	projMenu->Append( menuProjVariable );
-	
+
 	wxMenuItem* menuProjFunction;
-	menuProjFunction = new wxMenuItem( projMenu, IDM_PROJ_FUNCTION, wxString( wxT("Create generic function") ) , wxT("Create user-defined function"), wxITEM_NORMAL );
+	menuProjFunction = new wxMenuItem( projMenu, IDM_PROJ_FUNCTION, wxString( _("Create generic function") ) , _("Create user-defined function"), wxITEM_NORMAL );
 	#ifdef __WXMSW__
 	menuProjFunction->SetBitmaps( wxBitmap( Function_xpm ) );
 	#elif (defined( __WXGTK__ ) || defined( __WXOSX__ ))
 	menuProjFunction->SetBitmap( wxBitmap( Function_xpm ) );
 	#endif
 	projMenu->Append( menuProjFunction );
-	
+
 	projMenu->AppendSeparator();
-	
+
 	wxMenuItem* menuProjEdit;
-	menuProjEdit = new wxMenuItem( projMenu, IDM_PROJ_EDIT, wxString( wxT("Edit selected item") ) , wxT("Edit properties of seleceted project item"), wxITEM_NORMAL );
+	menuProjEdit = new wxMenuItem( projMenu, IDM_PROJ_EDIT, wxString( _("Edit selected item") ) , _("Edit properties of seleceted project item"), wxITEM_NORMAL );
 	projMenu->Append( menuProjEdit );
-	
+
 	wxMenuItem* menuProjRemove;
-	menuProjRemove = new wxMenuItem( projMenu, IDM_PROJ_REMOVE, wxString( wxT("Remove selected item") ) + wxT('\t') + wxT("CTRL+D"), wxT("Remove item selected in the project view from current project"), wxITEM_NORMAL );
+	menuProjRemove = new wxMenuItem( projMenu, IDM_PROJ_REMOVE, wxString( _("Remove selected item") ) + wxT('\t') + wxT("CTRL+D"), _("Remove item selected in the project view from current project"), wxITEM_NORMAL );
 	projMenu->Append( menuProjRemove );
-	
+
 	projMenu->AppendSeparator();
-	
+
 	wxMenuItem* menuProjRemoveAll;
-	menuProjRemoveAll = new wxMenuItem( projMenu, IDM_PROJ_REMOVEALL, wxString( wxT("Remove all") ) , wxT("Clear project (permanently remove all project items)"), wxITEM_NORMAL );
+	menuProjRemoveAll = new wxMenuItem( projMenu, IDM_PROJ_REMOVEALL, wxString( _("Remove all") ) , _("Clear project (permanently remove all project items)"), wxITEM_NORMAL );
 	#ifdef __WXMSW__
 	menuProjRemoveAll->SetBitmaps( wxNullBitmap );
 	#elif (defined( __WXGTK__ ) || defined( __WXOSX__ ))
 	menuProjRemoveAll->SetBitmap( wxNullBitmap );
 	#endif
 	projMenu->Append( menuProjRemoveAll );
-	
+
 	projMenu->AppendSeparator();
-	
+
 	wxMenuItem* menuProjSettings;
-	menuProjSettings = new wxMenuItem( projMenu, IDM_PROJ_SETTINGS, wxString( wxT("Settings...") ) + wxT('\t') + wxT("Ctrl+Alt+S"), wxEmptyString, wxITEM_NORMAL );
+	menuProjSettings = new wxMenuItem( projMenu, IDM_PROJ_SETTINGS, wxString( _("Settings...") ) + wxT('\t') + wxT("Ctrl+Alt+S"), wxEmptyString, wxITEM_NORMAL );
 	#ifdef __WXMSW__
 	menuProjSettings->SetBitmaps( wxBitmap( configure_xpm ) );
 	#elif (defined( __WXGTK__ ) || defined( __WXOSX__ ))
 	menuProjSettings->SetBitmap( wxBitmap( configure_xpm ) );
 	#endif
 	projMenu->Append( menuProjSettings );
-	
-	mbar->Append( projMenu, wxT("&Project") ); 
-	
+
+	mbar->Append( projMenu, _("&Project") );
+
 	bankMenu = new wxMenu();
 	wxMenuItem* menuBankManage;
-	menuBankManage = new wxMenuItem( bankMenu, IDM_BANK_MANAGE, wxString( wxT("Manage bank...") ) + wxT('\t') + wxT("Ctrl+B"), wxEmptyString, wxITEM_NORMAL );
+	menuBankManage = new wxMenuItem( bankMenu, IDM_BANK_MANAGE, wxString( _("Manage bank...") ) + wxT('\t') + wxT("Ctrl+B"), wxEmptyString, wxITEM_NORMAL );
 	bankMenu->Append( menuBankManage );
-	
+
 	bankMenu->AppendSeparator();
-	
+
 	wxMenuItem* menuBankStore;
-	menuBankStore = new wxMenuItem( bankMenu, IDM_DIAG_STORETOBANK, wxString( wxT("Store diagram to bank") ) , wxT("Store currently selected diagram to bank"), wxITEM_NORMAL );
+	menuBankStore = new wxMenuItem( bankMenu, IDM_DIAG_STORETOBANK, wxString( _("Store diagram to bank") ) , _("Store currently selected diagram to bank"), wxITEM_NORMAL );
 	bankMenu->Append( menuBankStore );
-	
+
 	wxMenuItem* menuBankInsert;
-	menuBankInsert = new wxMenuItem( bankMenu, IDM_DIAG_INSERTFROMBANK, wxString( wxT("Insert diagram from bank") ) , wxT("Insert diagram from bank to currently selected package"), wxITEM_NORMAL );
+	menuBankInsert = new wxMenuItem( bankMenu, IDM_DIAG_INSERTFROMBANK, wxString( _("Insert diagram from bank") ) , _("Insert diagram from bank to currently selected package"), wxITEM_NORMAL );
 	bankMenu->Append( menuBankInsert );
-	
+
 	bankMenu->AppendSeparator();
-	
+
 	wxMenuItem* menuBankImport;
-	menuBankImport = new wxMenuItem( bankMenu, IDM_BANK_IMPORT, wxString( wxT("Import bank...") ) , wxEmptyString, wxITEM_NORMAL );
+	menuBankImport = new wxMenuItem( bankMenu, IDM_BANK_IMPORT, wxString( _("Import bank...") ) , wxEmptyString, wxITEM_NORMAL );
 	bankMenu->Append( menuBankImport );
-	
+
 	wxMenuItem* menuBankExport;
-	menuBankExport = new wxMenuItem( bankMenu, IDM_BANK_EXPORT, wxString( wxT("Export bank...") ) , wxEmptyString, wxITEM_NORMAL );
+	menuBankExport = new wxMenuItem( bankMenu, IDM_BANK_EXPORT, wxString( _("Export bank...") ) , wxEmptyString, wxITEM_NORMAL );
 	bankMenu->Append( menuBankExport );
-	
-	mbar->Append( bankMenu, wxT("&Diagram bank") ); 
-	
+
+	mbar->Append( bankMenu, _("&Diagram bank") );
+
 	codeGenMenu = new wxMenu();
 	wxMenuItem* menuCodePreview;
-	menuCodePreview = new wxMenuItem( codeGenMenu, IDM_CODE_PREVIEW, wxString( wxT("&Preview") ) + wxT('\t') + wxT("Ctrl+Shift+G"), wxT("Generate code from active diagram"), wxITEM_NORMAL );
+	menuCodePreview = new wxMenuItem( codeGenMenu, IDM_CODE_PREVIEW, wxString( _("&Preview") ) + wxT('\t') + wxT("Ctrl+Shift+G"), _("Generate code from active diagram"), wxITEM_NORMAL );
 	#ifdef __WXMSW__
 	menuCodePreview->SetBitmaps( wxBitmap( spellcheck_xpm ) );
 	#elif (defined( __WXGTK__ ) || defined( __WXOSX__ ))
 	menuCodePreview->SetBitmap( wxBitmap( spellcheck_xpm ) );
 	#endif
 	codeGenMenu->Append( menuCodePreview );
-	
+
 	wxMenuItem* menuCodeGenerate;
-	menuCodeGenerate = new wxMenuItem( codeGenMenu, IDM_CODE_GENERATE, wxString( wxT("&Generate") ) + wxT('\t') + wxT("Ctrl+G"), wxT("Generate code for an active chart"), wxITEM_NORMAL );
+	menuCodeGenerate = new wxMenuItem( codeGenMenu, IDM_CODE_GENERATE, wxString( _("&Generate") ) + wxT('\t') + wxT("Ctrl+G"), _("Generate code for an active chart"), wxITEM_NORMAL );
 	#ifdef __WXMSW__
 	menuCodeGenerate->SetBitmaps( wxBitmap( actionrun_xpm ) );
 	#elif (defined( __WXGTK__ ) || defined( __WXOSX__ ))
 	menuCodeGenerate->SetBitmap( wxBitmap( actionrun_xpm ) );
 	#endif
 	codeGenMenu->Append( menuCodeGenerate );
-	
+
 	codeGenMenu->AppendSeparator();
-	
+
 	wxMenuItem* menuCodeSynchronize;
-	menuCodeSynchronize = new wxMenuItem( codeGenMenu, IDM_CODE_SYNCHRONIZE, wxString( wxT("Synchronize code") ) , wxT("Synchronize changes in code items' source code."), wxITEM_NORMAL );
+	menuCodeSynchronize = new wxMenuItem( codeGenMenu, IDM_CODE_SYNCHRONIZE, wxString( _("Synchronize code") ) , _("Synchronize changes in code items' source code."), wxITEM_NORMAL );
 	codeGenMenu->Append( menuCodeSynchronize );
-	
-	mbar->Append( codeGenMenu, wxT("&Code generation") ); 
-	
+
+	mbar->Append( codeGenMenu, _("&Code generation") );
+
 	pluginsMenu = new wxMenu();
 	wxMenuItem* menuPluginsManage;
-	menuPluginsManage = new wxMenuItem( pluginsMenu, IDM_PLUGINS_MANAGE, wxString( wxT("Manage plugins...") ) , wxT("Manage available plugins"), wxITEM_NORMAL );
+	menuPluginsManage = new wxMenuItem( pluginsMenu, IDM_PLUGINS_MANAGE, wxString( _("Manage plugins...") ) , _("Manage available plugins"), wxITEM_NORMAL );
 	pluginsMenu->Append( menuPluginsManage );
-	
-	mbar->Append( pluginsMenu, wxT("&Plugins") ); 
-	
+
+	mbar->Append( pluginsMenu, _("&Plugins") );
+
 	helpMenu = new wxMenu();
 	wxMenuItem* menuHelpAbout;
-	menuHelpAbout = new wxMenuItem( helpMenu, wxID_ABOUT, wxString( wxT("&About...") ) + wxT('\t') + wxT("F1"), wxT("Show info about this application"), wxITEM_NORMAL );
+	menuHelpAbout = new wxMenuItem( helpMenu, wxID_ABOUT, wxString( _("&About...") ) + wxT('\t') + wxT("F1"), _("Show info about this application"), wxITEM_NORMAL );
 	#ifdef __WXMSW__
 	menuHelpAbout->SetBitmaps( wxBitmap( helpindex_xpm ) );
 	#elif (defined( __WXGTK__ ) || defined( __WXOSX__ ))
 	menuHelpAbout->SetBitmap( wxBitmap( helpindex_xpm ) );
 	#endif
 	helpMenu->Append( menuHelpAbout );
-	
-	mbar->Append( helpMenu, wxT("&Help") ); 
-	
+
+	mbar->Append( helpMenu, _("&Help") );
+
 	this->SetMenuBar( mbar );
-	
+
 	statusBar = this->CreateStatusBar( 3, wxST_SIZEGRIP, wxID_ANY );
 	wxBoxSizer* mainSizer;
 	mainSizer = new wxBoxSizer( wxVERTICAL );
-	
+
 	m_mainPanel = new wxPanel( this, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxTAB_TRAVERSAL );
 	wxFlexGridSizer* mainDsgnSizer;
 	mainDsgnSizer = new wxFlexGridSizer( 3, 1, 0, 0 );
@@ -400,57 +400,57 @@ _MainFrame::_MainFrame( wxWindow* parent, wxWindowID id, const wxString& title, 
 	mainDsgnSizer->AddGrowableRow( 1 );
 	mainDsgnSizer->SetFlexibleDirection( wxBOTH );
 	mainDsgnSizer->SetNonFlexibleGrowMode( wxFLEX_GROWMODE_SPECIFIED );
-	
+
 	m_auintbPalettes = new wxAuiNotebook( m_mainPanel, IDC_AUINTB_PALETTES, wxDefaultPosition, wxDefaultSize, wxAUI_NB_TAB_MOVE|wxAUI_NB_WINDOWLIST_BUTTON|wxNO_BORDER );
 	m_auintbPalettes->SetMinSize( wxSize( -1,50 ) );
-	
-	
+
+
 	mainDsgnSizer->Add( m_auintbPalettes, 1, wxEXPAND, 5 );
-	
+
 	m_auintbDesignArea = new wxAuiNotebook( m_mainPanel, IDC_AUINTB_DESIGNAREA, wxDefaultPosition, wxDefaultSize, wxAUI_NB_CLOSE_ON_ALL_TABS|wxAUI_NB_TAB_MOVE|wxAUI_NB_WINDOWLIST_BUTTON|wxNO_BORDER );
-	
+
 	mainDsgnSizer->Add( m_auintbDesignArea, 1, wxEXPAND, 5 );
-	
+
 	wxFlexGridSizer* zoomSizer;
 	zoomSizer = new wxFlexGridSizer( 1, 3, 0, 0 );
 	zoomSizer->AddGrowableCol( 2 );
 	zoomSizer->SetFlexibleDirection( wxBOTH );
 	zoomSizer->SetNonFlexibleGrowMode( wxFLEX_GROWMODE_SPECIFIED );
-	
+
 	btnZoom100 = new wxBitmapButton( m_mainPanel, wxID_ZOOM_100, wxBitmap( Zoom100_xpm ), wxDefaultPosition, wxSize( 24,24 ), wxBU_AUTODRAW );
-	
+
 	btnZoom100->SetBitmapDisabled( wxBitmap( Zoom100Dis_xpm ) );
-	btnZoom100->SetToolTip( wxT("Zoom diagram to its original size") );
-	
+	btnZoom100->SetToolTip( _("Zoom diagram to its original size") );
+
 	zoomSizer->Add( btnZoom100, 0, 0, 5 );
-	
+
 	btnZoomAll = new wxBitmapButton( m_mainPanel, wxID_ZOOM_FIT, wxBitmap( ZoomAll_xpm ), wxDefaultPosition, wxSize( 24,24 ), wxBU_AUTODRAW );
-	
+
 	btnZoomAll->SetBitmapDisabled( wxBitmap( ZoomAllDis_xpm ) );
-	btnZoomAll->SetToolTip( wxT("Zoom diagram to fit the design area") );
-	
+	btnZoomAll->SetToolTip( _("Zoom diagram to fit the design area") );
+
 	zoomSizer->Add( btnZoomAll, 0, 0, 5 );
-	
+
 	m_sliderZoom = new wxSlider( m_mainPanel, IDC_ZOOM, 50, 10, 99, wxDefaultPosition, wxSize( -1,20 ), wxSL_HORIZONTAL );
-	m_sliderZoom->SetToolTip( wxT("Design area zoom") );
-	
+	m_sliderZoom->SetToolTip( _("Design area zoom") );
+
 	zoomSizer->Add( m_sliderZoom, 0, wxEXPAND|wxLEFT|wxRIGHT|wxTOP, 5 );
-	
-	
+
+
 	mainDsgnSizer->Add( zoomSizer, 1, wxEXPAND, 5 );
-	
-	
+
+
 	m_mainPanel->SetSizer( mainDsgnSizer );
 	m_mainPanel->Layout();
 	mainDsgnSizer->Fit( m_mainPanel );
 	mainSizer->Add( m_mainPanel, 1, wxEXPAND, 5 );
-	
-	
+
+
 	this->SetSizer( mainSizer );
 	this->Layout();
-	
+
 	this->Centre( wxBOTH );
-	
+
 	// Connect Events
 	this->Connect( wxEVT_CLOSE_WINDOW, wxCloseEventHandler( _MainFrame::OnClose ) );
 	this->Connect( wxEVT_IDLE, wxIdleEventHandler( _MainFrame::OnIdle ) );
@@ -607,7 +607,7 @@ _MainFrame::~_MainFrame()
 	m_sliderZoom->Disconnect( wxEVT_SCROLL_THUMBRELEASE, wxScrollEventHandler( _MainFrame::OnZoom ), NULL, this );
 	m_sliderZoom->Disconnect( wxEVT_SCROLL_CHANGED, wxScrollEventHandler( _MainFrame::OnZoom ), NULL, this );
 	m_sliderZoom->Disconnect( wxEVT_UPDATE_UI, wxUpdateUIEventHandler( _MainFrame::OnUpdateZoomSlider ), NULL, this );
-	
+
 }
 
 _EditorFrame::_EditorFrame( wxWindow* parent, wxWindowID id, const wxString& title, const wxPoint& pos, const wxSize& size, long style ) : wxFrame( parent, id, title, pos, size, style )
@@ -615,36 +615,36 @@ _EditorFrame::_EditorFrame( wxWindow* parent, wxWindowID id, const wxString& tit
 	this->SetSizeHints( wxDefaultSize, wxDefaultSize );
 	this->SetExtraStyle( wxWS_EX_BLOCK_EVENTS );
 	this->SetExtraStyle( wxFRAME_EX_CONTEXTHELP );
-	
+
 	m_statusBar = this->CreateStatusBar( 1, wxST_SIZEGRIP, wxID_ANY );
 	m_menuBar = new wxMenuBar( 0 );
 	m_menuFile = new wxMenu();
 	wxMenuItem* menuFileClose;
-	menuFileClose = new wxMenuItem( m_menuFile, wxID_CLOSE, wxString( wxT("Close") ) + wxT('\t') + wxT("Alt+X"), wxT("Close editor window"), wxITEM_NORMAL );
+	menuFileClose = new wxMenuItem( m_menuFile, wxID_CLOSE, wxString( _("Close") ) + wxT('\t') + wxT("Alt+X"), _("Close editor window"), wxITEM_NORMAL );
 	m_menuFile->Append( menuFileClose );
-	
-	m_menuBar->Append( m_menuFile, wxT("&File") ); 
-	
+
+	m_menuBar->Append( m_menuFile, _("&File") );
+
 	m_menuEdit = new wxMenu();
 	wxMenuItem* menuEditCut;
-	menuEditCut = new wxMenuItem( m_menuEdit, wxID_CUT, wxString( wxT("Cu&t") ) + wxT('\t') + wxT("Ctrl+X"), wxEmptyString, wxITEM_NORMAL );
+	menuEditCut = new wxMenuItem( m_menuEdit, wxID_CUT, wxString( _("Cu&t") ) + wxT('\t') + wxT("Ctrl+X"), wxEmptyString, wxITEM_NORMAL );
 	m_menuEdit->Append( menuEditCut );
-	
+
 	wxMenuItem* menuEditCopy;
-	menuEditCopy = new wxMenuItem( m_menuEdit, wxID_COPY, wxString( wxT("&Copy") ) + wxT('\t') + wxT("Ctrl+C"), wxEmptyString, wxITEM_NORMAL );
+	menuEditCopy = new wxMenuItem( m_menuEdit, wxID_COPY, wxString( _("&Copy") ) + wxT('\t') + wxT("Ctrl+C"), wxEmptyString, wxITEM_NORMAL );
 	m_menuEdit->Append( menuEditCopy );
-	
+
 	wxMenuItem* menuEditPaste;
-	menuEditPaste = new wxMenuItem( m_menuEdit, wxID_PASTE, wxString( wxT("&Paste") ) + wxT('\t') + wxT("Ctrl+V"), wxEmptyString, wxITEM_NORMAL );
+	menuEditPaste = new wxMenuItem( m_menuEdit, wxID_PASTE, wxString( _("&Paste") ) + wxT('\t') + wxT("Ctrl+V"), wxEmptyString, wxITEM_NORMAL );
 	m_menuEdit->Append( menuEditPaste );
-	
-	m_menuBar->Append( m_menuEdit, wxT("&Edit") ); 
-	
+
+	m_menuBar->Append( m_menuEdit, _("&Edit") );
+
 	this->SetMenuBar( m_menuBar );
-	
+
 	wxBoxSizer* mainSizer;
 	mainSizer = new wxBoxSizer( wxVERTICAL );
-	
+
 	m_scintillaEditor = new wxStyledTextCtrl( this, wxID_ANY, wxDefaultPosition, wxDefaultSize, 0, wxEmptyString );
 	m_scintillaEditor->SetUseTabs( true );
 	m_scintillaEditor->SetTabWidth( 4 );
@@ -681,13 +681,13 @@ _EditorFrame::_EditorFrame( wxWindow* parent, wxWindowID id, const wxString& tit
 	m_scintillaEditor->SetSelBackground( true, wxSystemSettings::GetColour( wxSYS_COLOUR_HIGHLIGHT ) );
 	m_scintillaEditor->SetSelForeground( true, wxSystemSettings::GetColour( wxSYS_COLOUR_HIGHLIGHTTEXT ) );
 	mainSizer->Add( m_scintillaEditor, 1, wxEXPAND, 5 );
-	
-	
+
+
 	this->SetSizer( mainSizer );
 	this->Layout();
-	
+
 	this->Centre( wxBOTH );
-	
+
 	// Connect Events
 	this->Connect( wxEVT_CLOSE_WINDOW, wxCloseEventHandler( _EditorFrame::OnClose ) );
 	this->Connect( menuFileClose->GetId(), wxEVT_COMMAND_MENU_SELECTED, wxCommandEventHandler( _EditorFrame::OnCloseClick ) );
@@ -710,21 +710,21 @@ _EditorFrame::~_EditorFrame()
 	this->Disconnect( wxID_COPY, wxEVT_UPDATE_UI, wxUpdateUIEventHandler( _EditorFrame::OnUpdateCopy ) );
 	this->Disconnect( wxID_PASTE, wxEVT_COMMAND_MENU_SELECTED, wxCommandEventHandler( _EditorFrame::OnPasteClick ) );
 	this->Disconnect( wxID_PASTE, wxEVT_UPDATE_UI, wxUpdateUIEventHandler( _EditorFrame::OnUpdatePaste ) );
-	
+
 }
 
 _LogPanel::_LogPanel( wxWindow* parent, wxWindowID id, const wxPoint& pos, const wxSize& size, long style ) : wxPanel( parent, id, pos, size, style )
 {
 	wxBoxSizer* mainSizer;
 	mainSizer = new wxBoxSizer( wxVERTICAL );
-	
+
 	m_pLogList = new wxListCtrl( this, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxLC_REPORT|wxLC_SINGLE_SEL|wxSUNKEN_BORDER );
 	mainSizer->Add( m_pLogList, 1, wxEXPAND, 5 );
-	
-	
+
+
 	this->SetSizer( mainSizer );
 	this->Layout();
-	
+
 	// Connect Events
 	m_pLogList->Connect( wxEVT_RIGHT_DOWN, wxMouseEventHandler( _LogPanel::OnRightClick ), NULL, this );
 }
@@ -733,7 +733,7 @@ _LogPanel::~_LogPanel()
 {
 	// Disconnect Events
 	m_pLogList->Disconnect( wxEVT_RIGHT_DOWN, wxMouseEventHandler( _LogPanel::OnRightClick ), NULL, this );
-	
+
 }
 
 _ProjManPanel::_ProjManPanel( wxWindow* parent, wxWindowID id, const wxPoint& pos, const wxSize& size, long style ) : wxPanel( parent, id, pos, size, style )
@@ -744,58 +744,58 @@ _ProjManPanel::_ProjManPanel( wxWindow* parent, wxWindowID id, const wxPoint& po
 	mainSizer->AddGrowableRow( 1 );
 	mainSizer->SetFlexibleDirection( wxBOTH );
 	mainSizer->SetNonFlexibleGrowMode( wxFLEX_GROWMODE_SPECIFIED );
-	
-	m_toolBar = new wxToolBar( this, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxTB_HORIZONTAL ); 
-	m_toolLinkEditor = m_toolBar->AddTool( IDT_PROJMAN_LINK, wxT("Link on/off"), wxBitmap( link_editor_xpm ), wxNullBitmap, wxITEM_CHECK, wxT("Link project manager with design area"), wxEmptyString, NULL ); 
-	
-	m_toolExpandAll = m_toolBar->AddTool( IDT_PROJMAN_EXPAND, wxT("Expand/Collapse all"), wxBitmap( collapse_xpm ), wxNullBitmap, wxITEM_NORMAL, wxT("Expand/collapse all tree items"), wxEmptyString, NULL ); 
-	
-	m_toolBar->AddSeparator(); 
-	
-	m_toolProperties = m_toolBar->AddTool( IDT_PROJMAN_SHOWPROPS, wxT("Show properies"), wxBitmap( form_blue_xpm ), wxNullBitmap, wxITEM_CHECK, wxT("Inspect properties of selected tree item"), wxEmptyString, NULL ); 
-	
-	m_toolOrganizeCI = m_toolBar->AddTool( IDT_PROJMAN_ORGANIZECI, wxT("Organize code items"), wxBitmap( organisation_xpm ), wxNullBitmap, wxITEM_CHECK, wxT("Organize code items"), wxEmptyString, NULL ); 
-	
-	m_toolBar->Realize(); 
-	
+
+	m_toolBar = new wxToolBar( this, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxTB_HORIZONTAL );
+	m_toolLinkEditor = m_toolBar->AddTool( IDT_PROJMAN_LINK, _("Link on/off"), wxBitmap( link_editor_xpm ), wxNullBitmap, wxITEM_CHECK, _("Link project manager with design area"), wxEmptyString, NULL );
+
+	m_toolExpandAll = m_toolBar->AddTool( IDT_PROJMAN_EXPAND, _("Expand/Collapse all"), wxBitmap( collapse_xpm ), wxNullBitmap, wxITEM_NORMAL, _("Expand/collapse all tree items"), wxEmptyString, NULL );
+
+	m_toolBar->AddSeparator();
+
+	m_toolProperties = m_toolBar->AddTool( IDT_PROJMAN_SHOWPROPS, _("Show properies"), wxBitmap( form_blue_xpm ), wxNullBitmap, wxITEM_CHECK, _("Inspect properties of selected tree item"), wxEmptyString, NULL );
+
+	m_toolOrganizeCI = m_toolBar->AddTool( IDT_PROJMAN_ORGANIZECI, _("Organize code items"), wxBitmap( organisation_xpm ), wxNullBitmap, wxITEM_CHECK, _("Organize code items"), wxEmptyString, NULL );
+
+	m_toolBar->Realize();
+
 	mainSizer->Add( m_toolBar, 0, wxEXPAND, 5 );
-	
+
 	m_pSplitter = new wxSplitterWindow( this, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxSP_3D );
 	m_pSplitter->SetSashGravity( 0 );
 	m_pSplitter->SetMinimumPaneSize( 100 );
-	
+
 	m_pPanelTree = new wxPanel( m_pSplitter, wxID_ANY, wxDefaultPosition, wxSize( -1,300 ), wxTAB_TRAVERSAL );
 	m_pPanelTree->SetMinSize( wxSize( -1,300 ) );
-	
+
 	wxBoxSizer* treeSizer;
 	treeSizer = new wxBoxSizer( wxVERTICAL );
-	
+
 	m_auintbViews = new wxAuiNotebook( m_pPanelTree, IDC_AUINTB_PROJMAN, wxDefaultPosition, wxDefaultSize, wxAUI_NB_SCROLL_BUTTONS|wxAUI_NB_TAB_MOVE|wxNO_BORDER );
-	
+
 	treeSizer->Add( m_auintbViews, 1, wxEXPAND, 5 );
-	
-	
+
+
 	m_pPanelTree->SetSizer( treeSizer );
 	m_pPanelTree->Layout();
 	m_pPanelProperties = new wxPanel( m_pSplitter, wxID_ANY, wxDefaultPosition, wxSize( -1,100 ), wxTAB_TRAVERSAL );
 	m_pPanelProperties->SetMinSize( wxSize( -1,100 ) );
-	
+
 	wxBoxSizer* propertiesSizer;
 	propertiesSizer = new wxBoxSizer( wxVERTICAL );
-	
+
 	m_pPropertiesGrid = new wxPropertyGrid(m_pPanelProperties, wxID_ANY, wxDefaultPosition, wxSize( -1,-1 ), wxPG_DEFAULT_STYLE|wxPG_SPLITTER_AUTO_CENTER|wxPG_TOOLTIPS);
 	propertiesSizer->Add( m_pPropertiesGrid, 1, wxEXPAND, 5 );
-	
-	
+
+
 	m_pPanelProperties->SetSizer( propertiesSizer );
 	m_pPanelProperties->Layout();
 	m_pSplitter->SplitHorizontally( m_pPanelTree, m_pPanelProperties, -1 );
 	mainSizer->Add( m_pSplitter, 1, wxEXPAND, 5 );
-	
-	
+
+
 	this->SetSizer( mainSizer );
 	this->Layout();
-	
+
 	// Connect Events
 	this->Connect( m_toolLinkEditor->GetId(), wxEVT_COMMAND_TOOL_CLICKED, wxCommandEventHandler( _ProjManPanel::OnLinkedEditor ) );
 	this->Connect( m_toolLinkEditor->GetId(), wxEVT_UPDATE_UI, wxUpdateUIEventHandler( _ProjManPanel::OnUpdateLinkedEditor ) );
@@ -822,7 +822,7 @@ _ProjManPanel::~_ProjManPanel()
 	m_pSplitter->Disconnect( wxEVT_COMMAND_SPLITTER_SASH_POS_CHANGED, wxSplitterEventHandler( _ProjManPanel::OnPropsSashChanged ), NULL, this );
 	m_auintbViews->Disconnect( wxEVT_COMMAND_AUINOTEBOOK_PAGE_CHANGED, wxAuiNotebookEventHandler( _ProjManPanel::OnViewChanged ), NULL, this );
 	m_pPropertiesGrid->Disconnect( wxEVT_LEFT_DCLICK, wxMouseEventHandler( _ProjManPanel::OnPGActivated ), NULL, this );
-	
+
 }
 
 _EditorPanel::_EditorPanel( wxWindow* parent, wxWindowID id, const wxPoint& pos, const wxSize& size, long style ) : wxPanel( parent, id, pos, size, style )
@@ -833,21 +833,21 @@ _EditorPanel::_EditorPanel( wxWindow* parent, wxWindowID id, const wxPoint& pos,
 	mainSizer->AddGrowableRow( 1 );
 	mainSizer->SetFlexibleDirection( wxBOTH );
 	mainSizer->SetNonFlexibleGrowMode( wxFLEX_GROWMODE_SPECIFIED );
-	
-	m_toolActions = new wxToolBar( this, wxID_ANY, wxDefaultPosition, wxSize( -1,-1 ), wxTB_FLAT|wxTB_HORIZONTAL ); 
-	m_toolSave = m_toolActions->AddTool( IDT_INSTEDITOR_SAVE, wxT("tool"), wxBitmap( filesave_xpm ), wxNullBitmap, wxITEM_NORMAL, wxT("Save changes (Alt+S)"), wxEmptyString, NULL ); 
-	
-	m_toolActions->AddSeparator(); 
-	
-	m_stCodeItem = new wxStaticText( m_toolActions, wxID_ANY, wxT("Code item:"), wxDefaultPosition, wxDefaultSize, 0 );
+
+	m_toolActions = new wxToolBar( this, wxID_ANY, wxDefaultPosition, wxSize( -1,-1 ), wxTB_FLAT|wxTB_HORIZONTAL );
+	m_toolSave = m_toolActions->AddTool( IDT_INSTEDITOR_SAVE, wxT("tool"), wxBitmap( filesave_xpm ), wxNullBitmap, wxITEM_NORMAL, _("Save changes (Alt+S)"), wxEmptyString, NULL );
+
+	m_toolActions->AddSeparator();
+
+	m_stCodeItem = new wxStaticText( m_toolActions, wxID_ANY, _("Code item:"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_stCodeItem->Wrap( -1 );
 	m_stCodeItem->SetFont( wxFont( 8, 74, 90, 90, false, wxT("Sans") ) );
-	
+
 	m_toolActions->AddControl( m_stCodeItem );
-	m_toolActions->Realize(); 
-	
+	m_toolActions->Realize();
+
 	mainSizer->Add( m_toolActions, 0, wxEXPAND, 5 );
-	
+
 	m_scintillaEditor = new wxStyledTextCtrl( this, wxID_ANY, wxDefaultPosition, wxDefaultSize, 0, wxEmptyString );
 	m_scintillaEditor->SetUseTabs( true );
 	m_scintillaEditor->SetTabWidth( 4 );
@@ -884,11 +884,11 @@ _EditorPanel::_EditorPanel( wxWindow* parent, wxWindowID id, const wxPoint& pos,
 	m_scintillaEditor->SetSelBackground( true, wxSystemSettings::GetColour( wxSYS_COLOUR_HIGHLIGHT ) );
 	m_scintillaEditor->SetSelForeground( true, wxSystemSettings::GetColour( wxSYS_COLOUR_HIGHLIGHTTEXT ) );
 	mainSizer->Add( m_scintillaEditor, 1, wxEXPAND, 5 );
-	
-	
+
+
 	this->SetSizer( mainSizer );
 	this->Layout();
-	
+
 	// Connect Events
 	this->Connect( m_toolSave->GetId(), wxEVT_COMMAND_TOOL_CLICKED, wxCommandEventHandler( _EditorPanel::OnSave ) );
 	this->Connect( m_toolSave->GetId(), wxEVT_UPDATE_UI, wxUpdateUIEventHandler( _EditorPanel::OnUpdateSave ) );
@@ -901,81 +901,81 @@ _EditorPanel::~_EditorPanel()
 	this->Disconnect( m_toolSave->GetId(), wxEVT_COMMAND_TOOL_CLICKED, wxCommandEventHandler( _EditorPanel::OnSave ) );
 	this->Disconnect( m_toolSave->GetId(), wxEVT_UPDATE_UI, wxUpdateUIEventHandler( _EditorPanel::OnUpdateSave ) );
 	m_scintillaEditor->Disconnect( wxEVT_KEY_DOWN, wxKeyEventHandler( _EditorPanel::OnKeyDown ), NULL, this );
-	
+
 }
 
 _SettingsDialog::_SettingsDialog( wxWindow* parent, wxWindowID id, const wxString& title, const wxPoint& pos, const wxSize& size, long style ) : wxDialog( parent, id, title, pos, size, style )
 {
 	this->SetSizeHints( wxSize( 670,420 ), wxDefaultSize );
-	
+
 	wxFlexGridSizer* mainSizer;
 	mainSizer = new wxFlexGridSizer( 2, 1, 0, 0 );
 	mainSizer->AddGrowableCol( 0 );
 	mainSizer->AddGrowableRow( 0 );
 	mainSizer->SetFlexibleDirection( wxBOTH );
 	mainSizer->SetNonFlexibleGrowMode( wxFLEX_GROWMODE_SPECIFIED );
-	
+
 	m_pSplitter = new wxSplitterWindow( this, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxSP_3D );
 	m_pSplitter->Connect( wxEVT_IDLE, wxIdleEventHandler( _SettingsDialog::m_pSplitterOnIdle ), NULL, this );
 	m_pSplitter->SetMinimumPaneSize( 205 );
-	
+
 	m_pPanelTree = new wxPanel( m_pSplitter, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxTAB_TRAVERSAL );
 	wxBoxSizer* treeSizer;
 	treeSizer = new wxBoxSizer( wxVERTICAL );
-	
+
 	m_pCategoryTree = new wxTreeCtrl( m_pPanelTree, wxID_ANY, wxDefaultPosition, wxSize( 200,350 ), wxTR_DEFAULT_STYLE|wxTR_HIDE_ROOT|wxSIMPLE_BORDER );
 	m_pCategoryTree->SetMinSize( wxSize( 200,350 ) );
-	
+
 	treeSizer->Add( m_pCategoryTree, 1, wxEXPAND|wxTOP|wxBOTTOM|wxLEFT, 5 );
-	
-	
+
+
 	m_pPanelTree->SetSizer( treeSizer );
 	m_pPanelTree->Layout();
 	treeSizer->Fit( m_pPanelTree );
 	m_pPanelProps = new wxPanel( m_pSplitter, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxTAB_TRAVERSAL );
 	wxBoxSizer* propsSizer;
 	propsSizer = new wxBoxSizer( wxVERTICAL );
-	
+
 	m_pPropertyGrid = new wxPropertyGrid(m_pPanelProps, IDC_SETTINGSDLG_PROPGRID, wxDefaultPosition, wxSize( 450,350 ), wxPG_BOLD_MODIFIED|wxPG_DEFAULT_STYLE|wxPG_SPLITTER_AUTO_CENTER);
 	m_pPropertyGrid->SetMinSize( wxSize( 450,350 ) );
-	
+
 	propsSizer->Add( m_pPropertyGrid, 1, wxEXPAND|wxTOP|wxBOTTOM|wxRIGHT, 5 );
-	
-	
+
+
 	m_pPanelProps->SetSizer( propsSizer );
 	m_pPanelProps->Layout();
 	propsSizer->Fit( m_pPanelProps );
 	m_pSplitter->SplitVertically( m_pPanelTree, m_pPanelProps, 205 );
 	mainSizer->Add( m_pSplitter, 1, wxEXPAND, 5 );
-	
+
 	wxFlexGridSizer* buttonGridSizer;
 	buttonGridSizer = new wxFlexGridSizer( 1, 2, 0, 0 );
 	buttonGridSizer->AddGrowableCol( 0 );
 	buttonGridSizer->SetFlexibleDirection( wxBOTH );
 	buttonGridSizer->SetNonFlexibleGrowMode( wxFLEX_GROWMODE_SPECIFIED );
-	
-	m_btnDefaults = new wxButton( this, wxID_ANY, wxT("Defaults"), wxDefaultPosition, wxDefaultSize, 0 );
+
+	m_btnDefaults = new wxButton( this, wxID_ANY, _("Defaults"), wxDefaultPosition, wxDefaultSize, 0 );
 	buttonGridSizer->Add( m_btnDefaults, 0, wxALIGN_RIGHT|wxALL|wxALIGN_CENTER_VERTICAL, 5 );
-	
+
 	buttonSizer = new wxStdDialogButtonSizer();
 	buttonSizerOK = new wxButton( this, wxID_OK );
 	buttonSizer->AddButton( buttonSizerOK );
 	buttonSizerCancel = new wxButton( this, wxID_CANCEL );
 	buttonSizer->AddButton( buttonSizerCancel );
 	buttonSizer->Realize();
-	
+
 	buttonGridSizer->Add( buttonSizer, 0, wxTOP|wxBOTTOM|wxRIGHT|wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL, 5 );
-	
-	
+
+
 	mainSizer->Add( buttonGridSizer, 1, wxEXPAND, 5 );
-	
-	
+
+
 	this->SetSizer( mainSizer );
 	this->Layout();
 	mainSizer->Fit( this );
-	
+
 	this->Centre( wxBOTH );
-	
+
 	// Connect Events
 	this->Connect( wxEVT_INIT_DIALOG, wxInitDialogEventHandler( _SettingsDialog::OnInit ) );
 	m_pCategoryTree->Connect( wxEVT_COMMAND_TREE_SEL_CHANGED, wxTreeEventHandler( _SettingsDialog::OnChangeCategory ), NULL, this );
@@ -992,79 +992,79 @@ _SettingsDialog::~_SettingsDialog()
 	m_btnDefaults->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( _SettingsDialog::OnDefaults ), NULL, this );
 	buttonSizerCancel->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( _SettingsDialog::OnCancel ), NULL, this );
 	buttonSizerOK->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( _SettingsDialog::OnOk ), NULL, this );
-	
+
 }
 
 _InsertFromBankDialog::_InsertFromBankDialog( wxWindow* parent, wxWindowID id, const wxString& title, const wxPoint& pos, const wxSize& size, long style ) : wxDialog( parent, id, title, pos, size, style )
 {
 	this->SetSizeHints( wxSize( 420,300 ), wxDefaultSize );
-	
+
 	wxFlexGridSizer* mainSizer;
 	mainSizer = new wxFlexGridSizer( 5, 1, 0, 0 );
 	mainSizer->AddGrowableCol( 0 );
 	mainSizer->AddGrowableRow( 3 );
 	mainSizer->SetFlexibleDirection( wxBOTH );
 	mainSizer->SetNonFlexibleGrowMode( wxFLEX_GROWMODE_SPECIFIED );
-	
-	m_staticText69 = new wxStaticText( this, wxID_ANY, wxT("Category:"), wxDefaultPosition, wxDefaultSize, 0 );
+
+	m_staticText69 = new wxStaticText( this, wxID_ANY, _("Category:"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticText69->Wrap( -1 );
 	mainSizer->Add( m_staticText69, 0, wxTOP|wxRIGHT|wxLEFT, 5 );
-	
+
 	wxArrayString m_chCategoryChoices;
 	m_chCategory = new wxChoice( this, wxID_ANY, wxDefaultPosition, wxSize( 400,-1 ), m_chCategoryChoices, 0 );
 	m_chCategory->SetSelection( 0 );
 	m_chCategory->SetMinSize( wxSize( 400,-1 ) );
-	
+
 	mainSizer->Add( m_chCategory, 0, wxTOP|wxRIGHT|wxLEFT|wxEXPAND, 5 );
-	
-	m_staticText70 = new wxStaticText( this, wxID_ANY, wxT("Available diagrams:"), wxDefaultPosition, wxDefaultSize, 0 );
+
+	m_staticText70 = new wxStaticText( this, wxID_ANY, _("Available diagrams:"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticText70->Wrap( -1 );
 	mainSizer->Add( m_staticText70, 0, wxTOP|wxRIGHT|wxLEFT, 5 );
-	
+
 	m_lstDiagrams = new wxListCtrl( this, wxID_ANY, wxDefaultPosition, wxSize( -1,150 ), wxLC_HRULES|wxLC_REPORT|wxLC_VRULES );
 	m_lstDiagrams->SetMinSize( wxSize( -1,150 ) );
-	
+
 	m_menuDiagrams = new wxMenu();
 	wxMenuItem* menuDiagSelectAll;
-	menuDiagSelectAll = new wxMenuItem( m_menuDiagrams, IDM_DBANK_SELECTALL, wxString( wxT("Selec all") ) , wxEmptyString, wxITEM_NORMAL );
+	menuDiagSelectAll = new wxMenuItem( m_menuDiagrams, IDM_DBANK_SELECTALL, wxString( _("Selec all") ) , wxEmptyString, wxITEM_NORMAL );
 	m_menuDiagrams->Append( menuDiagSelectAll );
-	
+
 	wxMenuItem* menuDiagDeselectAll;
-	menuDiagDeselectAll = new wxMenuItem( m_menuDiagrams, IDM_DBANK_DESELECTALL, wxString( wxT("Deselect all") ) , wxEmptyString, wxITEM_NORMAL );
+	menuDiagDeselectAll = new wxMenuItem( m_menuDiagrams, IDM_DBANK_DESELECTALL, wxString( _("Deselect all") ) , wxEmptyString, wxITEM_NORMAL );
 	m_menuDiagrams->Append( menuDiagDeselectAll );
-	
+
 	m_menuDiagrams->AppendSeparator();
-	
+
 	wxMenuItem* menuDiagDeps;
-	menuDiagDeps = new wxMenuItem( m_menuDiagrams, IDM_DBANK_SHOWDEPS, wxString( wxT("Show info") ) , wxEmptyString, wxITEM_NORMAL );
+	menuDiagDeps = new wxMenuItem( m_menuDiagrams, IDM_DBANK_SHOWDEPS, wxString( _("Show info") ) , wxEmptyString, wxITEM_NORMAL );
 	m_menuDiagrams->Append( menuDiagDeps );
-	
-	m_lstDiagrams->Connect( wxEVT_RIGHT_DOWN, wxMouseEventHandler( _InsertFromBankDialog::m_lstDiagramsOnContextMenu ), NULL, this ); 
-	
+
+	m_lstDiagrams->Connect( wxEVT_RIGHT_DOWN, wxMouseEventHandler( _InsertFromBankDialog::m_lstDiagramsOnContextMenu ), NULL, this );
+
 	mainSizer->Add( m_lstDiagrams, 0, wxALL|wxEXPAND, 5 );
-	
+
 	wxBoxSizer* buttonsSizer;
 	buttonsSizer = new wxBoxSizer( wxHORIZONTAL );
-	
-	
+
+
 	buttonsSizer->Add( 0, 0, 1, wxEXPAND, 5 );
-	
-	m_btnInsert = new wxButton( this, wxID_OK, wxT("Insert selected"), wxDefaultPosition, wxDefaultSize, 0 );
+
+	m_btnInsert = new wxButton( this, wxID_OK, _("Insert selected"), wxDefaultPosition, wxDefaultSize, 0 );
 	buttonsSizer->Add( m_btnInsert, 0, wxALL, 5 );
-	
-	m_btnCancel = new wxButton( this, wxID_CANCEL, wxT("Cancel"), wxDefaultPosition, wxDefaultSize, 0 );
+
+	m_btnCancel = new wxButton( this, wxID_CANCEL, _("Cancel"), wxDefaultPosition, wxDefaultSize, 0 );
 	buttonsSizer->Add( m_btnCancel, 0, wxALL, 5 );
-	
-	
+
+
 	mainSizer->Add( buttonsSizer, 1, wxEXPAND, 5 );
-	
-	
+
+
 	this->SetSizer( mainSizer );
 	this->Layout();
 	mainSizer->Fit( this );
-	
+
 	this->Centre( wxBOTH );
-	
+
 	// Connect Events
 	m_chCategory->Connect( wxEVT_COMMAND_CHOICE_SELECTED, wxCommandEventHandler( _InsertFromBankDialog::OnCategoryChange ), NULL, this );
 	this->Connect( menuDiagSelectAll->GetId(), wxEVT_COMMAND_MENU_SELECTED, wxCommandEventHandler( _InsertFromBankDialog::OnSelectAll ) );
@@ -1083,91 +1083,91 @@ _InsertFromBankDialog::~_InsertFromBankDialog()
 	this->Disconnect( IDM_DBANK_SHOWDEPS, wxEVT_COMMAND_MENU_SELECTED, wxCommandEventHandler( _InsertFromBankDialog::OnShowDeps ) );
 	this->Disconnect( IDM_DBANK_SHOWDEPS, wxEVT_UPDATE_UI, wxUpdateUIEventHandler( _InsertFromBankDialog::OnUpdateShowDeps ) );
 	m_btnInsert->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( _InsertFromBankDialog::OnInsertClick ), NULL, this );
-	
-	delete m_menuDiagrams; 
+
+	delete m_menuDiagrams;
 }
 
 _StoreToBankDialog::_StoreToBankDialog( wxWindow* parent, wxWindowID id, const wxString& title, const wxPoint& pos, const wxSize& size, long style ) : wxDialog( parent, id, title, pos, size, style )
 {
 	this->SetSizeHints( wxSize( 435,450 ), wxDefaultSize );
-	
+
 	wxFlexGridSizer* mainSizer;
 	mainSizer = new wxFlexGridSizer( 4, 1, 0, 0 );
 	mainSizer->AddGrowableCol( 0 );
 	mainSizer->AddGrowableRow( 2 );
 	mainSizer->SetFlexibleDirection( wxBOTH );
 	mainSizer->SetNonFlexibleGrowMode( wxFLEX_GROWMODE_SPECIFIED );
-	
-	m_staticText69 = new wxStaticText( this, wxID_ANY, wxT("Category:"), wxDefaultPosition, wxDefaultSize, 0 );
+
+	m_staticText69 = new wxStaticText( this, wxID_ANY, _("Category:"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticText69->Wrap( -1 );
 	mainSizer->Add( m_staticText69, 0, wxTOP|wxRIGHT|wxLEFT, 5 );
-	
+
 	wxBoxSizer* categorySizer;
 	categorySizer = new wxBoxSizer( wxHORIZONTAL );
-	
+
 	wxArrayString m_chCategoryChoices;
 	m_chCategory = new wxChoice( this, wxID_ANY, wxDefaultPosition, wxSize( -1,-1 ), m_chCategoryChoices, 0 );
 	m_chCategory->SetSelection( 0 );
 	categorySizer->Add( m_chCategory, 1, wxEXPAND|wxTOP|wxBOTTOM|wxLEFT, 5 );
-	
-	m_btnCreateCat = new wxButton( this, IDC_CATEGORY_CREATE, wxT("Create"), wxDefaultPosition, wxDefaultSize, 0 );
+
+	m_btnCreateCat = new wxButton( this, IDC_CATEGORY_CREATE, _("Create"), wxDefaultPosition, wxDefaultSize, 0 );
 	categorySizer->Add( m_btnCreateCat, 0, wxALL|wxALIGN_CENTER_VERTICAL, 5 );
-	
-	
+
+
 	mainSizer->Add( categorySizer, 1, wxEXPAND, 5 );
-	
+
 	wxStaticBoxSizer* sbSizer7;
-	sbSizer7 = new wxStaticBoxSizer( new wxStaticBox( this, wxID_ANY, wxT("Diagram info") ), wxVERTICAL );
-	
-	m_stDiagName = new wxStaticText( this, wxID_ANY, wxT("Diagram"), wxDefaultPosition, wxDefaultSize, 0 );
+	sbSizer7 = new wxStaticBoxSizer( new wxStaticBox( this, wxID_ANY, _("Diagram info") ), wxVERTICAL );
+
+	m_stDiagName = new wxStaticText( this, wxID_ANY, _("Diagram"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_stDiagName->Wrap( -1 );
 	m_stDiagName->SetFont( wxFont( 9, 74, 90, 92, false, wxT("Sans") ) );
-	
+
 	sbSizer7->Add( m_stDiagName, 0, wxALL, 5 );
-	
-	m_staticText76 = new wxStaticText( this, wxID_ANY, wxT("Description:"), wxDefaultPosition, wxDefaultSize, 0 );
+
+	m_staticText76 = new wxStaticText( this, wxID_ANY, _("Description:"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticText76->Wrap( -1 );
 	sbSizer7->Add( m_staticText76, 0, wxALL, 5 );
-	
+
 	m_textDescription = new wxTextCtrl( this, wxID_ANY, wxEmptyString, wxDefaultPosition, wxSize( -1,100 ), wxTE_MULTILINE );
-	m_textDescription->SetMaxLength( 0 ); 
+	m_textDescription->SetMaxLength( 0 );
 	m_textDescription->SetMinSize( wxSize( -1,100 ) );
-	
+
 	sbSizer7->Add( m_textDescription, 0, wxBOTTOM|wxRIGHT|wxLEFT|wxEXPAND, 5 );
-	
-	m_staticText70 = new wxStaticText( this, wxID_ANY, wxT("Dependencies:"), wxDefaultPosition, wxDefaultSize, 0 );
+
+	m_staticText70 = new wxStaticText( this, wxID_ANY, _("Dependencies:"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticText70->Wrap( -1 );
 	sbSizer7->Add( m_staticText70, 0, wxRIGHT|wxLEFT, 5 );
-	
+
 	m_lstDeps = new wxListCtrl( this, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxLC_HRULES|wxLC_REPORT|wxLC_VRULES );
 	m_lstDeps->SetMinSize( wxSize( 400,100 ) );
-	
+
 	sbSizer7->Add( m_lstDeps, 1, wxALL|wxEXPAND, 5 );
-	
-	
+
+
 	mainSizer->Add( sbSizer7, 1, wxEXPAND|wxRIGHT|wxLEFT, 5 );
-	
+
 	wxBoxSizer* buttonsSizer;
 	buttonsSizer = new wxBoxSizer( wxHORIZONTAL );
-	
-	
+
+
 	buttonsSizer->Add( 0, 0, 1, wxEXPAND, 5 );
-	
-	m_btnInsert = new wxButton( this, wxID_OK, wxT("Store to bank"), wxDefaultPosition, wxDefaultSize, 0 );
+
+	m_btnInsert = new wxButton( this, wxID_OK, _("Store to bank"), wxDefaultPosition, wxDefaultSize, 0 );
 	buttonsSizer->Add( m_btnInsert, 0, wxALL, 5 );
-	
-	m_btnCancel = new wxButton( this, wxID_CANCEL, wxT("Cancel"), wxDefaultPosition, wxDefaultSize, 0 );
+
+	m_btnCancel = new wxButton( this, wxID_CANCEL, _("Cancel"), wxDefaultPosition, wxDefaultSize, 0 );
 	buttonsSizer->Add( m_btnCancel, 0, wxALL, 5 );
-	
-	
+
+
 	mainSizer->Add( buttonsSizer, 1, wxEXPAND, 5 );
-	
-	
+
+
 	this->SetSizer( mainSizer );
 	this->Layout();
-	
+
 	this->Centre( wxBOTH );
-	
+
 	// Connect Events
 	m_btnCreateCat->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( _StoreToBankDialog::OnCreateClick ), NULL, this );
 	m_btnInsert->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( _StoreToBankDialog::OnStoreClick ), NULL, this );
@@ -1178,56 +1178,56 @@ _StoreToBankDialog::~_StoreToBankDialog()
 	// Disconnect Events
 	m_btnCreateCat->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( _StoreToBankDialog::OnCreateClick ), NULL, this );
 	m_btnInsert->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( _StoreToBankDialog::OnStoreClick ), NULL, this );
-	
+
 }
 
 _DependenciesDialog::_DependenciesDialog( wxWindow* parent, wxWindowID id, const wxString& title, const wxPoint& pos, const wxSize& size, long style ) : wxDialog( parent, id, title, pos, size, style )
 {
 	this->SetSizeHints( wxSize( 420,350 ), wxDefaultSize );
-	
+
 	wxFlexGridSizer* mainSizer;
 	mainSizer = new wxFlexGridSizer( 5, 1, 0, 0 );
 	mainSizer->AddGrowableCol( 0 );
 	mainSizer->AddGrowableRow( 3 );
 	mainSizer->SetFlexibleDirection( wxBOTH );
 	mainSizer->SetNonFlexibleGrowMode( wxFLEX_GROWMODE_SPECIFIED );
-	
-	m_staticText77 = new wxStaticText( this, wxID_ANY, wxT("Description:"), wxDefaultPosition, wxDefaultSize, 0 );
+
+	m_staticText77 = new wxStaticText( this, wxID_ANY, _("Description:"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticText77->Wrap( -1 );
 	mainSizer->Add( m_staticText77, 0, wxALL, 5 );
-	
+
 	m_textDescription = new wxTextCtrl( this, wxID_ANY, wxEmptyString, wxDefaultPosition, wxSize( -1,100 ), wxTE_MULTILINE|wxTE_READONLY );
-	m_textDescription->SetMaxLength( 0 ); 
+	m_textDescription->SetMaxLength( 0 );
 	m_textDescription->SetMinSize( wxSize( -1,100 ) );
-	
+
 	mainSizer->Add( m_textDescription, 0, wxBOTTOM|wxRIGHT|wxLEFT|wxEXPAND, 5 );
-	
-	m_staticText70 = new wxStaticText( this, wxID_ANY, wxT("Used code items:"), wxDefaultPosition, wxDefaultSize, 0 );
+
+	m_staticText70 = new wxStaticText( this, wxID_ANY, _("Used code items:"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticText70->Wrap( -1 );
 	mainSizer->Add( m_staticText70, 0, wxTOP|wxRIGHT|wxLEFT, 5 );
-	
+
 	m_lstDeps = new wxListCtrl( this, wxID_ANY, wxDefaultPosition, wxSize( 400,150 ), wxLC_HRULES|wxLC_REPORT|wxLC_VRULES );
 	m_lstDeps->SetMinSize( wxSize( 400,150 ) );
-	
+
 	mainSizer->Add( m_lstDeps, 0, wxALL|wxEXPAND, 5 );
-	
+
 	wxBoxSizer* buttonsSizer;
 	buttonsSizer = new wxBoxSizer( wxHORIZONTAL );
-	
-	
+
+
 	buttonsSizer->Add( 0, 0, 1, wxEXPAND, 5 );
-	
-	m_btnCancel = new wxButton( this, wxID_OK, wxT("Close"), wxDefaultPosition, wxDefaultSize, 0 );
+
+	m_btnCancel = new wxButton( this, wxID_OK, _("Close"), wxDefaultPosition, wxDefaultSize, 0 );
 	buttonsSizer->Add( m_btnCancel, 0, wxALL, 5 );
-	
-	
+
+
 	mainSizer->Add( buttonsSizer, 1, wxEXPAND, 5 );
-	
-	
+
+
 	this->SetSizer( mainSizer );
 	this->Layout();
 	mainSizer->Fit( this );
-	
+
 	this->Centre( wxBOTH );
 }
 
@@ -1238,125 +1238,125 @@ _DependenciesDialog::~_DependenciesDialog()
 _ManageBankDialog::_ManageBankDialog( wxWindow* parent, wxWindowID id, const wxString& title, const wxPoint& pos, const wxSize& size, long style ) : wxDialog( parent, id, title, pos, size, style )
 {
 	this->SetSizeHints( wxSize( 710,400 ), wxDefaultSize );
-	
+
 	wxFlexGridSizer* mainSizer;
 	mainSizer = new wxFlexGridSizer( 2, 2, 0, 0 );
 	mainSizer->AddGrowableCol( 1 );
 	mainSizer->AddGrowableRow( 0 );
 	mainSizer->SetFlexibleDirection( wxBOTH );
 	mainSizer->SetNonFlexibleGrowMode( wxFLEX_GROWMODE_SPECIFIED );
-	
+
 	wxStaticBoxSizer* sbSizer5;
-	sbSizer5 = new wxStaticBoxSizer( new wxStaticBox( this, wxID_ANY, wxT("Categories") ), wxVERTICAL );
-	
-	m_lbCategories = new wxListBox( this, wxID_ANY, wxDefaultPosition, wxSize( 200,250 ), 0, NULL, wxLB_SINGLE ); 
+	sbSizer5 = new wxStaticBoxSizer( new wxStaticBox( this, wxID_ANY, _("Categories") ), wxVERTICAL );
+
+	m_lbCategories = new wxListBox( this, wxID_ANY, wxDefaultPosition, wxSize( 200,250 ), 0, NULL, wxLB_SINGLE );
 	m_lbCategories->SetMinSize( wxSize( 200,250 ) );
-	
+
 	sbSizer5->Add( m_lbCategories, 1, wxEXPAND, 5 );
-	
+
 	wxBoxSizer* bSizer74;
 	bSizer74 = new wxBoxSizer( wxHORIZONTAL );
-	
-	m_btnCreateCat = new wxButton( this, IDC_CAT_CREATE, wxT("Create"), wxDefaultPosition, wxDefaultSize, 0 );
-	m_btnCreateCat->SetToolTip( wxT("Create new category") );
-	
+
+	m_btnCreateCat = new wxButton( this, IDC_CAT_CREATE, _("Create"), wxDefaultPosition, wxDefaultSize, 0 );
+	m_btnCreateCat->SetToolTip( _("Create new category") );
+
 	bSizer74->Add( m_btnCreateCat, 1, wxEXPAND|wxTOP|wxBOTTOM|wxRIGHT, 5 );
-	
-	m_btnRenameCat = new wxButton( this, IDC_CAT_RENAME, wxT("Rename"), wxDefaultPosition, wxDefaultSize, 0 );
+
+	m_btnRenameCat = new wxButton( this, IDC_CAT_RENAME, _("Rename"), wxDefaultPosition, wxDefaultSize, 0 );
 	bSizer74->Add( m_btnRenameCat, 0, wxTOP|wxBOTTOM|wxRIGHT|wxEXPAND, 5 );
-	
-	m_btnRemoveCat = new wxButton( this, IDC_CAT_REMOVE, wxT("Remove"), wxDefaultPosition, wxDefaultSize, 0 );
-	m_btnRemoveCat->SetToolTip( wxT("Remove selected categories") );
-	
+
+	m_btnRemoveCat = new wxButton( this, IDC_CAT_REMOVE, _("Remove"), wxDefaultPosition, wxDefaultSize, 0 );
+	m_btnRemoveCat->SetToolTip( _("Remove selected categories") );
+
 	bSizer74->Add( m_btnRemoveCat, 1, wxEXPAND|wxTOP|wxBOTTOM, 5 );
-	
-	
+
+
 	sbSizer5->Add( bSizer74, 0, wxEXPAND, 5 );
-	
-	
+
+
 	mainSizer->Add( sbSizer5, 1, wxEXPAND|wxALL, 5 );
-	
+
 	wxStaticBoxSizer* sbSizer6;
-	sbSizer6 = new wxStaticBoxSizer( new wxStaticBox( this, wxID_ANY, wxT("Diagrams") ), wxVERTICAL );
-	
+	sbSizer6 = new wxStaticBoxSizer( new wxStaticBox( this, wxID_ANY, _("Diagrams") ), wxVERTICAL );
+
 	wxFlexGridSizer* fgSizer22;
 	fgSizer22 = new wxFlexGridSizer( 1, 2, 0, 0 );
 	fgSizer22->AddGrowableCol( 0 );
 	fgSizer22->AddGrowableRow( 0 );
 	fgSizer22->SetFlexibleDirection( wxBOTH );
 	fgSizer22->SetNonFlexibleGrowMode( wxFLEX_GROWMODE_SPECIFIED );
-	
+
 	wxBoxSizer* bSizer76;
 	bSizer76 = new wxBoxSizer( wxVERTICAL );
-	
+
 	m_lstDiagrams = new wxListCtrl( this, wxID_ANY, wxDefaultPosition, wxSize( 300,-1 ), wxLC_HRULES|wxLC_REPORT|wxLC_SINGLE_SEL|wxLC_VRULES );
 	m_lstDiagrams->SetMinSize( wxSize( 300,-1 ) );
-	
+
 	bSizer76->Add( m_lstDiagrams, 1, wxEXPAND|wxBOTTOM|wxRIGHT, 5 );
-	
-	m_staticText78 = new wxStaticText( this, wxID_ANY, wxT("Description:"), wxDefaultPosition, wxDefaultSize, 0 );
+
+	m_staticText78 = new wxStaticText( this, wxID_ANY, _("Description:"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticText78->Wrap( -1 );
 	bSizer76->Add( m_staticText78, 0, wxTOP|wxRIGHT, 5 );
-	
+
 	m_textDescription = new wxTextCtrl( this, wxID_ANY, wxEmptyString, wxDefaultPosition, wxSize( -1,75 ), wxTE_MULTILINE|wxTE_READONLY );
-	m_textDescription->SetMaxLength( 0 ); 
+	m_textDescription->SetMaxLength( 0 );
 	bSizer76->Add( m_textDescription, 0, wxEXPAND|wxBOTTOM|wxRIGHT, 5 );
-	
-	m_staticText75 = new wxStaticText( this, wxID_ANY, wxT("Dependencies:"), wxDefaultPosition, wxSize( -1,-1 ), 0 );
+
+	m_staticText75 = new wxStaticText( this, wxID_ANY, _("Dependencies:"), wxDefaultPosition, wxSize( -1,-1 ), 0 );
 	m_staticText75->Wrap( -1 );
 	bSizer76->Add( m_staticText75, 0, wxTOP|wxRIGHT, 5 );
-	
+
 	m_lstDeps = new wxListCtrl( this, wxID_ANY, wxDefaultPosition, wxSize( -1,-1 ), wxLC_HRULES|wxLC_REPORT|wxLC_SINGLE_SEL|wxLC_VRULES );
 	bSizer76->Add( m_lstDeps, 1, wxEXPAND|wxBOTTOM|wxRIGHT, 5 );
-	
-	
+
+
 	fgSizer22->Add( bSizer76, 1, wxEXPAND, 5 );
-	
+
 	wxBoxSizer* bSizer77;
 	bSizer77 = new wxBoxSizer( wxVERTICAL );
-	
-	m_btnRemoveDiag = new wxButton( this, IDC_DIAG_REMOVE, wxT("Remove"), wxDefaultPosition, wxDefaultSize, 0 );
-	m_btnRemoveDiag->SetToolTip( wxT("Remove selected diagrams") );
-	
+
+	m_btnRemoveDiag = new wxButton( this, IDC_DIAG_REMOVE, _("Remove"), wxDefaultPosition, wxDefaultSize, 0 );
+	m_btnRemoveDiag->SetToolTip( _("Remove selected diagrams") );
+
 	bSizer77->Add( m_btnRemoveDiag, 0, wxBOTTOM, 5 );
-	
-	m_btnRemoveAllDiag = new wxButton( this, IDM_DIAG_REMOVEALL, wxT("Remove all"), wxDefaultPosition, wxDefaultSize, 0 );
+
+	m_btnRemoveAllDiag = new wxButton( this, IDM_DIAG_REMOVEALL, _("Remove all"), wxDefaultPosition, wxDefaultSize, 0 );
 	bSizer77->Add( m_btnRemoveAllDiag, 0, wxBOTTOM, 5 );
-	
+
 	m_staticline1 = new wxStaticLine( this, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxLI_HORIZONTAL );
 	bSizer77->Add( m_staticline1, 0, wxEXPAND | wxALL, 5 );
-	
-	m_btnCopyDiag = new wxButton( this, IDM_DIAG_COPY, wxT("Copy to..."), wxDefaultPosition, wxDefaultSize, 0 );
-	m_btnCopyDiag->SetToolTip( wxT("Copy dialog to another category") );
-	
+
+	m_btnCopyDiag = new wxButton( this, IDM_DIAG_COPY, _("Copy to..."), wxDefaultPosition, wxDefaultSize, 0 );
+	m_btnCopyDiag->SetToolTip( _("Copy dialog to another category") );
+
 	bSizer77->Add( m_btnCopyDiag, 0, wxTOP|wxBOTTOM, 5 );
-	
-	m_btnMoveDiag = new wxButton( this, IDC_DIAG_MOVE, wxT("Move to..."), wxDefaultPosition, wxDefaultSize, 0 );
-	m_btnMoveDiag->SetToolTip( wxT("Move to another category") );
-	
+
+	m_btnMoveDiag = new wxButton( this, IDC_DIAG_MOVE, _("Move to..."), wxDefaultPosition, wxDefaultSize, 0 );
+	m_btnMoveDiag->SetToolTip( _("Move to another category") );
+
 	bSizer77->Add( m_btnMoveDiag, 0, wxEXPAND|wxBOTTOM, 5 );
-	
-	
+
+
 	fgSizer22->Add( bSizer77, 1, wxEXPAND, 5 );
-	
-	
+
+
 	sbSizer6->Add( fgSizer22, 1, wxEXPAND, 5 );
-	
-	
+
+
 	mainSizer->Add( sbSizer6, 1, wxEXPAND|wxTOP|wxBOTTOM|wxRIGHT, 5 );
-	
-	
+
+
 	mainSizer->Add( 0, 0, 1, wxEXPAND, 5 );
-	
-	m_btnClose = new wxButton( this, wxID_OK, wxT("Close"), wxDefaultPosition, wxDefaultSize, 0 );
+
+	m_btnClose = new wxButton( this, wxID_OK, _("Close"), wxDefaultPosition, wxDefaultSize, 0 );
 	mainSizer->Add( m_btnClose, 0, wxALIGN_RIGHT|wxBOTTOM|wxRIGHT|wxLEFT, 5 );
-	
-	
+
+
 	this->SetSizer( mainSizer );
 	this->Layout();
-	
+
 	this->Centre( wxBOTH );
-	
+
 	// Connect Events
 	m_lbCategories->Connect( wxEVT_COMMAND_LISTBOX_SELECTED, wxCommandEventHandler( _ManageBankDialog::OnCategoryChange ), NULL, this );
 	m_btnCreateCat->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( _ManageBankDialog::OnCreateCat ), NULL, this );
@@ -1393,16 +1393,16 @@ _ManageBankDialog::~_ManageBankDialog()
 	m_btnCopyDiag->Disconnect( wxEVT_UPDATE_UI, wxUpdateUIEventHandler( _ManageBankDialog::OnUpdateCopyTo ), NULL, this );
 	m_btnMoveDiag->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( _ManageBankDialog::OnMoveDiag ), NULL, this );
 	m_btnMoveDiag->Disconnect( wxEVT_UPDATE_UI, wxUpdateUIEventHandler( _ManageBankDialog::OnUpdateMoveTo ), NULL, this );
-	
+
 }
 
 _ManagePluginsDialog::_ManagePluginsDialog( wxWindow* parent, wxWindowID id, const wxString& title, const wxPoint& pos, const wxSize& size, long style ) : wxDialog( parent, id, title, pos, size, style )
 {
 	this->SetSizeHints( wxDefaultSize, wxDefaultSize );
-	
+
 	wxBoxSizer* mainSizer;
 	mainSizer = new wxBoxSizer( wxVERTICAL );
-	
+
 	wxFlexGridSizer* recordsSizer;
 	recordsSizer = new wxFlexGridSizer( 1, 2, 0, 0 );
 	recordsSizer->AddGrowableCol( 0 );
@@ -1410,49 +1410,49 @@ _ManagePluginsDialog::_ManagePluginsDialog( wxWindow* parent, wxWindowID id, con
 	recordsSizer->AddGrowableRow( 0 );
 	recordsSizer->SetFlexibleDirection( wxBOTH );
 	recordsSizer->SetNonFlexibleGrowMode( wxFLEX_GROWMODE_SPECIFIED );
-	
+
 	wxBoxSizer* pluginsSizer;
 	pluginsSizer = new wxBoxSizer( wxVERTICAL );
-	
-	m_staticText13 = new wxStaticText( this, wxID_ANY, wxT("Available plugins:"), wxDefaultPosition, wxDefaultSize, 0 );
+
+	m_staticText13 = new wxStaticText( this, wxID_ANY, _("Available plugins:"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticText13->Wrap( -1 );
 	pluginsSizer->Add( m_staticText13, 0, wxTOP|wxRIGHT|wxLEFT, 5 );
-	
+
 	wxArrayString m_checkListPluginsChoices;
 	m_checkListPlugins = new wxCheckListBox( this, wxID_ANY, wxDefaultPosition, wxSize( 200,300 ), m_checkListPluginsChoices, 0 );
 	m_checkListPlugins->SetMinSize( wxSize( 200,300 ) );
-	
+
 	pluginsSizer->Add( m_checkListPlugins, 1, wxEXPAND|wxALL, 5 );
-	
-	
+
+
 	recordsSizer->Add( pluginsSizer, 1, wxEXPAND, 5 );
-	
+
 	m_listCtrlPluginInfo = new wxListCtrl( this, wxID_ANY, wxDefaultPosition, wxSize( 350,-1 ), wxLC_HRULES|wxLC_REPORT|wxSUNKEN_BORDER );
 	m_listCtrlPluginInfo->SetFont( wxFont( 9, 77, 90, 90, false, wxT("Arial") ) );
 	m_listCtrlPluginInfo->SetBackgroundColour( wxColour( 229, 229, 229 ) );
 	m_listCtrlPluginInfo->SetMinSize( wxSize( 350,-1 ) );
-	
+
 	recordsSizer->Add( m_listCtrlPluginInfo, 1, wxEXPAND|wxTOP|wxBOTTOM|wxRIGHT, 5 );
-	
-	
+
+
 	mainSizer->Add( recordsSizer, 1, wxEXPAND, 5 );
-	
+
 	buttonSizer = new wxStdDialogButtonSizer();
 	buttonSizerOK = new wxButton( this, wxID_OK );
 	buttonSizer->AddButton( buttonSizerOK );
 	buttonSizerCancel = new wxButton( this, wxID_CANCEL );
 	buttonSizer->AddButton( buttonSizerCancel );
 	buttonSizer->Realize();
-	
+
 	mainSizer->Add( buttonSizer, 0, wxEXPAND|wxALIGN_RIGHT|wxBOTTOM|wxRIGHT, 5 );
-	
-	
+
+
 	this->SetSizer( mainSizer );
 	this->Layout();
 	mainSizer->Fit( this );
-	
+
 	this->Centre( wxBOTH );
-	
+
 	// Connect Events
 	this->Connect( wxEVT_INIT_DIALOG, wxInitDialogEventHandler( _ManagePluginsDialog::OnInitDialog ) );
 	m_checkListPlugins->Connect( wxEVT_COMMAND_LISTBOX_SELECTED, wxCommandEventHandler( _ManagePluginsDialog::OnPluginSelected ), NULL, this );
@@ -1465,37 +1465,37 @@ _ManagePluginsDialog::~_ManagePluginsDialog()
 	this->Disconnect( wxEVT_INIT_DIALOG, wxInitDialogEventHandler( _ManagePluginsDialog::OnInitDialog ) );
 	m_checkListPlugins->Disconnect( wxEVT_COMMAND_LISTBOX_SELECTED, wxCommandEventHandler( _ManagePluginsDialog::OnPluginSelected ), NULL, this );
 	buttonSizerOK->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( _ManagePluginsDialog::OnOk ), NULL, this );
-	
+
 }
 
 _SynchronizeDialog::_SynchronizeDialog( wxWindow* parent, wxWindowID id, const wxString& title, const wxPoint& pos, const wxSize& size, long style ) : wxDialog( parent, id, title, pos, size, style )
 {
 	this->SetSizeHints( wxDefaultSize, wxDefaultSize );
-	
+
 	wxBoxSizer* mainSizer;
 	mainSizer = new wxBoxSizer( wxVERTICAL );
-	
-	m_staticText16 = new wxStaticText( this, wxID_ANY, wxT("Select code items which should be updated:"), wxDefaultPosition, wxDefaultSize, 0 );
+
+	m_staticText16 = new wxStaticText( this, wxID_ANY, _("Select code items which should be updated:"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticText16->Wrap( -1 );
 	mainSizer->Add( m_staticText16, 0, wxTOP|wxRIGHT|wxLEFT, 5 );
-	
+
 	wxArrayString m_checkListChoices;
 	m_checkList = new wxCheckListBox( this, wxID_ANY, wxDefaultPosition, wxSize( -1,150 ), m_checkListChoices, 0 );
 	m_checkList->SetMinSize( wxSize( -1,150 ) );
-	
+
 	menuCheckList = new wxMenu();
 	wxMenuItem* menuSelectAll;
-	menuSelectAll = new wxMenuItem( menuCheckList, IDM_SYNCHRO_SELECT_ALL, wxString( wxT("Select all") ) , wxEmptyString, wxITEM_NORMAL );
+	menuSelectAll = new wxMenuItem( menuCheckList, IDM_SYNCHRO_SELECT_ALL, wxString( _("Select all") ) , wxEmptyString, wxITEM_NORMAL );
 	menuCheckList->Append( menuSelectAll );
-	
+
 	wxMenuItem* menuDeselectAll;
-	menuDeselectAll = new wxMenuItem( menuCheckList, IDM_SYNCHRO_DESELECT_ALL, wxString( wxT("Deselect all") ) , wxEmptyString, wxITEM_NORMAL );
+	menuDeselectAll = new wxMenuItem( menuCheckList, IDM_SYNCHRO_DESELECT_ALL, wxString( _("Deselect all") ) , wxEmptyString, wxITEM_NORMAL );
 	menuCheckList->Append( menuDeselectAll );
-	
-	m_checkList->Connect( wxEVT_RIGHT_DOWN, wxMouseEventHandler( _SynchronizeDialog::m_checkListOnContextMenu ), NULL, this ); 
-	
+
+	m_checkList->Connect( wxEVT_RIGHT_DOWN, wxMouseEventHandler( _SynchronizeDialog::m_checkListOnContextMenu ), NULL, this );
+
 	mainSizer->Add( m_checkList, 0, wxALL|wxEXPAND, 5 );
-	
+
 	wxFlexGridSizer* compareSizer;
 	compareSizer = new wxFlexGridSizer( 2, 2, 0, 0 );
 	compareSizer->AddGrowableCol( 0 );
@@ -1503,15 +1503,15 @@ _SynchronizeDialog::_SynchronizeDialog( wxWindow* parent, wxWindowID id, const w
 	compareSizer->AddGrowableRow( 1 );
 	compareSizer->SetFlexibleDirection( wxBOTH );
 	compareSizer->SetNonFlexibleGrowMode( wxFLEX_GROWMODE_SPECIFIED );
-	
-	m_staticText14 = new wxStaticText( this, wxID_ANY, wxT("In generated files:"), wxDefaultPosition, wxDefaultSize, 0 );
+
+	m_staticText14 = new wxStaticText( this, wxID_ANY, _("In generated files:"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticText14->Wrap( -1 );
 	compareSizer->Add( m_staticText14, 0, wxALL, 5 );
-	
-	m_staticText15 = new wxStaticText( this, wxID_ANY, wxT("In CodeDesigner:"), wxDefaultPosition, wxDefaultSize, 0 );
+
+	m_staticText15 = new wxStaticText( this, wxID_ANY, _("In CodeDesigner:"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticText15->Wrap( -1 );
 	compareSizer->Add( m_staticText15, 0, wxALL, 5 );
-	
+
 	m_scintillaModified = new wxStyledTextCtrl( this, wxID_ANY, wxDefaultPosition, wxSize( 300,200 ), 0, wxEmptyString );
 	m_scintillaModified->SetUseTabs( true );
 	m_scintillaModified->SetTabWidth( 4 );
@@ -1548,7 +1548,7 @@ _SynchronizeDialog::_SynchronizeDialog( wxWindow* parent, wxWindowID id, const w
 	m_scintillaModified->SetSelBackground( true, wxSystemSettings::GetColour( wxSYS_COLOUR_HIGHLIGHT ) );
 	m_scintillaModified->SetSelForeground( true, wxSystemSettings::GetColour( wxSYS_COLOUR_HIGHLIGHTTEXT ) );
 	compareSizer->Add( m_scintillaModified, 1, wxEXPAND|wxBOTTOM|wxRIGHT|wxLEFT, 5 );
-	
+
 	m_scintillaOriginal = new wxStyledTextCtrl( this, wxID_ANY, wxDefaultPosition, wxSize( 300,200 ), 0, wxEmptyString );
 	m_scintillaOriginal->SetUseTabs( true );
 	m_scintillaOriginal->SetTabWidth( 4 );
@@ -1585,26 +1585,26 @@ _SynchronizeDialog::_SynchronizeDialog( wxWindow* parent, wxWindowID id, const w
 	m_scintillaOriginal->SetSelBackground( true, wxSystemSettings::GetColour( wxSYS_COLOUR_HIGHLIGHT ) );
 	m_scintillaOriginal->SetSelForeground( true, wxSystemSettings::GetColour( wxSYS_COLOUR_HIGHLIGHTTEXT ) );
 	compareSizer->Add( m_scintillaOriginal, 1, wxEXPAND|wxBOTTOM|wxRIGHT|wxLEFT, 5 );
-	
-	
+
+
 	mainSizer->Add( compareSizer, 1, wxEXPAND, 5 );
-	
+
 	buttonSizer = new wxStdDialogButtonSizer();
 	buttonSizerOK = new wxButton( this, wxID_OK );
 	buttonSizer->AddButton( buttonSizerOK );
 	buttonSizerCancel = new wxButton( this, wxID_CANCEL );
 	buttonSizer->AddButton( buttonSizerCancel );
 	buttonSizer->Realize();
-	
+
 	mainSizer->Add( buttonSizer, 0, wxEXPAND|wxBOTTOM|wxRIGHT, 5 );
-	
-	
+
+
 	this->SetSizer( mainSizer );
 	this->Layout();
 	mainSizer->Fit( this );
-	
+
 	this->Centre( wxBOTH );
-	
+
 	// Connect Events
 	m_checkList->Connect( wxEVT_COMMAND_LISTBOX_SELECTED, wxCommandEventHandler( _SynchronizeDialog::OnSelectCodeItem ), NULL, this );
 	this->Connect( menuSelectAll->GetId(), wxEVT_COMMAND_MENU_SELECTED, wxCommandEventHandler( _SynchronizeDialog::OnSelectAll ) );
@@ -1619,82 +1619,82 @@ _SynchronizeDialog::~_SynchronizeDialog()
 	this->Disconnect( IDM_SYNCHRO_SELECT_ALL, wxEVT_COMMAND_MENU_SELECTED, wxCommandEventHandler( _SynchronizeDialog::OnSelectAll ) );
 	this->Disconnect( IDM_SYNCHRO_DESELECT_ALL, wxEVT_COMMAND_MENU_SELECTED, wxCommandEventHandler( _SynchronizeDialog::OnDeselectAll ) );
 	buttonSizerOK->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( _SynchronizeDialog::OnOk ), NULL, this );
-	
-	delete menuCheckList; 
+
+	delete menuCheckList;
 }
 
 _GroupDialog::_GroupDialog( wxWindow* parent, wxWindowID id, const wxString& title, const wxPoint& pos, const wxSize& size, long style ) : wxDialog( parent, id, title, pos, size, style )
 {
 	this->SetSizeHints( wxSize( 460,-1 ), wxDefaultSize );
-	
+
 	wxBoxSizer* mainSizer;
 	mainSizer = new wxBoxSizer( wxVERTICAL );
-	
+
 	wxGridBagSizer* controlSizer;
 	controlSizer = new wxGridBagSizer( 0, 0 );
 	controlSizer->SetFlexibleDirection( wxBOTH );
 	controlSizer->SetNonFlexibleGrowMode( wxFLEX_GROWMODE_SPECIFIED );
-	
-	m_staticText1 = new wxStaticText( this, wxID_ANY, wxT("Name"), wxDefaultPosition, wxDefaultSize, 0 );
+
+	m_staticText1 = new wxStaticText( this, wxID_ANY, _("Name"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticText1->Wrap( -1 );
 	controlSizer->Add( m_staticText1, wxGBPosition( 0, 0 ), wxGBSpan( 1, 1 ), wxTOP|wxRIGHT|wxLEFT, 5 );
-	
+
 	m_eName = new wxTextCtrl( this, wxID_ANY, wxEmptyString, wxDefaultPosition, wxSize( -1,-1 ), 0 );
-	m_eName->SetMaxLength( 0 ); 
+	m_eName->SetMaxLength( 0 );
 	controlSizer->Add( m_eName, wxGBPosition( 1, 0 ), wxGBSpan( 1, 1 ), wxALL|wxEXPAND, 5 );
-	
-	m_staticText2 = new wxStaticText( this, wxID_ANY, wxT("Description:"), wxDefaultPosition, wxDefaultSize, 0 );
+
+	m_staticText2 = new wxStaticText( this, wxID_ANY, _("Description:"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticText2->Wrap( -1 );
 	controlSizer->Add( m_staticText2, wxGBPosition( 2, 0 ), wxGBSpan( 1, 1 ), wxTOP|wxRIGHT|wxLEFT, 5 );
-	
+
 	m_eDescription = new wxTextCtrl( this, wxID_ANY, wxEmptyString, wxDefaultPosition, wxSize( 400,100 ), wxTE_MULTILINE );
-	m_eDescription->SetMaxLength( 0 ); 
+	m_eDescription->SetMaxLength( 0 );
 	m_eDescription->SetMinSize( wxSize( 400,100 ) );
-	
+
 	controlSizer->Add( m_eDescription, wxGBPosition( 3, 0 ), wxGBSpan( 1, 1 ), wxEXPAND|wxALL, 5 );
-	
+
 	m_pNotebook = new wxNotebook( this, wxID_ANY, wxDefaultPosition, wxDefaultSize, 0 );
 	m_pageAdv = new wxPanel( m_pNotebook, wxID_ANY, wxDefaultPosition, wxDefaultSize, wxTAB_TRAVERSAL );
 	wxBoxSizer* groupSizer;
 	groupSizer = new wxBoxSizer( wxHORIZONTAL );
-	
-	m_staticText70 = new wxStaticText( m_pageAdv, wxID_ANY, wxT("Group color:"), wxDefaultPosition, wxDefaultSize, 0 );
+
+	m_staticText70 = new wxStaticText( m_pageAdv, wxID_ANY, _("Group color:"), wxDefaultPosition, wxDefaultSize, 0 );
 	m_staticText70->Wrap( -1 );
 	groupSizer->Add( m_staticText70, 0, wxALL|wxALIGN_CENTER_VERTICAL, 5 );
-	
+
 	m_colourPicker = new wxColourPickerCtrl( m_pageAdv, wxID_ANY, wxColour( 200, 255, 200 ), wxDefaultPosition, wxDefaultSize, wxCLRP_DEFAULT_STYLE );
 	groupSizer->Add( m_colourPicker, 1, wxALL|wxALIGN_CENTER_VERTICAL, 5 );
-	
-	
+
+
 	m_pageAdv->SetSizer( groupSizer );
 	m_pageAdv->Layout();
 	groupSizer->Fit( m_pageAdv );
-	m_pNotebook->AddPage( m_pageAdv, wxT("Advanced"), true );
-	
+	m_pNotebook->AddPage( m_pageAdv, _("Advanced"), true );
+
 	controlSizer->Add( m_pNotebook, wxGBPosition( 4, 0 ), wxGBSpan( 1, 1 ), wxEXPAND | wxALL, 5 );
-	
+
 	bntSizer = new wxStdDialogButtonSizer();
 	bntSizerOK = new wxButton( this, wxID_OK );
 	bntSizer->AddButton( bntSizerOK );
 	bntSizerCancel = new wxButton( this, wxID_CANCEL );
 	bntSizer->AddButton( bntSizerCancel );
 	bntSizer->Realize();
-	
+
 	controlSizer->Add( bntSizer, wxGBPosition( 5, 0 ), wxGBSpan( 1, 1 ), wxALIGN_RIGHT|wxEXPAND|wxBOTTOM|wxRIGHT, 5 );
-	
-	
+
+
 	controlSizer->AddGrowableCol( 0 );
 	controlSizer->AddGrowableRow( 3 );
-	
+
 	mainSizer->Add( controlSizer, 1, wxEXPAND, 5 );
-	
-	
+
+
 	this->SetSizer( mainSizer );
 	this->Layout();
 	mainSizer->Fit( this );
-	
+
 	this->Centre( wxBOTH );
-	
+
 	// Connect Events
 	this->Connect( wxEVT_INIT_DIALOG, wxInitDialogEventHandler( _GroupDialog::OnInitDialog ) );
 	bntSizerOK->Connect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( _GroupDialog::OnOk ), NULL, this );
@@ -1705,5 +1705,5 @@ _GroupDialog::~_GroupDialog()
 	// Disconnect Events
 	this->Disconnect( wxEVT_INIT_DIALOG, wxInitDialogEventHandler( _GroupDialog::OnInitDialog ) );
 	bntSizerOK->Disconnect( wxEVT_COMMAND_BUTTON_CLICKED, wxCommandEventHandler( _GroupDialog::OnOk ), NULL, this );
-	
+
 }

@@ -2,18 +2,18 @@
  * Name:      	CodeLite.cpp
  * Purpose:   	Implements CodeLite integration plugin
  * Author:    	Michal Bližňák
- * Created:   
- * Copyright: 
+ * Created:
+ * Copyright:
  * License:   	wxWidgets license (www.wxwidgets.org)
  *********************************************************************/
- 
+
 #include "CodeLite.h"
 #include "projectbase/Common.h"
 
 #include <wx/txtstrm.h>
 
 #define TOPIC wxT("CODEDESIGNER SESSION")
- 
+
 ////////////////////////////////////////////////////////////////////////////////
 // plugin //////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
@@ -30,7 +30,7 @@ extern "C" WXDLLIMPEXP_CD IPlugin *CreatePlugin(IPluginManager *manager)
 	{
 		thePlugin = new udCodeLitePlugin(manager);
 	}
-	
+
 	return thePlugin;
 }
 
@@ -38,7 +38,7 @@ extern "C" WXDLLIMPEXP_CD udPluginInfo GetPluginInfo()
 {
 	// set plugin info
 	udPluginInfo info;
-	
+
 	info.SetAuthor( wxT("Michal Bližňák") );
 	info.SetName( wxT("CodeLite") );
 	info.SetDescription( wxT("CodeLite integration plugin.") );
@@ -46,7 +46,7 @@ extern "C" WXDLLIMPEXP_CD udPluginInfo GetPluginInfo()
 	info.SetVersion( wxT("1.0") );
 	info.SetAPIVersionMin( 1 );
 	info.SetAPIVersionMax( 1 );
-	
+
 	return info;
 }
 
@@ -59,33 +59,33 @@ bool udCodeLitePlugin::OnInit()
 {
 	// register plugin settings
 	m_PluginManager->RegisterSettings( new udCodeLiteSettingsCategory(), IPluginManager::settingsAPPLICATION );
-	
+
 	// connect events
 	m_PluginManager->RegisterEventListener( this );
-	
-	Connect( wxID_ANY, wxEVT_CD_PROJECT_BEFORE_GENERATION, udProjectEventHandler(udCodeLitePlugin::OnProjectGenerating) );	
+
+	Connect( wxID_ANY, wxEVT_CD_PROJECT_BEFORE_GENERATION, udProjectEventHandler(udCodeLitePlugin::OnProjectGenerating) );
 	Connect( wxID_ANY, wxEVT_CD_PROJECT_AFTER_GENERATION, udProjectEventHandler(udCodeLitePlugin::OnProjectGenerated) );
 	Connect( wxID_ANY, wxEVT_CD_PROJECT_FILE_ADDED, udProjectEventHandler(udCodeLitePlugin::OnFileAdded) );
 	m_PluginManager->GetMainFrame()->Connect( IDM_RECONNECT, wxEVT_COMMAND_MENU_SELECTED, wxCommandEventHandler(udCodeLitePlugin::OnReconnect), NULL, this );
-	
+
 	return true;
 }
 
 int udCodeLitePlugin::OnExit()
 {
 	// note: plugin settings cannot be unregistered
-	
+
 	// close IPC client
 	delete m_Client;
-	
+
 	// disconnect events
 	m_PluginManager->UnregisterEventListener( this );
-	
-	Disconnect( wxID_ANY, wxEVT_CD_PROJECT_BEFORE_GENERATION, udProjectEventHandler(udCodeLitePlugin::OnProjectGenerating) );	
-	Disconnect( wxID_ANY, wxEVT_CD_PROJECT_AFTER_GENERATION, udProjectEventHandler(udCodeLitePlugin::OnProjectGenerated) );	
+
+	Disconnect( wxID_ANY, wxEVT_CD_PROJECT_BEFORE_GENERATION, udProjectEventHandler(udCodeLitePlugin::OnProjectGenerating) );
+	Disconnect( wxID_ANY, wxEVT_CD_PROJECT_AFTER_GENERATION, udProjectEventHandler(udCodeLitePlugin::OnProjectGenerated) );
 	Disconnect( wxID_ANY, wxEVT_CD_PROJECT_FILE_ADDED, udProjectEventHandler(udCodeLitePlugin::OnFileAdded) );
 	m_PluginManager->GetMainFrame()->Disconnect( IDM_RECONNECT, wxEVT_COMMAND_MENU_SELECTED, wxCommandEventHandler(udCodeLitePlugin::OnReconnect), NULL, this );
-	
+
 	return 0;
 }
 
@@ -97,20 +97,20 @@ udPluginInfo udCodeLitePlugin::GetInfo()
 void udCodeLitePlugin::StartClient()
 {
 	delete m_Client;
-	
+
 	m_Client = new CDClient();
 }
 
 void udCodeLitePlugin::LogClientStatus()
 {
 	wxString sPort = IPluginManager::Get()->GetAppSettings().GetPropertyAsString( wxT("Communication port"), uddvDEFAULT_PORT_VALUE );
-	
+
 	if( m_Client && m_Client->IsConnected() )
 	{
-		IPluginManager::Get()->Log( wxString::Format( wxT("CodeLite plugin: IPC connection on port %s estabilished."), sPort.c_str() ) );
+		IPluginManager::Get()->Log( wxString::Format( _("CodeLite plugin: IPC connection on port %s estabilished."), sPort.c_str() ) );
 	}
 	else
-		IPluginManager::Get()->Log( wxString::Format( wxT("WARNING: CodeLite plugin: IPC connection on port %s failed."), sPort.c_str() ) );
+		IPluginManager::Get()->Log( wxString::Format( _("WARNING: CodeLite plugin: IPC connection on port %s failed."), sPort.c_str() ) );
 
 }
 
@@ -120,10 +120,10 @@ void udCodeLitePlugin::LogClientStatus()
 wxMenu* udCodeLitePlugin::CreateMenu()
 {
 	// create plugin menu (if needed) here...
-	
+
 	wxMenu *pMenu = new wxMenu();
 	pMenu->Append( IDM_RECONNECT, wxT("Reconnect") );
-	
+
 	return pMenu;
 }
 
@@ -142,7 +142,7 @@ void udCodeLitePlugin::OnProjectGenerated(udProjectEvent& event)
 			LogClientStatus();
 		}
 	}
-	
+
 	if( m_Client && m_Client->IsConnected() &&
 		IPluginManager::Get()->GetAppSettings().GetProperty( wxT("Update CodeLite workspace") )->AsBool() &&
 		!m_Files.IsEmpty() )
@@ -161,7 +161,7 @@ void udCodeLitePlugin::OnFileAdded(udProjectEvent& event)
 }
 
 void udCodeLitePlugin::OnReconnect(wxCommandEvent& event)
-{	
+{
 	StartClient();
 	LogClientStatus();
 }
@@ -180,7 +180,7 @@ udCodeLiteSettingsCategory::udCodeLiteSettingsCategory() : udSettingsCategory( w
 	m_sPort = uddvDEFAULT_PORT_VALUE;
 	m_fKeepAlive = uddvDEFAULT_KEEP_ALIVE;
 	m_fUpdateWorkspace = uddvDEFAULT_UPDATE_WORKSPACE;
-	
+
 	XS_SERIALIZE( m_sPort, wxT("Communication port") );
 	XS_SERIALIZE( m_fKeepAlive, wxT("Keep connection alive") );
 	XS_SERIALIZE( m_fUpdateWorkspace, wxT("Update CodeLite workspace") );
@@ -189,7 +189,7 @@ udCodeLiteSettingsCategory::udCodeLiteSettingsCategory() : udSettingsCategory( w
 udCodeLiteSettingsCategory::udCodeLiteSettingsCategory(const udCodeLiteSettingsCategory& obj) : udSettingsCategory( obj )
 {
 	SetName( wxT("CodeLite") );
-	
+
 	m_sPort = obj.m_sPort;
 	m_fKeepAlive = obj.m_fKeepAlive;
 	m_fUpdateWorkspace = obj.m_fUpdateWorkspace;
@@ -211,7 +211,7 @@ udCodeLiteSettingsCategory::~udCodeLiteSettingsCategory()
 CDClient::CDClient()
 {
 	wxString sPort = IPluginManager::Get()->GetAppSettings().GetPropertyAsString( wxT("Communication port"), uddvDEFAULT_PORT_VALUE );
-	
+
 	m_Connection = (CDConnection*) MakeConnection( wxT("localhost"), sPort, TOPIC );
 }
 
@@ -251,7 +251,7 @@ bool CDConnection::Poke(const wxString& item, wxChar *data, int size, wxIPCForma
 {
     bool retval = wxConnection::Poke(item, data, size, format);
     if (!retval) IPluginManager::Get()->Log( wxT("WARNING: IPC Poke failed") );
-	
+
     return retval;
 }
 #else
@@ -259,7 +259,7 @@ bool CDConnection::Poke(const wxString& item, const wchar_t *data)
 {
     bool retval = wxConnection::Poke(item, data);
     if (!retval) IPluginManager::Get()->Log( wxT("WARNING: IPC Poke failed") );
-	
+
     return retval;
 }
 #endif

@@ -54,7 +54,7 @@ bool wxSFPrintout::OnPrintPage(int page)
 {
 	wxUnusedVar( page );
 
-    wxASSERT_MSG(m_pCanvas, wxT("Shape canvas must be set in the wxSFPrintout class instance."));
+    wxASSERT_MSG(m_pCanvas, _("Shape canvas must be set in the wxSFPrintout class instance."));
 
     wxDC *dc = GetDC();
     if (dc && m_pCanvas)

@@ -11,11 +11,11 @@ wxArrayString udLanguage::m_arrFormalDataTypes;
 udLanguage::udLanguage()
 {
 	static bool fInitFormalTypeNames = true;
-	
+
 	udSettings &Settings = IPluginManager::Get()->GetAppSettings();
-	
-    m_sName = wxT("- Undefined language -");
-    m_sDescription = wxT("Base language class implementation.");
+
+    m_sName = _("- Undefined language -");
+    m_sDescription = _("Base language class implementation.");
 
     m_sOutBuffer = wxT("");
 
@@ -35,11 +35,11 @@ udLanguage::udLanguage()
 
     m_nIndentation = 0;
 	m_nCodeBufferIndex = -1;
-	
+
 	m_fHasUserDataType = true;
 	m_fHasSeparatedDecl = true;
 	m_fHasClasses = false;
-	
+
 	if( fInitFormalTypeNames )
 	{
 		m_arrFormalDataTypes.Add(wxT("<user-defined>"));
@@ -53,7 +53,7 @@ udLanguage::udLanguage()
 		m_arrFormalDataTypes.Add(wxT("BigReal"));
 		m_arrFormalDataTypes.Add(wxT("Char"));
 		m_arrFormalDataTypes.Add(wxT("Void"));
-		
+
 		fInitFormalTypeNames = false;
 	}
 }
@@ -74,10 +74,10 @@ void udLanguage::PopCode()
 void udLanguage::PushCode()
 {
 	m_nCodeBufferIndex++;
-	
+
 	m_arrCodeBuffer.SetCount(m_nCodeBufferIndex + 1);
 	m_arrCodeBuffer[m_nCodeBufferIndex] = m_sOutBuffer;
-	
+
 	m_sOutBuffer.Clear();
 }
 
@@ -174,17 +174,17 @@ void udLanguage::WriteCodeBlocks(const wxString& code)
 }
 
 wxString udLanguage::GetCommented(const wxString& txt)
-{	
+{
 	int nCurrIndent = GetIndentation();
 	SetIndentation( 0 );
 	PushCode();
-	
+
 	this->MultiLineCommentCmd( txt );
-	
+
 	wxString sOut = GetCodeBuffer();
-	
+
 	PopCode();
 	SetIndentation( nCurrIndent );
-	
+
 	return sOut;
 }

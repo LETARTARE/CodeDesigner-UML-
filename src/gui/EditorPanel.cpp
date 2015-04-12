@@ -19,9 +19,9 @@ udCodeEditorPanel::udCodeEditorPanel( wxWindow* parent, wxWindowID id, const wxP
 : _EditorPanel( parent, id, pos, size )
 {
 	m_pPrevLang = NULL;
-	
+
 	m_scintillaEditor->SetReadOnly( true );
-	
+
 	m_stCodeItem->SetLabel( wxT("") );
 }
 
@@ -57,32 +57,32 @@ void udCodeEditorPanel::OnProjectItemSelected(udProjectEvent& event)
 	if( IsShown() )
 	{
 		udCodeItem *pCI = GetAsCodeItem( event.GetProjectItem() );
-			
+
 		// initialize the editor only if neccessary (i.e. active language has been changed)
-		if( m_pPrevLang != wxGetApp().GetMainFrame()->GetSelectedLanguage() ) 
+		if( m_pPrevLang != wxGetApp().GetMainFrame()->GetSelectedLanguage() )
 		{
 			m_pPrevLang = wxGetApp().GetMainFrame()->GetSelectedLanguage();
 			udFRAME::InitStyledTextCtrl( m_scintillaEditor, m_pPrevLang );
 		}
-			
+
 		m_scintillaEditor->SetReadOnly( false );
-		
+
 		// update editor's content
 		if( pCI )
 		{
-			m_stCodeItem->SetLabel( wxT("Code item: ") + pCI->GetName() );
-			
+			m_stCodeItem->SetLabel( _("Code item: ") + pCI->GetName() );
+
 			if( pCI->GetProperty(wxT("code")) )	m_scintillaEditor->SetText( pCI->GetCode() );
 			else
 			{
-				m_scintillaEditor->SetText( wxT("<no editable content>") );
+				m_scintillaEditor->SetText( _("<no editable content>") );
 				m_scintillaEditor->SetReadOnly( true );
 			}
 		}
 		else
 		{
-			m_stCodeItem->SetLabel( wxT("Code item: <none>") );
-			m_scintillaEditor->SetText( wxT("<no editable content>") );
+			m_stCodeItem->SetLabel( _("Code item: <none>") );
+			m_scintillaEditor->SetText( _("<no editable content>") );
 			m_scintillaEditor->SetReadOnly( true );
 		}
 	}
@@ -107,7 +107,7 @@ void udCodeEditorPanel::OnKeyDown(wxKeyEvent& event)
 			else
 				event.Skip();
 			break;
-			
+
 		default:
 			event.Skip();
 	}
@@ -116,17 +116,17 @@ void udCodeEditorPanel::OnKeyDown(wxKeyEvent& event)
 // protected functions //////////////////////////////////////////////////////////////////////
 
 udCodeItem* udCodeEditorPanel::GetAsCodeItem(udProjectItem* item)
-{	
+{
 	udCodeItem *pCI = NULL;
-	
+
 	if( item )
 	{
 		// get original code item
 		if( item->IsKindOf(CLASSINFO(udCodeLinkItem)) ) pCI = (udCodeItem*)((udCodeLinkItem*)item)->GetOriginal();
-		else 
+		else
 			pCI = wxDynamicCast( item, udCodeItem );
 	}
-	
+
 	return pCI;
 }
 bool udCodeEditorPanel::CanSave()
@@ -136,6 +136,6 @@ bool udCodeEditorPanel::CanSave()
 		udCodeItem *pCI = GetAsCodeItem( wxGetApp().GetMainFrame()->GetSelectedProjectItem() );
 		return ( pCI && (m_scintillaEditor->GetText() != wxT("<no editable content>")) && (pCI->GetCode() != m_scintillaEditor->GetText()) );
 	}
-	
+
 	return false;
 }

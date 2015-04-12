@@ -24,7 +24,7 @@ IMPLEMENT_DYNAMIC_CLASS( udPluginCategory, udSettingsCategory);
 udPluginCategory::udPluginCategory() : udSettingsCategory( wxT("Plugins category") )
 {
 	m_arrActivePlugins.Add( wxT("<uninitialized>") );
-	
+
 	XS_SERIALIZE( m_arrActivePlugins, wxT("Active plugins") );
 }
 
@@ -33,7 +33,7 @@ udPluginManSettings::udPluginManSettings()
 	SetSerializerRootName( wxT("plugins") );
 	SetSerializerOwner( wxT("CodeDesigner") );
 	SetSerializerVersion( wxT("1") );
-	
+
 }
 
 void udPluginManSettings::CreateCategories()
@@ -49,7 +49,7 @@ udPluginManager::udPluginManager()
 	m_lstPlugins.DeleteContents( true );
 	m_lstLibraries.DeleteContents( true );
 	m_lstProjectSettings.DeleteContents( true );
-	
+
 	m_Frame = NULL;
 
 	SetThis( this );
@@ -87,11 +87,11 @@ void udPluginManager::RegisterDiagram(const udDiagramInfo& info)
 	// register new diagram type
 	m_Frame->GetDiagrams().Add( udDiagramType( GetNewDiagramId(), info.GetName(), info.GetDataClassName() ) );//, info.GetCanvasClassName() ) );
 	udArt::AddArt( info.GetIcon(), info.GetDataClassName());
-	
+
 	// register diagram components
 	PaletteArray *arrPalette = new PaletteArray();
 	m_mapElementPalettes[info.GetName()] = arrPalette;
- 
+
 	const DiagramComponentArray& arrComponents = info.GetComponentArray();
 	for( size_t i = 0; i < arrComponents.GetCount(); i ++ )
 	{
@@ -119,17 +119,17 @@ void udPluginManager::UnregisterEventListener(IPlugin* plugin)
 void udPluginManager::LoadPlugins()
 {
 	const int nAPIVERSION = 1;
-	
+
 	// load/create plugin manager settings
 	wxString sSettingsPath = wxGetApp().GetSettingsPath() + wxT("plugins.xml");
 	m_Settings.DeserializeFromXml( sSettingsPath );
-		
-	wxArrayString& arrActivePlugins = m_Settings.GetProperty( wxT("Active plugins") )->AsStringArray();
-	
+
+	wxArrayString& arrActivePlugins = m_Settings.GetProperty(wxT("Active plugins") )->AsStringArray();
+
 	//const wxString &sAppPath = wxGetApp().GetPath();
 	wxString ext;
-	
-#if defined (__WXGTK__) 
+
+#if defined (__WXGTK__)
 	ext = wxT("so");
 #elif defined (__WXMAC__)
 	ext = wxT("dylib");
@@ -144,11 +144,11 @@ void udPluginManager::LoadPlugins()
 #endif
 
 	wxDynamicLibrary *pDl = NULL;
-	
+
 	wxArrayString arrPluginNames;
 	//wxDir::GetAllFiles( sAppPath + wxT("plugins"), &arrPluginNames, sFileSpec, wxDIR_FILES );
 	wxDir::GetAllFiles( wxGetApp().GetPluginsPath(), &arrPluginNames, sFileSpec, wxDIR_FILES );
-	
+
 	// force loading of all available plugins after reset of application settings
 	bool fForceLoad = false;
 	if( arrActivePlugins.Index( wxT("<uninitialized>") ) != wxNOT_FOUND )
@@ -156,11 +156,11 @@ void udPluginManager::LoadPlugins()
 		fForceLoad = true;
 		arrActivePlugins.Clear();
 	}
-		
+
 	for( size_t i = 0; i < arrPluginNames.GetCount(); i++ )
 	{
 		wxString sFileName( arrPluginNames[i] );
-		
+
 		#ifdef NDEBUG
 		if( sFileName.Contains( wxT("_d.") + ext ) ) continue;
 		#endif
@@ -169,11 +169,11 @@ void udPluginManager::LoadPlugins()
 		pDl = new wxDynamicLibrary();
 		if( !pDl->Load( sFileName ) )
 		{
-			UMLDesignerApp::Log( wxT("ERROR: Unable to load plugin: ") + sFileName );
+			UMLDesignerApp::Log( _("ERROR: Unable to load plugin: ") + sFileName );
 			delete pDl;
 			continue;
 		}
-		
+
 		// try to get plugin info function
 		GET_PLUGIN_INFO_FUNC PluginInfo = (GET_PLUGIN_INFO_FUNC) pDl->GetSymbol( wxT("GetPluginInfo") );
 		if( !PluginInfo )
@@ -181,18 +181,18 @@ void udPluginManager::LoadPlugins()
 			delete pDl;
 			continue;
 		}
-		
+
 		// test whether the plugin's API matches current version
 		udPluginInfo pluginInfo = PluginInfo();
 		if( (pluginInfo.GetAPIVersionMin() >= nAPIVERSION) &&
 			(pluginInfo.GetAPIVersionMax() <= nAPIVERSION) )
 		{
 			m_arrPluginInfo.Add(pluginInfo);
-			
+
 			if( fForceLoad || (arrActivePlugins.Index( pluginInfo.GetName() ) != wxNOT_FOUND) )
 			{
 				if( fForceLoad ) arrActivePlugins.Add( pluginInfo.GetName() );
-				
+
 				// try to get plugin construction function
 				GET_PLUGIN_CREATE PluginCreate = (GET_PLUGIN_CREATE) pDl->GetSymbol( wxT("CreatePlugin") );
 				if( !PluginCreate )
@@ -201,14 +201,14 @@ void udPluginManager::LoadPlugins()
 					delete pDl;
 					continue;
 				}
-				
+
 				// create plugin instance
 				IPlugin* pPlugin = PluginCreate( this );
 				if( pPlugin ) //&& pPlugin->OnInit() )
 				{
 					m_lstPlugins.Append( pPlugin );
 					m_lstLibraries.Append( pDl );
-					
+
 					//UMLDesignerApp::Log( wxT("Plugin '") + pPlugin->GetInfo().GetName() + wxT("' has been successfully loaded.") );
 				}
 				else
@@ -229,7 +229,7 @@ void udPluginManager::UnloadPlugins()
 	// store plugin manager settings
 	wxString sSettingsPath = wxGetApp().GetSettingsPath() + wxT("plugins.xml");
 	m_Settings.SerializeToXml( sSettingsPath );
-	
+
 	// perform clean-up
 	m_lstPlugins.Clear();
 	m_lstLibraries.Clear();
@@ -238,32 +238,32 @@ void udPluginManager::UnloadPlugins()
 bool udPluginManager::InitializePlugins()
 {
 	bool fSuccess = true;
-	
+
 	for( PluginList::iterator it = m_lstPlugins.begin(); it != m_lstPlugins.end(); ++it )
 	{
 		if( !(*it)->OnInit() )
 		{
-			UMLDesignerApp::Log( wxT("WARNING: Couldn't initialize'") + (*it)->GetInfo().GetName() + wxT("' plugin.") );
+			UMLDesignerApp::Log( _("WARNING: Couldn't initialize'") + (*it)->GetInfo().GetName() + _("' plugin.") );
 			fSuccess = false;
 		}
 	}
-	
+
 	return fSuccess;
 }
 
 bool udPluginManager::UninitializePlugins()
 {
 	bool fSuccess = true;
-	
+
 	for( PluginList::iterator it = m_lstPlugins.begin(); it != m_lstPlugins.end(); ++it )
 	{
 		if( (*it)->OnExit() != 0 )
 		{
-			UMLDesignerApp::Log( wxT("WARNING: Couldn't uninitialize'") + (*it)->GetInfo().GetName() + wxT("' plugin correctly.") );
+			UMLDesignerApp::Log( _("WARNING: Couldn't uninitialize'") + (*it)->GetInfo().GetName() + _("' plugin correctly.") );
 			fSuccess = false;
 		}
 	}
-	
+
 	m_lstProjectSettings.Clear();
 	return fSuccess;
 }
@@ -401,7 +401,7 @@ void udPluginManager::RegisterCodeGenerator(const udGeneratorInfo& info)
 void udPluginManager::UnregisterCodeGenerator(const udGeneratorInfo& info)
 {
 	GeneratorsArray& arrGens = m_Frame->GetGenerators();
-	
+
 	for( size_t i = 0; i < arrGens.GetCount(); i++ )
 	{
 		if( arrGens[i].GetClassName() == info.GetClassName() )
@@ -444,12 +444,12 @@ void udPluginManager::RegisterSettings(udSettingsCategory* settings, SETTINGSTYP
 					delete settings;
 			}
 			break;
-			
+
 			case IPluginManager::settingsPROJECT:
 			{
 				// insert project settings to list which will be appended to newly loaded project's settings
 				m_lstProjectSettings.Append( settings );
-				
+
 				// update current project settings
 				AppendPluginsSettings( udProject::Get()->GetSettings() );
 			}

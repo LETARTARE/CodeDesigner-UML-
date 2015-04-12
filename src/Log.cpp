@@ -18,8 +18,8 @@ END_EVENT_TABLE()
 udLog::udLog( wxWindow* parent, wxWindowID id ) : _LogPanel( parent, id )
 {
 	// initialize list control
-    m_pLogList->InsertColumn(0, wxT("Message"));
-    m_pLogList->InsertColumn(1, wxT("Time"));
+    m_pLogList->InsertColumn(0, _("Message"));
+    m_pLogList->InsertColumn(1, _("Time"));
 
     // prepare the imagelist
     static const int ICON_SIZE = 16;
@@ -59,7 +59,7 @@ udLog::udLog( wxWindow* parent, wxWindowID id ) : _LogPanel( parent, id )
 
 	// create popup menu
 	m_pPopupMenu = new wxMenu();
-	m_pPopupMenu->Append(IDM_LOGWND_CLEAR, wxT("Clear"));
+	m_pPopupMenu->Append(IDM_LOGWND_CLEAR, _("Clear"));
 }
 
 udLog::~udLog()
@@ -75,8 +75,8 @@ void udLog::ClearMessages()
 
 void udLog::AddMessage(const wxString &msg)
 {
-	if( ( msg.Contains( wxT("ERROR") ) && (UMLDesignerApp::GetLogMask() & UMLDesignerApp::logERRORS) ) ||
-		( msg.Contains( wxT("WARNING") ) && (UMLDesignerApp::GetLogMask() & UMLDesignerApp::logWARNINGS) ) ||
+	if( ( msg.Contains( _("ERROR") ) && (UMLDesignerApp::GetLogMask() & UMLDesignerApp::logERRORS) ) ||
+		( msg.Contains( _("WARNING") ) && (UMLDesignerApp::GetLogMask() & UMLDesignerApp::logWARNINGS) ) ||
 		(UMLDesignerApp::GetLogMask() & UMLDesignerApp::logNORMAL) )
 		{
 			int nImage = -1;
@@ -86,8 +86,8 @@ void udLog::AddMessage(const wxString &msg)
 
 			if ( m_fIconsLoaded )
 			{
-				if( msg.Contains(wxT("ERROR")) ) nImage = 2;
-				else if( msg.Contains(wxT("WARNING")) ) nImage = 1;
+				if( msg.Contains(_("ERROR")) ) nImage = 2;
+				else if( msg.Contains(_("WARNING")) ) nImage = 1;
 				else nImage = 0;
 			}
 

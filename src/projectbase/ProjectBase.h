@@ -52,18 +52,18 @@ class WXDLLIMPEXP_CD udProjectItem : public IProjectItem
 {
 public:
 	XS_DECLARE_CLONABLE_CLASS(udProjectItem);
-	
+
 	udProjectItem();
 	udProjectItem(const udProjectItem& obj);
 	virtual ~udProjectItem();
-	
+
 	virtual void SetName(const wxString& name){m_sName = GetUniqueName( name );}
 	virtual void SetDescription(const wxString& desc){m_sDescription = desc;}
 
     virtual const wxString& GetName() const {return m_sName;}
 	virtual const wxString& GetDescription() const {return m_sDescription;}
 	virtual wxString GetUniqueId(const udLanguage *lang) {return wxString::Format("ID_%s", lang->MakeValidIdentifier( this->GetName() ).Upper());}
-	
+
 	// public functions
 	virtual void AcceptChild(const wxString& classname) { m_arrAcceptedChild.Add(classname);	}
 	virtual void AcceptSibbling(const wxString& classname) { m_arrAcceptedSibbling.Add(classname); }
@@ -74,7 +74,7 @@ public:
 
     // virtual public functions
 	virtual wxMenu* CreateMenu();
-		
+
 	virtual void OnCreate();
 	virtual void OnCreateCopy();
 	virtual void OnTreeTextChange(const wxString& txt);
@@ -85,17 +85,17 @@ public:
     virtual void OnSelection();
     virtual void OnActivation();
     virtual void OnContextMenu(wxWindow* parent, const wxPoint& pos);
-	
+
 protected:
 	// procted data members
     wxString m_sName;
 	wxString m_sDescription;
-	
+
 	wxArrayString m_arrAcceptedChild;
 	wxArrayString m_arrAcceptedSibbling;
-	
+
 	bool m_fMustBeUnique;
-	
+
 	// protected functions
 	virtual wxString GetUniqueName(const wxString& name);
 };
@@ -119,7 +119,7 @@ public:
     virtual void OnActivation();
 	virtual void OnTreeTextChange(const wxString& txt);
 	virtual void OnEditItem(wxWindow* parent);
-	
+
 protected:
 
 	virtual wxMenu* CreateMenu();
@@ -138,21 +138,21 @@ public:
 
 	// public functions
 	virtual udProjectItem* GetOriginal();
-    
+
     void UpdateLabels(const wxString& diagram, const wxString& element);
-	
+
     // public data members accessors
     void SetOrigDiagram(const wxString& name){ m_sOriginalDiagram = name; }
     void SetOrigElement(const wxString& name){ m_sOriginalElement = name; }
 
     wxString GetOrigDiagram(){ return m_sOriginalDiagram; }
     wxString GetOrigElement(){ return m_sOriginalElement; }
-	
+
 	// public virtual functions
     virtual void OnShapeTextChange(const wxString& txt, udLABEL::TYPE type, int id);
     virtual void OnSelection();
 	virtual void OnContextMenu(wxWindow* parent, const wxPoint& pos);
-	
+
 protected:
     // protected data members
     wxString m_sOriginalDiagram;
@@ -172,12 +172,12 @@ public:
 
 	// public functions
 	virtual udProjectItem* GetOriginal();
-    
+
     // public data members accessors
     void SetOrigDiagram(const wxString& name){ m_sOriginalDiagram = name; }
 
-    wxString GetOrigDiagram(){ return m_sOriginalDiagram; }	
-	
+    wxString GetOrigDiagram(){ return m_sOriginalDiagram; }
+
 protected:
     // protected data members
     wxString m_sOriginalDiagram;
@@ -191,14 +191,14 @@ public:
 	udAccessType();
 	udAccessType(udLanguage::ACCESSTYPE at);
 	udAccessType(const udAccessType& obj);
-	
+
 	wxMenu* CreateAccessMenu();
-	
+
 	// public member data accessors
 	void SetAccessType(const udLanguage::ACCESSTYPE& at) {m_nAccessType = at;}
-	
+
 	const udLanguage::ACCESSTYPE& GetAccessType() const {return m_nAccessType;}
-	
+
 protected:
 	// protected data members
 	udLanguage::ACCESSTYPE m_nAccessType;
@@ -211,7 +211,7 @@ class WXDLLIMPEXP_CD udCodeItem : public udProjectItem
 {
 public:
 	XS_DECLARE_CLONABLE_CLASS(udCodeItem);
-	
+
 	enum CODEFORMAT
 	{
 		cfDECLARATION,
@@ -229,20 +229,20 @@ public:
 	void SetInverted(bool fInverted){m_fInverted = fInverted;}
 	void SetInline(bool inln){m_fInline = inln;}
 	void SetScope(const wxString& scope){m_sScope = scope;}
-	
+
 	const wxString& GetCode() const {return m_sCode;}
 	bool GetInverted() const {return m_fInverted;}
 	bool IsInline() const {return m_fInline;}
 	const wxString& GetScope() const {return m_sScope;}
-	
+
 	void UpdateSignature();
 	const wxString& GetSignature() const { return m_sSignature; }
 
 	// public virtual functions
 	virtual wxString ToString(CODEFORMAT format, udLanguage *lang = NULL);
-	
+
 	virtual wxMenu* CreateMenu();
-		
+
 	virtual void OnActivation();
 	virtual bool OnTreeItemBeginDrag(const wxPoint &pos);
 	virtual void OnTreeItemEndDrag(const wxPoint &pos);
@@ -255,7 +255,7 @@ protected:
 	wxString m_sSignature;
 	bool m_fInverted;
 	bool m_fInline;
-	
+
 	// protected functions
 	bool DragCodeItem(udCodeLinkItem *link);
 };
@@ -268,29 +268,29 @@ public:
     XS_DECLARE_CLONABLE_CLASS(udCodeLinkItem);
 
     udCodeLinkItem();
-	udCodeLinkItem(const udCodeItem *orig);	
+	udCodeLinkItem(const udCodeItem *orig);
     udCodeLinkItem(const udCodeLinkItem &obj);
     virtual ~udCodeLinkItem();
-	
+
     // public data members accessors
     void SetOrigCodeItem(const wxString& name){ m_sOriginalCodeItem = name; }
 	void SetScope(const wxString& scope){ m_sScope = scope; }
-	
+
 	const wxString& GetOrigCodeItem() const { return m_sOriginalCodeItem; }
 	const wxString& GetScope() const { return m_sScope; }
-	
+
 	// public functions
 	virtual wxString ToString(udCodeItem::CODEFORMAT format, udLanguage *lang = NULL) { return ((udCodeItem*)this->GetOriginal())->ToString(format, lang); }
-	
+
 	// public virtual functions
 	virtual udProjectItem* GetOriginal();
-	
+
 	virtual void OnTreeTextChange(const wxString& txt);
 	virtual void OnEditItem(wxWindow* parent);
 	virtual void OnActivation();
 	virtual bool OnTreeItemBeginDrag(const wxPoint &pos);
 	virtual void OnTreeItemEndDrag(const wxPoint &pos);
-	
+
 protected:
 	// protected data members
 	wxString m_sOriginalCodeItem;
@@ -310,11 +310,11 @@ public:
 		dlCODE,
 		dlHEADER
 	};
-	
+
     udVariableItem();
 	udVariableItem(const udVariableItem &obj);
     virtual ~udVariableItem();
-	
+
 	// public functions
 	virtual wxString GetDataTypeString(CODEFORMAT format, udLanguage *lang);
 	virtual wxString GetModifierString(udLanguage *lang);
@@ -345,7 +345,7 @@ public:
 protected:
 	// protected data members
 	DECLLOCATION m_nUserDeclPlace;
-	
+
 	udLanguage::VALUETYPE m_nValueType;
 	udLanguage::DATATYPE m_nDataType;
 	udLanguage::DATAMODIFIER m_nDataModifier;
@@ -354,9 +354,9 @@ protected:
 	wxString m_sUserDeclaration;
 	wxString m_sUserDeclFile;
 	wxString m_sValue;
-	
+
 	// protected functions
-	
+
 private:
 	// private functions
 	void MarkSerializableDataMembers();
@@ -376,7 +376,7 @@ class WXDLLIMPEXP_CD udVariableLinkItem : public udCodeLinkItem
 {
 public:
 	XS_DECLARE_CLONABLE_CLASS(udVariableLinkItem);
-	
+
 	// constructor
 	udVariableLinkItem() {;}
 	udVariableLinkItem(const udCodeItem *orig) : udCodeLinkItem(orig) {;}
@@ -394,9 +394,9 @@ public:
 	udParamItem();
 	udParamItem(const udParamItem& obj) : udVariableItem(obj) {;}
 	virtual ~udParamItem() {;}
-	
+
 	virtual wxString GetDataTypeString(CODEFORMAT format, udLanguage *lang);
-	
+
 	// public virtual functions
 	virtual void OnTreeTextChange(const wxString& txt);
 	virtual wxString ToString(CODEFORMAT format, udLanguage *lang = NULL);
@@ -412,7 +412,7 @@ public:
     udFunctionItem();
 	udFunctionItem(const udFunctionItem &obj);
     virtual ~udFunctionItem();
-	
+
 	// public functions
 	wxString GetDataTypeString(udLanguage *lang);
 	wxString GetModifierString(udLanguage *lang);
@@ -454,10 +454,10 @@ protected:
 	udVariableItem::DECLLOCATION m_nUserRetValDeclPlace;
 	udLanguage::FCNMODIFIER m_nFcnModifier;
 	wxString m_sImplementation;
-	
+
 	// protected functions
-	
-	
+
+
 private:
 	// private functions
 	void MarkSerializableDataMembers();
@@ -470,7 +470,7 @@ class WXDLLIMPEXP_CD udGenericFunctionItem : public udFunctionItem
 public:
     XS_DECLARE_CLONABLE_CLASS(udGenericFunctionItem);
 	virtual ~udGenericFunctionItem(){;}
-	
+
 	// public virtual functions
 	virtual wxString ToString(udCodeItem::CODEFORMAT format, udLanguage *lang = NULL);
 };
@@ -479,24 +479,24 @@ class WXDLLIMPEXP_CD udFunctionLinkItem : public udCodeLinkItem
 {
 public:
 	XS_DECLARE_CLONABLE_CLASS(udFunctionLinkItem);
-	
+
 	// constructor
 	udFunctionLinkItem();
 	udFunctionLinkItem(const udCodeItem *orig);
 	udFunctionLinkItem(const udFunctionLinkItem& obj);
 	virtual ~udFunctionLinkItem() {;}
-	
+
 	// public functions
 	udFunctionItem* GetOriginalFunction(){ return wxDynamicCast( this->GetOriginal(), udFunctionItem ); }
-	
+
 	// call parameters handling
 	StringMap& GetCallParams() {return m_mapCallParams;}
 	wxString GetUpdatedFunctionCall(udCodeItem::CODEFORMAT format, udLanguage *lang);
-	
+
 	// public virtual functions
 	virtual wxString ToString(udCodeItem::CODEFORMAT format, udLanguage *lang = NULL);
 	virtual void OnEditItem(wxWindow* parent);
-	
+
 protected:
 	// protected data members
 	StringMap m_mapCallParams;
@@ -537,26 +537,26 @@ public:
 
 	// public virtual functions
 	virtual wxMenu* CreateMenu();
-	
+
     virtual void OnActivation();
 	virtual void OnTreeTextChange(const wxString& txt);
 	virtual bool OnTreeItemBeginDrag(const wxPoint &pos);
 	virtual void OnEditItem(wxWindow* parent);
-	
+
 	virtual void GetSpecificCodeItems(wxClassInfo *type, SerializableList& codeitems);
 
 protected:
 
     // protected data members
     wxString m_sDiagramType;
-	
+
     udDiagramManager m_DiagramManager;
     udDiagramCanvas *m_pCurrentUMLCanvas;
 	udSubDiagramElementItem *m_pSubElement;
 
     wxString m_sActiveGenerator;
     wxString m_sActiveAlgorithm;
-	
+
 	wxString m_sOutputFile;
 	bool m_fGenerate;
 
@@ -573,13 +573,13 @@ class WXDLLIMPEXP_CD udDiagElementItem : public udProjectItem, public udAccessTy
 {
 public:
 	friend class udElementLinkItem;
-	
+
     XS_DECLARE_CLONABLE_CLASS(udDiagElementItem);
 
     udDiagElementItem();
 	udDiagElementItem(const udDiagElementItem &obj);
     virtual ~udDiagElementItem();
-	
+
 	// code items handling
 	void AssignCodeItem(udProjectItem *item);
 	void ClearCodeItems(wxClassInfo *origtype);
@@ -589,7 +589,7 @@ public:
     // virtual public functions
 	virtual wxMenu* CreateMenu();
 	virtual wxString GetUniqueId(const udLanguage *lang);
-	
+
     virtual void OnSelection();
     virtual void OnActivation();
 	virtual void OnEditItem(wxWindow* parent);
@@ -598,27 +598,27 @@ public:
 	virtual void OnTreeItemEndDrag(const wxPoint &pos);
 	virtual void OnShapeTextChange(const wxString& txt, udLABEL::TYPE type, int id);
 	virtual void OnContextMenu(wxWindow* parent, const wxPoint& pos);
-	
+
 	virtual void UpdateInnerContent(){;}
 
-protected:	
+protected:
 	// protected data members
 	StringMap m_mapStoredCallParams;
-	
+
 	// protected functions
 	wxString RemoveCallParams(const wxString& txt);
-	
+
 	void StoreCallParams();
 	void RestoreCallParams();
-	
+
 	bool UpdateSubmenu(wxMenu *submenu, const wxArrayString& items, bool clear);
 	void UpdateAffectedCodeItems(const wxString& prevname, const wxString& newname);
 
 	// protected virtual functions
-	
+
     virtual wxXmlNode* Serialize(wxXmlNode* node);
     virtual void Deserialize(wxXmlNode* node);
-	
+
 	virtual wxString GetUniqueName(const wxString& name);
 };
 
@@ -632,7 +632,7 @@ public:
     udSubDiagramElementItem();
 	udSubDiagramElementItem(const udSubDiagramElementItem &obj);
     virtual ~udSubDiagramElementItem();
-	
+
 	udDiagramItem* GetSubDiagram(){return m_pSubDiagram;}
 
 	virtual wxMenu* CreateMenu();
@@ -644,7 +644,7 @@ public:
 
 protected:
     udDiagramItem* m_pSubDiagram;
-	
+
 	// protected functions
 	virtual wxString GetUniqueName(const wxString& name);
 };

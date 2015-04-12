@@ -22,7 +22,7 @@ void udSubStateDialog::OnInit(wxInitDialogEvent& event)
 	m_eName->SetValidator(wxGenericValidator(&m_Name));
 	m_eDescription->SetValidator(wxGenericValidator(&m_Description));
 	m_chbStoreRetVal->SetValidator(wxGenericValidator(&m_StoreRetVal));
-	
+
 	// use validators to transfer a data
 	TransferDataToWindow();
 	m_pageAdv->TransferDataToWindow();
@@ -34,9 +34,9 @@ void udSubStateDialog::OnNameChange(wxCommandEvent& event)
 	{
 		long nFrom, nTo;
 		m_eName->GetSelection(&nFrom, &nTo);
-		
+
 		m_eName->ChangeValue( m_pLang->MakeValidIdentifier( m_eName->GetValue() ) );
-		
+
 		m_eName->SetSelection( nFrom, nTo );
 	}
 }
@@ -50,13 +50,13 @@ void udSubStateDialog::OnOk(wxCommandEvent& event)
 {
 	if( m_eName->GetValue() == wxT("") )
 	{
-		wxMessageBox(wxT("Name cannot be empty."), wxT("CodeDesigner"), wxICON_WARNING | wxOK );
+		wxMessageBox(_("Name cannot be empty."), wxT("CodeDesigner"), wxICON_WARNING | wxOK );
 		m_eName->SetFocus();
 	}
 //	else if( (m_Name != m_eName->GetValue()) && !IPluginManager::Get()->GetProject()->IsUniqueName( m_eName->GetValue() ) )
 //	{
 //		wxMessageBox(wxT("Name must be unique."), wxT("CodeDesigner"), wxICON_WARNING | wxOK );
-//		m_eName->SetFocus();		
+//		m_eName->SetFocus();
 //	}
 	else
 	{

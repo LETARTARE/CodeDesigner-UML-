@@ -10,10 +10,10 @@ int CompareTypeAndName(const void *elem1, const void *elem2)
 {
 	udProjectItem *pItem1 = *(udProjectItem**)elem1;
 	udProjectItem *pItem2 = *(udProjectItem**)elem2;
-	
+
 	int res = wxString( pItem1->GetClassInfo()->GetClassName() ).Cmp( pItem2->GetClassInfo()->GetClassName() );
 	if( res == 0) res = pItem1->GetName().Cmp( pItem2->GetName() );
-	
+
 	return res;
 }
 
@@ -36,7 +36,7 @@ void udDialogFunctions::DeselectAllItems(wxListCtrl* ctrl)
 void udDialogFunctions::GetSelectedItems(const wxListCtrl* ctrl, wxArrayInt& selection)
 {
 	selection.Clear();
-	
+
 	for( int i = 0; i < ctrl->GetItemCount(); i++ )
 	{
 		if( ctrl->GetItemState( i, wxLIST_STATE_SELECTED ) ) selection.Add( i );
@@ -47,20 +47,20 @@ void udDialogFunctions::InsertProjectItems(wxListCtrl* ctrl, SerializableList& i
 {
 	// sort items' list if required
 	if( sort ) items.Sort( CompareTypeAndName );
-	
+
 	// initialize list control
 	ctrl->ClearAll();
 	ctrl->SetImageList( udArt::GetImageList(), wxIMAGE_LIST_SMALL );
-	
-	ctrl->InsertColumn(0, wxT("Type") );
-	ctrl->InsertColumn(1, wxT("Name") );
+
+	ctrl->InsertColumn(0, _("Type") );
+	ctrl->InsertColumn(1, _("Name") );
 
 	// fill it with (sorted) items
 	if( !items.IsEmpty() )
 	{
 		int nIndex = 0;
 		udProjectItem *pItem;
-		
+
 		for( SerializableList::iterator it = items.begin(); it != items.end(); ++it )
 		{
 			pItem = (udProjectItem*) *it;
@@ -69,11 +69,11 @@ void udDialogFunctions::InsertProjectItems(wxListCtrl* ctrl, SerializableList& i
 				ctrl->InsertItem( nIndex,
 								  udXS2PG::GetFriendlyName( wxT("classname"), pItem->GetClassInfo()->GetClassName() ),
 								  udArt::GetImageIndex( pItem->GetClassInfo()->GetClassName() ) );
-								
+
 				ctrl->SetItem( nIndex++, 1, pItem->GetName() );
 			}
 		}
-		
+
 		ctrl->SetColumnWidth( 0, wxLIST_AUTOSIZE );
 		ctrl->SetColumnWidth( 1, wxLIST_AUTOSIZE );
 	}

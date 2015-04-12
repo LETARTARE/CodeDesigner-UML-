@@ -44,8 +44,8 @@ public:
 	wxSFContentCtrl(wxWindow* parent, wxWindowID id, wxSFEditTextShape* parentShape, const wxString& content, wxPoint pos, wxSize size, int style);
 
     /*!
-	 * \brief Finish the editing process/ 
-	 * \param apply If TRUE then changes made in eddited text will be applied on text shape, otherwise it will be canceled 
+	 * \brief Finish the editing process/
+	 * \param apply If TRUE then changes made in eddited text will be applied on text shape, otherwise it will be canceled
 	 */
 	void Quit( bool apply = sfAPPLY_TEXT_CHANGES );
 
@@ -74,7 +74,7 @@ protected:
  * modification of a content of the text shape. </summary>
  * \sa wxSFEditTextShape
  */
-class wxSFDetachedContentCtrl : public wxDialog 
+class wxSFDetachedContentCtrl : public wxDialog
 {
 public:
     /*!
@@ -86,13 +86,13 @@ public:
      * \param size Initial size
      * \param style Window style
      */
-	wxSFDetachedContentCtrl( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = _("Edit content"),
+	wxSFDetachedContentCtrl( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = wxT("Edit content"),
 							 const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxDefaultSize,
 							 long style = wxDEFAULT_DIALOG_STYLE|wxRESIZE_BORDER );
-	
+
 	/*! \brief Destructor. */
 	~wxSFDetachedContentCtrl();
-	
+
 	// public member data accessors
 	/**
 	 * \brief Set content of dialog's text edit control.
@@ -104,7 +104,7 @@ public:
 	 * \return Edited text
 	 */
 	wxString GetContent() const { return m_pText->GetValue(); }
-		
+
 protected:
 	// protected data members
 	wxTextCtrl* m_pText;
@@ -120,7 +120,7 @@ public:
 	friend class wxSFContentCtrl;
 
 	XS_DECLARE_CLONABLE_CLASS(wxSFEditTextShape);
-	
+
 	enum EDITTYPE
 	{
 		editINPLACE = 0,
@@ -164,7 +164,7 @@ public:
 	 * \return Pointer to instance of wxSFContentCtrl class
 	 */
 	wxSFContentCtrl* GetTextCtrl() {return m_pTextCtrl;}
-	
+
 
 	// public functions
 	/*! \brief Switch the shape to a label editation mode. */
@@ -195,7 +195,7 @@ public:
 
 protected:
 	wxSFContentCtrl* m_pTextCtrl;
-	
+
 	long m_nCurrentState;
 	bool m_fForceMultiline;
 	EDITTYPE m_nEditType;

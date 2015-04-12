@@ -499,15 +499,15 @@ wxString xsArrayStringPropIO::ToString(const wxArrayString& value)
 }
 
 wxArrayString xsArrayStringPropIO::FromString(const wxString& value)
-{	
+{
 	wxArrayString arrData;
-	
+
 	wxStringTokenizer tokens( value, wxT("|") );
 	while( tokens.HasMoreTokens() )
 	{
 		arrData.Add( tokens.GetNextToken() );
 	}
-	
+
 	return arrData;
 }
 
@@ -577,13 +577,13 @@ wxString xsArrayIntPropIO::ToString(const IntArray& value)
 IntArray xsArrayIntPropIO::FromString(const wxString& value)
 {
 	IntArray arrData;
-	
+
 	wxStringTokenizer tokens( value, wxT("|") );
 	while( tokens.HasMoreTokens() )
 	{
 		arrData.Add( xsIntPropIO::FromString( tokens.GetNextToken() ) );
 	}
-	
+
 	return arrData;
 }
 
@@ -653,13 +653,13 @@ wxString xsArrayLongPropIO::ToString(const LongArray& value)
 LongArray xsArrayLongPropIO::FromString(const wxString& value)
 {
 	LongArray arrData;
-	
+
 	wxStringTokenizer tokens( value, wxT("|") );
 	while( tokens.HasMoreTokens() )
 	{
 		arrData.Add( xsLongPropIO::FromString( tokens.GetNextToken() ) );
 	}
-	
+
 	return arrData;
 }
 
@@ -729,13 +729,13 @@ wxString xsArrayDoublePropIO::ToString(const DoubleArray& value)
 DoubleArray xsArrayDoublePropIO::FromString(const wxString& value)
 {
 	DoubleArray arrData;
-	
+
 	wxStringTokenizer tokens( value, wxT("|") );
 	while( tokens.HasMoreTokens() )
 	{
 		arrData.Add( xsDoublePropIO::FromString( tokens.GetNextToken() ) );
 	}
-	
+
 	return arrData;
 }
 
@@ -798,20 +798,20 @@ wxString xsArrayCharPropIO::ToString(const CharArray& value)
 		out << xsCharPropIO::ToString(value[i]);
 		if( i < value.GetCount()-1 ) out << wxT("|");
 	}
-	
+
 	return out;
 }
 
 CharArray xsArrayCharPropIO::FromString(const wxString& value)
 {
 	CharArray arrData;
-	
+
 	wxStringTokenizer tokens( value, wxT("|") );
 	while( tokens.HasMoreTokens() )
 	{
 		arrData.Add( xsCharPropIO::FromString( tokens.GetNextToken() ) );
 	}
-	
+
 	return arrData;
 }
 
@@ -881,13 +881,13 @@ wxString xsArrayRealPointPropIO::ToString(const RealPointArray& value)
 RealPointArray xsArrayRealPointPropIO::FromString(const wxString& value)
 {
 	RealPointArray arrData;
-	
+
 	wxStringTokenizer tokens( value, wxT("|") );
 	while( tokens.HasMoreTokens() )
 	{
 		arrData.Add( xsRealPointPropIO::FromString( tokens.GetNextToken() ) );
 	}
-	
+
 	return arrData;
 }
 
@@ -968,13 +968,13 @@ wxString xsListRealPointPropIO::ToString(const RealPointList& value)
 RealPointList xsListRealPointPropIO::FromString(const wxString& value)
 {
 	RealPointList lstData;
-	
+
 	wxStringTokenizer tokens( value, wxT("|") );
 	while( tokens.HasMoreTokens() )
 	{
 		lstData.Append( new wxRealPoint(xsRealPointPropIO::FromString( tokens.GetNextToken() )) );
 	}
-	
+
 	return lstData;
 }
 
@@ -1011,7 +1011,7 @@ void xsListSerializablePropIO::Read(xsProperty *property, wxXmlNode *source)
 				list.Append( object );
 			}
 		}
-		
+
 		listNode = listNode->GetNext();
 	}
 }
@@ -1027,8 +1027,8 @@ void xsListSerializablePropIO::Write(xsProperty *property, wxXmlNode *target)
         while(listNode)
         {
 			xsSerializable *object = listNode->GetData();
-			newNode->AddChild(object->SerializeObject(NULL));			
-			
+			newNode->AddChild(object->SerializeObject(NULL));
+
             listNode = listNode->GetNext();
         }
 
@@ -1055,7 +1055,7 @@ wxString xsListSerializablePropIO::ToString(const SerializableList& value)
 SerializableList xsListSerializablePropIO::FromString(const wxString& value)
 {
 	wxUnusedVar( value );
-	
+
 	return SerializableList();
 }
 
@@ -1117,7 +1117,7 @@ wxString xsDynObjPropIO::ToString(const xsSerializable& value)
 xsSerializable xsDynObjPropIO::FromString(const wxString& value)
 {
 	wxUnusedVar( value );
-	
+
 	return xsSerializable();
 }
 
@@ -1173,7 +1173,7 @@ wxString xsDynNCObjPropIO::ToString(const xsSerializable& value)
 xsSerializable xsDynNCObjPropIO::FromString(const wxString& value)
 {
 	wxUnusedVar( value );
-	
+
 	return xsSerializable();
 }
 
@@ -1220,7 +1220,7 @@ wxString xsStaticObjPropIO::ToString(const xsSerializable& value)
 xsSerializable xsStaticObjPropIO::FromString(const wxString& value)
 {
 	wxUnusedVar( value );
-	
+
 	return xsSerializable();
 }
 
@@ -1303,7 +1303,7 @@ wxString xsMapStringPropIO::ToString(const StringMap& value)
 StringMap xsMapStringPropIO::FromString(const wxString& value)
 {
 	StringMap mapData;
-	
+
 	wxString token;
 	wxStringTokenizer tokens( value, wxT("|") );
 	while( tokens.HasMoreTokens() )
@@ -1312,7 +1312,7 @@ StringMap xsMapStringPropIO::FromString(const wxString& value)
 		token.Replace(wxT("->"), wxT("|"));
 		mapData[token.BeforeFirst(wxT('|'))] = token.AfterFirst(wxT('|'));
 	}
-	
+
 	return mapData;
 }
 

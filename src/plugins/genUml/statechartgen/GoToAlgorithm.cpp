@@ -12,7 +12,7 @@ udGOTOAlgorithm::udGOTOAlgorithm()
     m_mapElementProcessors[wxT("umlSubStateItem")] = new udGTSubStateProcessor();
     m_mapElementProcessors[wxT("umlInitialItem")] = new udGTSimpleStateProcessor();
     m_mapElementProcessors[wxT("umlFinalItem")] = new udGTFinalItemProcessor();
-	
+
     m_mapElementProcessors[wxT("umlCompStateItem")] = new udGTSimpleStateProcessor();
     m_mapElementProcessors[wxT("umlDecisionItem")] = new udGTSimpleStateProcessor();
     m_mapElementProcessors[wxT("umlHistoryItem")] = new udGTHistoryProcessor();
@@ -32,7 +32,7 @@ udGOTOAlgorithm::udGOTOAlgorithm(udGenerator *parent) : udAlgorithm(parent)
     m_mapElementProcessors[wxT("umlSubStateItem")] = new udGTSubStateProcessor(parent);
     m_mapElementProcessors[wxT("umlInitialItem")] = new udGTSimpleStateProcessor(parent);
     m_mapElementProcessors[wxT("umlFinalItem")] = new udGTFinalItemProcessor(parent);
-	
+
     m_mapElementProcessors[wxT("umlCompStateItem")] = new udGTSimpleStateProcessor(parent);
     m_mapElementProcessors[wxT("umlDecisionItem")] = new udGTSimpleStateProcessor(parent);
     m_mapElementProcessors[wxT("umlHistoryItem")] = new udGTHistoryProcessor(parent);
@@ -68,10 +68,10 @@ void udGOTOAlgorithm::ProcessAlgorithm(udDiagramItem *src)
 
     wxSFDiagramManager *pDiagManager = &src->GetDiagramManager();
     udLanguage *pLang = m_pParentGenerator->GetActiveLanguage();
-	
+
 	udSStateChartDiagramItem *pSCH = wxDynamicCast( src, udSStateChartDiagramItem );
 	if( ! pSCH ) return;
-			
+
     // get inital states
     ShapeList lstInitialStates;
     pDiagManager->GetShapes(CLASSINFO(umlInitialItem), lstInitialStates);
@@ -97,33 +97,33 @@ void udGOTOAlgorithm::ProcessAlgorithm(udDiagramItem *src)
     if( !lstInitialStates.IsEmpty() )
     {
         m_lstProcessedElements.Clear();
-		
+
 		// declare all history states and set history variables to proper values
 		if( pSCH->IsKindOf( CLASSINFO(udHStateChartDiagramItem) ) )
 		{
 			wxSFShapeBase *pHistory, *pTarget;
 			ShapeList lstHistoryStates, lstOutTrans;
-			
+
 			pDiagManager->GetShapes( CLASSINFO( umlHistoryItem ), lstHistoryStates );
-			
+
 			if( !lstHistoryStates.IsEmpty() ) pLang->SingleLineCommentCmd(wxT("set history states"));
-			
+
 			ShapeList::compatibility_iterator node = lstHistoryStates.GetFirst();
 			while( node )
 			{
 				// find first processed state in a history level
 				pHistory = node->GetData();
-				
+
 				lstOutTrans.Clear();
 				pDiagManager->GetNeighbours( pHistory, lstOutTrans, CLASSINFO( umlTransitionItem ),  wxSFShapeBase::lineSTARTING, sfDIRECT );
 				// there can be only one outcomming transition in hierarchical state with history
 				if( !lstOutTrans.IsEmpty() )
 				{
 					pTarget = lstOutTrans.GetFirst()->GetData();
-				
+
 					pLang->VariableDeclAssignCmd( wxT("STATE_T"), pLang->MakeValidIdentifier( udLABEL::GetContent( pHistory, udLABEL::ltTITLE ) ).Lower(), m_pParentGenerator->MakeIDName(pTarget) );
 				}
-				
+
 				node = node->GetNext();
 			}
 		}
@@ -149,19 +149,19 @@ void udGOTOAlgorithm::ProcessState(wxSFShapeBase *state)
     wxSFDiagramManager *pDiagManager = state->GetShapeManager();
 	udLanguage *pLang = m_pParentGenerator->GetActiveLanguage();
 
-    // find state neighbours	
+    // find state neighbours
 	ShapeList lstTransitions;
     pDiagManager->GetAssignedConnections(state, CLASSINFO(umlTransitionItem), wxSFShapeBase::lineSTARTING, lstTransitions);
 
 	// sort transitions
 	((udStateChartGenerator*)m_pParentGenerator)->SortTransitions(lstTransitions, sortASC);
-	
+
 	// find next processed state
 	m_pNextElement = NULL;
-	
+
     if( !lstTransitions.IsEmpty() )
     {
-		// 
+		//
 		wxSFShapeBase *pNext;
 		ShapeList::compatibility_iterator node = lstTransitions.GetFirst();
 		while( node )
@@ -174,7 +174,7 @@ void udGOTOAlgorithm::ProcessState(wxSFShapeBase *state)
 			}
 			node = node->GetNext();
 		}
-    }        
+    }
 
 	pLang->SingleLineCommentCmd(wxT("State ID: ") + m_pParentGenerator->MakeIDName(state));
 
@@ -187,7 +187,7 @@ void udGOTOAlgorithm::ProcessState(wxSFShapeBase *state)
     else
     {
         pLang->SingleLineCommentCmd(wxString::Format(wxT( "!!! WARNING: UNSUPPORTED ELEMENT ('%s') !!!"), ((udProjectItem*)state->GetUserData())->GetName().c_str()));
-        IPluginManager::Get()->Log(wxString::Format(wxT("WARNING: '%s' element is not supported by this algorithm."), ((udProjectItem*)state->GetUserData())->GetName().c_str()));
+        IPluginManager::Get()->Log(wxString::Format(_("WARNING: '%s' element is not supported by this algorithm."), ((udProjectItem*)state->GetUserData())->GetName().c_str()));
     }
 
     // set the state as processes

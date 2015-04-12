@@ -55,10 +55,10 @@
 ///////////////////////////////////////////////////////////////////////////////
 /// Class _CodeDialog
 ///////////////////////////////////////////////////////////////////////////////
-class _CodeDialog : public wxDialog 
+class _CodeDialog : public wxDialog
 {
 	private:
-	
+
 	protected:
 		wxStaticText* m_staticText1;
 		wxTextCtrl* m_eName;
@@ -73,28 +73,28 @@ class _CodeDialog : public wxDialog
 		wxStdDialogButtonSizer* bntSizer;
 		wxButton* bntSizerOK;
 		wxButton* bntSizerCancel;
-		
+
 		// Virtual event handlers, overide them in your derived class
 		virtual void OnInit( wxInitDialogEvent& event ) { event.Skip(); }
 		virtual void OnNameChange( wxCommandEvent& event ) { event.Skip(); }
 		virtual void OnMakeValid( wxCommandEvent& event ) { event.Skip(); }
 		virtual void OnOk( wxCommandEvent& event ) { event.Skip(); }
-		
-	
+
+
 	public:
-		
-		_CodeDialog( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = wxT("Condition/Action properties"), const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize( -1,-1 ), long style = wxDEFAULT_DIALOG_STYLE|wxRESIZE_BORDER ); 
+
+		_CodeDialog( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = _("Condition/Action properties"), const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize( -1,-1 ), long style = wxDEFAULT_DIALOG_STYLE|wxRESIZE_BORDER );
 		~_CodeDialog();
-	
+
 };
 
 ///////////////////////////////////////////////////////////////////////////////
 /// Class _StateActionDialog
 ///////////////////////////////////////////////////////////////////////////////
-class _StateActionDialog : public wxDialog 
+class _StateActionDialog : public wxDialog
 {
 	private:
-	
+
 	protected:
 		wxStaticText* m_staticText1;
 		wxTextCtrl* m_eName;
@@ -111,28 +111,28 @@ class _StateActionDialog : public wxDialog
 		wxStdDialogButtonSizer* bntSizer;
 		wxButton* bntSizerOK;
 		wxButton* bntSizerCancel;
-		
+
 		// Virtual event handlers, overide them in your derived class
 		virtual void OnInit( wxInitDialogEvent& event ) { event.Skip(); }
 		virtual void OnNameChange( wxCommandEvent& event ) { event.Skip(); }
 		virtual void OnMakeValid( wxCommandEvent& event ) { event.Skip(); }
 		virtual void OnOk( wxCommandEvent& event ) { event.Skip(); }
-		
-	
+
+
 	public:
-		
-		_StateActionDialog( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = wxT("State action properties"), const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize( -1,-1 ), long style = wxDEFAULT_DIALOG_STYLE|wxRESIZE_BORDER ); 
+
+		_StateActionDialog( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = _("State action properties"), const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize( -1,-1 ), long style = wxDEFAULT_DIALOG_STYLE|wxRESIZE_BORDER );
 		~_StateActionDialog();
-	
+
 };
 
 ///////////////////////////////////////////////////////////////////////////////
 /// Class _EventDialog
 ///////////////////////////////////////////////////////////////////////////////
-class _EventDialog : public wxDialog 
+class _EventDialog : public wxDialog
 {
 	private:
-	
+
 	protected:
 		wxStaticText* m_staticText1;
 		wxTextCtrl* m_eName;
@@ -146,29 +146,29 @@ class _EventDialog : public wxDialog
 		wxStdDialogButtonSizer* bntSizer;
 		wxButton* bntSizerOK;
 		wxButton* bntSizerCancel;
-		
+
 		// Virtual event handlers, overide them in your derived class
 		virtual void OnInit( wxInitDialogEvent& event ) { event.Skip(); }
 		virtual void OnNameChange( wxCommandEvent& event ) { event.Skip(); }
 		virtual void OnMakeValid( wxCommandEvent& event ) { event.Skip(); }
 		virtual void OnTypeChange( wxCommandEvent& event ) { event.Skip(); }
 		virtual void OnOk( wxCommandEvent& event ) { event.Skip(); }
-		
-	
+
+
 	public:
-		
-		_EventDialog( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = wxT("Event properties"), const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize( -1,-1 ), long style = wxDEFAULT_DIALOG_STYLE|wxRESIZE_BORDER ); 
+
+		_EventDialog( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = _("Event properties"), const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize( -1,-1 ), long style = wxDEFAULT_DIALOG_STYLE|wxRESIZE_BORDER );
 		~_EventDialog();
-	
+
 };
 
 ///////////////////////////////////////////////////////////////////////////////
 /// Class _ActionLinkDialog
 ///////////////////////////////////////////////////////////////////////////////
-class _ActionLinkDialog : public wxDialog 
+class _ActionLinkDialog : public wxDialog
 {
 	private:
-	
+
 	protected:
 		wxStaticText* m_staticText1;
 		wxTextCtrl* m_eName;
@@ -183,27 +183,27 @@ class _ActionLinkDialog : public wxDialog
 		wxStdDialogButtonSizer* bntSizer;
 		wxButton* bntSizerOK;
 		wxButton* bntSizerCancel;
-		
+
 		// Virtual event handlers, overide them in your derived class
 		virtual void OnInit( wxInitDialogEvent& event ) { event.Skip(); }
 		virtual void OnEditOriginal( wxCommandEvent& event ) { event.Skip(); }
 		virtual void OnOk( wxCommandEvent& event ) { event.Skip(); }
-		
-	
+
+
 	public:
-		
-		_ActionLinkDialog( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = wxT("State action link properties"), const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize( 400,380 ), long style = wxDEFAULT_DIALOG_STYLE|wxRESIZE_BORDER ); 
+
+		_ActionLinkDialog( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = _("State action link properties"), const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize( 400,380 ), long style = wxDEFAULT_DIALOG_STYLE|wxRESIZE_BORDER );
 		~_ActionLinkDialog();
-	
+
 };
 
 ///////////////////////////////////////////////////////////////////////////////
 /// Class _ClassMemberLinkDialog
 ///////////////////////////////////////////////////////////////////////////////
-class _ClassMemberLinkDialog : public wxDialog 
+class _ClassMemberLinkDialog : public wxDialog
 {
 	private:
-	
+
 	protected:
 		wxStaticText* m_staticText1;
 		wxTextCtrl* m_eName;
@@ -216,27 +216,27 @@ class _ClassMemberLinkDialog : public wxDialog
 		wxStdDialogButtonSizer* bntSizer;
 		wxButton* bntSizerOK;
 		wxButton* bntSizerCancel;
-		
+
 		// Virtual event handlers, overide them in your derived class
 		virtual void OnInit( wxInitDialogEvent& event ) { event.Skip(); }
 		virtual void OnEditOriginal( wxCommandEvent& event ) { event.Skip(); }
 		virtual void OnOk( wxCommandEvent& event ) { event.Skip(); }
-		
-	
+
+
 	public:
-		
-		_ClassMemberLinkDialog( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = wxT("Class member link properties"), const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize( 400,380 ), long style = wxDEFAULT_DIALOG_STYLE|wxRESIZE_BORDER ); 
+
+		_ClassMemberLinkDialog( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = _("Class member link properties"), const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize( 400,380 ), long style = wxDEFAULT_DIALOG_STYLE|wxRESIZE_BORDER );
 		~_ClassMemberLinkDialog();
-	
+
 };
 
 ///////////////////////////////////////////////////////////////////////////////
 /// Class _EventLinkDialog
 ///////////////////////////////////////////////////////////////////////////////
-class _EventLinkDialog : public wxDialog 
+class _EventLinkDialog : public wxDialog
 {
 	private:
-	
+
 	protected:
 		wxStaticText* m_staticText1;
 		wxTextCtrl* m_eName;
@@ -248,27 +248,27 @@ class _EventLinkDialog : public wxDialog
 		wxStdDialogButtonSizer* bntSizer;
 		wxButton* bntSizerOK;
 		wxButton* bntSizerCancel;
-		
+
 		// Virtual event handlers, overide them in your derived class
 		virtual void OnInit( wxInitDialogEvent& event ) { event.Skip(); }
 		virtual void OnEditOriginal( wxCommandEvent& event ) { event.Skip(); }
 		virtual void OnOk( wxCommandEvent& event ) { event.Skip(); }
-		
-	
+
+
 	public:
-		
-		_EventLinkDialog( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = wxT("Event link properties"), const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize( 400,380 ), long style = wxDEFAULT_DIALOG_STYLE|wxRESIZE_BORDER ); 
+
+		_EventLinkDialog( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = _("Event link properties"), const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize( 400,380 ), long style = wxDEFAULT_DIALOG_STYLE|wxRESIZE_BORDER );
 		~_EventLinkDialog();
-	
+
 };
 
 ///////////////////////////////////////////////////////////////////////////////
 /// Class _TransitionDialog
 ///////////////////////////////////////////////////////////////////////////////
-class _TransitionDialog : public wxDialog 
+class _TransitionDialog : public wxDialog
 {
 	private:
-	
+
 	protected:
 		wxStaticText* m_staticText1;
 		wxTextCtrl* m_eName;
@@ -295,7 +295,7 @@ class _TransitionDialog : public wxDialog
 		wxStdDialogButtonSizer* bntSizer;
 		wxButton* bntSizerOK;
 		wxButton* bntSizerCancel;
-		
+
 		// Virtual event handlers, overide them in your derived class
 		virtual void OnInit( wxInitDialogEvent& event ) { event.Skip(); }
 		virtual void OnNameChange( wxCommandEvent& event ) { event.Skip(); }
@@ -315,32 +315,32 @@ class _TransitionDialog : public wxDialog
 		virtual void OnSelectAllAvailable( wxCommandEvent& event ) { event.Skip(); }
 		virtual void OnDeselectAllAvailable( wxCommandEvent& event ) { event.Skip(); }
 		virtual void OnOk( wxCommandEvent& event ) { event.Skip(); }
-		
-	
+
+
 	public:
-		
-		_TransitionDialog( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = wxT("Transition properties"), const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize( -1,-1 ), long style = wxDEFAULT_DIALOG_STYLE|wxRESIZE_BORDER ); 
+
+		_TransitionDialog( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = _("Transition properties"), const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize( -1,-1 ), long style = wxDEFAULT_DIALOG_STYLE|wxRESIZE_BORDER );
 		~_TransitionDialog();
-		
+
 		void m_listUsedOnContextMenu( wxMouseEvent &event )
 		{
 			m_listUsed->PopupMenu( m_menuUsed, event.GetPosition() );
 		}
-		
+
 		void m_listAvailableOnContextMenu( wxMouseEvent &event )
 		{
 			m_listAvailable->PopupMenu( m_menuAvailable, event.GetPosition() );
 		}
-	
+
 };
 
 ///////////////////////////////////////////////////////////////////////////////
 /// Class _FinalStateDialog
 ///////////////////////////////////////////////////////////////////////////////
-class _FinalStateDialog : public wxDialog 
+class _FinalStateDialog : public wxDialog
 {
 	private:
-	
+
 	protected:
 		wxStaticText* m_staticText1;
 		wxTextCtrl* m_eName;
@@ -355,29 +355,29 @@ class _FinalStateDialog : public wxDialog
 		wxStdDialogButtonSizer* bntSizer;
 		wxButton* bntSizerOK;
 		wxButton* bntSizerCancel;
-		
+
 		// Virtual event handlers, overide them in your derived class
 		virtual void OnInit( wxInitDialogEvent& event ) { event.Skip(); }
 		virtual void OnNameChange( wxCommandEvent& event ) { event.Skip(); }
 		virtual void OnMakeValid( wxCommandEvent& event ) { event.Skip(); }
 		virtual void OnDefault( wxCommandEvent& event ) { event.Skip(); }
 		virtual void OnOk( wxCommandEvent& event ) { event.Skip(); }
-		
-	
+
+
 	public:
-		
-		_FinalStateDialog( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = wxT("Final state properties"), const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize( -1,-1 ), long style = wxDEFAULT_DIALOG_STYLE|wxRESIZE_BORDER ); 
+
+		_FinalStateDialog( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = _("Final state properties"), const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize( -1,-1 ), long style = wxDEFAULT_DIALOG_STYLE|wxRESIZE_BORDER );
 		~_FinalStateDialog();
-	
+
 };
 
 ///////////////////////////////////////////////////////////////////////////////
 /// Class _CompStateDialog
 ///////////////////////////////////////////////////////////////////////////////
-class _CompStateDialog : public wxDialog 
+class _CompStateDialog : public wxDialog
 {
 	private:
-	
+
 	protected:
 		wxStaticText* m_staticText1;
 		wxTextCtrl* m_eName;
@@ -403,7 +403,7 @@ class _CompStateDialog : public wxDialog
 		wxStdDialogButtonSizer* bntSizer;
 		wxButton* bntSizerOK;
 		wxButton* bntSizerCancel;
-		
+
 		// Virtual event handlers, overide them in your derived class
 		virtual void OnInit( wxInitDialogEvent& event ) { event.Skip(); }
 		virtual void OnNameChange( wxCommandEvent& event ) { event.Skip(); }
@@ -422,37 +422,37 @@ class _CompStateDialog : public wxDialog
 		virtual void OnSelectAllAvailable( wxCommandEvent& event ) { event.Skip(); }
 		virtual void OnDeselectAllAvailable( wxCommandEvent& event ) { event.Skip(); }
 		virtual void OnOk( wxCommandEvent& event ) { event.Skip(); }
-		
-	
+
+
 	public:
-		
-		_CompStateDialog( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = wxT("Composite state properties"), const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize( -1,-1 ), long style = wxDEFAULT_DIALOG_STYLE|wxRESIZE_BORDER ); 
+
+		_CompStateDialog( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = _("Composite state properties"), const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize( -1,-1 ), long style = wxDEFAULT_DIALOG_STYLE|wxRESIZE_BORDER );
 		~_CompStateDialog();
-		
+
 		void m_listUsedEntryOnContextMenu( wxMouseEvent &event )
 		{
 			m_listUsedEntry->PopupMenu( m_menuUsed, event.GetPosition() );
 		}
-		
+
 		void m_listUsedExitOnContextMenu( wxMouseEvent &event )
 		{
 			m_listUsedExit->PopupMenu( m_menuUsedExit, event.GetPosition() );
 		}
-		
+
 		void m_listAvailableOnContextMenu( wxMouseEvent &event )
 		{
 			m_listAvailable->PopupMenu( m_menuAvailable, event.GetPosition() );
 		}
-	
+
 };
 
 ///////////////////////////////////////////////////////////////////////////////
 /// Class _ConstructorDialog
 ///////////////////////////////////////////////////////////////////////////////
-class _ConstructorDialog : public wxDialog 
+class _ConstructorDialog : public wxDialog
 {
 	private:
-	
+
 	protected:
 		wxStaticText* m_staticText1;
 		wxTextCtrl* m_eName;
@@ -482,7 +482,7 @@ class _ConstructorDialog : public wxDialog
 		wxStdDialogButtonSizer* bntSizer;
 		wxButton* bntSizerOK;
 		wxButton* bntSizerCancel;
-		
+
 		// Virtual event handlers, overide them in your derived class
 		virtual void OnInit( wxInitDialogEvent& event ) { event.Skip(); }
 		virtual void OnNameChange( wxCommandEvent& event ) { event.Skip(); }
@@ -500,22 +500,22 @@ class _ConstructorDialog : public wxDialog
 		virtual void OnUpdateEditor( wxUpdateUIEvent& event ) { event.Skip(); }
 		virtual void OnCancel( wxCommandEvent& event ) { event.Skip(); }
 		virtual void OnOk( wxCommandEvent& event ) { event.Skip(); }
-		
-	
+
+
 	public:
-		
-		_ConstructorDialog( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = wxT("Constructor properties"), const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize( 460,450 ), long style = wxDEFAULT_DIALOG_STYLE|wxRESIZE_BORDER ); 
+
+		_ConstructorDialog( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = _("Constructor properties"), const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize( 460,450 ), long style = wxDEFAULT_DIALOG_STYLE|wxRESIZE_BORDER );
 		~_ConstructorDialog();
-	
+
 };
 
 ///////////////////////////////////////////////////////////////////////////////
 /// Class _DestructorDialog
 ///////////////////////////////////////////////////////////////////////////////
-class _DestructorDialog : public wxDialog 
+class _DestructorDialog : public wxDialog
 {
 	private:
-	
+
 	protected:
 		wxStaticText* m_staticText1;
 		wxTextCtrl* m_eName;
@@ -533,7 +533,7 @@ class _DestructorDialog : public wxDialog
 		wxStdDialogButtonSizer* bntSizer;
 		wxButton* bntSizerOK;
 		wxButton* bntSizerCancel;
-		
+
 		// Virtual event handlers, overide them in your derived class
 		virtual void OnInit( wxInitDialogEvent& event ) { event.Skip(); }
 		virtual void OnNameChange( wxCommandEvent& event ) { event.Skip(); }
@@ -542,22 +542,22 @@ class _DestructorDialog : public wxDialog
 		virtual void OnUpdateEditor( wxUpdateUIEvent& event ) { event.Skip(); }
 		virtual void OnCancel( wxCommandEvent& event ) { event.Skip(); }
 		virtual void OnOk( wxCommandEvent& event ) { event.Skip(); }
-		
-	
+
+
 	public:
-		
-		_DestructorDialog( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = wxT("Destructor properties"), const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize( 460,450 ), long style = wxDEFAULT_DIALOG_STYLE|wxRESIZE_BORDER ); 
+
+		_DestructorDialog( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = _("Destructor properties"), const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize( 460,450 ), long style = wxDEFAULT_DIALOG_STYLE|wxRESIZE_BORDER );
 		~_DestructorDialog();
-	
+
 };
 
 ///////////////////////////////////////////////////////////////////////////////
 /// Class _RenameVirtualDialog
 ///////////////////////////////////////////////////////////////////////////////
-class _RenameVirtualDialog : public wxDialog 
+class _RenameVirtualDialog : public wxDialog
 {
 	private:
-	
+
 	protected:
 		wxStaticText* m_staticText37;
 		wxTextCtrl* m_textCtrlName;
@@ -567,34 +567,34 @@ class _RenameVirtualDialog : public wxDialog
 		wxStdDialogButtonSizer* buttonSizer;
 		wxButton* buttonSizerOK;
 		wxButton* buttonSizerCancel;
-		
+
 		// Virtual event handlers, overide them in your derived class
 		virtual void OnNameChange( wxCommandEvent& event ) { event.Skip(); }
 		virtual void OnMakeValid( wxCommandEvent& event ) { event.Skip(); }
 		virtual void OnSelectAll( wxCommandEvent& event ) { event.Skip(); }
 		virtual void OnDeselectAll( wxCommandEvent& event ) { event.Skip(); }
 		virtual void OnOk( wxCommandEvent& event ) { event.Skip(); }
-		
-	
+
+
 	public:
-		
-		_RenameVirtualDialog( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = wxT("Refactor virtual function"), const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxDefaultSize, long style = wxDEFAULT_DIALOG_STYLE|wxRESIZE_BORDER ); 
+
+		_RenameVirtualDialog( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = wxT("Refactor virtual function"), const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxDefaultSize, long style = wxDEFAULT_DIALOG_STYLE|wxRESIZE_BORDER );
 		~_RenameVirtualDialog();
-		
+
 		void m_checkListCandidatesOnContextMenu( wxMouseEvent &event )
 		{
 			m_checkListCandidates->PopupMenu( m_menuCandidates, event.GetPosition() );
 		}
-	
+
 };
 
 ///////////////////////////////////////////////////////////////////////////////
 /// Class _ClassTemplateDialog
 ///////////////////////////////////////////////////////////////////////////////
-class _ClassTemplateDialog : public wxDialog 
+class _ClassTemplateDialog : public wxDialog
 {
 	private:
-	
+
 	protected:
 		wxStaticText* m_staticText1;
 		wxTextCtrl* m_eName;
@@ -608,28 +608,28 @@ class _ClassTemplateDialog : public wxDialog
 		wxStdDialogButtonSizer* bntSizer;
 		wxButton* bntSizerOK;
 		wxButton* bntSizerCancel;
-		
+
 		// Virtual event handlers, overide them in your derived class
 		virtual void OnInit( wxInitDialogEvent& event ) { event.Skip(); }
 		virtual void OnNameChange( wxCommandEvent& event ) { event.Skip(); }
 		virtual void OnMakeValid( wxCommandEvent& event ) { event.Skip(); }
 		virtual void OnOk( wxCommandEvent& event ) { event.Skip(); }
-		
-	
+
+
 	public:
-		
-		_ClassTemplateDialog( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = wxT("Class template properties"), const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize( -1,-1 ), long style = wxDEFAULT_DIALOG_STYLE|wxRESIZE_BORDER ); 
+
+		_ClassTemplateDialog( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = _("Class template properties"), const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize( -1,-1 ), long style = wxDEFAULT_DIALOG_STYLE|wxRESIZE_BORDER );
 		~_ClassTemplateDialog();
-	
+
 };
 
 ///////////////////////////////////////////////////////////////////////////////
 /// Class _ClassInstanceDialog
 ///////////////////////////////////////////////////////////////////////////////
-class _ClassInstanceDialog : public wxDialog 
+class _ClassInstanceDialog : public wxDialog
 {
 	private:
-	
+
 	protected:
 		wxStaticText* m_staticText40;
 		wxTextCtrl* m_textInstName;
@@ -640,26 +640,26 @@ class _ClassInstanceDialog : public wxDialog
 		wxStaticLine* m_staticline1;
 		wxStdDialogButtonSizer* m_sdbSizer13;
 		wxButton* m_sdbSizer13OK;
-		
+
 		// Virtual event handlers, overide them in your derived class
 		virtual void OnInit( wxInitDialogEvent& event ) { event.Skip(); }
 		virtual void OnOk( wxCommandEvent& event ) { event.Skip(); }
-		
-	
+
+
 	public:
-		
-		_ClassInstanceDialog( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = wxT("Class instance"), const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxDefaultSize, long style = wxDEFAULT_DIALOG_STYLE|wxRESIZE_BORDER ); 
+
+		_ClassInstanceDialog( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = wxT("Class instance"), const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxDefaultSize, long style = wxDEFAULT_DIALOG_STYLE|wxRESIZE_BORDER );
 		~_ClassInstanceDialog();
-	
+
 };
 
 ///////////////////////////////////////////////////////////////////////////////
 /// Class _EnumElementDialog
 ///////////////////////////////////////////////////////////////////////////////
-class _EnumElementDialog : public wxDialog 
+class _EnumElementDialog : public wxDialog
 {
 	private:
-	
+
 	protected:
 		wxStaticText* m_staticText1;
 		wxTextCtrl* m_eName;
@@ -673,28 +673,28 @@ class _EnumElementDialog : public wxDialog
 		wxStdDialogButtonSizer* bntSizer;
 		wxButton* bntSizerOK;
 		wxButton* bntSizerCancel;
-		
+
 		// Virtual event handlers, overide them in your derived class
 		virtual void OnInit( wxInitDialogEvent& event ) { event.Skip(); }
 		virtual void OnNameChange( wxCommandEvent& event ) { event.Skip(); }
 		virtual void OnMakeValid( wxCommandEvent& event ) { event.Skip(); }
 		virtual void OnOk( wxCommandEvent& event ) { event.Skip(); }
-		
-	
+
+
 	public:
-		
-		_EnumElementDialog( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = wxT("Enumeration element properties"), const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize( -1,-1 ), long style = wxDEFAULT_DIALOG_STYLE|wxRESIZE_BORDER ); 
+
+		_EnumElementDialog( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = _("Enumeration element properties"), const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize( -1,-1 ), long style = wxDEFAULT_DIALOG_STYLE|wxRESIZE_BORDER );
 		~_EnumElementDialog();
-	
+
 };
 
 ///////////////////////////////////////////////////////////////////////////////
 /// Class _EnumDialog
 ///////////////////////////////////////////////////////////////////////////////
-class _EnumDialog : public wxDialog 
+class _EnumDialog : public wxDialog
 {
 	private:
-	
+
 	protected:
 		wxStaticText* m_staticText1;
 		wxTextCtrl* m_eName;
@@ -708,28 +708,28 @@ class _EnumDialog : public wxDialog
 		wxStdDialogButtonSizer* bntSizer;
 		wxButton* bntSizerOK;
 		wxButton* bntSizerCancel;
-		
+
 		// Virtual event handlers, overide them in your derived class
 		virtual void OnInit( wxInitDialogEvent& event ) { event.Skip(); }
 		virtual void OnNameChange( wxCommandEvent& event ) { event.Skip(); }
 		virtual void OnMakeValid( wxCommandEvent& event ) { event.Skip(); }
 		virtual void OnOk( wxCommandEvent& event ) { event.Skip(); }
-		
-	
+
+
 	public:
-		
-		_EnumDialog( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = wxT("Enumeration properties"), const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize( -1,-1 ), long style = wxDEFAULT_DIALOG_STYLE|wxRESIZE_BORDER ); 
+
+		_EnumDialog( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = _("Enumeration properties"), const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize( -1,-1 ), long style = wxDEFAULT_DIALOG_STYLE|wxRESIZE_BORDER );
 		~_EnumDialog();
-	
+
 };
 
 ///////////////////////////////////////////////////////////////////////////////
 /// Class _ClassDialog
 ///////////////////////////////////////////////////////////////////////////////
-class _ClassDialog : public wxDialog 
+class _ClassDialog : public wxDialog
 {
 	private:
-	
+
 	protected:
 		wxStaticText* m_staticText1;
 		wxTextCtrl* m_eName;
@@ -742,28 +742,28 @@ class _ClassDialog : public wxDialog
 		wxStdDialogButtonSizer* bntSizer;
 		wxButton* bntSizerOK;
 		wxButton* bntSizerCancel;
-		
+
 		// Virtual event handlers, overide them in your derived class
 		virtual void OnInit( wxInitDialogEvent& event ) { event.Skip(); }
 		virtual void OnNameChange( wxCommandEvent& event ) { event.Skip(); }
 		virtual void OnMakeValid( wxCommandEvent& event ) { event.Skip(); }
 		virtual void OnOk( wxCommandEvent& event ) { event.Skip(); }
-		
-	
+
+
 	public:
-		
-		_ClassDialog( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = wxT("Class properties"), const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize( -1,-1 ), long style = wxDEFAULT_DIALOG_STYLE|wxRESIZE_BORDER ); 
+
+		_ClassDialog( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = _("Class properties"), const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize( -1,-1 ), long style = wxDEFAULT_DIALOG_STYLE|wxRESIZE_BORDER );
 		~_ClassDialog();
-	
+
 };
 
 ///////////////////////////////////////////////////////////////////////////////
 /// Class _SubStateDialog
 ///////////////////////////////////////////////////////////////////////////////
-class _SubStateDialog : public wxDialog 
+class _SubStateDialog : public wxDialog
 {
 	private:
-	
+
 	protected:
 		wxStaticText* m_staticText1;
 		wxTextCtrl* m_eName;
@@ -776,28 +776,28 @@ class _SubStateDialog : public wxDialog
 		wxStdDialogButtonSizer* bntSizer;
 		wxButton* bntSizerOK;
 		wxButton* bntSizerCancel;
-		
+
 		// Virtual event handlers, overide them in your derived class
 		virtual void OnInit( wxInitDialogEvent& event ) { event.Skip(); }
 		virtual void OnNameChange( wxCommandEvent& event ) { event.Skip(); }
 		virtual void OnMakeValid( wxCommandEvent& event ) { event.Skip(); }
 		virtual void OnOk( wxCommandEvent& event ) { event.Skip(); }
-		
-	
+
+
 	public:
-		
-		_SubStateDialog( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = wxT("Sub machine properties"), const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize( -1,-1 ), long style = wxDEFAULT_DIALOG_STYLE|wxRESIZE_BORDER ); 
+
+		_SubStateDialog( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = _("Sub machine properties"), const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize( -1,-1 ), long style = wxDEFAULT_DIALOG_STYLE|wxRESIZE_BORDER );
 		~_SubStateDialog();
-	
+
 };
 
 ///////////////////////////////////////////////////////////////////////////////
 /// Class _AggregationDialog
 ///////////////////////////////////////////////////////////////////////////////
-class _AggregationDialog : public wxDialog 
+class _AggregationDialog : public wxDialog
 {
 	private:
-	
+
 	protected:
 		wxStaticText* m_staticText1;
 		wxTextCtrl* m_eName;
@@ -812,19 +812,19 @@ class _AggregationDialog : public wxDialog
 		wxStdDialogButtonSizer* bntSizer;
 		wxButton* bntSizerOK;
 		wxButton* bntSizerCancel;
-		
+
 		// Virtual event handlers, overide them in your derived class
 		virtual void OnInit( wxInitDialogEvent& event ) { event.Skip(); }
 		virtual void OnNameChange( wxCommandEvent& event ) { event.Skip(); }
 		virtual void OnMakeValid( wxCommandEvent& event ) { event.Skip(); }
 		virtual void OnOk( wxCommandEvent& event ) { event.Skip(); }
-		
-	
+
+
 	public:
-		
-		_AggregationDialog( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = wxT("Aggregation properties"), const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize( -1,-1 ), long style = wxDEFAULT_DIALOG_STYLE|wxRESIZE_BORDER ); 
+
+		_AggregationDialog( wxWindow* parent, wxWindowID id = wxID_ANY, const wxString& title = _("Aggregation properties"), const wxPoint& pos = wxDefaultPosition, const wxSize& size = wxSize( -1,-1 ), long style = wxDEFAULT_DIALOG_STYLE|wxRESIZE_BORDER );
 		~_AggregationDialog();
-	
+
 };
 
 #endif //__GUI_H__
