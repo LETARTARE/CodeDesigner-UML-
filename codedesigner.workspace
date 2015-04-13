@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_workspace_file>
+	<Workspace title="codedesigner">
+		<Project filename="src/controls/wxShapeFramework.cbp" />
+		<Project filename="src/projectbase/projectBase.cbp" />
+		<Project filename="src/plugins/diagTest/diagTest.cbp">
+			<Depends filename="src/projectbase/projectBase.cbp" />
+		</Project>
+		<Project filename="src/plugins/diagUml/diagUml.cbp">
+			<Depends filename="src/projectbase/projectBase.cbp" />
+		</Project>
+		<Project filename="src/plugins/genUml/genUml.cbp">
+			<Depends filename="src/projectbase/projectBase.cbp" />
+			<Depends filename="src/plugins/diagUml/diagUml.cbp" />
+		</Project>
+		<Project filename="src/plugins/codelite/CodeLite.cbp">
+			<Depends filename="src/projectbase/projectBase.cbp" />
+		</Project>
+		<Project filename="src/plugins/revEng/ReverseEngineering.cbp">
+			<Depends filename="src/projectbase/projectBase.cbp" />
+			<Depends filename="src/plugins/diagUml/diagUml.cbp" />
+		</Project>
+		<Project filename="src/CodeDesigner.cbp">
+			<Depends filename="src/projectbase/projectBase.cbp" />
+		</Project>
+		<Project filename="src/ctags/Ctags.cbp" />
+		<Project filename="../../../Qt/ControleurGrbl/GCV-412.q5/GCV-412.qt5.cbp" />
+	</Workspace>
+</CodeBlocks_workspace_file>

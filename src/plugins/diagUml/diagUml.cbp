@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="diagUml" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Release">
+				<Option output="../../../output/plugins/diaguml.dll" prefix_auto="0" extension_auto="0" />
+				<Option object_output=".objsu" />
+				<Option type="3" />
+				<Option compiler="gcc" />
+				<Option createStaticLib="1" />
+				<Compiler>
+					<Add option="-Wall" />
+					<Add option="-O3" />
+					<Add option="-fno-strict-aliasing" />
+					<Add option="-DWXMAKINGDLL_CD" />
+					<Add option="-DWXUSINGDLL" />
+					<Add option="-DUNICODE" />
+					<Add option="-D_UNICODE" />
+					<Add option="-D__WX__" />
+					<Add option="-D__WXMSW__" />
+					<Add option="-DWIN32" />
+					<Add option="-D_WINDOWS" />
+					<Add option="-DNDEBUG" />
+					<Add directory="." />
+					<Add directory="../" />
+					<Add directory="../../" />
+					<Add directory="$(#WX30.include)" />
+					<Add directory="../../controls/include" />
+					<Add directory="$(#WX30.lib)/gcc_dll/mswu" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+					<Add library="wxmsw30u_shapeframework_cd" />
+					<Add library="cdprojectbase" />
+					<Add library="wxbase30u" />
+					<Add library="wxmsw30u_core" />
+					<Add library="wxmsw30u_propgrid" />
+					<Add library="wxmsw30u_stc" />
+					<Add directory="../../../output/plugins" />
+					<Add directory="../../../output" />
+					<Add directory="$(#WX30.lib)/gcc_dll" />
+				</Linker>
+			</Target>
+			<Target title="Debug">
+				<Option output="../../../output/plugins/diaguml_d.dll" prefix_auto="0" extension_auto="0" />
+				<Option object_output=".objsud" />
+				<Option type="3" />
+				<Option compiler="gcc" />
+				<Option createStaticLib="1" />
+				<Compiler>
+					<Add option="-Wall" />
+					<Add option="-g" />
+					<Add option="-DWXMAKINGDLL_CD" />
+					<Add option="-DWXUSINGDLL" />
+					<Add option="-DUNICODE" />
+					<Add option="-D_UNICODE" />
+					<Add option="-D__WX__" />
+					<Add option="-D__WXMSW__" />
+					<Add option="-DWIN32" />
+					<Add option="-D_WINDOWS" />
+					<Add option="-DDEBUG" />
+					<Add option="-D_DEBUG" />
+					<Add option="-D__WXDEBUG__" />
+					<Add option="-O0" />
+					<Add directory="." />
+					<Add directory="../" />
+					<Add directory="../../" />
+					<Add directory="$(#WX.include)" />
+					<Add directory="../../controls/include" />
+					<Add directory="$(#WX.lib)/gcc_dll/mswud" />
+				</Compiler>
+				<Linker>
+					<Add library="wxmsw30ud_shapeframework_cd" />
+					<Add library="cdprojectbase_d" />
+					<Add library="wxmsw30ud" />
+					<Add directory="../../../output/plugins" />
+					<Add directory="../../../output" />
+					<Add directory="$(#WX.lib)/gcc_dll" />
+				</Linker>
+			</Target>
+		</Build>
+		<Unit filename="DiagCD.cpp" />
+		<Unit filename="DiagCD.h" />
+		<Unit filename="DiagEvtHandlers.cpp" />
+		<Unit filename="DiagIds.h" />
+		<Unit filename="DiagSCH.cpp" />
+		<Unit filename="DiagSCH.h" />
+		<Unit filename="DiagUml.cpp" />
+		<Unit filename="DiagUml.h" />
+		<Unit filename="gui/ActionLinkDialog.cpp" />
+		<Unit filename="gui/ActionLinkDialog.h" />
+		<Unit filename="gui/ActionTypeDialog.cpp" />
+		<Unit filename="gui/ActionTypeDialog.h" />
+		<Unit filename="gui/AggregationDialog.cpp" />
+		<Unit filename="gui/AggregationDialog.h" />
+		<Unit filename="gui/AssignAsDialog.cpp" />
+		<Unit filename="gui/AssignAsDialog.h" />
+		<Unit filename="gui/CADialog.cpp" />
+		<Unit filename="gui/CADialog.h" />
+		<Unit filename="gui/ClassDialog.cpp" />
+		<Unit filename="gui/ClassDialog.h" />
+		<Unit filename="gui/ClassInstanceDialog.cpp" />
+		<Unit filename="gui/ClassInstanceDialog.h" />
+		<Unit filename="gui/ClassMemberLinkDialog.cpp" />
+		<Unit filename="gui/ClassMemberLinkDialog.h" />
+		<Unit filename="gui/ClassTemplDialog.cpp" />
+		<Unit filename="gui/ClassTemplDialog.h" />
+		<Unit filename="gui/CompStateDialog.cpp" />
+		<Unit filename="gui/CompStateDialog.h" />
+		<Unit filename="gui/ConstructorDialog.cpp" />
+		<Unit filename="gui/ConstructorDialog.h" />
+		<Unit filename="gui/DestructorDialog.cpp" />
+		<Unit filename="gui/DestructorDialog.h" />
+		<Unit filename="gui/EnumDialog.cpp" />
+		<Unit filename="gui/EnumDialog.h" />
+		<Unit filename="gui/EnumElementDialog.cpp" />
+		<Unit filename="gui/EnumElementDialog.h" />
+		<Unit filename="gui/EventDialog.cpp" />
+		<Unit filename="gui/EventDialog.h" />
+		<Unit filename="gui/EventLinkDialog.cpp" />
+		<Unit filename="gui/EventLinkDialog.h" />
+		<Unit filename="gui/FinalStateDialog.cpp" />
+		<Unit filename="gui/FinalStateDialog.h" />
+		<Unit filename="gui/GUI.cpp" />
+		<Unit filename="gui/GUI.h" />
+		<Unit filename="gui/RenameVirtualDialog.cpp" />
+		<Unit filename="gui/RenameVirtualDialog.h" />
+		<Unit filename="gui/SSCHDiagramDialog.cpp" />
+		<Unit filename="gui/SSCHDiagramDialog.h" />
+		<Unit filename="gui/StateActionDialog.cpp" />
+		<Unit filename="gui/StateActionDialog.h" />
+		<Unit filename="gui/SubStateDialog.cpp" />
+		<Unit filename="gui/SubStateDialog.h" />
+		<Unit filename="gui/TransitionDialog.cpp" />
+		<Unit filename="gui/TransitionDialog.h" />
+		<Unit filename="gui/UMLDesignerAUI.fbp" />
+		<Unit filename="shapes/ClassDiagram.cpp" />
+		<Unit filename="shapes/ClassDiagram.h" />
+		<Unit filename="shapes/SimpleStateChartDiagram.cpp" />
+		<Unit filename="shapes/SimpleStateChartDiagram.h" />
+		<Unit filename="shapes/StateChartDiagram.cpp" />
+		<Unit filename="shapes/StateChartDiagram.h" />
+		<Unit filename="shapes/classdiagram/BasicAggregItem.cpp" />
+		<Unit filename="shapes/classdiagram/BasicAggregItem.h" />
+		<Unit filename="shapes/classdiagram/BiDirectAssocItem.cpp" />
+		<Unit filename="shapes/classdiagram/BiDirectAssocItem.h" />
+		<Unit filename="shapes/classdiagram/ClassItem.cpp" />
+		<Unit filename="shapes/classdiagram/ClassItem.h" />
+		<Unit filename="shapes/classdiagram/ClassTemplItem.cpp" />
+		<Unit filename="shapes/classdiagram/ClassTemplItem.h" />
+		<Unit filename="shapes/classdiagram/CompAggregItem.cpp" />
+		<Unit filename="shapes/classdiagram/CompAggregItem.h" />
+		<Unit filename="shapes/classdiagram/EnumItem.cpp" />
+		<Unit filename="shapes/classdiagram/EnumItem.h" />
+		<Unit filename="shapes/classdiagram/IncludeAssocItem.cpp" />
+		<Unit filename="shapes/classdiagram/IncludeAssocItem.h" />
+		<Unit filename="shapes/classdiagram/InheritanceItem.cpp" />
+		<Unit filename="shapes/classdiagram/InheritanceItem.h" />
+		<Unit filename="shapes/classdiagram/InterfaceItem.cpp" />
+		<Unit filename="shapes/classdiagram/InterfaceItem.h" />
+		<Unit filename="shapes/classdiagram/TemplateBindItem.cpp" />
+		<Unit filename="shapes/classdiagram/TemplateBindItem.h" />
+		<Unit filename="shapes/classdiagram/UniDirectAssocItem.cpp" />
+		<Unit filename="shapes/classdiagram/UniDirectAssocItem.h" />
+		<Unit filename="shapes/statechart/DecisionItem.cpp" />
+		<Unit filename="shapes/statechart/DecisionItem.h" />
+		<Unit filename="shapes/statechart/EntryItem.cpp" />
+		<Unit filename="shapes/statechart/EntryItem.h" />
+		<Unit filename="shapes/statechart/ExitItem.cpp" />
+		<Unit filename="shapes/statechart/ExitItem.h" />
+		<Unit filename="shapes/statechart/FinalItem.cpp" />
+		<Unit filename="shapes/statechart/FinalItem.h" />
+		<Unit filename="shapes/statechart/ForkJoinHItem.cpp" />
+		<Unit filename="shapes/statechart/ForkJoinHItem.h" />
+		<Unit filename="shapes/statechart/ForkJoinVItem.cpp" />
+		<Unit filename="shapes/statechart/ForkJoinVItem.h" />
+		<Unit filename="shapes/statechart/HistoryItem.cpp" />
+		<Unit filename="shapes/statechart/HistoryItem.h" />
+		<Unit filename="shapes/statechart/InitialItem.cpp" />
+		<Unit filename="shapes/statechart/InitialItem.h" />
+		<Unit filename="shapes/statechart/SimpleStateItem.cpp" />
+		<Unit filename="shapes/statechart/SimpleStateItem.h" />
+		<Unit filename="shapes/statechart/StateItem.cpp" />
+		<Unit filename="shapes/statechart/StateItem.h" />
+		<Unit filename="shapes/statechart/SubStateItem.cpp" />
+		<Unit filename="shapes/statechart/SubStateItem.h" />
+		<Unit filename="shapes/statechart/TransitionItem.cpp" />
+		<Unit filename="shapes/statechart/TransitionItem.h" />
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

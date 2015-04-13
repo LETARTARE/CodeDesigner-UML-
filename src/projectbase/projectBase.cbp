@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="projectBase" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Release">
+				<Option output="../../output/cdprojectbase.dll" prefix_auto="0" extension_auto="0" />
+				<Option object_output=".objsu" />
+				<Option type="3" />
+				<Option compiler="gcc" />
+				<Option createStaticLib="1" />
+				<Compiler>
+					<Add option="-Wall" />
+					<Add option="-O3" />
+					<Add option="-fno-strict-aliasing" />
+					<Add option="-DWXMAKINGDLL_CD" />
+					<Add option="-DWXUSINGDLL" />
+					<Add option="-DUNICODE" />
+					<Add option="-D_UNICODE" />
+					<Add option="-D__WX__" />
+					<Add option="-D__WXMSW__" />
+					<Add option="-DWIN32" />
+					<Add option="-D_WINDOWS" />
+					<Add option="-DNDEBUG" />
+					<Add directory="." />
+					<Add directory="../" />
+					<Add directory="$(#WX30.include)" />
+					<Add directory="../controls/include" />
+					<Add directory="$(#WX30.lib)/gcc_dll/mswu" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+					<Add library="wxmsw30u_shapeframework_cd" />
+					<Add library="wxbase30u" />
+					<Add library="wxscintilla" />
+					<Add library="wxbase30u_xml" />
+					<Add library="wxmsw30u_core" />
+					<Add library="wxmsw30u_adv" />
+					<Add library="wxmsw30u_aui" />
+					<Add library="wxmsw30u_xrc" />
+					<Add library="wxmsw30u_gl" />
+					<Add library="wxmsw30u_propgrid" />
+					<Add library="wxmsw30u_richtext" />
+					<Add library="wxmsw30u_stc" />
+					<Add directory="../../output" />
+					<Add directory="$(#WX30.lib)/gcc_dll" />
+				</Linker>
+			</Target>
+			<Target title="Debug">
+				<Option output="../../output/cdprojectbase_d.dll" prefix_auto="0" extension_auto="0" />
+				<Option object_output=".objsud" />
+				<Option type="3" />
+				<Option compiler="gcc" />
+				<Option createStaticLib="1" />
+				<Compiler>
+					<Add option="-Wall" />
+					<Add option="-g" />
+					<Add option="-DWXMAKINGDLL_CD" />
+					<Add option="-DWXUSINGDLL" />
+					<Add option="-DUNICODE" />
+					<Add option="-D_UNICODE" />
+					<Add option="-D__WX__" />
+					<Add option="-D__WXMSW__" />
+					<Add option="-DWIN32" />
+					<Add option="-D_WINDOWS" />
+					<Add option="-DDEBUG" />
+					<Add option="-D_DEBUG" />
+					<Add option="-D__WXDEBUG__" />
+					<Add option="-O0" />
+					<Add directory="." />
+					<Add directory="../" />
+					<Add directory="$(#WX.include)" />
+					<Add directory="../controls/include" />
+					<Add directory="$(#WX.lib)/gcc_dll/mswud" />
+				</Compiler>
+				<Linker>
+					<Add library="wxmsw30ud_shapeframework_cd" />
+					<Add library="wxmsw30ud" />
+					<Add directory="../../output" />
+					<Add directory="$(#WX.lib)/gcc_dll" />
+				</Linker>
+			</Target>
+		</Build>
+		<Unit filename="Common.cpp" />
+		<Unit filename="Common.h" />
+		<Unit filename="DiagramBase.cpp" />
+		<Unit filename="DiagramBase.h" />
+		<Unit filename="Events.cpp" />
+		<Unit filename="Events.h" />
+		<Unit filename="FrameBase.cpp" />
+		<Unit filename="FrameBase.h" />
+		<Unit filename="GeneratorBase.cpp" />
+		<Unit filename="GeneratorBase.h" />
+		<Unit filename="ProjectBase.cpp" />
+		<Unit filename="ProjectBase.h" />
+		<Unit filename="SettingsBase.cpp" />
+		<Unit filename="SettingsBase.h" />
+		<Unit filename="codegen/Algorithm.cpp" />
+		<Unit filename="codegen/Algorithm.h" />
+		<Unit filename="codegen/CodeItemsGenerator.cpp" />
+		<Unit filename="codegen/CodeItemsGenerator.h" />
+		<Unit filename="codegen/CommentProcessors.cpp" />
+		<Unit filename="codegen/CommentProcessors.h" />
+		<Unit filename="codegen/ElementProcessor.cpp" />
+		<Unit filename="codegen/ElementProcessor.h" />
+		<Unit filename="codegen/Generator.cpp" />
+		<Unit filename="codegen/Generator.h" />
+		<Unit filename="codegen/Language.cpp" />
+		<Unit filename="codegen/Language.h" />
+		<Unit filename="codegen/Optimizer.cpp" />
+		<Unit filename="codegen/Optimizer.h" />
+		<Unit filename="codegen/Preprocessor.cpp" />
+		<Unit filename="codegen/Preprocessor.h" />
+		<Unit filename="codegen/Verifier.cpp" />
+		<Unit filename="codegen/Verifier.h" />
+		<Unit filename="gui/AccessTypeDialog.cpp" />
+		<Unit filename="gui/AccessTypeDialog.h" />
+		<Unit filename="gui/ChoiceDialog.cpp" />
+		<Unit filename="gui/ChoiceDialog.h" />
+		<Unit filename="gui/CodeLinkDialog.cpp" />
+		<Unit filename="gui/CodeLinkDialog.h" />
+		<Unit filename="gui/DiagramDialog.cpp" />
+		<Unit filename="gui/DiagramDialog.h" />
+		<Unit filename="gui/ElementDialog.cpp" />
+		<Unit filename="gui/ElementDialog.h" />
+		<Unit filename="gui/FunctionDialog.cpp" />
+		<Unit filename="gui/FunctionDialog.h" />
+		<Unit filename="gui/FunctionLinkDialog.cpp" />
+		<Unit filename="gui/FunctionLinkDialog.h" />
+		<Unit filename="gui/GUI_ProjectBase.cpp" />
+		<Unit filename="gui/GUI_ProjectBase.h" />
+		<Unit filename="gui/ProgressDialog.cpp" />
+		<Unit filename="gui/ProgressDialog.h" />
+		<Unit filename="gui/ScopedElementDialog.cpp" />
+		<Unit filename="gui/ScopedElementDialog.h" />
+		<Unit filename="gui/UMLDesignerAUI.fbp" />
+		<Unit filename="gui/UpdateCodeDialog.cpp" />
+		<Unit filename="gui/UpdateCodeDialog.h" />
+		<Unit filename="gui/VariableDialog.cpp" />
+		<Unit filename="gui/VariableDialog.h" />
+		<Unit filename="shapes/CircleElement.cpp" />
+		<Unit filename="shapes/CircleElement.h" />
+		<Unit filename="shapes/DnDElement.cpp" />
+		<Unit filename="shapes/DnDElement.h" />
+		<Unit filename="shapes/LabelElement.cpp" />
+		<Unit filename="shapes/LabelElement.h" />
+		<Unit filename="shapes/LineElement.cpp" />
+		<Unit filename="shapes/LineElement.h" />
+		<Unit filename="shapes/MultiLabelLineElement.cpp" />
+		<Unit filename="shapes/MultiLabelLineElement.h" />
+		<Unit filename="shapes/PolygonElement.cpp" />
+		<Unit filename="shapes/PolygonElement.h" />
+		<Unit filename="shapes/RectElement.cpp" />
+		<Unit filename="shapes/RectElement.h" />
+		<Unit filename="shapes/RoundRectElement.cpp" />
+		<Unit filename="shapes/RoundRectElement.h" />
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

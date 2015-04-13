@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="diagTest" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Release">
+				<Option output="../../../output/plugins/diagtest.dll" prefix_auto="0" extension_auto="0" />
+				<Option object_output=".objsu" />
+				<Option type="3" />
+				<Option compiler="gcc" />
+				<Option createStaticLib="1" />
+				<Compiler>
+					<Add option="-Wall" />
+					<Add option="-O3" />
+					<Add option="-fno-strict-aliasing" />
+					<Add option="-DWXMAKINGDLL_CD" />
+					<Add option="-DWXUSINGDLL" />
+					<Add option="-DUNICODE" />
+					<Add option="-D_UNICODE" />
+					<Add option="-D__WX__" />
+					<Add option="-D__WXMSW__" />
+					<Add option="-DWIN32" />
+					<Add option="-D_WINDOWS" />
+					<Add option="-DNDEBUG" />
+					<Add directory="." />
+					<Add directory="../" />
+					<Add directory="../../" />
+					<Add directory="$(#WX30.include)" />
+					<Add directory="../../controls/include" />
+					<Add directory="$(#WX30.lib)/gcc_dll/mswu" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+					<Add library="wxmsw30u_shapeframework_cd" />
+					<Add library="cdprojectbase" />
+					<Add library="wxbase30u" />
+					<Add library="wxmsw30u_core" />
+					<Add library="wxmsw30u_aui" />
+					<Add directory="../../../output/plugins" />
+					<Add directory="../../../output" />
+					<Add directory="$(#WX30.lib)/gcc_dll" />
+				</Linker>
+			</Target>
+			<Target title="Debug">
+				<Option output="../../../output/plugins/diagtest_d.dll" prefix_auto="0" extension_auto="0" />
+				<Option object_output=".objsud" />
+				<Option type="3" />
+				<Option compiler="gcc" />
+				<Option createStaticLib="1" />
+				<Compiler>
+					<Add option="-Wall" />
+					<Add option="-g" />
+					<Add option="-DWXMAKINGDLL_CD" />
+					<Add option="-DWXUSINGDLL" />
+					<Add option="-DUNICODE" />
+					<Add option="-D_UNICODE" />
+					<Add option="-D__WX__" />
+					<Add option="-D__WXMSW__" />
+					<Add option="-DWIN32" />
+					<Add option="-D_WINDOWS" />
+					<Add option="-DDEBUG" />
+					<Add option="-D_DEBUG" />
+					<Add option="-D__WXDEBUG__" />
+					<Add option="-O0" />
+					<Add directory="." />
+					<Add directory="../" />
+					<Add directory="../../" />
+					<Add directory="$(#WX.include)" />
+					<Add directory="../../controls/include" />
+					<Add directory="$(#WX.lib)/gcc_dll/mswud" />
+				</Compiler>
+				<Linker>
+					<Add library="wxmsw30ud_shapeframework_cd" />
+					<Add library="cdprojectbase_d" />
+					<Add library="wxmsw30ud" />
+					<Add directory="../../../output/plugins" />
+					<Add directory="../../../output" />
+					<Add directory="$(#WX.lib)/gcc_dll" />
+				</Linker>
+			</Target>
+		</Build>
+		<Unit filename="DiagTest.cpp" />
+		<Unit filename="DiagTest.h" />
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

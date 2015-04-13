@@ -1,0 +1,462 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="CodeDesigner" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Option show_notes="0">
+			<notes>
+				<![CDATA[version 1.6.5-0
+]]>
+			</notes>
+		</Option>
+		<Option check_files="0" />
+		<Build>
+			<Target title="Release">
+				<Option output="../output/codedesigner.exe" prefix_auto="0" extension_auto="0" />
+				<Option object_output=".objsu" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-Wall" />
+					<Add option="-O3" />
+					<Add option="-Winvalid-pch" />
+					<Add option='-include &quot;wx_pch.h&quot;' />
+					<Add option="-fno-strict-aliasing" />
+					<Add option="-DWXUSINGDLL" />
+					<Add option="-DUNICODE" />
+					<Add option="-D_UNICODE" />
+					<Add option="-D__WX__" />
+					<Add option="-D__WXMSW__" />
+					<Add option="-DWIN32" />
+					<Add option="-D_WINDOWS" />
+					<Add option="-DNDEBUG" />
+					<Add directory="." />
+					<Add directory="$(#Wx30.include)" />
+					<Add directory="controls/include" />
+					<Add directory="$(#WX30.lib)/gcc_dll/mswu" />
+				</Compiler>
+				<ResourceCompiler>
+					<Add directory="." />
+					<Add directory="$(#WX.include)" />
+					<Add directory="controls/include" />
+					<Add directory="$(#WX.lib)/gcc_dll/mswu" />
+				</ResourceCompiler>
+				<Linker>
+					<Add option="-s" />
+					<Add library="wxmsw30u_shapeframework_cd" />
+					<Add library="cdprojectbase" />
+					<Add library="wxbase30u" />
+					<Add library="wxmsw30u_core" />
+					<Add library="wxmsw30u_stc" />
+					<Add library="wxmsw30u_aui" />
+					<Add library="wxmsw30u_propgrid" />
+					<Add library="wxbase30u_xml" />
+					<Add library="wxmsw30u_adv" />
+					<Add directory="../output" />
+					<Add directory="$(#WX30.lib)/gcc_dll" />
+				</Linker>
+			</Target>
+			<Target title="Debug">
+				<Option output="../output/codedesigner_d.exe" prefix_auto="0" extension_auto="0" />
+				<Option object_output=".objsud" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-Wall" />
+					<Add option="-g" />
+					<Add option="-Winvalid-pch" />
+					<Add option='-include &quot;wx_pch.h&quot;' />
+					<Add option="-DWXUSINGDLL" />
+					<Add option="-DUNICODE" />
+					<Add option="-D_UNICODE" />
+					<Add option="-D__WX__" />
+					<Add option="-D__WXMSW__" />
+					<Add option="-DWIN32" />
+					<Add option="-D_WINDOWS" />
+					<Add option="-DDEBUG" />
+					<Add option="-D_DEBUG" />
+					<Add option="-D__WXDEBUG__" />
+					<Add option="-O0" />
+					<Add directory="." />
+					<Add directory="$(#WX.include)" />
+					<Add directory="controls/include" />
+					<Add directory="$(#WX.lib)/gcc_dll/mswud" />
+				</Compiler>
+				<ResourceCompiler>
+					<Add directory="." />
+					<Add directory="$(#WX.include)" />
+					<Add directory="controls/include" />
+					<Add directory="$(#WX.lib)/gcc_dll/mswud" />
+				</ResourceCompiler>
+				<Linker>
+					<Add library="wxmsw30ud_shapeframework_cd" />
+					<Add library="cdprojectbase_d" />
+					<Add library="wxmsw30ud" />
+					<Add directory="../output" />
+					<Add directory="$(#WX.lib)/gcc_dll" />
+				</Linker>
+				<ExtraCommands>
+					<Add before="python $(ProjectPath)/create_buildnum.py" />
+				</ExtraCommands>
+			</Target>
+			<Target title="infos">
+				<Option output="CodeDesigner" prefix_auto="1" extension_auto="1" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+			</Target>
+		</Build>
+		<Unit filename="../LICENSE.txt">
+			<Option target="infos" />
+		</Unit>
+		<Unit filename="../changes.txt">
+			<Option target="infos" />
+		</Unit>
+		<Unit filename="../info/codedesigner.his">
+			<Option target="infos" />
+		</Unit>
+		<Unit filename="../readme_bin.txt">
+			<Option target="infos" />
+		</Unit>
+		<Unit filename="../readme_src.txt">
+			<Option target="infos" />
+		</Unit>
+		<Unit filename="Art.cpp">
+			<Option target="Release" />
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="Art.h">
+			<Option target="Release" />
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="BuildNum.h">
+			<Option target="Release" />
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="CodeItemsTree.cpp">
+			<Option target="Release" />
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="CodeItemsTree.h">
+			<Option target="Release" />
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="DiagramBank.cpp">
+			<Option target="Release" />
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="DiagramBank.h">
+			<Option target="Release" />
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="Ids.h">
+			<Option target="Release" />
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="Log.cpp">
+			<Option target="Release" />
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="Log.h">
+			<Option target="Release" />
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="PluginManager.cpp">
+			<Option target="Release" />
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="PluginManager.h">
+			<Option target="Release" />
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="ProjStructTree.cpp">
+			<Option target="Release" />
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="ProjStructTree.h">
+			<Option target="Release" />
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="Project.cpp">
+			<Option target="Release" />
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="Project.h">
+			<Option target="Release" />
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="ProjectManager.cpp">
+			<Option target="Release" />
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="ProjectManager.h">
+			<Option target="Release" />
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="ProjectTree.cpp">
+			<Option target="Release" />
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="ProjectTree.h">
+			<Option target="Release" />
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="Settings.cpp">
+			<Option target="Release" />
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="Settings.h">
+			<Option target="Release" />
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="UMLDesignerApp.cpp">
+			<Option target="Release" />
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="UMLDesignerApp.h">
+			<Option target="Release" />
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="UMLDesignerMain.cpp">
+			<Option target="Release" />
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="UMLDesignerMain.h">
+			<Option target="Release" />
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="XS2PG.cpp">
+			<Option target="Release" />
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="XS2PG.h">
+			<Option target="Release" />
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="codegen/CProjectGenerator.cpp">
+			<Option target="Release" />
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="codegen/CProjectGenerator.h">
+			<Option target="Release" />
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="codegen/PythonProjectGenerator.cpp">
+			<Option target="Release" />
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="codegen/PythonProjectGenerator.h">
+			<Option target="Release" />
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="codegen/base/ProjectGenerator.cpp">
+			<Option target="Release" />
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="codegen/base/ProjectGenerator.h">
+			<Option target="Release" />
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="codegen/languages/CLanguage.cpp">
+			<Option target="Release" />
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="codegen/languages/CLanguage.h">
+			<Option target="Release" />
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="codegen/languages/CPPLanguage.cpp">
+			<Option target="Release" />
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="codegen/languages/CPPLanguage.h">
+			<Option target="Release" />
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="codegen/languages/PythonLanguage.cpp">
+			<Option target="Release" />
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="codegen/languages/PythonLanguage.h">
+			<Option target="Release" />
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="gui/DependenciesDialog.cpp">
+			<Option target="Release" />
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="gui/DependenciesDialog.h">
+			<Option target="Release" />
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="gui/DialogFunctions.cpp">
+			<Option target="Release" />
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="gui/DialogFunctions.h">
+			<Option target="Release" />
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="gui/Editor.cpp">
+			<Option target="Release" />
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="gui/Editor.h">
+			<Option target="Release" />
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="gui/EditorPanel.cpp">
+			<Option target="Release" />
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="gui/EditorPanel.h">
+			<Option target="Release" />
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="gui/GUI.cpp">
+			<Option target="Release" />
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="gui/GUI.h">
+			<Option target="Release" />
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="gui/GroupDialog.cpp">
+			<Option target="Release" />
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="gui/GroupDialog.h">
+			<Option target="Release" />
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="gui/InsertFromBankDialog.cpp">
+			<Option target="Release" />
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="gui/InsertFromBankDialog.h">
+			<Option target="Release" />
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="gui/ManageBankDialog.cpp">
+			<Option target="Release" />
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="gui/ManageBankDialog.h">
+			<Option target="Release" />
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="gui/ManagePluginsDialog.cpp">
+			<Option target="Release" />
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="gui/ManagePluginsDialog.h">
+			<Option target="Release" />
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="gui/SettingsDialog.cpp">
+			<Option target="Release" />
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="gui/SettingsDialog.h">
+			<Option target="Release" />
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="gui/StoreToBankDialog.cpp">
+			<Option target="Release" />
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="gui/StoreToBankDialog.h">
+			<Option target="Release" />
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="gui/SynchronizeDialog.cpp">
+			<Option target="Release" />
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="gui/SynchronizeDialog.h">
+			<Option target="Release" />
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="gui/TabArt.cpp">
+			<Option target="Release" />
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="gui/TabArt.h">
+			<Option target="Release" />
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="gui/UMLDesignerAUI.fbp">
+			<Option target="Release" />
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="interfaces/Defs.h">
+			<Option target="Release" />
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="interfaces/IDiagram.h">
+			<Option target="Release" />
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="interfaces/IGenerator.h">
+			<Option target="Release" />
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="interfaces/IPlugin.h">
+			<Option target="Release" />
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="interfaces/IPluginManager.h">
+			<Option target="Release" />
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="interfaces/IProject.h">
+			<Option target="Release" />
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="resource.rc">
+			<Option compilerVar="WINDRES" />
+			<Option target="Release" />
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="shapes/GroupItem.cpp">
+			<Option target="Release" />
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="shapes/GroupItem.h">
+			<Option target="Release" />
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="shapes/NoteConnItem.cpp">
+			<Option target="Release" />
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="shapes/NoteConnItem.h">
+			<Option target="Release" />
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="shapes/NoteItem.cpp">
+			<Option target="Release" />
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="shapes/NoteItem.h">
+			<Option target="Release" />
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="wx_pch.cpp">
+			<Option target="Release" />
+			<Option target="Debug" />
+		</Unit>
+		<Unit filename="wx_pch.h">
+			<Option compile="1" />
+			<Option weight="0" />
+			<Option target="Release" />
+			<Option target="Debug" />
+		</Unit>
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

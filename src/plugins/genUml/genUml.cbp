@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="genUml" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Release">
+				<Option output="../../../output/plugins/genuml.dll" prefix_auto="0" extension_auto="0" />
+				<Option object_output=".objsu" />
+				<Option type="3" />
+				<Option compiler="gcc" />
+				<Option createStaticLib="1" />
+				<Compiler>
+					<Add option="-Wall" />
+					<Add option="-O3" />
+					<Add option="-fno-strict-aliasing" />
+					<Add option="-DWXMAKINGDLL_CD" />
+					<Add option="-DWXUSINGDLL" />
+					<Add option="-DUNICODE" />
+					<Add option="-D_UNICODE" />
+					<Add option="-D__WX__" />
+					<Add option="-D__WXMSW__" />
+					<Add option="-DWIN32" />
+					<Add option="-D_WINDOWS" />
+					<Add option="-DNDEBUG" />
+					<Add directory="." />
+					<Add directory="../" />
+					<Add directory="../../" />
+					<Add directory="$(#WX30.include)" />
+					<Add directory="../../controls/include" />
+					<Add directory="$(#WX30.lib)/gcc_dll/mswu" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+					<Add option="-Wl,-rpath,$``ORIGIN/" />
+					<Add library="wxmsw30u_shapeframework_cd" />
+					<Add library="cdprojectbase" />
+					<Add library="diaguml" />
+					<Add library="wxbase30u" />
+					<Add library="wxmsw30u_core" />
+					<Add directory="../../../output/plugins" />
+					<Add directory="../../../output" />
+					<Add directory="$(#WX30.lib)/gcc_dll" />
+				</Linker>
+			</Target>
+			<Target title="Debug">
+				<Option output="../../../output/plugins/genuml_d.dll" prefix_auto="0" extension_auto="0" />
+				<Option object_output=".objsud" />
+				<Option type="3" />
+				<Option compiler="gcc" />
+				<Option createStaticLib="1" />
+				<Compiler>
+					<Add option="-Wall" />
+					<Add option="-g" />
+					<Add option="-DWXMAKINGDLL_CD" />
+					<Add option="-DWXUSINGDLL" />
+					<Add option="-DUNICODE" />
+					<Add option="-D_UNICODE" />
+					<Add option="-D__WX__" />
+					<Add option="-D__WXMSW__" />
+					<Add option="-DWIN32" />
+					<Add option="-D_WINDOWS" />
+					<Add option="-DDEBUG" />
+					<Add option="-D_DEBUG" />
+					<Add option="-D__WXDEBUG__" />
+					<Add option="-O0" />
+					<Add directory="." />
+					<Add directory="../" />
+					<Add directory="../../" />
+					<Add directory="$(#WX.include)" />
+					<Add directory="../../controls/include" />
+					<Add directory="$(#WX.lib)/gcc_dll/mswud" />
+				</Compiler>
+				<Linker>
+					<Add option="-Wl,-rpath,$``ORIGIN/" />
+					<Add library="wxmsw30ud_shapeframework_cd" />
+					<Add library="cdprojectbase_d" />
+					<Add library="diaguml_d" />
+					<Add library="wxmsw30ud" />
+					<Add directory="../../../output/plugins" />
+					<Add directory="../../../output" />
+					<Add directory="$(#WX.lib)/gcc_dll" />
+				</Linker>
+			</Target>
+		</Build>
+		<Unit filename="GenUml.cpp" />
+		<Unit filename="GenUml.h" />
+		<Unit filename="classdiaggen/CPPClassAlgorithm.cpp" />
+		<Unit filename="classdiaggen/CPPClassAlgorithm.h" />
+		<Unit filename="classdiaggen/CPPElementProcessors.cpp" />
+		<Unit filename="classdiaggen/CPPElementProcessors.h" />
+		<Unit filename="classdiaggen/ClassAlgorithm.cpp" />
+		<Unit filename="classdiaggen/ClassAlgorithm.h" />
+		<Unit filename="classdiaggen/ClassDiagramGenerator.cpp" />
+		<Unit filename="classdiaggen/ClassDiagramGenerator.h" />
+		<Unit filename="classdiaggen/PythonClassAlgorithm.cpp" />
+		<Unit filename="classdiaggen/PythonClassAlgorithm.h" />
+		<Unit filename="classdiaggen/PythonElementProcessors.cpp" />
+		<Unit filename="classdiaggen/PythonElementProcessors.h" />
+		<Unit filename="statechartgen/EIElementProcessors.cpp" />
+		<Unit filename="statechartgen/EIElementProcessors.h" />
+		<Unit filename="statechartgen/ElifAlgorithm.cpp" />
+		<Unit filename="statechartgen/ElifAlgorithm.h" />
+		<Unit filename="statechartgen/GTElementProcessors.cpp" />
+		<Unit filename="statechartgen/GTElementProcessors.h" />
+		<Unit filename="statechartgen/GoToAlgorithm.cpp" />
+		<Unit filename="statechartgen/GoToAlgorithm.h" />
+		<Unit filename="statechartgen/HStateChartGenerator.cpp" />
+		<Unit filename="statechartgen/HStateChartGenerator.h" />
+		<Unit filename="statechartgen/HStateChartPreprocessor.cpp" />
+		<Unit filename="statechartgen/HStateChartPreprocessor.h" />
+		<Unit filename="statechartgen/LCEITransitionProcessor.cpp" />
+		<Unit filename="statechartgen/LCEITransitionProcessor.h" />
+		<Unit filename="statechartgen/LCElementProcessors.cpp" />
+		<Unit filename="statechartgen/LCElementProcessors.h" />
+		<Unit filename="statechartgen/LoopCaseAlgorithm.cpp" />
+		<Unit filename="statechartgen/LoopCaseAlgorithm.h" />
+		<Unit filename="statechartgen/SStateChartGenerator.cpp" />
+		<Unit filename="statechartgen/SStateChartGenerator.h" />
+		<Unit filename="statechartgen/StateChartElementProcessor.cpp" />
+		<Unit filename="statechartgen/StateChartElementProcessor.h" />
+		<Unit filename="statechartgen/StateChartGenerator.cpp" />
+		<Unit filename="statechartgen/StateChartGenerator.h" />
+		<Unit filename="statechartgen/StateChartOptimizer.cpp" />
+		<Unit filename="statechartgen/StateChartOptimizer.h" />
+		<Unit filename="statechartgen/StateChartVerifier.cpp" />
+		<Unit filename="statechartgen/StateChartVerifier.h" />
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

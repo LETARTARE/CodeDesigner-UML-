@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="wxShapeFramework" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Release">
+				<Option output="../../output/wxmsw30u_shapeframework_cd.dll" prefix_auto="0" extension_auto="0" />
+				<Option object_output=".objsu" />
+				<Option type="3" />
+				<Option compiler="gcc" />
+				<Option createStaticLib="1" />
+				<Compiler>
+					<Add option="-Wall" />
+					<Add option="-O3" />
+					<Add option="-fno-strict-aliasing" />
+					<Add option="-DWXMAKINGDLL_WXSF" />
+					<Add option="-DWXMAKINGDLL_WXXS" />
+					<Add option="-DMONOLITHIC" />
+					<Add option="-DWXUSINGDLL" />
+					<Add option="-DUNICODE" />
+					<Add option="-D_UNICODE" />
+					<Add option="-D__WX__" />
+					<Add option="-D__WXMSW__" />
+					<Add option="-DWIN32" />
+					<Add option="-D_WINDOWS" />
+					<Add option="-DNDEBUG" />
+					<Add directory="include" />
+					<Add directory="src/wxShapeFramework" />
+					<Add directory="$(#Wx30.include)" />
+					<Add directory="$(#WX30.lib)/gcc_dll/mswu" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+					<Add library="wxbase30u" />
+					<Add library="wxmsw30u_core" />
+					<Add library="wxmsw30u_adv" />
+					<Add library="wxbase30u_xml" />
+					<Add library="wxmsw30u_gl" />
+					<Add library="wxmsw30u_aui" />
+					<Add library="wxmsw30u_propgrid" />
+					<Add library="wxmsw30u_xrc" />
+					<Add library="wxscintilla" />
+					<Add directory="../../output" />
+					<Add directory="$(#WX30.lib)/gcc_dll" />
+				</Linker>
+			</Target>
+			<Target title="Debug">
+				<Option output="../../output/wxmsw30ud_shapeframework_cd.dll" prefix_auto="0" extension_auto="0" />
+				<Option object_output=".objsud" />
+				<Option type="3" />
+				<Option compiler="gcc" />
+				<Option createStaticLib="1" />
+				<Compiler>
+					<Add option="-Wall" />
+					<Add option="-g" />
+					<Add option="-O0" />
+					<Add option="-DWXMAKINGDLL_WXSF" />
+					<Add option="-DWXMAKINGDLL_WXXS" />
+					<Add option="-DMONOLITHIC" />
+					<Add option="-DWXUSINGDLL" />
+					<Add option="-DUNICODE" />
+					<Add option="-D_UNICODE" />
+					<Add option="-D__WX__" />
+					<Add option="-D__WXMSW__" />
+					<Add option="-DWIN32" />
+					<Add option="-D_WINDOWS" />
+					<Add option="-DDEBUG" />
+					<Add option="-D_DEBUG" />
+					<Add option="-D__WXDEBUG__" />
+					<Add directory="include" />
+					<Add directory="src/wxShapeFramework" />
+					<Add directory="$(#WX30.include)" />
+					<Add directory="$(#WX30.lib)/gcc_dll/mswud" />
+				</Compiler>
+				<Linker>
+					<Add library="wxmsw30ud" />
+					<Add directory="../../output" />
+					<Add directory="$(#WX30.lib)/gcc_dll" />
+				</Linker>
+			</Target>
+		</Build>
+		<Unit filename="include/wx/wxsf/ArrowBase.h" />
+		<Unit filename="include/wx/wxsf/AutoLayout.h" />
+		<Unit filename="include/wx/wxsf/BitmapShape.h" />
+		<Unit filename="include/wx/wxsf/CanvasHistory.h" />
+		<Unit filename="include/wx/wxsf/CanvasState.h" />
+		<Unit filename="include/wx/wxsf/CircleArrow.h" />
+		<Unit filename="include/wx/wxsf/CircleShape.h" />
+		<Unit filename="include/wx/wxsf/CommonFcn.h" />
+		<Unit filename="include/wx/wxsf/ControlShape.h" />
+		<Unit filename="include/wx/wxsf/CurveShape.h" />
+		<Unit filename="include/wx/wxsf/Defs.h" />
+		<Unit filename="include/wx/wxsf/DiagramManager.h" />
+		<Unit filename="include/wx/wxsf/DiamondArrow.h" />
+		<Unit filename="include/wx/wxsf/DiamondShape.h" />
+		<Unit filename="include/wx/wxsf/EditTextShape.h" />
+		<Unit filename="include/wx/wxsf/EllipseShape.h" />
+		<Unit filename="include/wx/wxsf/FixedRectShape.h" />
+		<Unit filename="include/wx/wxsf/FlexGridShape.h" />
+		<Unit filename="include/wx/wxsf/GridShape.h" />
+		<Unit filename="include/wx/wxsf/LineShape.h" />
+		<Unit filename="include/wx/wxsf/MultiSelRect.h" />
+		<Unit filename="include/wx/wxsf/OpenArrow.h" />
+		<Unit filename="include/wx/wxsf/OrthoShape.h" />
+		<Unit filename="include/wx/wxsf/PolygonShape.h" />
+		<Unit filename="include/wx/wxsf/Printout.h" />
+		<Unit filename="include/wx/wxsf/RectShape.h" />
+		<Unit filename="include/wx/wxsf/RoundOrthoShape.h" />
+		<Unit filename="include/wx/wxsf/RoundRectShape.h" />
+		<Unit filename="include/wx/wxsf/SFEvents.h" />
+		<Unit filename="include/wx/wxsf/ScaledDC.h" />
+		<Unit filename="include/wx/wxsf/ShapeBase.h" />
+		<Unit filename="include/wx/wxsf/ShapeCanvas.h" />
+		<Unit filename="include/wx/wxsf/ShapeDataObject.h" />
+		<Unit filename="include/wx/wxsf/ShapeDockpoint.h" />
+		<Unit filename="include/wx/wxsf/ShapeHandle.h" />
+		<Unit filename="include/wx/wxsf/SolidArrow.h" />
+		<Unit filename="include/wx/wxsf/TextShape.h" />
+		<Unit filename="include/wx/wxsf/Thumbnail.h" />
+		<Unit filename="include/wx/wxsf/wxShapeFramework.h" />
+		<Unit filename="include/wx/wxxmlserializer/Defs.h" />
+		<Unit filename="include/wx/wxxmlserializer/PropertyIO.h" />
+		<Unit filename="include/wx/wxxmlserializer/XmlSerializer.h" />
+		<Unit filename="src/wxShapeFramework/ArrowBase.cpp" />
+		<Unit filename="src/wxShapeFramework/AutoLayout.cpp" />
+		<Unit filename="src/wxShapeFramework/BitmapShape.cpp" />
+		<Unit filename="src/wxShapeFramework/BitmapShapeXml.cpp" />
+		<Unit filename="src/wxShapeFramework/CanvasHistory.cpp" />
+		<Unit filename="src/wxShapeFramework/CanvasState.cpp" />
+		<Unit filename="src/wxShapeFramework/CircleArrow.cpp" />
+		<Unit filename="src/wxShapeFramework/CircleShape.cpp" />
+		<Unit filename="src/wxShapeFramework/CommonFcn.cpp" />
+		<Unit filename="src/wxShapeFramework/ControlShape.cpp" />
+		<Unit filename="src/wxShapeFramework/CurveShape.cpp" />
+		<Unit filename="src/wxShapeFramework/DiagramManager.cpp" />
+		<Unit filename="src/wxShapeFramework/DiamondArrow.cpp" />
+		<Unit filename="src/wxShapeFramework/DiamondShape.cpp" />
+		<Unit filename="src/wxShapeFramework/EditTextShape.cpp" />
+		<Unit filename="src/wxShapeFramework/EllipseShape.cpp" />
+		<Unit filename="src/wxShapeFramework/FixedRectShape.cpp" />
+		<Unit filename="src/wxShapeFramework/FlexGridShape.cpp" />
+		<Unit filename="src/wxShapeFramework/GridShape.cpp" />
+		<Unit filename="src/wxShapeFramework/LineShape.cpp" />
+		<Unit filename="src/wxShapeFramework/MultiSelRect.cpp" />
+		<Unit filename="src/wxShapeFramework/OpenArrow.cpp" />
+		<Unit filename="src/wxShapeFramework/OrthoShape.cpp" />
+		<Unit filename="src/wxShapeFramework/PolygonShape.cpp" />
+		<Unit filename="src/wxShapeFramework/PolygonShapeXml.cpp" />
+		<Unit filename="src/wxShapeFramework/Printout.cpp" />
+		<Unit filename="src/wxShapeFramework/RectShape.cpp" />
+		<Unit filename="src/wxShapeFramework/RoundOrthoShape.cpp" />
+		<Unit filename="src/wxShapeFramework/RoundRectShape.cpp" />
+		<Unit filename="src/wxShapeFramework/SFEvents.cpp" />
+		<Unit filename="src/wxShapeFramework/ScaledDC.cpp" />
+		<Unit filename="src/wxShapeFramework/ShapeBase.cpp" />
+		<Unit filename="src/wxShapeFramework/ShapeBaseXml.cpp" />
+		<Unit filename="src/wxShapeFramework/ShapeCanvas.cpp" />
+		<Unit filename="src/wxShapeFramework/ShapeDataObject.cpp" />
+		<Unit filename="src/wxShapeFramework/ShapeDockpoint.cpp" />
+		<Unit filename="src/wxShapeFramework/ShapeHandle.cpp" />
+		<Unit filename="src/wxShapeFramework/SolidArrow.cpp" />
+		<Unit filename="src/wxShapeFramework/TextShape.cpp" />
+		<Unit filename="src/wxShapeFramework/TextShapeXml.cpp" />
+		<Unit filename="src/wxShapeFramework/Thumbnail.cpp" />
+		<Unit filename="src/wxShapeFramework/wx_pch.cpp" />
+		<Unit filename="src/wxShapeFramework/wxxmlserializer/PropertyIO.cpp" />
+		<Unit filename="src/wxShapeFramework/wxxmlserializer/XmlSerializer.cpp" />
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

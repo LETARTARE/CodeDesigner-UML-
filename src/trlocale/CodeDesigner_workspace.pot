@@ -1,0 +1,2517 @@
+# CodeDesigner.
+# Copyright (C) YEAR THE CodeDesigner'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the CodeDesigner package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: CodeDesigner.cbp\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-04-12 09:30+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: French <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\build\wxShapeFramework\..\..\src\controls\src\wxShapeFramework\AutoLayout.cpp:77
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:2356
+msgid "Circle"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\build\wxShapeFramework\..\..\src\controls\src\wxShapeFramework\AutoLayout.cpp:78
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:241
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:2368
+msgid "Horizontal Tree"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\build\wxShapeFramework\..\..\src\controls\src\wxShapeFramework\AutoLayout.cpp:79
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:249
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:2364
+msgid "Vertical Tree"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\build\wxShapeFramework\..\..\src\controls\src\wxShapeFramework\AutoLayout.cpp:80
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:233
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:2360
+msgid "Mesh"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\build\wxShapeFramework\..\..\src\controls\src\wxShapeFramework\DiagramManager.cpp:375
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\build\wxShapeFramework\..\..\src\controls\src\wxShapeFramework\wxxmlserializer\XmlSerializer.cpp:799
+msgid "Unable to initialize input stream."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\build\wxShapeFramework\..\..\src\controls\src\wxShapeFramework\DiagramManager.cpp:397
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\build\wxShapeFramework\..\..\src\controls\src\wxShapeFramework\ShapeCanvas.cpp:1954
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\build\wxShapeFramework\..\..\src\controls\src\wxShapeFramework\wxxmlserializer\XmlSerializer.cpp:834
+msgid "Unknown file format."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\build\wxShapeFramework\..\..\src\controls\src\wxShapeFramework\DiagramManager.cpp:401
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\build\wxShapeFramework\..\..\src\controls\src\wxShapeFramework\wxxmlserializer\XmlSerializer.cpp:838
+msgid "Unable to load XML file."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\build\wxShapeFramework\..\..\src\controls\src\wxShapeFramework\DiagramManager.cpp:491
+msgid ""
+"Deserialization couldn't be completed because not of all shapes are accepted."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\build\wxShapeFramework\..\..\src\controls\src\wxShapeFramework\Printout.cpp:57
+msgid "Shape canvas must be set in the wxSFPrintout class instance."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\build\wxShapeFramework\..\..\src\controls\src\wxShapeFramework\ShapeCanvas.cpp:221
+msgid "Shape manager has not been properly set in shape canvas's constructor."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\build\wxShapeFramework\..\..\src\controls\src\wxShapeFramework\ShapeCanvas.cpp:223
+msgid "Shape manager must be initialized before a creation of assigned canvas."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\build\wxShapeFramework\..\..\src\controls\src\wxShapeFramework\ShapeCanvas.cpp:332
+msgid "Couldn't enable Graphics context due to missing wxUSE_GRAPHICS_CONTEXT"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\build\wxShapeFramework\..\..\src\controls\src\wxShapeFramework\ShapeCanvas.cpp:1829
+msgid "Couldn't change scale of shape canvas containing control (GUI) shapes."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\build\wxShapeFramework\..\..\src\controls\src\wxShapeFramework\ShapeCanvas.cpp:2191
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:1555
+#, c-format
+msgid "The image has been saved to '%s'."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\build\wxShapeFramework\..\..\src\controls\src\wxShapeFramework\ShapeCanvas.cpp:2193
+msgid "Unable to save image to "
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\build\wxShapeFramework\..\..\src\controls\src\wxShapeFramework\ShapeCanvas.cpp:2196
+msgid "Could not create output bitmap."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\build\wxShapeFramework\..\..\src\controls\src\wxShapeFramework\ShapeCanvas.cpp:3389
+msgid ""
+"There was a problem printing.\n"
+"Perhaps your current printer is not set correctly?"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\build\wxShapeFramework\..\..\src\controls\src\wxShapeFramework\ShapeCanvas.cpp:3389
+msgid "wxSF Printing"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\build\wxShapeFramework\..\..\src\controls\src\wxShapeFramework\ShapeCanvas.cpp:3416
+msgid ""
+"There was a problem previewing.\n"
+"Perhaps your current printer is not set correctly?"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\build\wxShapeFramework\..\..\src\controls\src\wxShapeFramework\ShapeCanvas.cpp:3416
+msgid "wxSF Previewing"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\build\wxShapeFramework\..\..\src\controls\src\wxShapeFramework\ShapeCanvas.cpp:3420
+msgid "wxSF Print Preview"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\build\wxShapeFramework\..\..\src\controls\src\wxShapeFramework\wxxmlserializer\XmlSerializer.cpp:782
+msgid "Unable to save XML document."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\build\wxShapeFramework\..\..\src\controls\src\wxShapeFramework\wxxmlserializer\XmlSerializer.cpp:831
+msgid "No matching file owner or version."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\ProjectBase.cpp:116
+#, c-format
+msgid "Properties dialog for '%s' isn't implemented yet."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\ProjectBase.cpp:162
+msgid "Link description..."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\ProjectBase.cpp:227
+msgid "Link properties"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\ProjectBase.cpp:255
+msgid "Diagram element link"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\ProjectBase.cpp:320
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\ProjectBase.cpp:2415
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagCD.cpp:369
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagSCH.cpp:689
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagSCH.cpp:931
+msgid "Copy\tCtrl+C"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\ProjectBase.cpp:325
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\ProjectBase.cpp:2420
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagCD.cpp:374
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagSCH.cpp:694
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagSCH.cpp:936
+msgid "Cut\tCtrl+X"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\ProjectBase.cpp:331
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\ProjectBase.cpp:677
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\ProjectBase.cpp:1945
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\ProjectBase.cpp:2426
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagCD.cpp:380
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagSCH.cpp:700
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagSCH.cpp:942
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:542
+msgid "Edit properties..."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\ProjectBase.cpp:331
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\ProjectBase.cpp:2426
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagCD.cpp:380
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagSCH.cpp:700
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagSCH.cpp:942
+msgid "Edit diagram element"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\ProjectBase.cpp:334
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\ProjectBase.cpp:2429
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagCD.cpp:382
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagSCH.cpp:702
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagSCH.cpp:945
+msgid "Remove element"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\ProjectBase.cpp:334
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\ProjectBase.cpp:2429
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagCD.cpp:382
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagSCH.cpp:702
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagSCH.cpp:945
+msgid "Remove diagram element"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\ProjectBase.cpp:344
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\ProjectBase.cpp:350
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\ProjectBase.cpp:2449
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\ProjectBase.cpp:2455
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagCD.cpp:285
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagSCH.cpp:880
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:504
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.cpp:1113
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.cpp:1260
+msgid "Create"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\ProjectBase.cpp:362
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\ProjectBase.cpp:2491
+msgid "Navigate to element"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\ProjectBase.cpp:362
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\ProjectBase.cpp:2491
+msgid "Scroll the diagram so the element will be in its center"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\ProjectBase.cpp:475
+msgid "Code item link"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\ProjectBase.cpp:677
+msgid "Edit action properties."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\ProjectBase.cpp:679
+msgid "Remove code item"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\ProjectBase.cpp:679
+msgid "Remove code item."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\ProjectBase.cpp:737
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\Project.cpp:219
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\Project.cpp:326
+msgid "Couldn't move item to its successor."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\ProjectBase.cpp:858
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:687
+msgid "Variable"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\ProjectBase.cpp:859
+msgid "Variable's description..."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\ProjectBase.cpp:1239
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:688
+msgid "Function"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\ProjectBase.cpp:1240
+msgid "Function's descritpion..."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\ProjectBase.cpp:1585
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.cpp:1122
+msgid "Diagram"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\ProjectBase.cpp:1587
+msgid "Diagram's description..."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\ProjectBase.cpp:1932
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\ProjectBase.cpp:2687
+msgid "Show diagram"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\ProjectBase.cpp:1932
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\ProjectBase.cpp:2687
+msgid "Show diagram."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\ProjectBase.cpp:1934
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\ProjectBase.cpp:2689
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:509
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:725
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:2603
+msgid "Code preview"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\ProjectBase.cpp:1941
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\ProjectBase.cpp:2696
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.cpp:1156
+msgid "Store to bank"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\ProjectBase.cpp:1945
+msgid "Edit diagram properties."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\ProjectBase.cpp:1947
+msgid "Remove diagram"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\ProjectBase.cpp:1947
+msgid "Remove diagram and all included items."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\ProjectBase.cpp:1964
+msgid "Diagram element"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\ProjectBase.cpp:1965
+msgid "Diagram element's description..."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\codegen\CodeItemsGenerator.cpp:12
+msgid "Code items generator"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\codegen\CodeItemsGenerator.cpp:51
+msgid "ERROR: No valid generation target has been specified."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\codegen\Generator.cpp:100
+msgid "Initializing generator..."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\codegen\Generator.cpp:103
+msgid "Initialization is done."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\codegen\Generator.cpp:107
+msgid "ERROR: Initialization has failed."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\codegen\Generator.cpp:112
+msgid "Starting code generation..."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\codegen\Generator.cpp:114
+msgid "Code generation is done."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\codegen\Generator.cpp:117
+msgid "Cleaning up the generator..."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\codegen\Generator.cpp:119
+msgid "Clean up process is done."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\codegen\Generator.cpp:123
+msgid "Generation process is done."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\codegen\Generator.cpp:126
+msgid "Generation process is done with 'ERROR' status."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\codegen\Generator.cpp:142
+#, c-format
+msgid "Processing diagram '%s' ..."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\codegen\Generator.cpp:147
+msgid "Preprocessing..."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\codegen\Generator.cpp:149
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\codegen\Generator.cpp:174
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\revEng\gui\RevEngPanel.cpp:918
+msgid "Done."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\codegen\Generator.cpp:157
+msgid "Verifying..."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\codegen\Generator.cpp:160
+msgid "Verification is done with 'ERROR' status."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\codegen\Generator.cpp:164
+msgid "Verification is done with 'OK' status."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\codegen\Generator.cpp:172
+msgid "Optimizing..."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\codegen\Generator.cpp:183
+#, c-format
+msgid "Diagram '%s' was processed."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\codegen\Language.cpp:17
+msgid "- Undefined language -"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\codegen\Language.cpp:18
+msgid "Base language class implementation."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\gui\AccessTypeDialog.cpp:10
+msgid "Access type"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\gui\AccessTypeDialog.cpp:11
+msgid "Select access type to this class member:"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\gui\CodeLinkDialog.cpp:49
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\gui\DiagramDialog.cpp:77
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\gui\ElementDialog.cpp:51
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\gui\FunctionDialog.cpp:125
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\gui\FunctionLinkDialog.cpp:66
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\gui\ScopedElementDialog.cpp:62
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\gui\VariableDialog.cpp:95
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\ActionLinkDialog.cpp:69
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\AggregationDialog.cpp:63
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\CADialog.cpp:66
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\ClassDialog.cpp:54
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\ClassMemberLinkDialog.cpp:51
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\ClassTemplDialog.cpp:48
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\CompStateDialog.cpp:78
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\ConstructorDialog.cpp:137
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\DestructorDialog.cpp:80
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\EnumDialog.cpp:54
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\EnumElementDialog.cpp:54
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\EventDialog.cpp:54
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\FinalStateDialog.cpp:53
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\RenameVirtualDialog.cpp:59
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\SSCHDiagramDialog.cpp:79
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\StateActionDialog.cpp:76
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\SubStateDialog.cpp:53
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\TransitionDialog.cpp:86
+msgid "Name cannot be empty."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\gui\FunctionDialog.cpp:258
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\gui\GUI_ProjectBase.cpp:392
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:1401
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:1669
+msgid "<user-defined-code>"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\gui\FunctionDialog.cpp:334
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\ConstructorDialog.cpp:332
+msgid "Parameter properties"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\gui\GUI_ProjectBase.cpp:24
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\gui\GUI_ProjectBase.cpp:345
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\gui\GUI_ProjectBase.cpp:679
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\gui\GUI_ProjectBase.cpp:1167
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:1360
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:1628
+msgid "Name (must be valid language identifier):"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\gui\GUI_ProjectBase.cpp:35
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\gui\GUI_ProjectBase.cpp:356
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\gui\GUI_ProjectBase.cpp:690
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\gui\GUI_ProjectBase.cpp:962
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\gui\GUI_ProjectBase.cpp:1178
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:37
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:186
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:347
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:751
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:994
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:1106
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:1371
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:1639
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:1813
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:1902
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:2083
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:2184
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:2285
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:2379
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:2475
+msgid "Make valid"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\gui\GUI_ProjectBase.cpp:41
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\gui\GUI_ProjectBase.cpp:362
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\gui\GUI_ProjectBase.cpp:696
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\gui\GUI_ProjectBase.cpp:968
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\gui\GUI_ProjectBase.cpp:1184
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:43
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:192
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:353
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:757
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:1000
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:1112
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:1377
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:1645
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:1908
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:2089
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:2190
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:2291
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:2385
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:2481
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.cpp:1128
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.cpp:1195
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.cpp:1297
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.cpp:1646
+msgid "Description:"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\gui\GUI_ProjectBase.cpp:58
+msgid "Generate code from this diagram"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\gui\GUI_ProjectBase.cpp:65
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\gui\GUI_ProjectBase.cpp:204
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\gui\GUI_ProjectBase.cpp:411
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\gui\GUI_ProjectBase.cpp:755
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\gui\GUI_ProjectBase.cpp:1215
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:67
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:228
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:384
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:487
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:597
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:688
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:1038
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:1420
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:1688
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:2118
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:2219
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:2313
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:2409
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:2518
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.cpp:1672
+msgid "Advanced"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\gui\GUI_ProjectBase.cpp:70
+msgid "Output file (without extension):"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\gui\GUI_ProjectBase.cpp:77
+msgid "Select an output file"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\gui\GUI_ProjectBase.cpp:80
+msgid "Reset"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\gui\GUI_ProjectBase.cpp:93
+msgid "Generator:"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\gui\GUI_ProjectBase.cpp:97
+msgid "Algorithm:"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\gui\GUI_ProjectBase.cpp:118
+msgid "Generator"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\gui\GUI_ProjectBase.cpp:177
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\gui\GUI_ProjectBase.cpp:256
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:441
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:551
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:649
+msgid "Link name:"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\gui\GUI_ProjectBase.cpp:186
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\gui\GUI_ProjectBase.cpp:265
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:450
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:560
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:658
+msgid "Original code item:"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\gui\GUI_ProjectBase.cpp:188
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\gui\GUI_ProjectBase.cpp:267
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:452
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:562
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:660
+msgid "MyLabel"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\gui\GUI_ProjectBase.cpp:194
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\gui\GUI_ProjectBase.cpp:273
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:458
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:568
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:666
+msgid "Edit original"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\gui\GUI_ProjectBase.cpp:293
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:499
+msgid "Call parameters"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\gui\GUI_ProjectBase.cpp:382
+msgid "Inline"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\gui\GUI_ProjectBase.cpp:388
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:1397
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:1665
+msgid "Implementation:"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\gui\GUI_ProjectBase.cpp:398
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:1407
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:1675
+msgid "Function modifier:"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\gui\GUI_ProjectBase.cpp:419
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\gui\GUI_ProjectBase.cpp:716
+msgid "Modifier:"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\gui\GUI_ProjectBase.cpp:428
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\gui\GUI_ProjectBase.cpp:725
+msgid "Data type:"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\gui\GUI_ProjectBase.cpp:437
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\gui\GUI_ProjectBase.cpp:734
+msgid "Value type:"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\gui\GUI_ProjectBase.cpp:450
+msgid "Return value"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\gui\GUI_ProjectBase.cpp:461
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\gui\GUI_ProjectBase.cpp:766
+msgid "Type name:"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\gui\GUI_ProjectBase.cpp:469
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\gui\GUI_ProjectBase.cpp:774
+msgid "Defined in:"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\gui\GUI_ProjectBase.cpp:473
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\gui\GUI_ProjectBase.cpp:778
+msgid "Built-in"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\gui\GUI_ProjectBase.cpp:473
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\gui\GUI_ProjectBase.cpp:590
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\gui\GUI_ProjectBase.cpp:778
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\gui\GUI_ProjectBase.cpp:851
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:120
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:281
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:1544
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:1741
+msgid "Editor"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\gui\GUI_ProjectBase.cpp:473
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\gui\GUI_ProjectBase.cpp:778
+msgid "Definition file"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\gui\GUI_ProjectBase.cpp:479
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\gui\GUI_ProjectBase.cpp:784
+msgid "Definition file:"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\gui\GUI_ProjectBase.cpp:483
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\gui\GUI_ProjectBase.cpp:788
+msgid "Select a file"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\gui\GUI_ProjectBase.cpp:493
+msgid "User return type"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\gui\GUI_ProjectBase.cpp:506
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:1433
+msgid "Add"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\gui\GUI_ProjectBase.cpp:509
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagCD.cpp:359
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagCD.cpp:1032
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagSCH.cpp:680
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagSCH.cpp:922
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:1436
+msgid "Edit"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\gui\GUI_ProjectBase.cpp:512
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:1439
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.cpp:1268
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.cpp:1318
+msgid "Remove"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\gui\GUI_ProjectBase.cpp:515
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:1442
+msgid "Move up"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\gui\GUI_ProjectBase.cpp:518
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:1445
+msgid "Move down"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\gui\GUI_ProjectBase.cpp:531
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:1458
+msgid "Parameters"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\gui\GUI_ProjectBase.cpp:536
+msgid "Function code"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\gui\GUI_ProjectBase.cpp:536
+msgid "User-defined return type"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\gui\GUI_ProjectBase.cpp:743
+msgid "Default value:"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\gui\GUI_ProjectBase.cpp:798
+msgid "User-define data type"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\gui\GUI_ProjectBase.cpp:909
+msgid "Comment"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\gui\GUI_ProjectBase.cpp:951
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:26
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:175
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:336
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:740
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:983
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:1095
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:1891
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:2072
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:2173
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:2274
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:2368
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:2464
+msgid "Name (must be valid language identifier);"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\gui\GUI_ProjectBase.cpp:1024
+msgid "Reference to '' has been found in:"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\gui\GUI_ProjectBase.cpp:1034
+msgid "SelectAll"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\gui\GUI_ProjectBase.cpp:1038
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:823
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:884
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:1151
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:1187
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:1256
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:1833
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\revEng\gui\GUI.cpp:74
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.cpp:1033
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.cpp:1492
+msgid "Deselect all"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\gui\GUI_ProjectBase.cpp:1045
+msgid "Pattern occurences:"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\gui\GUI_ProjectBase.cpp:1099
+msgid "Previous"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\gui\GUI_ProjectBase.cpp:1102
+msgid "Next"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\gui\GUI_ProjectBase.cpp:1114
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.cpp:1055
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.cpp:1159
+msgid "Cancel"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\gui\GUI_ProjectBase.cpp:1117
+msgid "Update selected"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\gui\GUI_ProjectBase.cpp:1202
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:581
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:2502
+msgid "Access:"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\gui\GUI_ProjectBase.cpp:1265
+msgid "Text"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\gui\GUI_ProjectBase.h:86
+msgid "Diagram properties"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\gui\GUI_ProjectBase.h:117
+msgid "Code link properties"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\gui\GUI_ProjectBase.h:149
+msgid "Function link properties"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\gui\GUI_ProjectBase.h:224
+msgid "Function properties"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\gui\GUI_ProjectBase.h:277
+msgid "Variable properties"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\gui\GUI_ProjectBase.h:297
+msgid "Select a choice"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\gui\GUI_ProjectBase.h:328
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\gui\GUI_ProjectBase.h:404
+msgid "Diagram element properties"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\gui\GUI_ProjectBase.h:364
+msgid "Update code references"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\gui\GUI_ProjectBase.h:422
+msgid "Progress..."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\gui\UpdateCodeDialog.cpp:26
+msgid "Reference to '"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\gui\UpdateCodeDialog.cpp:26
+msgid "' has been found in these code items:"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\gui\UpdateCodeDialog.cpp:119
+msgid "The end of the code preview has been reached."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\gui\UpdateCodeDialog.cpp:128
+msgid "The begin of the code preview has been reached."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\projectbase\shapes\LabelElement.cpp:32
+msgid "Element"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagTest\DiagTest.cpp:170
+msgid "Test action"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagTest\DiagTest.cpp:357
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\genUml\classdiaggen\ClassAlgorithm.cpp:58
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\genUml\classdiaggen\ClassAlgorithm.cpp:82
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\genUml\statechartgen\ElifAlgorithm.cpp:215
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\genUml\statechartgen\GoToAlgorithm.cpp:190
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\genUml\statechartgen\LoopCaseAlgorithm.cpp:219
+#, c-format
+msgid "WARNING: '%s' element is not supported by this algorithm."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagCD.cpp:145
+#, c-format
+msgid ""
+"Class function member with name '%s' doesn't exist in this scope yet. Would "
+"you like to create one?"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagCD.cpp:169
+#, c-format
+msgid "Function '%s' doesn't match the allowed form '%s'."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagCD.cpp:231
+#, c-format
+msgid ""
+"Class data member with name '%s' doesn't exist in this scope yet. Would you "
+"like to create one?"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagCD.cpp:255
+#, c-format
+msgid "Variable '%s' doesn't match the allowed form '%s'."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagCD.cpp:272
+msgid "Create constructor"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagCD.cpp:273
+msgid "Create destructor"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagCD.cpp:277
+msgid "Member variable"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagCD.cpp:281
+msgid "Member function"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagCD.cpp:312
+msgid "Assign member variable"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagCD.cpp:336
+msgid "Assign member function"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagCD.cpp:363
+msgid "Clear member variables"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagCD.cpp:364
+msgid "Clear member functions"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagCD.cpp:439
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagCD.cpp:1287
+msgid "The code link cannot be used in this scope."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagCD.cpp:917
+#, c-format
+msgid "Bind type '%s' doesn't match the allowed form '%s'."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagCD.cpp:1013
+msgid "Add element"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagCD.cpp:1036
+msgid "Clear all elements"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagCD.cpp:1123
+#, c-format
+msgid "Element '%s' doesn't match the allowed form '%s'."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagCD.cpp:1161
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagCD.cpp:1233
+msgid "Access"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagCD.cpp:1549
+msgid "Refactor virtual function"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagCD.cpp:1549
+msgid "Rename all correspoding ancestors/successors."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagEvtHandlers.cpp:465
+msgid "Enumeration element:"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagEvtHandlers.cpp:465
+msgid "Enter new enumeration element"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagSCH.cpp:266
+#, c-format
+msgid "Given guard content doesn't match the allowed form '%s'."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagSCH.cpp:329
+#, c-format
+msgid ""
+"Condition with name '%s' doesn't exist yet. Would you like to create one?"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagSCH.cpp:355
+#, c-format
+msgid "Name '%s' doesn't match the allowed form '%s'."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagSCH.cpp:392
+#, c-format
+msgid "Action with name '%s' doesn't exist yet. Would you like to create one?"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagSCH.cpp:415
+#, c-format
+msgid "Action list '%s' doesn't match the allowed form '%s'."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagSCH.cpp:606
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagUml.cpp:168
+msgid "Condition function"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagSCH.cpp:610
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagUml.cpp:169
+msgid "Event flag"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagSCH.cpp:614
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagSCH.cpp:876
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagUml.cpp:170
+msgid "Action function"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagSCH.cpp:638
+msgid "Assign condition/event"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagSCH.cpp:657
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagSCH.cpp:899
+msgid "Assign action function"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagSCH.cpp:684
+msgid "Clear condition/event"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagSCH.cpp:685
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagSCH.cpp:926
+msgid "Clear action functions"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagSCH.cpp:793
+#, c-format
+msgid "Action with name '%s' doesn't exist yet. Would you like to create it?"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagSCH.cpp:814
+#, c-format
+msgid "State action '%s' doesn't match the allowed form '%s'."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagUml.cpp:55
+msgid "UML diagrams"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagUml.cpp:56
+msgid "Set of UML diagrams."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagUml.cpp:99
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagUml.cpp:114
+msgid "Simple state"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagUml.cpp:100
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagUml.cpp:116
+msgid "Sub machine"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagUml.cpp:101
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagUml.cpp:117
+msgid "Initial"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagUml.cpp:102
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagUml.cpp:118
+msgid "Final"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagUml.cpp:103
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagUml.cpp:121
+msgid "Transition connection"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagUml.cpp:115
+msgid "Composite machine"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagUml.cpp:119
+msgid "History"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagUml.cpp:120
+msgid "Decision"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagUml.cpp:132
+msgid "Class"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagUml.cpp:133
+msgid "Class template"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagUml.cpp:134
+msgid "Enumeration"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagUml.cpp:135
+msgid "Inheritance connection"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagUml.cpp:136
+msgid "Interface connection"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagUml.cpp:137
+msgid "Bi-directional association"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagUml.cpp:138
+msgid "Uni-directional association"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagUml.cpp:139
+msgid "Basic aggregation"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagUml.cpp:140
+msgid "Composition aggregation"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagUml.cpp:141
+msgid "Template binding"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagUml.cpp:142
+msgid "Include association"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagUml.cpp:147
+msgid "Transition element"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagUml.cpp:148
+msgid "Composite state element"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagUml.cpp:149
+msgid "Sub diagram element"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagUml.cpp:150
+msgid "State chart sub diagram element"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagUml.cpp:151
+msgid "Hierarchical state chart sub diagram element"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagUml.cpp:152
+msgid "Simple state element"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagUml.cpp:153
+msgid "Initial state element"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagUml.cpp:154
+msgid "Final state element"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagUml.cpp:155
+msgid "Decision state element"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagUml.cpp:156
+msgid "History state element"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagUml.cpp:157
+msgid "Class element"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagUml.cpp:158
+msgid "Enumeration element"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagUml.cpp:159
+msgid "Enumeration value"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagUml.cpp:160
+msgid "Include association element"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagUml.cpp:161
+msgid "Class template element"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagUml.cpp:162
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagUml.cpp:186
+msgid "Inheritance element"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagUml.cpp:163
+msgid "Interface element"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagUml.cpp:164
+msgid "Bi-directional association element"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagUml.cpp:165
+msgid "Uni-directional association element"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagUml.cpp:166
+msgid "Basic aggregation element"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagUml.cpp:167
+msgid "Composition aggregation element"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagUml.cpp:171
+msgid "Class member data"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagUml.cpp:172
+msgid "Class member function"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagUml.cpp:173
+msgid "Class constructor"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagUml.cpp:174
+msgid "Class destructor"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagUml.cpp:175
+msgid "Condition function link"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagUml.cpp:176
+msgid "Event flag link"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagUml.cpp:177
+msgid "Action function link"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagUml.cpp:178
+msgid "State action function link"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagUml.cpp:179
+msgid "Element link"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagUml.cpp:180
+msgid "Class member data link"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagUml.cpp:181
+msgid "Class member function link"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagUml.cpp:182
+msgid "State chart sub diagram"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagUml.cpp:183
+msgid "Simple State Chart diagram"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagUml.cpp:184
+msgid "Hierarchical State Chart diagram"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagUml.cpp:185
+msgid "Class diagram"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagUml.cpp:188
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagUml.cpp:194
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagUml.cpp:200
+msgid "False"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagUml.cpp:189
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagUml.cpp:195
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagUml.cpp:201
+msgid "True"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagUml.cpp:191
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:216
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:475
+msgid "Entry action"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagUml.cpp:192
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:216
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:475
+msgid "Exit action"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagUml.cpp:197
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:374
+msgid "Normal event"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagUml.cpp:198
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:374
+msgid "Critical event"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagUml.cpp:225
+msgid "Action functions"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagUml.cpp:226
+msgid "Condition functions"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagUml.cpp:227
+msgid "Event flags"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagUml.cpp:228
+msgid "Class data members"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagUml.cpp:229
+msgid "Class member functions"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagUml.cpp:230
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\DiagUml.cpp:231
+msgid "Constructors/destructors"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\ActionTypeDialog.cpp:16
+msgid "State action type"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\AssignAsDialog.cpp:10
+msgid "Function type"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\ClassInstanceDialog.cpp:32
+msgid "Instance name cannot be empty."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:60
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:209
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\SSCHDiagramDialog.cpp:19
+msgid "Inline code"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:212
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:471
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:2017
+msgid "Type:"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:370
+msgid "Event type:"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:679
+msgid "Clear event flag"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:680
+msgid "Clear event flag automatically"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:777
+msgid "Condition:"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:786
+msgid "Priority:"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:797
+msgid "Condition"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:810
+msgid "Used actions:"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:819
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:880
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:1147
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:1183
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:1252
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:1829
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\revEng\gui\GUI.cpp:70
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.cpp:1488
+msgid "Select all"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:834
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:1162
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:1198
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\Project.cpp:67
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:546
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.cpp:296
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.cpp:1323
+msgid "Remove all"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:856
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:1228
+msgid "Up"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:859
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:1231
+msgid "Down"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:871
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:1243
+msgid "Available actions:"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:898
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:1270
+msgid "Actions"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:1017
+msgid "Return value:"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:1028
+msgid "Default"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:1173
+msgid "Entry"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:1209
+msgid "Exit"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:1472
+msgid "Call parameters for base constructor:"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:1491
+msgid "Base classes"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:1800
+msgid "New name (must be valid identifier):"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:1820
+msgid "Rename also:"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:1928
+msgid "Typename:"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:1943
+msgid "Template"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:1999
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:2207
+msgid "Instance name:"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:2009
+msgid "Parameters:"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:2021
+msgid "Static"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:2021
+msgid "Dynamic"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:2106
+msgid "Value:"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:2306
+msgid "Generate code"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:2400
+msgid "Store return value"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:2401
+msgid "Store value returned from managed sub diagram"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.cpp:2496
+msgid "Include target class"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.h:86
+msgid "Condition/Action properties"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.h:124
+msgid "State action properties"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.h:160
+msgid "Event properties"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.h:195
+msgid "State action link properties"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.h:228
+msgid "Class member link properties"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.h:260
+msgid "Event link properties"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.h:322
+msgid "Transition properties"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.h:369
+msgid "Final state properties"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.h:429
+msgid "Composite state properties"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.h:507
+msgid "Constructor properties"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.h:549
+msgid "Destructor properties"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.h:621
+msgid "Class template properties"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.h:686
+msgid "Enumeration element properties"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.h:721
+msgid "Enumeration properties"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.h:755
+msgid "Class properties"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.h:789
+msgid "Sub machine properties"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\GUI.h:825
+msgid "Aggregation properties"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\SSCHDiagramDialog.cpp:16
+msgid "State Chart diagram properties"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\SSCHDiagramDialog.cpp:23
+msgid "Non-blocking state chart"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\gui\SSCHDiagramDialog.cpp:27
+msgid "Input action:"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\shapes\classdiagram\ClassItem.cpp:354
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\shapes\statechart\StateItem.cpp:146
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\shapes\statechart\TransitionItem.cpp:73
+#, c-format
+msgid "'%s' is not accepted by '%s'"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\shapes\statechart\StateItem.cpp:201
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\shapes\statechart\TransitionItem.cpp:204
+msgid "Selected language doesn't support class instantiation."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\diagUml\shapes\statechart\TransitionItem.cpp:166
+msgid "Only final states from source sub machine can be dropped here."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\genUml\statechartgen\StateChartOptimizer.cpp:46
+#, c-format
+msgid ">>> Iteration %d ..."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\genUml\statechartgen\StateChartVerifier.cpp:53
+#, c-format
+msgid "ERROR: there is no initial state in diagram '%s'."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\genUml\statechartgen\StateChartVerifier.cpp:62
+#, c-format
+msgid "ERROR: more than one initial state in a parent object (state: '%s')"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\genUml\statechartgen\StateChartVerifier.cpp:84
+#, c-format
+msgid "WARNING: there should be at least one ending state in diagram '%s'."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\genUml\statechartgen\StateChartVerifier.cpp:119
+#, c-format
+msgid "ERROR: there is unconnected state '%s' in diagram '%s'."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\genUml\statechartgen\StateChartVerifier.cpp:196
+#, c-format
+msgid ""
+"ERROR: there are tansitions with duplicated guard condition in state '%s'."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\genUml\statechartgen\StateChartVerifier.cpp:207
+#, c-format
+msgid ""
+"ERROR: there are tansitions with duplicated priority level in state '%s'."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\genUml\statechartgen\StateChartVerifier.cpp:224
+#, c-format
+msgid "ERROR: there are more than one conditionless transitions in state '%s'."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\genUml\statechartgen\StateChartVerifier.cpp:254
+#, c-format
+msgid "ERROR: history state '%s' has no parent."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\genUml\statechartgen\StateChartVerifier.cpp:284
+#, c-format
+msgid ""
+"ERROR: there must by exactly one conditionless incoming transition in "
+"history state '%s' which starts either in an initial state or in parent "
+"composite state."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\genUml\statechartgen\StateChartVerifier.cpp:296
+#, c-format
+msgid ""
+"ERROR: there must by exactly one conditionless outcoming transition in "
+"history state '%s'."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\genUml\statechartgen\StateChartVerifier.cpp:315
+#, c-format
+msgid ""
+"ERROR: 'GOTO' code generation algorithm set in diagram '%s' doesn't support "
+"input actions."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\genUml\statechartgen\StateChartVerifier.cpp:320
+#, c-format
+msgid ""
+"ERROR: 'GOTO' code generation algorithm set in diagram '%s' doesn't support "
+"non-blocking state charts."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\codelite\CodeLite.cpp:110
+#, c-format
+msgid "CodeLite plugin: IPC connection on port %s estabilished."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\codelite\CodeLite.cpp:113
+#, c-format
+msgid "WARNING: CodeLite plugin: IPC connection on port %s failed."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\revEng\RevEng.cpp:42
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\revEng\RevEng.cpp:91
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\revEng\RevEng.cpp:130
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\revEng\gui\RevEngPanel.cpp:70
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\revEng\gui\RevEngPanel.cpp:128
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\revEng\gui\RevEngPanel.cpp:919
+msgid "Reverse Engineering"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\revEng\RevEng.cpp:43
+msgid ""
+"Reverse code engineering plugin which uses CTAGS tool to parse source files."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\revEng\gui\GUI.cpp:33
+msgid "Choose source files:"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\revEng\gui\GUI.cpp:40
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\revEng\gui\GUI.cpp:56
+msgid "Add files"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\revEng\gui\GUI.cpp:43
+msgid "Remove selected"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\revEng\gui\GUI.cpp:51
+msgid "Files to be parsed by CTAGS."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\revEng\gui\GUI.cpp:60
+msgid "Remove selected files"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\revEng\gui\GUI.cpp:64
+msgid "Remove all files"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\revEng\gui\GUI.cpp:80
+msgid "Check all"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\revEng\gui\GUI.cpp:84
+msgid "Uncheck all"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\revEng\gui\GUI.cpp:91
+msgid "Identifiers:"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\revEng\gui\GUI.cpp:97
+msgid ""
+"Specifies a list of identifiers which are to be specially handled by CTAGS "
+"while parsing C and C++ source files."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\revEng\gui\GUI.cpp:102
+msgid "Parse checked files"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\revEng\gui\GUI.cpp:117
+msgid "Found symbols:"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\revEng\gui\GUI.cpp:122
+msgid "Expand/Collapse All"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\revEng\gui\GUI.cpp:122
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.cpp:751
+msgid "Expand/collapse all tree items"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\revEng\gui\GUI.cpp:126
+msgid "Import symbols"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\revEng\gui\GUI.cpp:126
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\revEng\gui\GUI.cpp:145
+msgid "Import selected symbols"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\revEng\gui\GUI.cpp:128
+msgid "Members "
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\revEng\gui\GUI.cpp:129
+msgid "Import class members"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\revEng\gui\GUI.cpp:132
+msgid "Bodies "
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\revEng\gui\GUI.cpp:133
+msgid "Import function bodies"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\revEng\gui\GUI.cpp:151
+msgid "Remove all symbols"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\revEng\gui\RevEngPanel.cpp:24
+msgid "Choose source files"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\revEng\gui\RevEngPanel.cpp:24
+msgid "Source files (*.*)|*.*"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\revEng\gui\RevEngPanel.cpp:65
+msgid ""
+"ERROR: Unable to determine programing language from source files. Known file "
+"extensions are:"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\revEng\gui\RevEngPanel.cpp:67
+msgid ""
+". List of known file extensions can be changed via Reverse Engineering "
+"plugin settings. "
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\revEng\gui\RevEngPanel.cpp:68
+msgid "Moreover, just one programming language can be used at the time."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\revEng\gui\RevEngPanel.cpp:70
+msgid ""
+"Unable to determine programing language from source files. See the log "
+"window for more details."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\revEng\gui\RevEngPanel.cpp:128
+msgid "CTAGS utility failed. Please see the log window for more details."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\revEng\gui\RevEngPanel.cpp:259
+msgid "ERROR: Unable to find CTAGS under path "
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\revEng\gui\RevEngPanel.cpp:260
+msgid ""
+"ERROR: Please, specify correct path to CTAGS utility in Reverse Engineering "
+"plugin's settings"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\revEng\gui\RevEngPanel.cpp:299
+#, c-format
+msgid "ERROR: CTAGS failed with return value %d."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\revEng\gui\RevEngPanel.cpp:312
+msgid "Parsing classes..."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\revEng\gui\RevEngPanel.cpp:342
+#, c-format
+msgid "Parsing classes... %s"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\revEng\gui\RevEngPanel.cpp:444
+msgid "Parsing enums..."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\revEng\gui\RevEngPanel.cpp:465
+#, c-format
+msgid "Parsing enums... %s"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\revEng\gui\RevEngPanel.cpp:526
+msgid "Parsing global functions..."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\revEng\gui\RevEngPanel.cpp:555
+#, c-format
+msgid "Parsing global functions... %s"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\revEng\gui\RevEngPanel.cpp:574
+msgid "Parsing global variables..."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\revEng\gui\RevEngPanel.cpp:594
+#, c-format
+msgid "Parsing global variables... %s"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\revEng\gui\RevEngPanel.cpp:780
+msgid "Starting reverse code engineering..."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\revEng\gui\RevEngPanel.cpp:795
+msgid "Importing classes..."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\revEng\gui\RevEngPanel.cpp:832
+msgid "Importing enums..."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\revEng\gui\RevEngPanel.cpp:865
+msgid "Importing functions..."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\revEng\gui\RevEngPanel.cpp:890
+msgid "Importing variables..."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\revEng\gui\RevEngPanel.cpp:911
+msgid "Updating project..."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\revEng\gui\RevEngPanel.cpp:919
+msgid "Select symbols to be processed."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\revEng\gui\RevEngPanel.cpp:923
+#, c-format
+msgid "Number of symbols: %d"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\revEng\gui\RevEngPanel.cpp:924
+msgid ""
+"WARNING: Manual check of parsed project items is strongly recommended due to "
+"possible simplifications done during the import process."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\revEng\gui\RevEngPanelFcns.cpp:184
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\revEng\gui\RevEngPanelFcns.cpp:247
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\revEng\gui\RevEngPanelFcns.cpp:417
+msgid "Original class member: \""
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\revEng\gui\RevEngPanelFcns.cpp:266
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\revEng\gui\RevEngPanelFcns.cpp:326
+msgid "Original parameter: \""
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\revEng\gui\RevEngPanelFcns.cpp:308
+msgid "Original function: \""
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\plugins\revEng\gui\RevEngPanelFcns.cpp:363
+msgid "Original variable: \""
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\CodeItemsTree.cpp:43
+msgid "Reusable code fragments"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\DiagramBank.cpp:19
+msgid "Diagram record's description..."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\DiagramBank.cpp:58
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\ProjectManager.cpp:166
+msgid "Common"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\Log.cpp:21
+msgid "Message"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\Log.cpp:22
+msgid "Time"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\Log.cpp:62
+msgid "Clear"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\Log.cpp:78
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\Log.cpp:89
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerApp.cpp:351
+msgid "ERROR"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\Log.cpp:79
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\Log.cpp:90
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerApp.cpp:355
+msgid "WARNING"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\PluginManager.cpp:172
+msgid "ERROR: Unable to load plugin: "
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\PluginManager.cpp:246
+msgid "WARNING: Couldn't initialize'"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\PluginManager.cpp:246
+msgid "' plugin."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\PluginManager.cpp:262
+msgid "WARNING: Couldn't uninitialize'"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\PluginManager.cpp:262
+msgid "' plugin correctly."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\Project.cpp:34
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:178
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:832
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:838
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:842
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:1797
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.h:112
+msgid "Project items"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\Project.cpp:57
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\Project.cpp:169
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.cpp:244
+msgid "Create diagram package"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\Project.cpp:57
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\Project.cpp:169
+msgid "Create new package and add it to the project root"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\Project.cpp:61
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\Project.cpp:281
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.cpp:253
+msgid "Create code package"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\Project.cpp:61
+msgid "Create new code package and add it to the project root"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\Project.cpp:142
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\Project.cpp:248
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:679
+msgid "Package"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\Project.cpp:178
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:488
+msgid "Create "
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\Project.cpp:178
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:489
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:684
+msgid "Create new "
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\Project.cpp:178
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:490
+msgid " and add it to the current package."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\Project.cpp:185
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.cpp:329
+msgid "Insert diagram from bank"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\Project.cpp:190
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\Project.cpp:297
+msgid "Remove package"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\Project.cpp:190
+msgid "Remove package and all included items."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\Project.cpp:281
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:680
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.cpp:253
+msgid "Create new code package"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\Project.cpp:287
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.cpp:266
+msgid "Create generic variable"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\Project.cpp:287
+msgid "Create new user-defined variable"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\Project.cpp:291
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.cpp:275
+msgid "Create generic function"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\Project.cpp:291
+msgid "Create new user-defined function"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\Project.cpp:297
+msgid "Remove all user-defined code items."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\ProjectManager.cpp:173
+msgid "Properties"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\Settings.cpp:135
+msgid "CDCode"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\Settings.cpp:136
+msgid "CDCode_CI"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerApp.cpp:75
+msgid "This language is not supported by the system."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerApp.cpp:114
+msgid ""
+"CodeDesigner's usage:\n"
+"    CodeDesigner [-g][project]\n"
+"    g - generate opened project immediately\n"
+"    project - path to a project file to be opened by CodeDesigner\n"
+"\n"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerApp.cpp:144
+msgid "Application settings couldn't be read so default values will be used."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerApp.cpp:174
+msgid ""
+"Diagram bank file couldn't be read correctly (probably some previously used "
+"plugins aren't loaded at this time) so the current file was archived and new "
+"one is in use."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:163
+msgid "Group"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:164
+msgid "Note"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:165
+msgid "Note connection"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:168
+msgid "Project manager"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:169
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:336
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.cpp:213
+msgid "Log window"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:170
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:344
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.cpp:217
+msgid "Thumbnail"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:171
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:340
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.cpp:221
+msgid "Code editor"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:172
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:367
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.cpp:225
+msgid "File toolbar"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:173
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:371
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.cpp:229
+msgid "Diagram toolbar"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:174
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:375
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.cpp:233
+msgid "Layout toolbar"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:175
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:379
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.cpp:237
+msgid "Generator toolbar"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:179
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:180
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:181
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:183
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:184
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:835
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:843
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.h:113
+msgid "Code items"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:187
+msgid "Generic variables"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:188
+msgid "Generic functions"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:327
+msgid "Design area"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:331
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.cpp:209
+msgid "Project inspector"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:412
+msgid "Ready"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:516
+msgid "Undo\tCtrl+Z"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:520
+msgid "Redo\tCtrl+Y"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:526
+msgid "Paste\tCtrl+V"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:532
+msgid "Zoom 100%"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:536
+msgid "Zoom to all"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:655
+msgid "New"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:655
+msgid "New project"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:656
+msgid "Load"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:656
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:1431
+msgid "Open project..."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:657
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.cpp:68
+msgid "Save"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:657
+msgid "Save project"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:658
+msgid "Save as..."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:658
+msgid "Save project as..."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:660
+msgid "Print"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:660
+msgid "Print active diagram..."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:661
+msgid "Preview"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:661
+msgid "Preview active diagram..."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:663
+msgid "Copy"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:663
+msgid "Copy to clipboard"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:664
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.cpp:165
+msgid "Cut"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:664
+msgid "Cut to clipboard"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:665
+msgid "Paste"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:665
+msgid "Paste from clipboard"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:667
+msgid "Undo"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:668
+msgid "Redo"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:679
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.cpp:244
+msgid "Create new package"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:680
+msgid "Code package"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:687
+msgid "Create user-defined generic variable"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:688
+msgid "Create user-defined generic function"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:690
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:1627
+msgid "Project settings"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:702
+msgid "Grid"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:702
+msgid "Show/hide grid"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:704
+msgid "Align left"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:704
+msgid "Align selected items to the left"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:705
+msgid "Align right"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:705
+msgid "Align selected items to the right"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:706
+msgid "Align top"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:706
+msgid "Align selected items to the top"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:707
+msgid "Align bottom"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:707
+msgid "Align selected items to the bottom"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:708
+msgid "Align center"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:708
+msgid "Align selected items to the center"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:709
+msgid "Align middle"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:709
+msgid "Align selected items to the middle"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:711
+msgid "Align into circle"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:711
+msgid "Align selected items into circle"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:712
+msgid "Align into mesh"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:712
+msgid "Align selected items into mesh"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:713
+msgid "Align into vertical tree"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:713
+msgid "Align selected items into vertical tree"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:714
+msgid "Align into horizontal tree"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:714
+msgid "Align selected items into horizontal tree"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:725
+msgid "Generate code preview for an active chart"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:726
+msgid "Generate"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:726
+msgid "Generate code for an active project"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:730
+msgid "Select output programming language"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:733
+msgid "Select generator"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:736
+msgid "Select algorithm"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:811
+msgid "Design tool"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:951
+#, c-format
+msgid "DEBUG: Event type: %d, item: %s, parent: %s\n"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:1099
+#, c-format
+msgid "Couldn't add '%s' item to this diagram"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:1114
+#, c-format
+msgid ""
+"Element '%s' is linked by other elements. Do you realy want to remove it?"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:1138
+#, c-format
+msgid ""
+"Element '%s' is referenced by code items:\n"
+"%sDo you realy want to remove the element?"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:1165
+msgid "Modified"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:1167
+msgid "Saved"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:1362
+msgid "Unable to load the project file due to unsupported diagram types."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:1431
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:1483
+msgid "CodeDesigner project (*.cdp)|*.cdp"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:1450
+msgid ""
+"Current unsaved changes will be lost. Would you like to load the project "
+"anyway?"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:1483
+msgid "Save project..."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:1510
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.cpp:88
+msgid "Export diagram to image..."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:1510
+msgid ""
+"BMP Files (*.bmp)|*.bmp|GIF Files (*.gif)|(*.gif)|XPM Files (*.xpm)|*.xpm|"
+"PNG Files (*.png)|*.png|JPEG Files (*.jpg)|*.jpg|SVG Files (*.svg)|*.svg"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:1571
+msgid "Project is changed. Do you want to save it?"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:1593
+msgid "Application preferences"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:1642
+msgid ""
+"Cross-platform CASE tool designed for drawing of UML diagrams, code "
+"generation and reverse code engineering."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:1645
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.cpp:1020
+msgid "Available diagrams:"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:1652
+msgid "Available generators:"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:1673
+msgid "Current tool: Design tool"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:1675
+#, c-format
+msgid "Current tool: %s"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:1906
+msgid "Are you sure you want to remove all project items?"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:1930
+#, c-format
+msgid "Are you sure you want to remove '%s' from the project?"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:2615
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\codegen\CProjectGenerator.cpp:394
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\codegen\PythonProjectGenerator.cpp:245
+msgid ""
+"Generation process finished with ERROR status. See the log window for more "
+"details."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:2621
+msgid "Unable to initialize output stream."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:2628
+msgid "Unable to create selected code generator."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:2664
+msgid ""
+"Code generation process has been aborted because some user-defined code "
+"items' content located in generated files is ambiguous. Please see the log "
+"window for more details."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:2668
+msgid "Code generation process has been aborted by the user."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:2677
+msgid ""
+"Code generation process has been aborted because some user-defined code "
+"items' content placed in generated files is ambiguous. Please see the log "
+"window for more details."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:2697
+msgid "Unable to create the project generator for selected language."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:2700
+msgid "Unable to retrieve selected language processor."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:2721
+msgid ""
+"Some diagrams couldn't be inserted into the projet. Please, see the log for "
+"more details."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:2746
+#, c-format
+msgid "Diagram '%s' was stored into bank."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:2761
+msgid "Export diagram bank..."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:2762
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:2778
+msgid "Diagram bank (*.cdbank)|*.cdbank|All files (*.*)|*.*"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:2768
+msgid "Diagram bank has been exported to '"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:2771
+msgid "Unable to export diagram bank to '"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:2777
+msgid "Import diagram bank..."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:2786
+msgid "Imported data has been merged with current diagram bank content."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:2790
+msgid ""
+"Diagram bank file couldn't be read correctly (probably some previously used "
+"plugins aren't loaded at this time)."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:2806
+msgid "Are you sure you want to reset current layout?"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:2809
+msgid "The change will take an effect after application's restart"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:2821
+msgid "There is nothing to update."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:2826
+msgid "Some code items have been updated. Please, see the log window."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\UMLDesignerMain.cpp:2830
+msgid ""
+"Some code items couldn't be updated due to their ambiguous instances. "
+"Please, see the log window."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\codegen\CProjectGenerator.cpp:64
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\codegen\PythonProjectGenerator.cpp:64
+msgid "Output directory '"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\codegen\CProjectGenerator.cpp:64
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\codegen\PythonProjectGenerator.cpp:64
+msgid "' doesn't exist. Please check the project settings."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\codegen\CProjectGenerator.cpp:195
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\codegen\PythonProjectGenerator.cpp:142
+#, c-format
+msgid "Generating '%s'..."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\codegen\CProjectGenerator.cpp:196
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\codegen\PythonProjectGenerator.cpp:143
+#, c-format
+msgid "Generating code for diagram '%s'..."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\codegen\CProjectGenerator.cpp:219
+#, c-format
+msgid "Output files: %s, %s."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\codegen\PythonProjectGenerator.cpp:158
+#, c-format
+msgid "Output file: %s."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\codegen\base\ProjectGenerator.cpp:51
+msgid "Unable to generate project code."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\codegen\base\ProjectGenerator.cpp:384
+#, c-format
+msgid ""
+"ERROR: Code generation algorithm used in '%s' diagram doesn't support "
+"selected programming language.\n"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\codegen\base\ProjectGenerator.cpp:468
+#, c-format
+msgid "WARNING: Instances of '%s::%s' generated code are ambiguous."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\codegen\base\ProjectGenerator.cpp:479
+#, c-format
+msgid "Code item '%s::%s' is identical."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\DialogFunctions.cpp:55
+msgid "Type"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\DialogFunctions.cpp:56
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.cpp:1638
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\ManagePluginsDialog.cpp:85
+msgid "Name"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\EditorPanel.cpp:73
+msgid "Code item: "
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\EditorPanel.cpp:78
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\EditorPanel.cpp:85
+msgid "<no editable content>"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\EditorPanel.cpp:84
+msgid "Code item: <none>"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.cpp:50
+msgid "&New project"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.cpp:59
+msgid "&Open project..."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.cpp:77
+msgid "&Save project as..."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.cpp:88
+msgid "Export active diagram to BMP file"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.cpp:94
+msgid "&Print..."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.cpp:94
+msgid "Print active diagram"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.cpp:103
+msgid "Preview..."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.cpp:103
+msgid "Preview active diagram"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.cpp:112
+msgid "Page setup..."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.cpp:112
+msgid "Set page properties"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.cpp:118
+msgid "Recent projects"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.cpp:124
+msgid "&Quit"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.cpp:124
+msgid "Quit the application"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.cpp:132
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.cpp:626
+msgid "&File"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.cpp:136
+msgid "&Undo"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.cpp:145
+msgid "&Redo"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.cpp:156
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.cpp:634
+msgid "&Copy"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.cpp:174
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.cpp:638
+msgid "&Paste"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.cpp:185
+msgid "Select &all"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.cpp:185
+msgid "Select all items in current diagram"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.cpp:191
+msgid "Preferences..."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.cpp:199
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.cpp:641
+msgid "&Edit"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.cpp:203
+msgid "Reset layout"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.cpp:240
+msgid "&View"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.cpp:266
+msgid "Create user-defined variable"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.cpp:275
+msgid "Create user-defined function"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.cpp:286
+msgid "Edit selected item"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.cpp:286
+msgid "Edit properties of seleceted project item"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.cpp:290
+msgid "Remove selected item"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.cpp:290
+msgid "Remove item selected in the project view from current project"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.cpp:296
+msgid "Clear project (permanently remove all project items)"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.cpp:307
+msgid "Settings..."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.cpp:315
+msgid "&Project"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.cpp:319
+msgid "Manage bank..."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.cpp:325
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.h:403
+msgid "Store diagram to bank"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.cpp:325
+msgid "Store currently selected diagram to bank"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.cpp:329
+msgid "Insert diagram from bank to currently selected package"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.cpp:335
+msgid "Import bank..."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.cpp:339
+msgid "Export bank..."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.cpp:342
+msgid "&Diagram bank"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.cpp:346
+msgid "&Preview"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.cpp:346
+msgid "Generate code from active diagram"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.cpp:355
+msgid "&Generate"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.cpp:355
+msgid "Generate code for an active chart"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.cpp:366
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.h:534
+msgid "Synchronize code"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.cpp:366
+msgid "Synchronize changes in code items' source code."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.cpp:369
+msgid "&Code generation"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.cpp:373
+msgid "Manage plugins..."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.cpp:373
+msgid "Manage available plugins"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.cpp:376
+msgid "&Plugins"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.cpp:380
+msgid "&About..."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.cpp:380
+msgid "Show info about this application"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.cpp:388
+msgid "&Help"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.cpp:423
+msgid "Zoom diagram to its original size"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.cpp:430
+msgid "Zoom diagram to fit the design area"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.cpp:435
+msgid "Design area zoom"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.cpp:623
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.cpp:1220
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.cpp:1351
+msgid "Close"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.cpp:623
+msgid "Close editor window"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.cpp:630
+msgid "Cu&t"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.cpp:749
+msgid "Link on/off"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.cpp:749
+msgid "Link project manager with design area"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.cpp:751
+msgid "Expand/Collapse all"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.cpp:755
+msgid "Show properies"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.cpp:755
+msgid "Inspect properties of selected tree item"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.cpp:757
+msgid "Organize code items"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.cpp:838
+msgid "Save changes (Alt+S)"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.cpp:842
+msgid "Code item:"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.cpp:957
+msgid "Defaults"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.cpp:1009
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.cpp:1101
+msgid "Category:"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.cpp:1029
+msgid "Selec all"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.cpp:1039
+msgid "Show info"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.cpp:1052
+msgid "Insert selected"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.cpp:1120
+msgid "Diagram info"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.cpp:1138
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.cpp:1305
+msgid "Dependencies:"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.cpp:1205
+msgid "Used code items:"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.cpp:1250
+msgid "Categories"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.cpp:1261
+msgid "Create new category"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.cpp:1265
+msgid "Rename"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.cpp:1269
+msgid "Remove selected categories"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.cpp:1280
+msgid "Diagrams"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.cpp:1319
+msgid "Remove selected diagrams"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.cpp:1329
+msgid "Copy to..."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.cpp:1330
+msgid "Copy dialog to another category"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.cpp:1334
+msgid "Move to..."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.cpp:1335
+msgid "Move to another category"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.cpp:1417
+msgid "Available plugins:"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.cpp:1478
+msgid "Select code items which should be updated:"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.cpp:1507
+msgid "In generated files:"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.cpp:1511
+msgid "In CodeDesigner:"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.cpp:1661
+msgid "Group color:"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.h:329
+msgid "Settings"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.h:367
+msgid "Select diagrams for insertion"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.h:424
+msgid "Diagram Info"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.h:473
+msgid "Manage diagram bank"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.h:501
+msgid "Manage plugins"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\GUI.h:571
+msgid "Group element properties"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\ManageBankDialog.cpp:57
+msgid "Selected category is not empty. Are you sure you want to remove it?"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\ManageBankDialog.cpp:86
+msgid "Are you sure you want to remove selected diagram?"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\ManageBankDialog.cpp:106
+msgid "Are you sure you want to remove all diagrams from this category?"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\ManageBankDialog.cpp:292
+msgid "Move diagram"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\ManageBankDialog.cpp:293
+msgid "Select target category:"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\ManagePluginsDialog.cpp:64
+msgid "All changes will take an effect after application's restart."
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\ManagePluginsDialog.cpp:81
+msgid "Plugin info"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\ManagePluginsDialog.cpp:89
+msgid "Description"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\ManagePluginsDialog.cpp:94
+msgid "Author"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\ManagePluginsDialog.cpp:98
+msgid "Version"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\SettingsDialog.cpp:161
+msgid "Are you sure you want to set all properties to default values?"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\StoreToBankDialog.cpp:33
+msgid "Name: "
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\StoreToBankDialog.cpp:53
+msgid "Category name:"
+msgstr ""
+#: U:\DONNEES\TRAVAIL_NT\CodeBlock\Gcc\Uml\cdesigner\1.6.5-0\src\gui\SynchronizeDialog.cpp:60
+#, c-format
+msgid "User-defined code of '%s::%s' has been updated."
+msgstr ""
