@@ -1,3 +1,11 @@
+Changes in version 1.6.5-0 (2015-04-12) (LETARTARE 'Code::Blocks'):
+------------------------------------------------
+- change the organization of sources
+- add projects files for 'Code::Blocks' and 'wxMSW-3.02_gcc471TDM'
+- adaptation of the source files for internationalization
+
+
+
 Changes in version 1.6.5 beta (2015-03-05):
 ------------------------------------------------
 - Diagram items IDs and names are context-exclusive now (i.e. item names are uniqe per diagram
