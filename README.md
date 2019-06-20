@@ -26,6 +26,6 @@ This branch use 'Code::Blocks' as a development tool,
 
 
 
-A daptation of the source files for internationalization  in 'src/trlocale'
+Adaptation of the source files for internationalization  in 'src/trlocale'
 obtained with 'http://sourceforge.net/projects/wxtranslate' a plugin for 'Code::Blocks'
 
